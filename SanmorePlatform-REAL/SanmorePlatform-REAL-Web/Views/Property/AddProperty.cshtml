@@ -1,0 +1,1210 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<!-- Add listing -->
+<!-- Add listing -->
+<div class="top-section">
+    <div class="container-fluid container-px">
+        <div class="d-flex align-items-center">
+            <div class="me-3">
+                <h3 class="fw-semibold mb-0">Add a <span class="blue-primary">Listing</span></h3>
+            </div>
+            <div class="col-xxl-1 col-xl-2 col-md-6">
+                <select class="form-select">
+                    <option>Select Country</option>
+                    <option selected>USA</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="addlistingform">
+
+    <div class="container-fluid container-px" id="txtAddPropertyContainer">
+
+        <div class="add-property">
+            <div class="row">
+                <h5>Property</h5>
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="propertyType" class="form-label">Property type <span class="red-txt">*</span></label>
+                    <select class="form-select" aria-label="Default select example" id="propertyType" onchange="ValidatePropertyType()">
+                        <option>Select</option>
+                    </select>
+                    <span id="errpropertytype" class="text-danger"></span>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="relationshipId1" class="form-label">Relationship to property <span class="red-txt">*</span></label>
+                    <select class="form-select" onchange="TwoOnChange()" aria-label="Default select example" id="relationshipId1">
+                        <option selected>Select</option>
+                        <option value="Wholesaler">Wholesaler</option>
+                        <option value="Owner">Owner</option>
+                        <option value="Broker / Realtor">Broker / Realtor</option>
+                    </select>
+                    <span id="errRelationshipId1" class="text-danger"></span>
+                </div>
+                <!-- fields for wholesaler start -->
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="targetPrice" class="form-label">Target price <span class="red-txt">*</span></label>
+                    <input type="text" class="input-field CommaSeperateTargetPrice" id="targetPrice" onkeyup="RemoveTargetPrice()" placeholder="Target price">
+                    <span id="errtargetPrice" class="text-danger"></span>
+                </div>
+                <div id="divOriginalTargetPrice" class="col-xl-3 col-md-6 mb-3 d-none">
+                    <label for="originaltargetPrice" class="form-label">Original Contract Price <span class="red-txt">*</span></label>
+                    <input type="text" class="input-field commaSeperateContractPrice" onkeyup="RemoveOriginalTargetPrice()" id="originaltargetPrice" placeholder="Original contract price">
+                    <span id="erroriginaltargetPrice" class="text-danger"></span>
+                    <span id="erroriginaltargetPriceMaxLimit" class="text-danger"></span>
+                </div>
+                <input type="hidden" value="@Context.Session.GetString("Id")" id="txtUserId" />
+
+                <!-- fields for wholesaler end -->
+            </div>
+        </div>
+        <div class="add-property">
+            <h5>Address</h5>
+            <div class="row">
+                <div class="col-xl-6">
+                    <div class="row">
+                        <div class="col-xl-6 col-md-6 mb-3">
+                            <label for="address1" class="form-label">Address 1 <span class="red-txt">*</span></label>
+                            <input type="text" class="input-field" id="address1" onkeyup="RemoveAddress()" placeholder="Address 1">
+
+                            <span id="erraddress1" class="text-danger"></span>
+                        </div>
+                        <div class="col-xl-6 col-md-6 mb-3">
+                            <label for="address2" class="form-label">Address 2</label>
+                            <input type="text" class="input-field" id="address2" placeholder="Address 2">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="row">
+                        <div class="col-xl-4 col-md-6 mb-3">
+                            <label for="CityField" class="form-label">City <span class="red-txt">*</span></label>
+                            <input type="text" class="input-field" onkeyup="RemoveCity()" id="CityField" placeholder="City">
+                            <span id="errCityField" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-xl-4 col-md-6 mb-4">
+                            <label for="stateField" class="form-label">State <span class="red-txt">*</span></label>
+                            <select class="form-select" aria-label="Default select example" id="stateField" placeholder="SelectState">
+                                <option>Select</option>
+                            </select>
+                            <span id="errstateField" class="text-danger"></span>
+                        </div>
+                        <div class="col-xl-4 col-md-6 mb-3">
+                            <label for="zipCode" class="form-label">Zip code <span class="red-txt">*</span></label>
+                            @*                            <input type="number" onkeypress="if(this.value.length==5) return false;" min="1" oninput="this.value =!!this.value && Math.abs(this.value)>= 1 ? Math.abs(this.value) : null" class="input-field" onkeyup="RemoveZipCode()" id="zipCode" placeholder="Zip Code">
+                            *@
+                            <input type="number" min="0" onkeypress="if(this.value.length==5) return false;" class="input-field" onkeyup="RemoveZipCode()" id="zipCode" placeholder="Zip code">
+                            <span id="errzipCode" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Property Details-->
+        <div class="add-property showProperty" id="txtPropertyDetails">
+            <h5>Property Details</h5>
+            <div class="row">
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="buildingStatus" class="form-label">Building status <span class="red-txt">*</span></label>
+                    <select class="form-select" aria-label="Default select example" onchange="RemoveBuildingStatus()" id="buildingStatus">
+                        <option selected>Select</option>
+                        <option value="Existing">Existing</option>
+                        <option value="Under Construction">Under Construction</option>
+                        <option value="Needing Renovation">Needing Renovation </option>
+                        <option value="Recently Built">Recently Built</option>
+                    </select>
+                    <span id="errbuildingStatus" class="text-danger"></span>
+                </div>
+
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="buildings" class="form-label">Building count <span class="red-txt">*</span></label>
+                    <input type="number" class="input-field" id="buildings" step="0.01" min="1" maxlength="5"
+                           onkeyup="RemoveBuildingCount()" placeholder="Building count">
+                    <span id="errbuildings" class="text-danger"></span>
+                </div>
+
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="units1" class="form-label">Units</label>
+                    <input type="number" class="input-field" id="units1" min="1" oninput="this.value =!!this.value && Math.abs(this.value)>= 1 ? Math.abs(this.value) : null" placeholder="Units">
+                </div>
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="squareFootage" class="form-label">Built square footage <span class="red-txt">*</span></label>
+                    <input type="text" class="input-field commaSeperateBuiltSquare" id="squareFootage" onkeyup="RemoveBuiltSquareFootage()" placeholder="Built square footage">
+                    <span id="errsquareFootage" class="text-danger"></span>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="fFloors" class="form-label">Floors</label>
+                    <input type="number" class="input-field" id="fFloors" min="1" oninput="this.value =!!this.value && Math.abs(this.value)>= 1 ? Math.abs(this.value) : null" placeholder="Floors">
+                </div>
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="yearBuilt" class="form-label">Year built <span class="red-txt">*</span></label>
+                    <input type="number" onkeypress="if(this.value.length==4) return false;" min="1" oninput="this.value =!!this.value && Math.abs(this.value)>= 1 ? Math.abs(this.value) : null" class="input-field" id="yearBuilt" onkeyup="RemoveYearBuilt()" placeholder="Year built">
+                    <span id="erryearBuilt" class="text-danger"></span>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="yearRenovated" class="form-label">Year renovated</label>
+                    <input type="number" onkeypress="if(this.value.length==4) return false;" min="1" oninput="this.value =!!this.value && Math.abs(this.value)>= 1 ? Math.abs(this.value) : null" class="input-field" id="yearRenovated" placeholder="Year renovated">
+                    <span id="erryearRenovated" class="text-danger"></span>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="landArea" class="form-label">Land area (in square feet) <span class="red-txt">*</span></label>
+                    <input type="text" class="input-field commaSeperateLandArea" id="landArea" onkeyup="RemoveLandArea()" placeholder="Land area">
+                    <span id="errlandArea" class="text-danger"></span>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="occupiedField" class="form-label">Occupancy <span class="red-txt">*</span></label>
+                    <select class="form-select" onchange="RemoveOccupancy()" aria-label="Default select example" id="occupiedField">
+                        <option selected>Select</option>
+                        <option value="1">Owner Occupied</option>
+                        <option value="2">Paying Tenant</option>
+                        <option value="3">Nonpaying Occupant</option>
+                        <option value="4">Vacant</option>
+                    </select>
+                    <span id="erroccupiedField" class="text-danger"></span>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="willOccupantStayAfterSale" class="form-label">Will occupant stay after sale </label>
+                    <select class="form-select" aria-label="Default select example" id="willOccupantStayAfterSale">
+                        <option selected>Select</option>
+                        <option value="1">Yes</option>
+                        <option value="2">No</option>
+                        <option value="3">N/A</option>
+                    </select>
+                </div>
+
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="constructionmaterial" class="form-label">
+                        Construction materials <span class="red-txt">*</span>
+                    </label>
+                    <select class="form-select" aria-label="Default select example" id="constructionmaterial" onchange="RemoveConstructionMaterial()">
+                        <option selected>Select</option>
+                        <option value="1">Wood frame</option>
+                        <option value="2">Metal frame</option>
+                        <option value="3">Cement board</option>
+                        <option value="4">Brick</option>
+                        <option value="5">Other</option>
+                    </select>
+                    <span id="errConstructionMaterial" class="text-danger"></span>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="elevators" class="form-label">Elevators</label>
+                    <input type="number" class="input-field" id="elevators" min="1" oninput="this.value =!!this.value && Math.abs(this.value)>= 1 ? Math.abs(this.value) : null" placeholder="Elevators">
+                </div>
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="parking" class="form-label">Parking count <span class="red-txt">*</span></label>
+                    <input type="number" step="0.01" min="1" class="input-field" id="parking" onkeyup="RemoveParkingCount()" placeholder="Parking count">
+                    <span id="errparking" class="text-danger"></span>
+                </div>
+
+
+                <div class="col-xl-3 col-md-6 mb-3 ">
+                    <label for="governanceField" class="form-label">Governance </label>
+                    <select class="js-select2 form-select" aria-label="Default select example" id="governanceField" onchange="OtherGovernance()" "
+                            multiple>
+                        <option value="1">City zoning</option>
+                        <option value="2">County zoning</option>
+                        <option value="3">Deed restrictions</option>
+                        <option value="4">Historic restrictions</option>
+                        <option value="5">HOA</option>
+                        <option value="6">Other</option>
+                    </select>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-3 d-none" id="divOtherGovernance">
+                    <label for="otherDescription" class="form-label">Other</label>
+                    <input type="text" class="input-field" id="otherDescription" placeholder="Add..">
+                </div>
+
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="deliveryBays" class="form-label">Delivery bays</label>
+                    <input type="number" class="input-field" id="deliveryBays" min="1" oninput="this.value =!!this.value && Math.abs(this.value)>= 1 ? Math.abs(this.value) : null" placeholder="Delivery bays">
+                </div>
+            </div>
+            <hr>
+            <div class="unit-mix-section d-none">
+                <h5>Unit Mix</h5>
+                <div class="row" id="getAllHtmldNone">
+                    <div class="col-12">
+                        <div class="row p-0 m-0 custom-row" id="parentDiv2">
+                            <div class="col-xl-3 pm-0">
+                                <div class="row">
+                                    <div class="col-xl-6 col-md-6 mb-3">
+                                        <label for="units" class="form-label">Units</label>
+                                        <input type="number" class="input-field Unit" id="units" min="1" oninput="this.value =!!this.value && Math.abs(this.value)>= 1 ? Math.abs(this.value) : null" placeholder="Units" onkeyup="RemoveUnitMixValidation()">
+
+                                    </div>
+                                    <div class="col-xl-6 col-md-6 mb-3">
+                                        <label for="bedselect" class="form-label">Beds</label>
+                                        <select class="form-select" aria-label="Default select example" id="bedselect">
+                                            <option selected>Select</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="row">
+                                    <div class="col-xl-3 col-md-6 mb-3">
+                                        <label for="bathselect" class="form-label">Baths</label>
+                                        <select class="form-select" aria-label="Default select example" id="bathselect">
+                                            <option selected>Select</option>
+                                            <option value="1">1</option>
+                                            <option value="2">1.5</option>
+                                            <option value="3">2</option>
+                                            <option value="4">2.5</option>
+                                            <option value="5">3</option>
+                                            <option value="6">3.5</option>
+                                            <option value="7">4</option>
+                                            <option value="8">4.5</option>
+                                            <option value="9">5</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xl-3 col-md-6 mb-3">
+                                        <label for="units" class="form-label">Unit area</label>
+                                        <input type="text" class="input-field commaSeperateUnitArea" id="unitsarea" onkeyup="CalculateUnitArea(this)" placeholder="Unit SF">
+                                    </div>
+                                    <div class="col-xl-3 col-md-6 mb-3">
+                                        <label for="askingRent" class="form-label">Asking rent</label>
+                                        <input type="text" class="input-field commaSeperateAskingRent" id="askingRent" onkeyup="CalculateAskingRent(this)" placeholder="Asking rent">
+                                    </div>
+                                    <div class="col-xl-3 col-md-6 mt-6">
+                                        <span class="ms-3">
+                                            <svg class="deleteMeUnitMix" xmlns="http://www.w3.org/2000/svg" width="16" height="18"
+                                                 viewBox="0 0 16 18" fill="none">
+                                                <path d="M3 18C2.45 18 1.979 17.804 1.587 17.412C1.195 17.02 0.999333 16.5493 1 16V3H0V1H5V0H11V1H16V3H15V16C15 16.55 14.804 17.021 14.412 17.413C14.02 17.805 13.5493 18.0007 13 18H3ZM5 14H7V5H5V14ZM9 14H11V5H9V14Z"
+                                                      fill="#DC3545" />
+                                            </svg>
+                                        </span>
+                                        <span class="ms-2" id="addmore">
+                                            <svg onclick="MakeNewRow()" xmlns="http://www.w3.org/2000/svg" width="20" class="idAddUnitDiv" id="AddIcon"
+                                                 height="20" viewBox="0 0 20 20" fill="none">
+                                                <path d="M10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20C15.523 20 20 15.523 20 10C20 4.477 15.523 0 10 0ZM15 11H11V15H9V11H5V9H9V5H11V9H15V11Z"
+                                                      fill="#002A7B" />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <div class="unit-mix-section">
+                <h5>Unit Mix</h5><span id="errunits" class="text-danger"></span>
+                <div class="row" id="getAllHtml">
+                    <div class="col-12">
+                        <div class="row p-0 m-0 custom-row" id="mainDiv2">
+                            <div class="col-xl-3 pm-0">
+                                <div class="row">
+                                    <div class="col-xl-6 col-md-6 mb-3">
+                                        <label for="units" class="form-label">Units</label>
+                                        <span id="errunits" class="text-danger"></span>
+                                        <input type="number" class="input-field Unit" id="units" min="1" oninput="this.value =!!this.value && Math.abs(this.value)>= 1 ? Math.abs(this.value) : null" placeholder="Units" onkeyup="RemoveUnitMixValidation()">
+
+                                    </div>
+
+                                    <div class="col-xl-6 col-md-6 mb-3">
+                                        <label for="bedselect" class="form-label">Beds</label>
+                                        <select class="form-select" aria-label="Default select example" id="bedselect">
+                                            <option selected>Select</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="row">
+                                    <div class="col-xl-3 col-md-6 mb-3">
+                                        <label for="bathselect" class="form-label">Baths</label>
+                                        <select class="form-select" aria-label="Default select example" id="bathselect">
+                                            <option selected>Select</option>
+                                            <option value="1">1</option>
+                                            <option value="2">1.5</option>
+                                            <option value="3">2</option>
+                                            <option value="4">2.5</option>
+                                            <option value="5">3</option>
+                                            <option value="6">3.5</option>
+                                            <option value="7">4</option>
+                                            <option value="8">4.5</option>
+                                            <option value="9">5</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xl-3 col-md-6 mb-3">
+                                        <label for="units" class="form-label">Unit area</label>
+                                        <input type="text" class="input-field commaSeperateUnitArea" id="unitsarea" onkeyup="CalculateUnitArea(this)" placeholder="Unit SF">
+                                    </div>
+                                    <div class="col-xl-3 col-md-6 mb-3">
+                                        <label for="askingRent" class="form-label">Asking rent</label>
+                                        <input type="text" class="input-field commaSeperateAskingRent" id="askingRent" onkeyup="CalculateAskingRent(this)" placeholder="Asking rent">
+                                    </div>
+                                    <div class="col-xl-3 col-md-6 mt-6">
+                                        <span class="ms-3">
+                                            <svg class="deleteMe2" xmlns="http://www.w3.org/2000/svg" width="16" height="18"
+                                                 viewBox="0 0 16 18" fill="none">
+                                                <path d="M3 18C2.45 18 1.979 17.804 1.587 17.412C1.195 17.02 0.999333 16.5493 1 16V3H0V1H5V0H11V1H16V3H15V16C15 16.55 14.804 17.021 14.412 17.413C14.02 17.805 13.5493 18.0007 13 18H3ZM5 14H7V5H5V14ZM9 14H11V5H9V14Z"
+                                                      fill="#DC3545" />
+                                            </svg>
+                                        </span>
+                                        <span class="ms-2" id="addmore">
+                                            <svg onclick="MakeNewRow()" xmlns="http://www.w3.org/2000/svg" width="20" class="idAddUnitDiv" id="divUnitMain"
+                                                 height="20" viewBox="0 0 20 20" fill="none">
+                                                <path d="M10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20C15.523 20 20 15.523 20 10C20 4.477 15.523 0 10 0ZM15 11H11V15H9V11H5V9H9V5H11V9H15V11Z"
+                                                      fill="#002A7B" />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </div>
+        <!-- Residential property Details-->
+        <div class="add-property residential-property d-none ">
+            <h5>Residential Property Details</h5>
+            <div class="row">
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="buildingStatus" class="form-label">Building status  <span class="red-txt">*</span></label>
+                    <select class="form-select" aria-label="Default select example" id="residentialBuildingStatus" onchange="RemoveResBuildingStatus()">
+                        <option value="0" selected>Select</option>
+                        <option value="1">New Build</option>
+                        <option value="2">Renovated</option>
+                        <option value="3">Rehab Needed</option>
+                        <option value="4">Under Construction</option>
+                    </select>
+                    <span id="errResBuildingStatus" class="text-danger"></span>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="renovated" class="form-label">Price of renovations needed</label>
+                    <input type="text" class="input-field commaResidentialPriceOfRenovatedNeeded" id="renovated" placeholder="Price of renovations needed">
+                </div>
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="afterRepair" class="form-label">After repair value  <span class="red-txt">*</span></label>
+                    <input type="text" class="input-field commaResidentialAfterRepairValue" id="afterRepair" placeholder="After repair value" onkeyup="RemoveResRepairValue()">
+                    <span id="errResAfterRepair" class="text-danger"></span>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="bedroomsId" class="form-label">Bedrooms <span class="red-txt">*</span></label>
+                    <select class="form-select" aria-label="Default select example" id="bedroomsId" onchange="RemoveResBedrooms()">
+                        <option value="0" selected>Select</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5+</option>
+                    </select>
+                    <span id="errResBedrooms" class="text-danger"></span>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="bathroomId" class="form-label">Bathrooms<span class="red-txt">*</span></label>
+                    <select class="form-select" aria-label="Default select example" id="bathroomId" onchange="RemoveResBathrooms()">
+                        <option value="0" selected>Select</option>
+                        <option value="1">1</option>
+                        <option value="2">1.5</option>
+                        <option value="3">2</option>
+                        <option value="4">2.5</option>
+                        <option value="5">3</option>
+                        <option value="6">3.5</option>
+                        <option value="7">4</option>
+                        <option value="8">4.5</option>
+                        <option value="9">5+</option>
+                    </select>
+                    <span id="errResBathrooms" class="text-danger"></span>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="builtSquareId" class="form-label">Built square footage  <span class="red-txt">*</span></label>
+                    <input type="text" class="input-field commaResidentialBuiltSquareFootage" id="builtSquareId" placeholder="Built square footage" onkeyup="RemoveResBuiltSquareFootage()">
+                    <span id="errResBuiltSquareFootage" class="text-danger"></span>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="lotSizeFootage" class="form-label">Lot size square footage  <span class="red-txt">*</span></label>
+                    <input type="text" class="input-field commaResidentialLotSizeFootage" id="lotSizeFootage" placeholder="Lot size square footage" onkeyup="RemoveResLotSizeSquare()">
+                    <span id="errResLotSizeSquareFootage" class="text-danger"></span>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="builtYearField" class="form-label">Built year</label>
+                    <input type="number" class="input-field" onkeypress="if(this.value.length==4) return false;" min="1" oninput="this.value =!!this.value && Math.abs(this.value)>= 1 ? Math.abs(this.value) : null" id="builtYearField" placeholder="Built year">
+                </div>
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="renovatedYear1" class="form-label">Renovated year</label>
+                    <input type="number" class="input-field" onkeypress="if(this.value.length==4) return false;" min="1" oninput="this.value =!!this.value && Math.abs(this.value)>= 1 ? Math.abs(this.value) : null" id="renovatedYear1" placeholder="Renovated year">
+                </div>
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="parkingResidential" class="form-label">Parking<span class="red-txt">*</span></label>
+                    <select class="form-select" aria-label="Default select example" id="parkingResidential" onchange="RemoveResParking()">
+                        <option value="0" selected>Select</option>
+                        <option value="1">Attached Garage</option>
+                        <option value="2">Detached Garage</option>
+                        <option value="3">Attached Carport</option>
+                        <option value="4">Detached Carport</option>
+                        <option value="5">Uncovered Parking</option>
+                        <option value="6">Street Only Parking</option>
+                    </select>
+                    <span id="errResParking" class="text-danger"></span>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="parkingSpaces" class="form-label">Parking spaces</label>
+                    <select class="form-select" aria-label="Default select example" id="parkingSpaces" onchange="RemoveResParkingSpaces()">
+                        <option vlaue="0" selected>Select</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5+</option>
+                    </select>
+                    <span id="errResParkingSpaces" class="text-danger"></span>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="occupiedField1" class="form-label">Occupancy<span class="red-txt">*</span></label>
+                    <select class="form-select" aria-label="Default select example" id="occupiedField1" onchange="RemoveResOccupancy()">
+                        <option value="0" selected>Select</option>
+                        <option value="1">Owner Occupied</option>
+                        <option value="2">Paying Tenant</option>
+                        <option value="3">Nonpaying Occupant</option>
+                        <option value="4">Vacant</option>
+                    </select>
+                    <span id="errResOccupancy" class="text-danger"></span>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="willOccupantStayAfterSale1" class="form-label">
+                        Will occupant stay after sale  <span class="red-txt">*</span>
+                    </label>
+                    <select class="form-select" aria-label="Default select example" id="willOccupantStayAfterSale1" onchange="RemoveResWillOccupant()">
+                        <option value="0" selected>Select</option>
+                        <option value="1">Yes</option>
+                        <option value="2">No</option>
+                        <option value="3">N/A</option>
+                    </select>
+                    <span id="errResWillOccupantAfterSale" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <!-- Residential property Details end-->
+        <!-- Land Details if user select Land-->
+        <div class="add-property land-Detail d-none" id="landDetailsId">
+            <h5>Land Details</h5>
+            <div class="row">
+                <div class="col-xxl-3 col-xl-4 col-md-6 mb-3">
+                    <label for="landSquareFootage" class="form-label">
+                        Land size <span class="red-txt">*</span>
+                    </label>
+                    <div class="row">
+                        <div class="col-12 col-lg-6 col-md-6">
+                            <input type="text" class="input-field me-2 commaLandSquareFootage" id="landSquareFootage" onkeyup="RemoveLandSquareFootage()"
+                                   placeholder="Land size">
+                            <span id="errLandSquareFootage" class="text-danger"></span>
+                        </div>
+                        <div class="col-12 col-lg-6 col-md-6">
+                            <select class="form-select" aria-label="Default select example" id="landSquareFootage2">
+                                <option selected value="1">Square feet</option>
+                                <option value="2">Acres</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="lotStatus" class="form-label">
+                        Lot status <span class="red-txt">*</span>
+                    </label>
+                    <select class="form-select" aria-label="Default select example" id="lotStatus" onchange="RemoveLotStatus()">
+                        <option selected>Select</option>
+                        <option value="1">Cleared</option>
+                        <option value="2">Uncleared</option>
+                        <option value="3">Wooded</option>
+                        <option value="4">Pre-developed w/ utilities ran</option>
+                    </select>
+                    <span id="errLotStatus" class="text-danger"></span>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="lotUse" class="form-label">
+                        Lot use <span class="red-txt">*</span>
+                    </label>
+                    <select class="form-select" aria-label="Default select example" id="lotUse" onchange="RemoveLotUse()">
+                        <option selected>Select</option>
+                        <option value="1">Commercial</option>
+                        <option value="2">Residential</option>
+                        <option value="3">Unrestricted</option>
+                    </select>
+                    <span id="errLotUse" class="text-danger"></span>
+                </div>
+                <h5 class="mt-2">Utilities Available </h5>
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="electricField" class="form-label">Electric <span class="red-txt">*</span></label>
+                    <select class="form-select" aria-label="Default select example" id="electricField" onchange="RemoveElectric()">
+                        <option selected>Select</option>
+                        <option value="1">Available</option>
+                        <option value="2">Not available</option>
+                        <option value="3">Unknown</option>
+                    </select>
+                    <span id="errElectricField" class="text-danger"></span>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="gasField" class="form-label">Gas <span class="red-txt">*</span></label>
+                    <select class="form-select" aria-label="Default select example" id="gasField" onchange="RemoveGas()">
+                        <option selected>Select</option>
+                        <option value="1">Available</option>
+                        <option value="2">Not available</option>
+                        <option value="3">Unknown</option>
+                    </select>
+                    <span id="errGasField" class="text-danger"></span>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-3 select-placeholder">
+                    <label for="waterrequirement" class="form-label">Water <span class="red-txt">*</span></label>
+                    <select class="js-select2 form-select" aria-label="Default select example" id="waterrequirement" onchange="RemoveWater()"
+                            multiple>
+                        <option value="1">Public water</option>
+                        <option value="2">Public sewer</option>
+                        <option value="3">Septic tank</option>
+                        <option value="4">Well</option>
+                        <option value="5">None available</option>
+                    </select>
+                    <span id="errWaterrequirement" class="text-danger"></span>
+                </div>
+
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="opentoBuilders" class="form-label">
+                        Open to partnering with builders?<span class="red-txt">*</span>
+                    </label>
+                    <select class="form-select" aria-label="Default select example" id="opentoBuilders" onchange="RemoveOpenToPartneringWithBuilders()">
+                        <option selected>Select</option>
+                        <option value="1">Yes</option>
+                        <option value="2">No</option>
+                    </select>
+                    <span id="errOpenToBuilders" class="text-danger"></span>
+
+                </div>
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="surveyavail" class="form-label">
+                        Survey available? <span class="red-txt">*</span>
+                    </label>
+                    <select class="form-select" aria-label="Default select example" id="surveyavail" onchange="RemoveSurveyAvailable()">
+                        <option selected>Select</option>
+                        <option value="1">Yes</option>
+                        <option value="2">No</option>
+                    </select>
+                    <span id="errSurveyavail" class="text-danger"></span>
+
+                </div>
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="enironmentalAvail" class="form-label">
+                        Environmental available? <span class="red-txt">*</span>
+                    </label>
+                    <select class="form-select" aria-label="Default select example" id="enironmentalAvail" onchange="RemoveEnvironmentalAvailable()">
+                        <option selected>Select</option>
+                        <option value="1">Yes</option>
+                        <option value="2">No</option>
+                    </select>
+                    <span id="errEnironmentalAvail" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <!-- seller details -->
+        <div class="add-property">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="row">
+                        <div class="col-xxl-3 col-xl-4 col-md-6 mb-3">
+                            <label for="isSellerOffered" class="txtellipsis"
+                                   title="Is Seller financing offered under propertyyy?">
+                                Is Seller financing offered under
+                                property?
+                            </label>
+                            <select class="form-select" aria-label="Default select example" onchange="RemoveIsSellerOffered()" id="isSellerOffered">
+
+                                <option value="1">Yes</option>
+                                <option selected value="0">No</option>
+                            </select>
+                            <span id="errisSellerOffered" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-xxl-3 col-xl-5 col-md-12 removeAddedSellerFinancingOption d-none px-1">
+                            <div class="row">
+                                <div class="col-xl-6 col-md-6 mb-3">
+                                    <label for="downPayment" class="form-label">Down payment needed<span class="red-txt">*</span></label>
+                                    <input type="text" class="input-field" id="downPayment" onkeyup="RemoveDownPayment()" placeholder="%">
+                                    <span id="errisdownPayment" class="text-danger"></span>
+                                </div>
+
+                                <div class="col-xl-6 col-md-6 mb-3">
+                                    <label for="interestOffered" class="form-label">Interest being offered<span class="red-txt">*</span></label>
+                                    <input type="text" class="input-field" id="interestOffered" onkeyup="RemoveInterestOffered()" placeholder="%">
+                                    <span id="errinterestOffered" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 mb-3 removeAddedSellerFinancingOption d-none ">
+                            <label for="termOfLoan" class="form-label">Term of loan</label>
+                            <div class="d-flex">
+                                <input type="number" onkeypress="if(this.value.length==4) return false;" min="1" oninput="this.value =!!this.value && Math.abs(this.value)>= 1 ? Math.abs(this.value) : null" class="input-field me-2" id="yearLoan" placeholder="Term of loan">
+                                <select class="form-select" aria-label="Default select example" id="monthLoan">
+
+                                    <option selected value="1">Months</option>
+                                    <option value="2">Years</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-3 col-xl-3 col-md-6 mb-3 removeAddedSellerFinancingOption d-none ">
+                            <label for="amortizedId" class="form-label">Amortized? <span class="red-txt">*</span></label>
+                            <select class="form-select" aria-label="Default select example" onchange="RemoveAmortized()" id="amortizedId">
+                                <option selected>Select</option>
+                                <option value="1">Interest Only</option>
+                                <option value="2">5 years</option>
+                                <option value="3">10 years</option>
+                                <option value="4">15 years</option>
+                                <option value="5">20 years</option>
+                                <option value="6">25 years</option>
+                                <option value="7">30 years</option>
+                                <option value="8">40 years</option>
+                                <option value="9">Other</option>
+                            </select>
+                            <span id="erramortizedId" class="text-danger"></span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xl-12">
+                    <div class="row">
+                        <div class="col-xl-3 col-md-6 mb-3">
+                            <label for="subAssup" class="form-label">Is this a subject-to assumption </label>
+                            <select class="form-select" aria-label="Default select example" onchange="RemoveAssumption()" id="subAssup">
+
+                                <option value="1">Yes</option>
+                                <option selected value="0">No</option>
+                            </select>
+                            <span id="errsubAssup" class="text-danger"></span>
+                        </div>
+                        <div class="col-xxl-3 col-xl-5 col-md-12 AddOrRemoveSubjectToAssumption d-none px-1">
+                            <div class="row">
+                                <div class="col-xl-6 col-md-6 mb-3">
+                                    <label for="cashToCLoseNeeded" class="form-label">Cash to close needed<span class="red-txt">*</span></label>
+                                    <input type="text" class="input-field commaSeperateCashToClose" onkeyup="CashToCloseOnKeyup()" id="cashToCLoseNeeded" placeholder="$">
+                                    <span id="errcashToCLoseNeeded" class="text-danger"></span>
+                                </div>
+                                <div class="col-xl-6 col-md-6 mb-3">
+                                    <label for="mortgageBalance" class="form-label">Mortgage balance<span class="red-txt">*</span></label>
+                                    <input type="text" class="input-field commaSeperateMortgage" onkeyup="RemoveMortgageBalance()" id="mortgageBalance" placeholder="$">
+                                    <span id="errmortgageBalance" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 mb-3 AddOrRemoveSubjectToAssumption d-none">
+                            <label for="monthlyPaymentAssumed" class="form-label txtellipsis mb-0" title="Monthly Payment being assumed">Monthly payment being assumed<span class="red-txt">*</span></label>
+                            <input type="text" class="input-field commaSeperateMonthlyPayment" onkeyup="RemoveMonthlyPaymentAssumed()" id="monthlyPaymentAssumed" placeholder="$">
+                            <span id="errmonthlyPaymentAssumed" class="text-danger"></span>
+                        </div>
+
+
+                        <div class="col-xxl-3 col-xl-4 col-md-6 mb-3 AddOrRemoveSubjectToAssumption d-none select-placeholder">
+                            <label for="escrowsField" class="form-label">
+                                Escrows included in monthly payment <span class="red-txt">*</span>
+                            </label>
+                            <select class="js-select2 form-select" aria-label="Default select example"
+                                    id="escrowsField" multiple>
+                                <option value="1">Insurance</option>
+                                <option value="2">Taxes</option>
+                                <option value="3">HOA fees</option>
+                                <option value="4">Other</option>
+                            </select>
+
+
+                            <span id="errEscrowsField" class="text-danger multiselect-error"></span>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6 mb-3 AddOrRemoveSubjectToAssumption d-none">
+                            <label for="termOfLoan1" class="form-label">Term left on mortgage  <span class="red-txt">*</span></label>
+
+                            <div class="d-flex">
+
+                                <input type="number" onkeypress="if(this.value.length==4) return false;" min="1" oninput="this.value =!!this.value && Math.abs(this.value)>= 1 ? Math.abs(this.value) : null" class="input-field me-2" id="yearLoan1" onkeyup="RemoveTermLeftOnMortgage()" placeholder="Term left">
+
+                                <select class="form-select" aria-label="Default select example" id="monthLoan1">
+
+                                    <option selected="1">Months</option>
+                                    <option value="2">Years</option>
+                                </select>
+                            </div>
+                            <span id="errTermLeftOnMortgage" class="text-danger"></span>
+
+                        </div>
+                        <div class="col-xl-3 col-md-6 mb-3 AddOrRemoveSubjectToAssumption d-none">
+                            <label for="amortizedmortgageId" class="form-label">Amortization of mortgage</label>
+                            <select class="form-select" aria-label="Default select example" id="amortizedmortgageId">
+                                <option selected>Select</option>
+                                <option value="1">Interest Only</option>
+                                <option value="2">10 years</option>
+                                <option value="3">15 years</option>
+                                <option value="4">20 years</option>
+                                <option value="5">25 years</option>
+                                <option value="6">30 years</option>
+                                <option value="7">40 years</option>
+                                <option value="8">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-5 col-md-6 mb-3">
+                <div class="txtellipsis form-label" title="Is Due Diligence period available on this property?">
+                    Is due diligence period available on this property? <span class="red-txt">*</span>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div>Up&nbsp;to</div> <select class="form-select mx-2 custom-width" onchange="RemoveDueDiligenceAvail()" aria-label="Default select example"
+                                                  id="dueDiligenceAvail">
+                        <option selected>Select</option>
+                        <option value="1">0</option>
+                        <option value="2">1</option>
+                        <option value="3">2</option>
+                        <option value="4">3</option>
+                        <option value="5">4</option>
+                        <option value="6">5</option>
+                        <option value="7">6</option>
+                        <option value="8">7</option>
+                        <option value="9">8</option>
+                        <option value="10">9</option>
+                        <option value="11">10</option>
+                        <option value="12">11</option>
+                        <option value="13">12</option>
+                        <option value="14">13</option>
+                        <option value="15">14</option>
+                        <option value="16">15</option>
+                        <option value="17">16</option>
+                        <option value="18">17</option>
+                        <option value="19">18</option>
+                        <option value="20">19</option>
+                        <option value="21">20</option>
+                    </select>
+                    <div>Days available as due diligence period</div>
+                </div><span id="errdueDiligenceAvail" class="text-danger"></span>
+            </div>
+
+        </div>
+
+        <!-- Property Description -->
+        <div class="add-property">
+            <!-- <h5>Property Description</h5> -->
+            <div class="row">
+                <div class="col-xl-12 col-md-6 mb-3">
+                    <label for="descTextarea" class="form-label">Property description <span class="red-txt">*</span></label>
+                    <textarea class="form-control txtarea" onkeyup="RemovePropertyDescription()" placeholder="Add property description.."
+                              id="descTextarea"></textarea>
+                    <span id="errdescTextarea" class="text-danger"></span>
+                </div>
+
+            </div>
+        </div>
+        <!-- Features -->
+        <div class="add-property">
+            <div>
+                <h5 class="mb-0">Key Features</h5> <div class="mb-3 subpara">
+                    Please input the best features of this property <span class="fs-small">
+                        (Maximum
+                        100 characters)
+                    </span>
+                </div>
+            </div>
+            <div class="row" id="KeyFeatureHtml">
+                <div class="col-xl-6 col-md-6 mb-3">
+                    <label for="feature1" class="form-label">Key feature 1</label>
+                    <input type="text" class="input-field" id="feature1" placeholder="Add feature">
+                    <span id="errFeature1" class="text-danger"></span>
+                </div>
+                <div class="col-xl-6 col-md-6 mb-3">
+                    <label for="feature2" class="form-label">Key feature 2</label>
+                    <input type="text" class="input-field" id="feature2" placeholder="Add feature">
+                    <span id="errFeature2" class="text-danger"></span>
+                </div>
+                <div class="col-xl-6 col-md-6 mb-3">
+                    <label for="feature3" class="form-label">Key feature 3</label>
+                    <input type="text" class="input-field" id="feature3" placeholder="Add feature">
+                    <span id="errFeature3" class="text-danger"></span>
+                </div>
+                <div class="col-xl-6 col-md-6 mb-3">
+                    <label for="feature4" class="form-label">Key feature 4</label>
+                    <input type="text" class="input-field" id="feature4" placeholder="Add feature">
+                    <span id="errFeature4" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="add-property">
+            <h5 class="mb-1">Due Diligence Documents</h5>
+            <div class="mb-3 subpara"> Only pdf and all image format</div>
+            <div class="row">
+
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <div class="upload__box">
+                        <div class="upload__btn-box">
+
+                            <div class="upload__btn position-relative">
+                                <label for="fileForm" class="form-label">Appraisal</label>
+                                <input type="file" multiple data-max_length="20"
+                                       class="input-field formFile upload__inputfile" onchange="CheckAppraisalFileFormat()" id="fileForm" accept="image/*">
+                                <div id="demoApp" class="demoClass"></div>
+                                <div id="demo2App" class="demoClass2"> </div>
+                            </div>
+                            <span id="spanUploadAppraisalFile" class="text-danger"></span>
+                        </div>
+
+                        <div class="upload__img-wrap"></div>
+                    </div>
+                </div>
+
+
+                <div class="col-xxl-3 col-xl-3 col-md-6 mb-2">
+                    <div class="row">
+                        <div class="col-xl-12  col-md-6 mb-3">
+                            <div class="upload__box">
+                                <div class="upload__btn-box">
+                                    <label class="upload__btn">
+                                        <span>Inspection</span>
+                                    </label>
+                                    upload__img-close <input type="file" multiple
+                                                             data-max_length="20"
+                                                             class="input-field formFile upload__inputfile" onchange="CheckInspectionFileFormat()" id="fileForm1" accept="image/*">
+                                    <div id="demoIns" class="demoClass">0 </div>
+                                    <div id="demo2Ins" class="demoClass2"> </div>
+
+                                </div>
+                                <span id="spanUploadInspectionFile" class="text-danger"></span>
+
+                                <div class="upload__img-wrap"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xxl-3 col-xl-3 col-md-6 mb-2">
+                    <div class="row">
+                        <div class="col-xl-12  col-md-6 mb-3">
+                            <div class="upload__box">
+                                <div class="upload__btn-box">
+                                    <label class="upload__btn">
+                                        <span>Survey</span>
+                                    </label>
+                                    <input type="file" multiple
+                                           data-max_length="20"
+                                           class="input-field formFile upload__inputfile" onchange="CheckSurveyFileFormat()" id="fileForm2" accept="image/*">
+                                    <div id="demoSur" class="demoClass">0 </div>
+                                    <div id="demo2Sur" class="demoClass2"> </div>
+
+                                </div>
+                                <span id="spanUploadSurveyFile" class="text-danger"></span>
+
+                                <div class="upload__img-wrap"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xxl-3 col-xl-3 col-md-6 mb-2">
+                    <div class="row">
+                        <div class="col-xl-12  col-md-6 mb-3">
+                            <div class="upload__box">
+                                <div class="upload__btn-box">
+                                    <label class="upload__btn">
+                                        <span>Environmental</span>
+                                    </label>
+                                    <input type="file" multiple
+                                           data-max_length="20"
+                                           class="input-field formFile upload__inputfile" onchange="CheckEnvironmentalFileFormat()" id="fileForm3" accept="image/*">
+                                    <div id="demoEnv" class="demoClass">0 </div>
+                                    <div id="demo2Env" class="demoClass2"> </div>
+
+                                </div>
+                                <span id="spanUploadEnvironmentalFile" class="text-danger "></span>
+
+                                <div class="upload__img-wrap"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!--property pictures -->
+            <div class="col-xl-6">
+                <div class="add-property upload__box">
+                    <div class="row">
+                        <div class="col-xl-6 col-md-12">
+                            <div class="upload__btn-box">
+                                <h5>
+                                    Property Pictures <span class="fs-small subpara">(Select all that apply)</span>
+                                </h5>
+                                <label for="upload-img" class="form-label">Upload pictures</label>
+                                <input class="input-field formFile upload__inputfile" type="file" onchange="CheckPropertyPicturesFileFormat()" id="upload-img" accept="image/*"
+                                       data-max_length="20"
+                                       multiple>
+                                <div id="demoProp" class="demoClass"></div>
+                                <div id="demo2Prop" class="demoClass2"> </div>
+
+                            </div>
+                            <span id="spanUploadPropertyImage" class="text-danger"></span>
+
+                            <div class="upload__img-wrap"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--property Videos -->
+            <div class="col-xl-6">
+                <div class="add-property">
+                    <div class="row">
+                        <div class="col-xl-6 col-md-12">
+                            <h5>Property Videos <span class="fs-small subpara">(Select all that apply)</span></h5>
+                            <label for="filevideos" class="form-label">Upload videos</label>
+                            <input class="input-field formFile" type="file" id="upload-video" onchange="CheckPropertyVideoFormat()" accept="video/*"
+                                   multiple>
+                            <span id="spanUploadPropertyVideo" class="text-danger"></span>
+                        </div>
+                        <!-- for preview property videos -->
+                        <div class="img-thumbs img-thumbs-hidden" id="video-preview"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Links -->
+        <div class="add-propertyhdn d-none">
+            <div class="row" id="getAllHtmlForLinkhdn">
+                <div>
+                    <div class="col-xl-3 col-md-6 mb-3" id="parentDiv">
+                        <div>
+                            <div class="d-flex align-items-center">
+                                <input type="text" class="input-field" id="linkform" placeholder="Add links">
+                                <span class="ms-3">
+                                    <svg class="deleteMe" xmlns="http://www.w3.org/2000/svg" width="16" height="18" id="DeleteMeOnDeleteCopy"
+                                         viewBox="0 0 16 18" fill="none">
+                                        <path d="M3 18C2.45 18 1.979 17.804 1.587 17.412C1.195 17.02 0.999333 16.5493 1 16V3H0V1H5V0H11V1H16V3H15V16C15 16.55 14.804 17.021 14.412 17.413C14.02 17.805 13.5493 18.0007 13 18H3ZM5 14H7V5H5V14ZM9 14H11V5H9V14Z"
+                                              fill="#DC3545" />
+                                    </svg>
+                                </span>
+                                <span class="ms-2 trying" id="AddMeCopy">
+                                    <svg onclick="MakeNewLinkRow()" class="idAddDiv" xmlns="http://www.w3.org/2000/svg" width="20" height="20" id="deleteMeCopy"
+                                         viewBox="0 0 20 20" fill="none">
+                                        <path d="M10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20C15.523 20 20 15.523 20 10C20 4.477 15.523 0 10 0ZM15 11H11V15H9V11H5V9H9V5H11V9H15V11Z"
+                                              fill="#002A7B" />
+                                    </svg>
+                                </span>
+                                <span id="errLink" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="add-property deleteLink-Div">
+            <h5>Links</h5>
+            <label for="linkform" class="form-label">Add links</label>
+            <div class="row" id="getAllHtmlForLink">
+                <div class="col-xl-3 col-md-6 mb-3" id="mainDiv">
+                    <div>
+                        <div class="d-flex align-items-center">
+                            <input type="text" class="input-field" id="linkform" placeholder="Add links">
+                            <span class="ms-3">
+                                <svg class="deleteMe1" xmlns="http://www.w3.org/2000/svg" width="16" height="18" id="DeleteMeDisable "
+                                     viewBox="0 0 16 18" fill="none">
+                                    <path d="M3 18C2.45 18 1.979 17.804 1.587 17.412C1.195 17.02 0.999333 16.5493 1 16V3H0V1H5V0H11V1H16V3H15V16C15 16.55 14.804 17.021 14.412 17.413C14.02 17.805 13.5493 18.0007 13 18H3ZM5 14H7V5H5V14ZM9 14H11V5H9V14Z"
+                                          fill="#DC3545" />
+                                </svg>
+                            </span>
+                            <span class="ms-2">
+                                <svg onclick="MakeNewLinkRow()" xmlns="http://www.w3.org/2000/svg" class="idAddDiv" width="20" height="20" id="divLinkMain"
+                                     viewBox="0 0 20 20" fill="none">
+                                    <path d="M10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20C15.523 20 20 15.523 20 10C20 4.477 15.523 0 10 0ZM15 11H11V15H9V11H5V9H9V5H11V9H15V11Z"
+                                          fill="#002A7B" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Identification Verification -->
+        <div class="add-property">
+            <h5>
+                Identification Verification <span class="info" data-toggle="tooltip"
+                                                  title="Help us prevent fraud! Upload ID">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18"
+                         height="18" viewBox="0 0 18 18" fill="none">
+                        <path d="M8.1 13.5H9.9V8.1H8.1V13.5ZM9 6.3C9.255 6.3 9.4689 6.2136 9.6417 6.0408C9.8145 5.868 9.9006 5.6544 9.9 5.4C9.9 5.145 9.8136 4.9314 9.6408 4.7592C9.468 4.587 9.2544 4.5006 9 4.5C8.745 4.5 8.5314 4.5864 8.3592 4.7592C8.187 4.932 8.1006 5.1456 8.1 5.4C8.1 5.655 8.1864 5.8689 8.3592 6.0417C8.532 6.2145 8.7456 6.3006 9 6.3ZM9 18C7.755 18 6.585 17.7636 5.49 17.2908C4.395 16.818 3.4425 16.1769 2.6325 15.3675C1.8225 14.5575 1.1814 13.605 0.7092 12.51C0.237 11.415 0.0006 10.245 0 9C0 7.755 0.2364 6.585 0.7092 5.49C1.182 4.395 1.8231 3.4425 2.6325 2.6325C3.4425 1.8225 4.395 1.1814 5.49 0.7092C6.585 0.237 7.755 0.0006 9 0C10.245 0 11.415 0.2364 12.51 0.7092C13.605 1.182 14.5575 1.8231 15.3675 2.6325C16.1775 3.4425 16.8189 4.395 17.2917 5.49C17.7645 6.585 18.0006 7.755 18 9C18 10.245 17.7636 11.415 17.2908 12.51C16.818 13.605 16.1769 14.5575 15.3675 15.3675C14.5575 16.1775 13.605 16.8189 12.51 17.2917C11.415 17.7645 10.245 18.0006 9 18Z"
+                              fill="#002A7B" />
+                    </svg>
+                </span>
+            </h5>
+            <div class="row">
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <label for="identificationform" class="form-label">Identification verification type <span class="red-txt">*</span></label>
+                    <select class="form-select" aria-label="Default select example" onchange="RemoveidentificationForm()" id="identificationform">
+                        <option selected>Select</option>
+                        <option value="1">State Issued ID</option>
+                        <option value="2">Passport</option>
+                    </select>
+                    <span id="erridentificationform" class="text-danger"></span>
+
+                </div>
+
+                <div class="col-xxl-3 col-xl-3 col-md-6 mb-4">
+                    <div class="row">
+                        <div class="col-xl-12  col-md-6 mb-3 ">
+                            <div class="upload__box">
+                                <div class="upload__btn-box">
+                                    <div class="upload__btn">
+                                        <label for="stateIssuedId" class="form-label">
+                                            Upload identification <span class="red-txt">*</span>
+                                        </label>
+                                        <input type="file"
+                                               class="input-field formFile upload__inputfile" onchange="fileFormatOnchange()" id="stateIssuedId" accept="image/*">
+                                    </div>
+                                    <span id="errstateIssuedId" class="text-danger"></span>
+                                    <span id="spanUploadIdentityFile" class="text-danger"></span>
+                                </div>
+
+                                <div class="upload__img-wrap"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- User Agreement -->
+        <div class="add-property">
+            <h5>User Agreement</h5>
+            <div class="row mt-2">
+                <div class="col-xl-12 col-md-12 mb-3">
+                    <div class="userfield">
+                        Accept Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+                        voluptas facilis quo dolor aut quibusdam eaque, aspernatur ut temporibus tenetur quaerat rem
+                        repellat mollitia voluptatum repellendus velit necessitatibus error suscipit.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
+                        ipsum dolor sit Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Lorem ipsum
+                        dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit Lorem ipsum dolor sit amet consectetur adipisicing elit amet consectetur
+                        adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim deserunt
+                        molestiae dolor consectetur natus reprehenderit hic a architecto atque nisi sit facere est
+                        doloremque quaerat sequi sapiente, dignissimos, nihil laboreLorem ipsum dolor sit amet consectetur
+                        adipisicing elit Lorem ipsum dolor sit amet consectetur adipisicing elit amet consectetur
+                        adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim deserunt
+                        molestiae dolor consectetur natus reprehenderit hic a architecto atque nisi sit facere est
+                        doloremque quaerat sequi sapiente, dignissimos, nihil labore. It hic a architecto atque nisi sit facere est
+                        doloremque quaerat sequi sapiente, dignissimos, nihil laboreLorem ipsum dolor sit amet consectetur
+                        adipisicing elit Lorem ipsum dolor sit amet consectetur adipisicing elit amet consectetur
+                        adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim deserunt
+                        molestiae dolor consectetur natus reprehenderit hic a architecto atque nisi sit facere est
+                        doloremque quaerat sequi sapiente, dignissimos, nihil labore.
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="d-flex">
+                    <input type="checkbox" class="me-2 mt-1 filter-checkbox" id="chkbx2"><label class="fs-small" id="txtAcceptUser">Accept user agreement</label>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4 mb-4 user_profile">
+            <button type="button" class="btn-pbr btn-cancel" onclick="CancelPropertyData()">Cancel</button>
+            <button type="button" class="btn-login btn-pbr">Save Progress</button>
+            <button type="button" class="btn-sign btn-pbr"onclick="SubmitPropertyData()">
+                Submit
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Warning message modal popup -->
+<div class="modal popup fade" id="WarningCreateLending" aria-hidden="true" aria-labelledby="WarningCreateLendingLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content br-32 border-0">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center mb-4">
+                    <img src="~/Images/warning-icon.png" alt="warning-icon">
+                </div>
+                <div class="text-center">
+                    <h3 class="fw-semibold blue-primary">
+                        Are you ready to submit?
+                    </h3>
+                    <p>Are you sure you want to submit provided information?</p>
+                </div>
+            </div>
+            <div class="py-4 text-center">
+                <button type="button" class="me-2 btn-pbr btn-cancel" data-bs-dismiss="modal" aria-label="Close">
+                    Stay an
+                    edit
+                </button>
+                <button type="submit" class="btn-sign btn-pbr" id="txtConformModel" data-bs-toggle="modal">
+                    Submit
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Success message modal  -->
+<div class="modal fade" id="WarningCreateLending2" aria-hidden="true" aria-labelledby="WarningCreateLendingLabel2"
+     tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content br-32 border-0">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">&nbsp;</h1>
+            </div>
+            <div class="modal-body">
+                <div class="text-center mb-4">
+                    <img src="~/Images/success.svg" alt="success icon" class="success-popup">
+                </div>
+                <div class="text-center">
+                    <h3 class="fw-semibold blue-primary">
+                        Submission successful!
+                    </h3>
+                    <p class="thankmsg">
+                        Thank you for your submission, your new property addition was successfully sent to a
+                        Reidy
+                        Transaction Coordinator, we will
+                        review
+                        and be in contact soon!
+                    </p>
+                </div>
+            </div>
+            <div class="py-4 text-center">
+              @*   <a type="button" asp-action="Index" asp-controller="Home" class="btn-pbr btn-cancel">Close</a> *@
+                <button type="button" class="btn-pbr btn-cancel" data-bs-dismiss="modal"
+                        aria-label="Close" onclick="location.href='/Broker/Currentinventory/@Context.Session.GetString("Id")'">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+<!-- Right Sidebar Menu Modal Popup End-->
+<script src="~/js/addlisting.js"></script>
+}

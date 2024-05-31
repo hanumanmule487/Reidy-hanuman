@@ -1,0 +1,629 @@
+﻿@using SanmorePlatform_REAL_Utility.Enum.LenderEnum;
+@model SanmorePlatform_REAL_Model.ViewModels.LenderViewModel.LenderResponceModel;
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SanmorePlatform-REAL</title>
+    <!-- Links -->
+    <link rel="stylesheet" href="~/css/lenders.css">
+   
+</head>
+
+<body>
+    
+    <div class="container pt-page">
+        <div class="progressbar">
+            <div class="progress" id="progress"></div>
+            <div class="progress-step progress-step-active" data-title="Intro"></div>
+            <div class="progress-step" data-title="Company"></div>
+            <div class="progress-step" data-title="Loans"></div>
+            <div class="progress-step" data-title="Fraud identification"></div>
+            <div class="progress-step" data-title="Fight fraud"></div>
+        </div>
+        <div class="card card-primary">
+            <div class="card-body">
+                <div class="progress-container">
+                    <div class="progress-card-title">
+                        <div class="title-left">
+                            <button class="btn btn-sm btn-prev">
+                                <img src="~/images/icons/angle-left-color.svg" />
+                                <span>Back</span>
+                            </button>
+                        </div>
+                        <div class="progress-title">Lender Sign Up</div>
+                        <div class="title-right">
+                            <button class="btn btn-sm">
+                                <img src="~/images/icons/close.svg" />
+                            </button>
+                        </div>
+                    </div>
+                    <form class="form-container">
+                        <!-- First step form -->
+                        <div class="form-step form-step-active">
+                            <div class="form-title">
+                                Does this look right?
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-6 col-md-6">
+                                    <label for="first-name">First Name</label>
+                                    <input type="text" class="form-control" id="first-name" name="first-name" placeholder="Enter your first name" value=@Model.FirstName disabled>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="last-name">Last Name</label>
+                                    <input type="text" class="form-control" id="last-name" name="last-name" placeholder="Enter your last name" value=@Model.LastName disabled>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" value=@Model.Email disabled>
+                                    <span id="erremail" class="text-danger" />
+
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="phone">Phone</label>
+                                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number" value=@Model.PhoneNumber disabled>
+                                    <span id="errphonenumber" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="account">Account</label>
+                                    <input type="text" class="form-control" id="account" name="account" placeholder="Enter your account" value=@Model.Account disabled>
+                                     <span id="errAccount" class="text-danger"></span> 
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="social-media">Social Media</label>
+                                    <input type="text" class="form-control" id="social-media" name="social-media" placeholder="Enter your social media" value=@Model.SocialMedia disabled>
+                                    <span id="errSocialMedia" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="btns-group">
+                                <button type="button" class="btn btn-next btn-outline-primary">Next</button>
+                            </div>
+                        </div>
+
+                        <!-- Second step form -->
+                        <div class="form-step">
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="company-name">Company Name</label>
+                                    <input type="text" class="form-control" id="company-name" name="company-name" placeholder="Enter your company name" value=@Model.LenderCompanyName>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="business-address">Business Address</label>
+                                    <input type="text" class="form-control" id="business-address" name="business-address" placeholder="Enter your business address" value=@Model.BusinessAddress disabled>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="city">City</label>
+                                    <input type="text" class="form-control" id="city" name="city" placeholder="Enter your city" value=@Model.City  disabled>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="state">State</label>
+                                    <input type="text" class="form-control" id="state" name="state" placeholder="Enter your state" value=@Model.states disabled>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="zip-code">Zip Code</label>
+                                    <input type="text" class="form-control" id="zip-code" name="zip-code" placeholder="Enter your zip code" value=@Model.ZipCode disabled>
+
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="country">Country</label>
+                                    <input type="text" class="form-control" id="country" name="country" placeholder="Enter your country" value=@Model.Country disabled>
+                                </div>
+                            </div>
+                            <div class="btns-group">
+                                <button type="button" class="btn btn-prev btn-outline-primary">Previous</button>
+                                <button type="button" class="btn btn-next btn-outline-primary">Next</button>
+                            </div>
+                        </div>
+
+                        <!-- Third step form -->
+                        <div class="form-step">
+                            <div class="form-title">
+                                We like to know just a little bit more about your position
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="Role">Role In lending Company</label>
+                                    <input type="text" class="form-control" id="Role" name="Role" placeholder="Role In The Lending Company" value=@Model.RoleInLendingCompany disabled>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="Entity-type">Entity Type</label>
+                                    <input type="text" class="form-control" id="Entity-type" name="Entity-TYPE" placeholder="Enter Entity Type" value=@Model.EntityType disabled>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <div>
+                                    <label class="form-group col-md-3" for="loans-year">loans done/year</label>
+                                    <input type="number" class="form-control-lender" id="" name="loans-year" placeholder="Loans done per year" value=@Model.EstimatedLoansDonePerYear disabled>
+                                   </div>
+                                   <div>
+                                    <label class="form-group col-md-3" for="business-years">Years in Business</label>
+                                    <input type="number" class="form-control-lender" id="business-years" name="business-years" placeholder="Years in Business" value=@Model.YearsInBusiness disabled>
+                                   </div>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label for="Lender-phone">lender phone</label>
+                                    <input type="number" class="form-control" id="Lender-phone" name="Lender-PHONE" placeholder="Enter Phone Number" value=@Model.LenderPhoneNo disabled>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="Doc-Drafting">Preferred Attorney for Doc Drafting </label>
+                                    <input type="text" class="form-control" id="Doc-drafting" name="Doc-Drafting" placeholder="Preferred Attorney for Doc Drafting" value=@Model.PreferredAttorneyForDocDrafting disabled>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="Attorney-number">Preferred Attorney Phone Number </label>
+                                    <input type="number" class="form-control" id="Attorney-number" name="Attorney-Number" placeholder="Preferred Attorney Phone Number" value=@Model.PreferredAttorneyPhone>
+                                </div>
+                                <div class="form-title">
+                                    Are you interested in servicing your loans in Reidy
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="tc-upload"></label>
+                                    <div class="radio-btns">
+                                        <input type="radio" id="tc-yes" name="tc-upload" value="Yes">
+                                        <label for="tc-yes">Yes</label>
+                                        <input type="radio" id="tc-no" name="tc-upload" value="No">
+                                        <label for="tc-no">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btns-group">
+                                <button type="button" class="btn btn-prev btn-outline-primary">Previous</button>
+                                <button type="button" class="btn btn-next btn-outline-primary">Next</button>
+                            </div>
+                        </div>
+
+                        <!-- Fourth step form -->
+                        <div class="form-step">
+                            <div class="form-title">
+                                Can you please provide proof of Lendable Funds
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    <label for="upload-documents">Upload Documents</label>
+                                    <input type="file" class="form-control" id="upload-documents" name="upload-documents" value=@Model.UploadDocuments>
+                                </div>
+                                   <div b-3mwa5ejgrd="" class="or mt-4">OR</div>
+                                <div class="cloud-lender">
+                                    <img class="cloud-image" src="~/Images/icons/upload-cloud.png"/>
+                                <h1 class="drag-files">Drag files</h1>
+                               </div>
+                            </div>
+                            <div class="btns-group">
+                                <button type="button" class="btn btn-prev btn-outline-primary">Previous</button>
+                                <button type="button" class="btn btn-next btn-outline-primary">Next</button>
+                            </div>
+                        </div>
+
+                        <!-- Fifth step form -->
+                        <div class="form-step">
+                            <div class="form-title">
+                                Help us fight fraud!
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="identification-type">Identification type</label>
+                                    <input type="text" class="form-control" id="identification-type" name="identification-type" placeholder="Enter your identification type" value=@Model.IdentificationType>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="upload-documents">Upload Documents</label>
+                                    <input type="file" class="form-control" id="upload-documents" name="upload-documents" value=@Model.UploadLenderFile>
+                                </div>
+                                <div class="btns-group">
+                                    <button type="button" class="btn btn-prev btn-outline-primary">Previous</button>
+                                    <button type="button" class="btn btn-next btn-outline-primary">Next</button>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </form>
+                 </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- Add listing -->
+  @*   <div class="top-section">
+        <div class="container">
+            <h3 class="fw-semibold mb-0">New Lender <span class="blue-primary">Signup</span></h3>
+        </div>
+    </div>
+    <div class="addlistingform">
+        <div class="container">
+            <div class="add-property">
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 mb-3">
+                        <label for="firstNameInput" class="form-label">First name</label>
+                        <input type="text" class="input-field" id="firstNameInput" placeholder="First name"
+                              >
+                    </div>
+                    <div class="col-xl-4 col-md-6 mb-3">
+                        <label for="lastNameInput" class="form-label">Last name</label>
+                        <input type="text" class="input-field" id="lastNameInput" placeholder="Last name" value=@Model.LastName
+                               disabled>
+                    </div>
+                    <div class="col-xl-4 col-md-6 mb-3">
+                        <label for="emaillenderInput" class="form-label">Email</label>
+                        <input type="email" class="input-field" id="emaillenderInput" placeholder="Email"
+                               value=@Model.Email disabled>
+                    </div>
+                    <div class="col-xl-4 col-md-6 mb-3">
+                        <label for="phoneNumberInput" class="form-label">
+                            Phone number <span class="red-txt">*</span>
+                        </label>
+                        <input type="tel" maxlength="12" class="input-field myPhoneClass" id="phoneNumberInput" placeholder="Phone number" onkeyup="RemovePhoneNumber()" value=@Model.PhoneNumber>
+                        <span id="errPhoneNo" class="text-danger"></span>
+
+                    </div>
+                    <div class="col-xl-4 col-md-6 mb-3">
+                        <label for="roleLendingInput" class="form-label">
+                            Role in lending company <span class="red-txt">*</span>
+                        </label>
+                        <input type="text" class="input-field" id="roleLendingInput" placeholder="Role in lending company" onkeyup="RemoveRoleInCompany()" value=@Model.RoleInLendingCompany>
+                        <span id="errRoleInCompany" class="text-danger"></span>
+                    </div>
+                    <div class="col-xl-4 col-md-6 mb-3"></div>
+                    <div class="col-xl-4 col-md-6 mb-3">
+                        <label for="lenderCompanyNameInput" class="form-label">
+                            Lender company name <span class="red-txt">*</span>
+                        </label>
+                        <input type="text" class="input-field" id="lenderCompanyNameInput" placeholder="Lender company name" onkeyup="RemoveCompanyName()" value=@Model.LenderCompanyName>
+                        <span id="errComapanyName" class="text-danger"></span>
+                    </div>
+                    <div class="col-xl-4 col-md-6 mb-3">
+                        <label for="enrityType" class="form-label">Entity type <span class="red-txt">*</span></label>
+                        <select class="form-select" aria-label="Default select example" id="enrityType" asp-items="Html.GetEnumSelectList<EntityType>()" onchange="RemoveEntityType()">
+                            <option selected>Select</option>
+                        </select>
+
+                        <span id="errEntityType" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 mb-3">
+                        <label for="phoneLenderInput" class="form-label">
+                            Lender phone <span class="red-txt">*</span>
+                        </label>
+                        <input type="tel" maxlength="12" class="input-field myLenderPhoneClass " id="phoneLenderInput" placeholder="Lender phone" onkeyup="RemoveLenderPhoneNumber()" value=@Model.LenderPhoneNo>
+                        <span id="errLenderPhone" class="text-danger"></span>
+                    </div>
+                </div>
+                <!-- Lender Address row -->
+                <div class="row">
+                    <div class="col-xl-8">
+                        <div class="row">
+                            <div class="col-xl-6 col-md-6 mb-3">
+                                <label for="address1" class="form-label">
+                                    Address 1 <span class="red-txt">*</span>
+                                </label>
+                                <input type="text" class="input-field" id="address1" placeholder="Address 1" onkeyup="RemoveAddress1()" value=@Model.Address1>
+                                <span id="errAddress1" class="text-danger"></span>
+                            </div>
+                            <div class="col-xl-6 col-md-6 mb-3">
+                                <label for="address2" class="form-label">Address 2</label>
+                                <input type="text" class="input-field" id="address2" placeholder="Address 2" value=@Model.Address2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-8">
+                        <div class="row">
+                            <div class="col-xl-3 col-md-6 mb-3">
+                                <label for="CityField" class="form-label">City <span class="red-txt">*</span></label>
+                                <input type="text" class="input-field" id="CityField" placeholder="City" onkeyup="RemoveCity()" value=@Model.City>
+                                <span id="errLenderCity" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-xl-3 col-md-6 mb-3">
+                                <label for="stateField" class="form-label">State <span class="red-txt">*</span></label>
+                                <select class="form-select" aria-label="Default select example" id="stateField" placeholder="SelectState" onchange="RemoveState()">
+                                    <option>Select</option>
+                                </select>
+                                <span id="errstateField" class="text-danger"></span>
+                            </div>
+                            <div class="col-xl-3 col-md-6 mb-3">
+                                <label for="zipCode" class="form-label">Zip code <span class="red-txt">*</span></label>
+                                <input type="text" class="input-field" maxlength="5" id="zipCode" placeholder="Zip code" onkeyup="RemoveZipCode()" value=@Model.ZipCode>
+                                <span id="errZipCode" class="text-danger"></span>
+                            </div>
+                            <div class="col-xl-3 col-md-6 mb-3 ps-1">
+                                <label for="countryField" class="form-label">Country <span class="red-txt">*</span></label>
+                                <select class="form-select" aria-label="Default select example" id="countryField" onchange="RemoveCountry()">
+                                    <option>Select</option>
+                                </select>
+
+                                <span id="errCountry" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 mb-3">
+                        <label for="yearsInBusiness" class="form-label">
+                            Years in business <span class="red-txt">*</span>
+                        </label>
+                        <input type="text" class="input-field" maxlength="3" id="yearsInBusiness" placeholder="Years in business" onkeyup="RemoveYearInBusiness()" value=@Model.YearsInBusiness>
+                        <span id="errYearInBusiness" class="text-danger"></span>
+                    </div>
+                    <div class="col-xxl-4 col-xl-4 col-md-6 mb-3">
+                        <label for="estimatedNumberLoanDone" class="form-label">
+                            Est. number of loans done per year <span class="red-txt">*</span>
+                        </label>
+                        <input type="text" class="input-field" maxlength="2" id="estimatedNumberLoanDone" placeholder="Est. number of loans done per year" onkeyup="RemoveEstimatedNumberLoanDone()" value=@Model.EstimatedLoansDonePerYear>
+                        <span id="errEstimatedNumberLoanDone" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 mb-3">
+                        <label for="preferredAttorneyDoc" class="form-label">
+                            Preferred attorney for doc drafting
+                        </label>
+                        <input type="text" class="input-field" id="preferredAttorneyDoc" placeholder="Preferred attorney for doc drafting" value=@Model.PreferredAttorneyForDocDrafting>
+                    </div>
+                    <div class="col-xl-4 col-md-6 mb-3">
+                        <label for="preferredAttorneyPhone" class="form-label">
+                            Preferred attorney phone
+                        </label>
+                        <input type="tel" maxlength="12" class="input-field myAttorneyPhoneClass" id="preferredAttorneyPhone" placeholder="Enter phone number" onkeyup="RemoveAttorneyPhoneNumber()" value=@Model.PreferredAttorneyPhone>
+                        <span id="errAttorneyPhone" class="text-danger"></span>
+                    </div>
+                    <div class="col-xl-4 col-md-6 mb-3">
+                        <label for="preferredAttorneyPhone" class="form-label">
+                            Attorney Email
+                        </label>
+                        <input type="email" class="input-field" id="preferredAttorneyemail" onkeyup="RemoveEmail()" placeholder="Enter Email" value="@Model.AttorneyEmail">
+                        <span id="errAttorneyemail" class="text-danger error-text"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xxl-7 col-xl-10 col-md-12 mb-3">
+                        <div class="d-flex align-items-center">
+                            <label for="servicingLoanReidy" class="me-2">
+                                Are you interested in servicing your loans
+                                right here within Reidy?
+                            </label>
+                            <select class="form-select w-25" aria-label="Default select example" id="servicingLoanReidy" asp-items="Html.GetEnumSelectList<LoanWithinReidy>()">
+                                <option selected>Select</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="add-property">
+                <h5>Proof of Lendable Funds</h5>
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 mb-3">
+                        <label for="proofType" class="form-label">Type <span class="red-txt">*</span></label>
+                        <select class="form-select" aria-label="Default select example" id="proofType" onchange="RemoveProofType()" asp-items="Html.GetEnumSelectList<ProofType>()">
+                            <option selected>Select</option>
+                        </select>
+                        <span id="errProofType" class="text-danger"></span>
+                    </div>
+                    <div class="col-xl-4 col-md-6 mb-3">
+                        <!-- <label for="uploadFileLender" class="form-label">Upload file <span class="fs-small subpara">(pdf or images only)</span>
+                        </label>
+                        <input class="input-field formFile" type="file" id="uploadFileLender"> -->
+                        <div class="upload__box">
+                            <div class="upload__btn-box">
+                                <div class="upload__btn">
+                                    <label for="uploadFileLender" class="form-label">
+                                        Upload file <span class="fs-small subpara">
+                                            (pdf or
+                                            images only)
+                                        </span> <span class="red-txt">*</span>
+                                    </label>
+                                    <input type="file" multiple
+                                           data-max_length="20"
+                                           class="input-field formFile upload__inputfile" id="uploadFileLender" onchange="fileFormatOnchange()" accept="image/*">
+                                </div>
+                            </div>
+                            <span id="errUploadLenderFile" class="text-danger"></span>
+                            <span id="spanUploadLenderFile" class="text-danger"></span>
+                            <div class="upload__img-wrap"></div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-4 col-xl-5 col-md-6 mb-3">
+                        <div class="upload__box">
+                            <div class="upload__btn-box">
+                                <div class="upload__btn">
+                                    <label for="uploadLenderLicense" class="form-label">
+                                        Upload lending license (if any) <span class="fs-small subpara">(pdf or images allowed)</span>
+                                    </label>
+                                    <input type="file" multiple
+                                           data-max_length="20"
+                                           class="input-field formFile upload__inputfile" id="uploadLenderLicense" onchange="CheckUploadLendingLicenseFileFormat()" accept="image/*">
+                                </div>
+                            </div>
+                            <span id="spanUploadLenderLicenseFile" class="text-danger"></span>
+                            <div class="upload__img-wrap"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="add-property">
+                <h5>Help us fight fraud!</h5>
+                <div class="row">
+                    <div class="col-xxl-4 col-xl-4 col-md-6">
+                        <label for="identificationform1" class="form-label">Identification verification type</label>
+
+                        <select class="form-select" aria-label="Default select example" id="identificationform1" asp-items="Html.GetEnumSelectList<IdentificationType>()">
+                            <option selected>Select</option>
+                        </select>
+                    </div>
+                    <div class="col-xxl-4 col-md-6">
+                        <div class="upload__box">
+                            <div class="upload__btn-box">
+                                <div class="upload__btn">
+                                    <label for="stateIssuedId" class="form-label">
+                                        Upload identification <span class="fs-small subpara">(pdf or images only)</span>
+                                    </label>
+                                    <input type="file"
+                                           data-max_length="20"
+                                           class="input-field formFile upload__inputfile" id="stateIssuedId" onchange="CheckUploadIdentityFileFormat()" accept="image/*">
+                                </div>
+                            </div>
+                            <span id="spanUploadIdentityFile" class="text-danger"></span>
+                            <div class="upload__img-wrap"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- User Agreement -->
+            <div class="add-property">
+                <h5>Disclosure</h5>
+                <div class="row mt-2 h-row">
+                    <div class="col-xl-12 col-md-12 mb-3">
+                        <div class="userfield">
+                            Accept Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+                            voluptas facilis quo dolor aut quibusdam eaque, aspernatur ut temporibus tenetur quaerat rem
+                            repellat mollitia voluptatum repellendus velit necessitatibus error suscipit.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
+                            ipsum dolor sit Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Lorem ipsum
+                            dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit Lorem ipsum dolor sit amet consectetur adipisicing elit amet consectetur
+                            adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim deserunt
+                            molestiae dolor consectetur natus reprehenderit hic a architecto atque nisi sit facere est
+                            doloremque quaerat sequi sapiente, dignissimos, nihil laboreLorem ipsum dolor sit amet
+                            consectetur
+                            adipisicing elit Lorem ipsum dolor sit amet consectetur adipisicing elit amet consectetur
+                            adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim deserunt
+                            molestiae dolor consectetur natus reprehenderit hic a architecto atque nisi sit facere est
+                            doloremque quaerat sequi sapiente, dignissimos, nihil labore. It hic a architecto atque nisi
+                            sit facere est
+                            doloremque quaerat sequi sapiente, dignissimos, nihil laboreLorem ipsum dolor sit amet
+                            consectetur
+                            adipisicing elit Lorem ipsum dolor sit amet consectetur adipisicing elit amet consectetur
+                            adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim deserunt
+                            molestiae dolor consectetur natus reprehenderit hic a architecto atque nisi sit facere est
+                            doloremque quaerat sequi sapiente, dignissimos, nihil labore.
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex">
+                        <input type="checkbox" class="me-2 mt-1 filter-checkbox" id="chkbx3" @(Model.Disclosure.HasValue && Model.Disclosure.Value ? "checked" : "")>
+                        <label class="fs-small" id="txtAcceptLenderUser">Accept user agreement</label>
+                    </div>
+                </div>
+
+                <div class="text-center mt-3 mb-5 d-none">
+                    <label for="idInput" class="form-label">ID</label>
+
+                    <input type="text" class="input-field" id="idInput" name="Id" placeholder="ID" value="@Model.Id" disabled>
+                </div>
+
+
+            </div>
+            <div class="text-center mt-4 mb-4 user_profile">
+                <button type="button" class="btn-pbr btn-cancel" onclick="CancelLenderSignup()">Cancel</button>
+                <button type="button" class="btn-login btn-pbr" onclick="SaveProgress()">Save Progress</button>
+                <button type="button" class="btn-sign btn-pbr" data-bs-target="#submitLenderSignup"
+                        onclick="LenderSignup()">
+                    Submit
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Sidebar Menu Modal Popup -->
+    <!-- Right Sidebar Menu Modal Popup End-->
+    <!-- Submit modal popup -->
+    <div class="modal popup fade" id="submitLenderSignup" aria-hidden="true" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content br-32 border-0">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center mb-4"><img src="~/Images/success.svg" alt="success icon" class="success-popup"></div>
+                    <div class="text-center">
+                        Application submitted to Transaction Coordinator.<br>  Do you wish to add the lending
+                        product now?
+                    </div>
+                </div>
+                <div class="py-4 text-center">
+            
+                    <button type="button" class="me-3 btn-pbr btn-cancel" data-bs-dismiss="modal"
+                            aria-label="Close">
+                        Cancel
+                    </button>
+
+                    <a href="/Lender/CreateLenderProduct/@Context.Session.GetString("Id")">
+                        <input type="button" class="btn-sign btn-pbr" id="createLenderProduct" value="Continue" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div> *@
+    <!-- footer -->
+    <!-- scripts -->
+    <!-- scripts -->
+    <script src="~/js/jquery-3.7.1.js"></script>
+    <script src="~/js/Lender/lenderSignup.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const nextButtons = document.querySelectorAll(".btn-next");
+
+            nextButtons.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    const currentStep = this.closest(".form-step");
+                    const requiredFields = currentStep.querySelectorAll("[required]");
+                    let isValid = true;
+
+                    requiredFields.forEach(function (field) {
+                        if (field.value.trim() === "") {
+                            isValid = false;
+                            // Add error class to the field's parent div
+                            field.parentNode.classList.add("has-error");
+                        } else {
+                            // Remove error class if exists
+                            field.parentNode.classList.remove("has-error");
+                        }
+                    });
+
+                    if (isValid) {
+                        // Proceed to the next step
+                        const nextStep = currentStep.nextElementSibling;
+                        if (nextStep) {
+                            currentStep.classList.remove("form-step-active");
+                            nextStep.classList.add("form-step-active");
+                        }
+                    }
+                });
+            });
+        });
+
+    </script>
+</body> 
+
+</html>

@@ -1,0 +1,1678 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+    <link rel="stylesheet"
+          href="/css/styleSlider.css">
+
+    @*<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/6.5.2/css/bootstrap.min.css">*@
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+    @*<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>*@
+    <meta name="viewport" content="width=device-width" />
+    <title>Home</title>
+</head>
+<body style="width:100%;">
+
+
+
+
+    <!--Filter-->
+    <!-- Filters Modal Popup Start-->
+    <div class="modal popup" tabindex="-1" id="FiltersId99">
+
+        <div style="max-width: 885px;margin-left:auto;margin-right:auto;" class="modal-dialog modal-dialog-centered" id="AllFilterModel">
+            <div style="border-radius: 10px;" class="modal-content br-32 border-0 filterHeight">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-semibold"
+                        style="margin-left: auto; margin-right: auto; width: 167px;color: #000;text-align: center;font-family: 'Open Sans';font-size: 18px;font-style: normal;font-weight: 700;line-height: normal;">
+                        Filters
+                    </h5>
+                    <button style="float: right;Margin: 0px;" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btnAllFilterCancel"></button>
+                </div>
+                <div class="modal-body row">
+                    <div class="col-sm-12">
+                        <!--<div class="container">-->
+
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div style="height:250px;" class="row">
+
+                                    <div class="col-sm-4" style="margin-bottom:300px;display: inline-block;height:250px;z-index:0;overflow-y:auto;">
+
+                                        <h5 style="margin-left: auto; margin-right: auto; width: 174px; color: #000;font-family: Open Sans;font-size: 14px;font-style: normal;font-weight: 600;line-height: normal;">
+                                            Asset Type
+                                        </h5>
+                                        <div class="property-type-ul" id="SearchType">
+                                            <ul class="list-unstyled">
+                                                <li class="d-flex align-items-center">
+                                                    <input type="checkbox" id="txtSelectAll2" name="txtSelectAll2" value="0" class="me-4 filter-checkbox assetType">Select All
+                                                </li>
+                                                <li>
+                                                    <hr class="my-2">
+                                                </li>
+                                                <!--======try to check===-->
+                                                <li class="d-flex align-items-center">
+                                                    <input type="checkbox" value="1" class="me-4 filter-checkbox" id="txtMultiFamily" name="txtMultiFamily"><img src="~/Images/icons/multifamily.svg" alt="Multifamily" title="Multifamily" class="me-2">
+                                                    <span class="assetType"> Multifamily</span>
+                                                </li>
+                                                <li>
+                                                    <hr class="my-2">
+                                                </li>
+                                                <li class="d-flex align-items-center">
+                                                    <input type="checkbox" value="2" class="me-4 filter-checkbox" name="txthouseicon" id="txthouseicon"><img src="~/Images/icons/1_4_residential.svg" alt="1-4 Residential" title="1-4 Residential" class="me-2">
+                                                    <span class="assetType">1-4 Residential</span>
+                                                </li>
+                                                <li>
+                                                    <hr class="my-2">
+                                                </li>
+                                                <li class="d-flex align-items-center">
+                                                    <input type="checkbox" value="3" class="me-4 filter-checkbox" name="txtoffice" id="txtoffice"><img src="~/Images/icons/office.svg" alt="Office" title="Office" class="me-2">
+                                                    <span class="assetType">Office</span>
+                                                </li>
+                                                <li>
+                                                    <hr class="my-2">
+                                                </li>
+                                                <li class="d-flex align-items-center">
+                                                    <input type="checkbox" value="4" class="me-4 filter-checkbox" name="txtIndustrial" id="txtIndustrial"><img src="~/Images/icons/industrial.svg" alt="Industrial" title="Industrial" class="me-2">
+                                                    <span class="assetType">Industrial</span>
+                                                </li>
+                                                <li>
+                                                    <hr class="my-2">
+                                                </li>
+                                                <li class="d-flex align-items-center">
+                                                    <input type="checkbox" value="5" class="me-4 filter-checkbox" name="txtretail" id="txtretail"><img src="~/Images/icons/retail.svg" alt="Retail" title="Retail" class="me-2">
+                                                    <span class="assetType">Retail</span>
+                                                </li>
+                                                <li>
+                                                    <hr class="my-2">
+                                                </li>
+                                                <li class="d-flex align-items-center">
+                                                    <input type="checkbox" value="6" class="me-4 filter-checkbox" name="txtshopping" id="txtshopping"><img src="~/Images/icons/shopping_center.svg" alt="Shopping Center" title="Shopping Center" class="me-2">
+                                                    <span class="assetType">Shopping Center</span>
+                                                </li>
+                                                <li>
+                                                    <hr class="my-2">
+                                                </li>
+                                                <li class="d-flex align-items-center">
+                                                    <input type="checkbox" value="7" class="me-4 filter-checkbox" name="txtSpeciality" id="txtSpeciality"><img src="~/Images/icons/storage_units.svg" alt="Storage Units" title="Storage Units" class="me-2">
+                                                    <span class="assetType">Storage Units</span>
+                                                </li>
+                                                <li>
+                                                    <hr class="my-2">
+                                                </li>
+                                                <li class="d-flex align-items-center">
+                                                    <input type="checkbox" value="8" class="me-4 filter-checkbox" name="txtHealth" id="txtHealth"><img src="~/Images/icons/healthcare.svg" alt="Healthcare" title="Healthcare" class="me-2">
+                                                    <span class="assetType">Healthcare</span>
+                                                </li>
+                                                <li>
+                                                    <hr class="my-2">
+                                                </li>
+                                                <li class="d-flex align-items-center">
+                                                    <input type="checkbox" value="9" class="me-4 filter-checkbox" name="txtHospitality" id="txtHospitality"><img src="~/Images/icons/hospitality.svg" alt="Hospitality" title="Hospitality" class="me-2">
+                                                    <span class="assetType">Hospitality</span>
+                                                </li>
+                                                <li>
+                                                    <hr class="my-2">
+                                                </li>
+                                                <li class="d-flex align-items-center">
+                                                    <input type="checkbox" value="10" class="me-4 filter-checkbox" name="txtSports" id="txtSports"><img src="~/Images/icons/sports_entertainment.svg" alt="Sports & Entertainment" title="Sports & Entertainment" class="me-2">
+                                                    <span class="assetType">Sports &amp; Entertainment</span>
+                                                </li>
+                                                <li>
+                                                    <hr class="my-2">
+                                                </li>
+                                                <li class="d-flex align-items-center">
+                                                    <input type="checkbox" value="11" class="me-4 filter-checkbox" name="txtLand" id="txtLand"><img src="~/Images/icons/land.svg" alt="Land" title="Land" class="me-2">
+                                                    <span class="assetType">Land</span>
+                                                </li>
+                                                <li>
+                                                    <hr class="my-2">
+                                                </li>
+                                                <li class="d-flex align-items-center">
+                                                    <input type="checkbox" value="12" class="me-4 filter-checkbox" name="txtresidentialportfolio" id="txtresidentialportfolio"><img src="~/Images/icons/residential_portfolio.svg" alt="Residential Portfolio" title="Residential Portfolio" class="me-2">
+                                                    <span class="assetType">Residential Portfolio</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                    <div style="display: inline-block;height:250px;z-index:5;" class="col-sm-8">
+
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <span style="width: 106px; color: #000;font-family: Open Sans;font-size: 12px;font-style: normal;font-weight: 600;line-height: normal;">Reidy Id</span>
+                                                <br />
+                                                <input type="text" id="reidyId" name="reidyId" style="width: 207px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <span style="width: 118px; color: #000; font-family: Open Sans; font-size: 12px; font-style: normal; font-weight: 600; line-height: normal;">Date Entered</span>
+                                                <br /><input type="text" id="date-range1" name="date-range1" placeholder="mm/dd/yyyy" style="width: 110px; height: 31px; flex-shrink: 0; border-radius: 10px; border: 1px solid #F1F1F1; background: #FFF;" />
+                                                <span style="width: 10px; height: 2px; color: #8AAF92; font-size: 24px;">-</span>
+                                                <input type="text" id="date-range2" name="date-range2" placeholder="mm/dd/yyyy" style="width: 110px; height: 31px; flex-shrink: 0; border-radius: 10px; border: 1px solid #F1F1F1; background: #FFF;" />
+                                            </div>
+
+                                            <br /><br /><br /><br />
+
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <span style="width: 106px; color: #000; font-family: Open Sans; font-size: 12px; font-style: normal; font-weight: 600; line-height: normal;">Price Range</span>&nbsp;
+
+                                                    <div style="display: inline-block; width: 97px;height: 21px;flex-shrink: 0;border-radius: 3px;background: #F1F1F1;">
+                                                        <input class="txtUnits" style="width: 12px;height: 12px;flex-shrink: 0;fill: #FFF;stroke-width: 1px;stroke: #D9D9D9;" type="radio" name="inlineRadioOptions" id="totalradio"
+                                                               value="1" checked>&nbsp;
+                                                        <label style="width: 64px;color: #33583B;font-family: Open Sans;font-size: 12px;font-style: normal;font-weight: 400;line-height: normal;" for="totalradio">Total $</label>
+                                                    </div>
+                                                    &nbsp;
+                                                    <div style=" display: inline-block;width: 97px;height: 21px;flex-shrink: 0;border-radius: 3px;background: #F1F1F1;">
+                                                        <input class="txtUnits" style="width: 12px;height: 12px;flex-shrink: 0;fill: #FFF;stroke-width: 1px;stroke: #D9D9D9;" type="radio" name="inlineRadioOptions" id="sfFieldradio"
+                                                               value="2">&nbsp;
+                                                        <label style="width: 64px;color: #33583B;font-family: Open Sans;font-size: 12px;font-style: normal;font-weight: 400;line-height: normal;" for="sfFieldradio">$ / sq. ft.</label>
+                                                    </div>
+                                                    &nbsp;
+                                                    <div style="display: inline-block;width: 97px;height: 21px;flex-shrink: 0;border-radius: 3px;background: #F1F1F1;">
+                                                        <input class="txtUnits" style="width: 12px;height: 12px;flex-shrink: 0;fill: #FFF;stroke-width: 1px;stroke: #D9D9D9;" type="radio" name="inlineRadioOptions" id="acrefield"
+                                                               value="3">&nbsp;
+                                                        <label style="width: 64px;color: #33583B;font-family: Open Sans;font-size: 12px;font-style: normal;font-weight: 400;line-height: normal;" for="acrefield">$ / Acre</label>
+                                                    </div>
+                                                    &nbsp;
+                                                    <div style="display: inline-block;width: 97px;height: 21px;flex-shrink: 0;border-radius: 3px;background: #F1F1F1;">
+                                                        <input class="txtUnits" style="width: 12px;height: 12px;flex-shrink: 0;fill: #FFF;stroke-width: 1px;stroke: #D9D9D9;" type="radio" name="inlineRadioOptions" id="unitRadio"
+                                                               value="4">&nbsp;
+                                                        <label style="width: 64px;color: #33583B;font-family: Open Sans;font-size: 12px;font-style: normal;font-weight: 400;line-height: normal;" for="unitRadio">$ / Unit</label>
+                                                    </div>
+                                                    &nbsp;<br />
+                                                </div>
+                                            </div>
+                                            <!--Range input-->
+
+                                            <br /><br />
+
+                                            <div class="custom-wrapper">
+
+                                                <div class="price-input-container">
+                                                    <div class="price-input">
+
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+
+                                                                <div style="display: inline-block;" class="price-field">
+                                                                    <input type="number"
+                                                                           id="Af_minPrice"
+                                                                           name="Af_minPrice"
+                                                                           class="min-input"
+                                                                           value="0" placeholder="$ Minimum" style="width: 150px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                                                </div>
+
+
+                                                                <span style="display: inline-block;width: 10px; height: 2px; color: #8AAF92; font-size: 24px;">-</span>
+
+
+
+                                                                <div style="display: inline-block;" class="price-field">
+                                                                    <input type="number"
+                                                                           id="Af_maxPrice"
+                                                                           name="Af_maxPrice"
+                                                                           class="max-input"
+                                                                           value="10000000" placeholder="$ Maximum" style="display: inline-block;width: 150px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                                                </div>
+
+                                                            </div>
+
+
+                                                        </div>
+                                                        <div class="slider-container">
+                                                            <div class="price-slider">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Slider -->
+                                                    <div class="range-input">
+                                                        <input type="range"
+                                                               class="min-range"
+                                                               min="0"
+                                                               max="10000000"
+                                                               value="0"
+                                                               step="5">
+                                                        <input type="range"
+                                                               class="max-range"
+                                                               min="0"
+                                                               max="10000000"
+                                                               value="10000000"
+                                                               step="5">
+                                                    </div>
+                                                </div>
+                                                <!--<script src="/js/scriptSlider.js"></script>-->
+
+
+
+
+
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!--<div class="container">-->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div style="height:300px;" class="row">
+
+                                    <div style="margin-bottom:275px;display: inline-block;height:300px;z-index:100;" class="col-sm-4">
+
+                                        <span style="width: 106px;color: #000;font-family: Open Sans;font-size: 12px;font-style: normal;font-weight: 600;line-height: normal;">
+                                            Year Built
+                                        </span>
+                                        <br />
+                                        <input type="text" id="Af_YearBuiltMin" name="Af_YearBuiltMin" placeholder="Min" style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                        <span style="display: inline-block;width: 10px; height: 2px; color: #8AAF92; font-size: 24px;">-</span>
+                                        <input type="text" id="Af_YearBuiltMax" name="Af_YearBuiltMax" placeholder="Max" style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" /><br /><br />
+
+                                        <span style="width: 106px;color: #000;font-family: Open Sans;font-size: 12px;font-style: normal;font-weight: 600;line-height: normal;">
+                                            Building Size
+                                        </span>
+                                        <br />
+                                        <input type="text" id="Af_BuildingMinSF" name="Af_BuildingMinSF" placeholder="Min sq. ft." style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                        <span style="display: inline-block;width: 10px; height: 2px; color: #8AAF92; font-size: 24px;">-</span>
+                                        <input type="text" id="Af_BuildingMaxSF" name="Af_BuildingMaxSF" placeholder="Max sq. ft." style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" /><br /><br />
+
+                                        <span style="width: 106px;color: #000;font-family: Open Sans;font-size: 12px;font-style: normal;font-weight: 600;line-height: normal;">
+                                            Land Size
+                                        </span>
+                                        <br />
+                                        <input type="text" id="Af_LandMinAcres" name="Af_LandMinAcres" placeholder="Min acres" style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                        <span style="display: inline-block;width: 10px; height: 2px; color: #8AAF92; font-size: 24px;">-</span>
+                                        <input type="text" id="Af_LandMaxAcres" name="Af_LandMaxAcres" placeholder="Max acres" style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" /><br /><br />
+
+                                        <span style="width: 106px;color: #000;font-family: Open Sans;font-size: 12px;font-style: normal;font-weight: 600;line-height: normal;">
+                                            Units
+                                        </span><br />
+                                        <input type="text" id="Af_UnitBedsMin" name="Af_UnitBedsMin" placeholder="Min" style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                        <span style="display: inline-block;width: 10px; height: 2px; color: #8AAF92; font-size: 24px;">-</span>
+                                        <input type="text" id="Af_UnitBedsMax" name="Af_UnitBedsMax" placeholder="Max" style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" /><br /><br />
+
+                                    </div>
+
+                                    <div style="display: inline-block;height:300px;z-index:1;" class="col-sm-8">
+
+                                        <span style="width: 106px; color: #000;font-family: Open Sans;font-size: 12px;font-style: normal;font-weight: 600;line-height: normal;">
+                                            Loan Type Filters
+                                        </span>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <span style="width:40px;color: #000;font-family: Open Sans;
+                                      font-size: 12px;
+                                      font-style: normal;
+                                      font-weight: 400;
+                                      line-height: normal;">
+                                                    Terms
+                                                </span><br />
+
+
+                                                <!--<input style="width: 215px;height: 31px;flex-shrink: 0;border-radius: 10px;
+                                                     border: 1px solid #F1F1F1;
+                                                     background: #FFF;" />-->
+
+                                                <div class="dropdown multi-dropdown">
+                                                    <button class="form-select dropdown-toggle" type="button" id="multiSelectDropdown"
+                                                            data-bs-toggle="dropdown" aria-expanded="false"
+                                                            style="width: 215px;height: 40px;flex-shrink: 0;border-radius: 10px;
+                                       border: 1px solid #F1F1F1;
+                                       background: #FFF;">
+                                                        Select
+                                                    </button>
+                                                    <ul class="dropdown-menu" aria-labelledby="multiSelectDropdown">
+                                                        <li class="ms-2">
+                                                            <label>
+                                                                <input id="terms1" name="terms1" type="checkbox" value="Interest Only" class="cstm">
+                                                                Interest Only
+                                                            </label>
+                                                        </li>
+                                                        <li class="ms-2">
+                                                            <label>
+                                                                <input id="terms2" name="terms2" type="checkbox" value="0-3 years" class="cstm">
+                                                                0-3 years
+                                                            </label>
+                                                        </li>
+                                                        <li class="ms-2">
+                                                            <label>
+                                                                <input id="terms3" name="terms3" type="checkbox" value="4-5 years" class="cstm">
+                                                                4-5 years
+                                                            </label>
+                                                        </li>
+                                                        <li class="ms-2">
+                                                            <label>
+                                                                <input id="terms4" name="terms4" type="checkbox" value="5-7 years" class="cstm">
+                                                                6-7 years
+                                                            </label>
+                                                        </li>
+                                                        <li class="ms-2">
+                                                            <label>
+                                                                <input id="terms5" name="terms5" type="checkbox" value="8-10 years" class="cstm">
+                                                                8-10 years
+                                                            </label>
+                                                        </li>
+                                                        <li class="ms-2">
+                                                            <label>
+                                                                <input id="terms6" name="terms6" type="checkbox" value="11-20 years" class="cstm">
+                                                                11-20 years
+                                                            </label>
+                                                        </li>
+                                                        <li class="ms-2">
+                                                            <label>
+                                                                <input id="terms7" name="terms7" type="checkbox" value="21-30 years" class="cstm">
+                                                                21-30 years
+                                                            </label>
+                                                        </li>
+                                                        <li class="ms-2">
+                                                            <label>
+                                                                <input id="terms8" name="terms8" type="checkbox" value="31+ years" class="cstm">
+                                                                31+ years
+                                                            </label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+
+
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <span style="width: 117px;color: #000;font-family: Open Sans;
+                                      font-size: 12px;
+                                      font-style: normal;
+                                      font-weight: 400;
+                                      line-height: normal;">
+                                                    Interest Rate Range
+                                                </span><br />
+                                                <input type="text" id="interestMin" name="interestMin" placeholder="Min" style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                                <span style="display: inline-block;width: 10px; height: 2px; color: #8AAF92; font-size: 24px;">-</span>
+                                                <input type="text" id="interestMax" name="interestMax" placeholder="Max" style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                            </div>
+                                        </div>
+                                        <br /><br />
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <span style="width: 86px;color: #000;font-family: Open Sans;
+                                      font-size: 12px;
+                                      font-style: normal;
+                                      font-weight: 400;
+                                      line-height: normal;">
+                                                    Program Types
+                                                </span><br />
+
+
+                                                <!--<input style="width: 215px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />-->
+
+
+                                                <select class="form-select mb-3" aria-label="Default select example" id="selectprograms" name="selectprograms"
+                                                        style="width: 215px;height: 40px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;">
+                                                    <option value="0" selected>Select</option>
+                                                    <option value="1">Conventional Loan</option>
+                                                    <option value="2">DSCR Loan</option>
+                                                    <option value="3">Hard Money Loan</option>
+                                                    <option value="4">Hybrid Loan</option>
+                                                    <option value="5">Non - QM Loan</option>
+                                                    <option value="6">Private Lender Loan</option>
+                                                    <option value="7">Seller Financing</option>
+                                                    <option value="8">Subject-to Assumption</option>
+                                                </select>
+
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <span style="width: 117px;color: #000;font-family: Open Sans;
+                                      font-size: 12px;
+                                      font-style: normal;
+                                      font-weight: 400;
+                                      line-height: normal;">
+                                                    Funds to Close
+                                                </span><br />
+                                                <input type="text" id="txtminFtC" name="txtminFtC" placeholder="Min" style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                                <span style="display: inline-block;width: 10px; height: 2px; color: #8AAF92; font-size: 24px;">-</span>
+                                                <input type="text" id="txtmaxFtC" name="txtmaxFtC" placeholder="Max" style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                            </div>
+                                        </div>
+                                        <br /><br />
+                                        <div id="txtDueDiligenceDocument" class="row">
+                                            <div style="margin-bottom: 15px;" class="col-sm-12">
+                                                <span style="width: 162px;color: #000;font-family: Open Sans;
+                                      font-size: 12px;
+                                      font-style: normal;
+                                      font-weight: 600;
+                                      line-height: normal;">
+                                                    Due Dilegence Documents
+                                                </span><br />
+
+                                                <div style="display: inline-block;width: 99px;height: 26px;flex-shrink: 0;border-radius: 5px;border: 1px solid #D9D9D9;">
+                                                    <input type="checkbox" id="txtAppraisal" name="txtAppraisal" value="1" style="width: 16px;height: 16px;flex-shrink: 0;border: 2px solid #8AAF92;" />
+                                                    <label style="width:56px;color: #000;font-family: Open Sans;
+                                       font-size: 12px;
+                                       font-style: normal;
+                                       font-weight: 400;
+                                       line-height: normal;" for="txtAppraisal">Appraisal</label>
+                                                </div>
+
+                                                <div style="display: inline-block;width: 130px;height: 26px;flex-shrink: 0;border-radius: 5px;border: 1px solid #D9D9D9;">
+                                                    <input type="checkbox" id="txtEnvironmental" name="txtEnvironmental" value="3" style="width: 16px;height: 16px;flex-shrink: 0;border: 2px solid #8AAF92;" />
+                                                    <label style="width:84px;color: #000;font-family: Open Sans;
+                                       font-size: 12px;
+                                       font-style: normal;
+                                       font-weight: 400;
+                                       line-height: normal;" for="txtEnvironmental">Environmental</label>
+                                                </div>
+
+                                                <div style="display: inline-block;width: 89px;height: 26px;flex-shrink: 0;border-radius: 5px;border: 1px solid #D9D9D9;">
+                                                    <input type="checkbox" id="txtSurvey" name="txtSurvey" value="2" style="width: 16px;height: 16px;flex-shrink: 0;border: 2px solid #8AAF92;" />
+                                                    <label style="width:41px;color: #000;font-family: Open Sans;
+                                       font-size: 12px;
+                                       font-style: normal;
+                                       font-weight: 400;
+                                       line-height: normal;" for="txtSurvey">Survey</label>
+                                                </div>
+
+                                                <div style="display: inline-block;width: 113px;height: 26px;flex-shrink: 0;border-radius: 5px;border: 1px solid #D9D9D9;">
+                                                    <input type="checkbox" id="txtInspection" name="txtInspection" value="4" style="width: 16px;height: 16px;flex-shrink: 0;border: 2px solid #8AAF92;" />
+                                                    <label style="width:59px;color: #000;font-family: Open Sans;
+                                       font-size: 12px;
+                                       font-style: normal;
+                                       font-weight: 400;
+                                       line-height: normal;" for="txtInspection">Inspection</label>
+                                                </div>
+
+                                            </div>
+
+
+
+
+                                            <button style="margin-left:auto;margin-right:auto; width: 100px;" type="button" class="btn-cancel btn-pbr"
+                                                    id="btnClear2">
+                                                Clear
+                                            </button>
+                                            <button style="margin-left:auto;margin-right:auto; width: 100px;" type="submit" class="btn-sign btn-pbr" id="btnSearch2" name="btnSearch" value="btnSearch2" data-bs-dismiss="modal">Search</button>
+
+
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+                        </div>
+                        <!--</div>-->
+                        <!--</div>-->
+
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- Debug stuff again -->
+    <!-- Map filters -->
+    <div class="map-filters">
+        <div class="container-px">
+            <div class="d-flex justify-content-between">
+                <div class="d-flex align-items-center">
+                    <div>
+
+                        <input type="hidden" id="txtUserID" value="@Context.Session.GetString("Id")">
+                    </div>
+
+
+                    @*<div class="dropdown open small-d-none" id="ddlPropertyType" name="PropertyList" multiple>
+                        <button type="button" id="btnProperty" class="btn filter-control dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            Property Types
+                        </button>
+                        <ul class="property-menu dropdown-menu px-3" id="ddlPropertyType1">
+                            <li class="d-flex align-items-center"><input type="checkbox" id="txtSelectAll" value="0" class="me-3 filter-checkbox">Select All</li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <input type="checkbox" value="1" class="me-3 filter-checkbox"><img src="~/Images/Multifamily.png" alt="Multifamily" class="me-2">Multifamily
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <input type="checkbox" value="2" class="me-3 filter-checkbox"><img src="~/images/houseicon.svg" alt="houseicon" class="me-2">1-4 Residential
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <input type="checkbox" value="3" class="me-3 filter-checkbox"><img src="~/images/office-icon.svg" alt="office-icon" class="me-2">Office
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <input type="checkbox" value="4" class="me-3 filter-checkbox"><img src="~/images/Industrial-icon.svg" alt="Industrial-icon" class="me-2">Industrial
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <input type="checkbox" value="5" class="me-3 filter-checkbox"><img src="~/images/retail.svg" alt="retail" class="me-2">Retail
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <input type="checkbox" value="6" class="me-3 filter-checkbox"><img src="~/images/shopping.svg" alt="shopping" class="me-2">Shopping Center
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <input type="checkbox" value="7" class="me-3 filter-checkbox"><img src="~/images/Speciality.svg" alt="Speciality" class="me-2">Specialty
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <input type="checkbox" value="8" class="me-3 filter-checkbox"><img src="~/images/Health.svg" alt="Health" class="me-2">Healthcare
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <input type="checkbox" value="9" class="me-3 filter-checkbox"><img src="~/images/Hospitality.svg" alt="Hospitality" class="me-2">Hospitality
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <input type="checkbox" value="10" class="me-3 filter-checkbox"><img src="~/images/Sports.svg" alt="Sports" class="me-2">Sports &amp; Entertainment
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <input type="checkbox" value="11" class="me-3 filter-checkbox"><img src="~/Images/Land.svg" alt="Land" class="me-2">Land
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <input type="checkbox" value="12" class="me-3 filter-checkbox"><img src="~/images/residentialportfolio.svg" alt="residentialportfolio" class="me-2">Residential
+                                Portfolio
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <!-- price dropdown -->
+                    <div class="dropdown small-d-none">
+                        <a class="btn filter-control dropdown-toggle" id="txtPrice" href="#" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Price
+                        </a>
+                        <div class="dropdown-menu p-3" role="menu">
+                            <div class="d-flex align-items-center">
+                                <div class="range-from">
+                                    <input type="text" id="MinTargetPrice" placeholder="Min $" class="input-drpdwn number1 min_max_price">
+                                </div>
+                                <div class="range-divider mx-2">
+                                    to
+                                </div>
+                                <div class="range-to">
+                                    <input type="text" id="MaxTargetPrice" name="PriceRangeMax" placeholder="Max $" class="input-drpdwn number2 min_max_price">
+                                </div>
+                            </div>
+
+                            <div class="pill-group">
+                                <div class="pill">
+                                    <input type="radio" class="input-radio txtUnits1" id="RangeTotal" name="RangeTotal" value="1" checked>
+                                    <label for="RangeTotal">Total $</label>
+                                </div>
+                                <div class="pill">
+                                    <input type="radio" class="input-radio txtUnits1" id="searchBarPrice" name="RangeTotal" value="2">
+                                    <label for="searchBarPrice">$/SF</label>
+                                </div>
+                                <div class="pill">
+                                    <input type="radio" class="input-radio txtUnits1" id="acre-field" name="RangeTotal" value="3">
+                                    <label for="acre-field">$/Acre</label>
+                                </div>
+                                <div class="pill">
+                                    <input type="radio" class="input-radio txtUnits1" id="unitinput" name="RangeTotal" value="4">
+                                    <label for="unitinput">$/Unit</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- building size chang-->
+                    <div class="dropdown small-d-none">
+                        <a class="btn filter-control dropdown-toggle" href="#" id="txtBuildingSize" data-bs-toggle="dropdown" aria-expanded="false">
+                            Building Size
+                        </a>
+
+                        <div class="dropdown-menu p-3" role="menu">
+                            <div class="d-flex align-items-center">
+                                <div class="range-from">
+                                    <input type="text" id="txtMinBuildSF" placeholder="Min SF" class="input-drpdwn number5 min_max_BuildSF">
+                                </div>
+                                <div class="range-divider mx-2">
+                                    to
+                                </div>
+                                <div class="range-to">
+                                    <input type="text" id="txtMaxBuildSF" placeholder="Max SF" class="input-drpdwn number6 min_max_BuildSF">
+                                </div>
+                            </div>
+
+                            <div class="squarefield">
+                                <div class="Square Feet">
+                                </div>
+                                <div class="Square Meters"></div>
+                            </div>
+                            <div class="square-fields mt-3">
+                                <div class="nav nav-pills row">
+                                    <div class="nav-item col-6">
+                                        <a class="nav-link active" aria-current="page" href="#" id="txtSquareFeet">Square Feet</a>
+                                    </div>
+                                    <div class="nav-item col-6">
+                                        <a class="nav-link" href="#" id="txtSquareMeters">Square Meters</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- price dropdown -->
+                    <div class="dropdown small-d-none">
+                        <a class="btn filter-control dropdown-toggle" href="#" id="txtFundsToClose" data-bs-toggle="dropdown" aria-expanded="false">
+                            Funds to Close
+                        </a>
+                        <div class="dropdown-menu p-3" role="menu">
+                            <div class="d-flex align-items-center">
+                                <div class="range-from">
+                                    <input type="text" placeholder="Min $" class="input-drpdwn number3" id="mintext">
+                                </div>
+                                <div class="range-divider mx-2">
+                                    to
+                                </div>
+                                <div class="range-to">
+                                    <input type="text" placeholder="Max $" class="input-drpdwn number4" id="maxtext">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" id="btnfilter" class="filter-control fw-semibold small-d-none" data-bs-toggle="modal" data-bs-target="#FiltersId">All Filters</button>
+                    <p id='percentage'></p>
+                    <button type="button" class="filter-control fw-semibold d-none" id="btnClear1">Clear</button>
+
+
+                    <button type="button" class="btn-login btn-pbr small-d-none me-0 ms-xl-3" data-bs-toggle="modal"
+                    data-bs-target="#savesearch">
+                    Save search
+                    </button>
+                    <button type="button" class="btn-login btn-pbr small-d-none me-0 ms-xl-3" data-bs-toggle="modal"
+                    data-bs-target="#">
+                    Load search
+                    </button>
+
+                    <img src="~/images/noun-filter.svg" alt="noun-filter" data-bs-toggle="modal" data-bs-target="#FiltersId" class="small-d-block ms-2>
+
+                    <div class="save_search">
+                        <button type="button" class="btn-login btn-pbr small-d-none me-0 ms-xl-3" data-bs-toggle="modal"
+                                data-bs-target="#savesearch">
+                            Save search
+                        </button>
+                        <!--<button type="button" id="btnLoadSearch" class="btn-login btn-pbr small-d-none me-0 ms-xl-3" data-bs-toggle="modal" data-bs-target="#">Load search</button>-->
+                        <button type="button" id="btnLoadSearchList" class="btn-login btn-pbr small-d-none me-0 ms-xl-3" data-bs-toggle="modal" data-bs-target="#loadsearches">Load search</button>
+                    </div>
+                </div>
+                
+                
+                <!-- For small device -->
+                <div class="save_search">
+                    <div class="filter-buttons d-flex">
+                        <div class="map-view profilebtn btn-login btn-pbr">
+                            <i class="fa fa-map-marker me-1" aria-hidden="true"></i> Map view
+                        </div>
+                        <div class="list-view profilebtn btn-login btn-pbr">
+                            <i class="fa fa-bars me-1" aria-hidden="true"></i> List view
+                        </div>
+                        <div class="grid-view-button dropdown" type="button">
+                            <div class="btn dropdown-toggle profilebtn btn-login btn-pbr" data-bs-toggle="dropdown"
+                                 aria-expanded="false">
+                                <div class="me-2 ">
+                                    <i class="fa fa-th-large me-1" aria-hidden="true"></i> Grid view
+                                </div>
+                            </div>
+                            <ul class="dropdown-menu dropdown-menu-end px-3">
+                                <li class="list-view-button view-button">
+                                    <i class="fa fa-th-large view-button me-1" aria-hidden="true"></i> 1 Columns
+                                </li>
+                                <li class="grid-view-button2 view-button">
+                                    <i class="fa fa-th-large view-button me-1" aria-hidden="true"></i> 2 Columns
+                                </li>
+                                <li class="grid-3 mt-1 view-button">
+                                    <i class="fa fa-th" aria-hidden="true me-1"></i> 3 Columns
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- <div class="grid-view-button"><i class="fa fa-th-large" aria-hidden="true"></i> Grid view</div>
+                        <div class="grid-3 ms-2"><i class="fa fa-th" aria-hidden="true"></i> Grid view 3 Columns</div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!------- Save search modal Starts-->
+    @*<div class="modal fade" id="savesearch" data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true"
+         aria-labelledby="savesearchLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content br-32">
+                <div class="modal-header p-4">
+                    <!-- <h5 class="modal-title" id="savesearchLabel">Save Your Search</h5> -->
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                </div>
+                <div class="modal-body p-4 pt-0 bg-seconsary">
+                    <div class="addlistingform pb-0">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h4>Save this search and get email alerts</h4>
+                                    <h6>Be the first to know about the listing that match your search criteria</h6>
+                                </div>
+                                <div class="col-xxl-6 col-xl-6 col-md-8 col-12 mt-3">
+                                    <!-- <label for="saved_property" class="form-label">Name of property</label> -->
+                                    <input type="text" placeholder="Name of saved property" id="saved_property" class="input-field">
+                                </div>
+                                <div class="col-12 d-flex mt-3">
+                                    <button class="btn-sign btn-pbr " type="button">Instantly</button>
+                                    <button class="btn-sign btn-pbr" type="button">Daily</button>
+                                    <button class="btn-sign btn-pbr" type="button">Weekly</button>
+                                    <button class="btn-sign btn-pbr" type="button">None</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-xl-12 col-md-12 d-flex justify-content-end pe-0">
+                        <button type="button" class="btn-login btn-pbr" data-bs-dismiss="modal" aria-label="Close">
+                            Close
+                        </button>
+                        <button type="button" class="btn-sign btn-pbr" id="btnSaveSearches" onclick="SaveSearchedInputValue()">
+                            Save searches
+                        </button>
+                    </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!------- Save search modal Starts-->
+    <div class="modal fade" id="savesearch" data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true"
+         aria-labelledby="savesearchLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-md modal-w-560">
+            <div class="modal-content br-32">
+                <div class="modal-header p-4">
+                    <h5 class="modal-title" id="savesearchLabel">Save Your Current Search</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 pt-0 bg-seconsary">
+                    <div class="addlistingform pb-0">
+                        <div class="container-fluid">
+                            <div class="row align-items-center mt-1">
+                                <div class="col-xxl-8 col-xl-7 col-lg-6 col-6">
+                                    <input type="text" placeholder="Search name" id="saved_property" class="input-field">
+                                    <!--<input type="text" placeholder="Name of saved property" id="saved_property" class="input-field">-->
+                                </div>
+                                <div class="col-xxl-4 col-xl-5 col-lg-6 col-6 text-end">
+                                    <button type="button" class="btn-sign btn-pbr mb-0" id="btnSaveSearches" onclick="SaveSearchedInputValue()">
+                                        Save search
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer py-3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------- Save search modal Ends-->
+    <!------- Load searches pop up starts-->
+    <div class="modal fade" id="loadsearches" data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true"
+         aria-labelledby="loadsearchesLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+            <div class="modal-content br-32">
+                <div class="modal-header p-4">
+                    <h5 class="modal-title" id="loadsearchesLabel">Load Your Search</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 pt-0 bg-seconsary" id="LoadSearchDiv">
+                    
+                </div>
+                <div class="modal-footer">
+                    <div class="col-xl-12 col-md-12 d-flex justify-content-end pe-0">
+                        <button type="button" class="btn-login btn-headerlist" data-bs-dismiss="modal" aria-label="Close">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------- Load searches pop up Ends-->
+
+
+
+    <!-- Map Section -->
+    <div class="map-section">
+        <div>
+     <input id="DrawOnMap" type="checkbox">
+     <label for="DrawOnMap"><span>Draw on Map</span></label>
+    </div>
+    <div id="DrawOnMapSearch">
+      <input id="DrawOnMapApply" value="Apply" type="button" disabled="disabled">
+      <input id="DrawOnMapReDraw" value="Redraw" type="button" disabled="disabled">
+    </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-8 col-md-8 mb-3">
+                    <div id="dvMap" class="map-area"></div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-3">
+                    <div id="main" class="map-details">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@*    <div class="map-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-8 col-md-8 mb-3">
+                    <div id="dvMap" class="map-area"></div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-3">
+                    <div id="main" class="map-details">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+
+    <!-- Latest News section -->
+    <div class="news-feeds">
+        <div class="container-fluid container-px">
+            <div class="center-title">
+                <div>
+                    <h2>Latest <span class="blue-primary">News</span></h2>
+                    <p class="subpara">Highlight the best of your properties by using the List Category shortcode.</p>
+                </div>
+            </div>
+            <!-- news content slider -->
+            <div class="news-slider">
+                <div>
+                    <div class="owl-carousel1 owl-carousel owl-theme">
+                        <div class="item">
+                            <div class="feeds">
+                                <img src="~/images/newsimg4.png" alt="newsimg4">
+                                <div class="mt-4">
+                                    <h6 class="fw-semibold">Life sciences offer an alternative future for some of London’s offices</h6>
+                                    <p class="subpara">
+                                        In what will be seen as a boost for the UK life sciences industry, a flurry of
+                                        investors
+                                        are looking to create specialist sites in London
+                                    </p>
+                                    <button type="button" class="readmore">
+                                        Read more <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                 width="6" height="10" viewBox="0 0 6 10" fill="none">
+                                                <path d="M4.37755 4.9977L0.818506 1.21726C0.755942 1.15113 0.706293 1.0725 0.672414 0.985902C0.638535 0.8993 0.621094 0.806433 0.621094 0.712641C0.621094 0.61885 0.638535 0.525983 0.672414 0.439381C0.706293 0.35278 0.755942 0.274152 0.818506 0.208018C0.945249 0.0747484 1.11633 0 1.2946 0C1.47287 0 1.64395 0.0747484 1.77069 0.208018L5.80283 4.48969C5.92466 4.61971 5.99467 4.79463 5.9983 4.9781C6.00194 5.16156 5.93892 5.33946 5.82235 5.47481L1.77348 9.78993C1.71114 9.85639 1.6371 9.90915 1.55558 9.9452C1.47406 9.98124 1.38666 9.99986 1.29837 10C1.21008 10.0001 1.12263 9.98179 1.04101 9.946C0.959396 9.91021 0.885209 9.85768 0.822687 9.79141C0.760166 9.72514 0.710536 9.64643 0.676629 9.55978C0.642723 9.47312 0.625205 9.38021 0.625076 9.28636C0.624814 9.09681 0.695396 8.91491 0.821294 8.78068L4.37755 4.9977Z"
+                                                      fill="#002A7B" />
+                                            </svg>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="feeds">
+                                <img src="~/images/newsimg2.png" alt="newsimg2">
+                                <div class="mt-4">
+                                    <h6 class="fw-semibold">Life sciences offer an alternative future for some of London’s offices</h6>
+                                    <p class="subpara">
+                                        In what will be seen as a boost for the UK life sciences industry, a flurry of
+                                        investors
+                                        are looking to create specialist sites in London
+                                    </p>
+                                    <button type="button" class="readmore">
+                                        Read more <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                 width="6" height="10" viewBox="0 0 6 10" fill="none">
+                                                <path d="M4.37755 4.9977L0.818506 1.21726C0.755942 1.15113 0.706293 1.0725 0.672414 0.985902C0.638535 0.8993 0.621094 0.806433 0.621094 0.712641C0.621094 0.61885 0.638535 0.525983 0.672414 0.439381C0.706293 0.35278 0.755942 0.274152 0.818506 0.208018C0.945249 0.0747484 1.11633 0 1.2946 0C1.47287 0 1.64395 0.0747484 1.77069 0.208018L5.80283 4.48969C5.92466 4.61971 5.99467 4.79463 5.9983 4.9781C6.00194 5.16156 5.93892 5.33946 5.82235 5.47481L1.77348 9.78993C1.71114 9.85639 1.6371 9.90915 1.55558 9.9452C1.47406 9.98124 1.38666 9.99986 1.29837 10C1.21008 10.0001 1.12263 9.98179 1.04101 9.946C0.959396 9.91021 0.885209 9.85768 0.822687 9.79141C0.760166 9.72514 0.710536 9.64643 0.676629 9.55978C0.642723 9.47312 0.625205 9.38021 0.625076 9.28636C0.624814 9.09681 0.695396 8.91491 0.821294 8.78068L4.37755 4.9977Z"
+                                                      fill="#002A7B" />
+                                            </svg>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="feeds">
+                                <img src="~/images/newsimg1.png" alt="newsimg1">
+                                <div class="mt-4">
+                                    <h6 class="fw-semibold">Life sciences offer an alternative future for some of London’s offices</h6>
+                                    <p class="subpara">
+                                        In what will be seen as a boost for the UK life sciences industry, a flurry of
+                                        investors
+                                        are looking to create specialist sites in London
+                                    </p>
+                                    <button type="button" class="readmore">
+                                        Read more <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                 width="6" height="10" viewBox="0 0 6 10" fill="none">
+                                                <path d="M4.37755 4.9977L0.818506 1.21726C0.755942 1.15113 0.706293 1.0725 0.672414 0.985902C0.638535 0.8993 0.621094 0.806433 0.621094 0.712641C0.621094 0.61885 0.638535 0.525983 0.672414 0.439381C0.706293 0.35278 0.755942 0.274152 0.818506 0.208018C0.945249 0.0747484 1.11633 0 1.2946 0C1.47287 0 1.64395 0.0747484 1.77069 0.208018L5.80283 4.48969C5.92466 4.61971 5.99467 4.79463 5.9983 4.9781C6.00194 5.16156 5.93892 5.33946 5.82235 5.47481L1.77348 9.78993C1.71114 9.85639 1.6371 9.90915 1.55558 9.9452C1.47406 9.98124 1.38666 9.99986 1.29837 10C1.21008 10.0001 1.12263 9.98179 1.04101 9.946C0.959396 9.91021 0.885209 9.85768 0.822687 9.79141C0.760166 9.72514 0.710536 9.64643 0.676629 9.55978C0.642723 9.47312 0.625205 9.38021 0.625076 9.28636C0.624814 9.09681 0.695396 8.91491 0.821294 8.78068L4.37755 4.9977Z"
+                                                      fill="#002A7B" />
+                                            </svg>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="feeds">
+                                <img src="~/images/newsimg3.png" alt="newsimg3">
+                                <div class="mt-4">
+                                    <h6 class="fw-semibold">Life sciences offer an alternative future for some of London’s offices</h6>
+                                    <p class="subpara">
+                                        In what will be seen as a boost for the UK life sciences industry, a flurry of
+                                        investors
+                                        are looking to create specialist sites in London
+                                    </p>
+                                    <button type="button" class="readmore">
+                                        Read more <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                 width="6" height="10" viewBox="0 0 6 10" fill="none">
+                                                <path d="M4.37755 4.9977L0.818506 1.21726C0.755942 1.15113 0.706293 1.0725 0.672414 0.985902C0.638535 0.8993 0.621094 0.806433 0.621094 0.712641C0.621094 0.61885 0.638535 0.525983 0.672414 0.439381C0.706293 0.35278 0.755942 0.274152 0.818506 0.208018C0.945249 0.0747484 1.11633 0 1.2946 0C1.47287 0 1.64395 0.0747484 1.77069 0.208018L5.80283 4.48969C5.92466 4.61971 5.99467 4.79463 5.9983 4.9781C6.00194 5.16156 5.93892 5.33946 5.82235 5.47481L1.77348 9.78993C1.71114 9.85639 1.6371 9.90915 1.55558 9.9452C1.47406 9.98124 1.38666 9.99986 1.29837 10C1.21008 10.0001 1.12263 9.98179 1.04101 9.946C0.959396 9.91021 0.885209 9.85768 0.822687 9.79141C0.760166 9.72514 0.710536 9.64643 0.676629 9.55978C0.642723 9.47312 0.625205 9.38021 0.625076 9.28636C0.624814 9.09681 0.695396 8.91491 0.821294 8.78068L4.37755 4.9977Z"
+                                                      fill="#002A7B" />
+                                            </svg>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="feeds">
+                                <img src="~/images/newsimg4.png" alt="newsimg4">
+                                <div class="mt-4">
+                                    <h6 class="fw-semibold">Life sciences offer an alternative future for some of London’s offices</h6>
+                                    <p class="subpara">
+                                        In what will be seen as a boost for the UK life sciences industry, a flurry of
+                                        investors
+                                        are looking to create specialist sites in London
+                                    </p>
+                                    <button type="button" class="readmore">
+                                        Read more <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                 width="6" height="10" viewBox="0 0 6 10" fill="none">
+                                                <path d="M4.37755 4.9977L0.818506 1.21726C0.755942 1.15113 0.706293 1.0725 0.672414 0.985902C0.638535 0.8993 0.621094 0.806433 0.621094 0.712641C0.621094 0.61885 0.638535 0.525983 0.672414 0.439381C0.706293 0.35278 0.755942 0.274152 0.818506 0.208018C0.945249 0.0747484 1.11633 0 1.2946 0C1.47287 0 1.64395 0.0747484 1.77069 0.208018L5.80283 4.48969C5.92466 4.61971 5.99467 4.79463 5.9983 4.9781C6.00194 5.16156 5.93892 5.33946 5.82235 5.47481L1.77348 9.78993C1.71114 9.85639 1.6371 9.90915 1.55558 9.9452C1.47406 9.98124 1.38666 9.99986 1.29837 10C1.21008 10.0001 1.12263 9.98179 1.04101 9.946C0.959396 9.91021 0.885209 9.85768 0.822687 9.79141C0.760166 9.72514 0.710536 9.64643 0.676629 9.55978C0.642723 9.47312 0.625205 9.38021 0.625076 9.28636C0.624814 9.09681 0.695396 8.91491 0.821294 8.78068L4.37755 4.9977Z"
+                                                      fill="#002A7B" />
+                                            </svg>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="feeds">
+                                <img src="~/images/newsimg2.png" alt="newsimg2">
+                                <div class="mt-4">
+                                    <h6 class="fw-semibold">Life sciences offer an alternative future for some of London’s offices</h6>
+                                    <p class="subpara">
+                                        In what will be seen as a boost for the UK life sciences industry, a flurry of
+                                        investors
+                                        are looking to create specialist sites in London
+                                    </p>
+                                    <button type="button" class="readmore">
+                                        Read more <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                 width="6" height="10" viewBox="0 0 6 10" fill="none">
+                                                <path d="M4.37755 4.9977L0.818506 1.21726C0.755942 1.15113 0.706293 1.0725 0.672414 0.985902C0.638535 0.8993 0.621094 0.806433 0.621094 0.712641C0.621094 0.61885 0.638535 0.525983 0.672414 0.439381C0.706293 0.35278 0.755942 0.274152 0.818506 0.208018C0.945249 0.0747484 1.11633 0 1.2946 0C1.47287 0 1.64395 0.0747484 1.77069 0.208018L5.80283 4.48969C5.92466 4.61971 5.99467 4.79463 5.9983 4.9781C6.00194 5.16156 5.93892 5.33946 5.82235 5.47481L1.77348 9.78993C1.71114 9.85639 1.6371 9.90915 1.55558 9.9452C1.47406 9.98124 1.38666 9.99986 1.29837 10C1.21008 10.0001 1.12263 9.98179 1.04101 9.946C0.959396 9.91021 0.885209 9.85768 0.822687 9.79141C0.760166 9.72514 0.710536 9.64643 0.676629 9.55978C0.642723 9.47312 0.625205 9.38021 0.625076 9.28636C0.624814 9.09681 0.695396 8.91491 0.821294 8.78068L4.37755 4.9977Z"
+                                                      fill="#002A7B" />
+                                            </svg>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="feeds">
+                                <img src="~/images/newsimg1.png" alt="newsimg1">
+                                <div class="mt-4">
+                                    <h6 class="fw-semibold">Life sciences offer an alternative future for some of London’s offices</h6>
+                                    <p class="subpara">
+                                        In what will be seen as a boost for the UK life sciences industry, a flurry of
+                                        investors
+                                        are looking to create specialist sites in London
+                                    </p>
+                                    <button type="button" class="readmore">
+                                        Read more <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                 width="6" height="10" viewBox="0 0 6 10" fill="none">
+                                                <path d="M4.37755 4.9977L0.818506 1.21726C0.755942 1.15113 0.706293 1.0725 0.672414 0.985902C0.638535 0.8993 0.621094 0.806433 0.621094 0.712641C0.621094 0.61885 0.638535 0.525983 0.672414 0.439381C0.706293 0.35278 0.755942 0.274152 0.818506 0.208018C0.945249 0.0747484 1.11633 0 1.2946 0C1.47287 0 1.64395 0.0747484 1.77069 0.208018L5.80283 4.48969C5.92466 4.61971 5.99467 4.79463 5.9983 4.9781C6.00194 5.16156 5.93892 5.33946 5.82235 5.47481L1.77348 9.78993C1.71114 9.85639 1.6371 9.90915 1.55558 9.9452C1.47406 9.98124 1.38666 9.99986 1.29837 10C1.21008 10.0001 1.12263 9.98179 1.04101 9.946C0.959396 9.91021 0.885209 9.85768 0.822687 9.79141C0.760166 9.72514 0.710536 9.64643 0.676629 9.55978C0.642723 9.47312 0.625205 9.38021 0.625076 9.28636C0.624814 9.09681 0.695396 8.91491 0.821294 8.78068L4.37755 4.9977Z"
+                                                      fill="#002A7B" />
+                                            </svg>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonial section  -->
+    <div class="testimonial-div">
+        <div class="container-fluid container-px">
+            <div class="center-title">
+                <div class="row">
+                    <h2>What<span class="blue-primary"> Clients Say</span></h2>
+                    <p class="subpara">
+                        Publish the best of your client testimonials and let the world know what a <br>great agent
+                        or real estate agency you are. Testimonials build trust
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- owl carousel -->
+        <div class="owl-slider">
+            <div class="container-fluid container-px">
+                <div class="owl-carousel owl-theme">
+                    <div class="item">
+                        <div class="carousel-detail">
+                            <img src="~/images/img-2.png" alt="img-2" class="img-width">
+                            <p class="mt-2">
+                                Publish the best of your client testimonials and let the world know what a great agent or
+                                real estate
+                                agency you are. Testimonials build trust
+                            </p>
+                            <div class="line mx-auto"></div>
+                            <div class="fw-semibold fs-5">Lisa Simon</div>
+                            <small>Happy Seller</small>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="carousel-detail">
+                            <img src="~/images/img-3.png" alt="img-3" class="img-width">
+                            <p class="mt-2">
+                                Publish the best of your client testimonials and let the world know what a great agent or
+                                real estate
+                                agency you are. Testimonials build trust
+                            </p>
+                            <div class="line mx-auto"></div>
+                            <div class="fw-semibold fs-5">Edward Drew</div>
+                            <small>Happy Seller</small>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="carousel-detail">
+                            <img src="~/images/img-1.png" alt="img-1" class="img-width">
+                            <p class="mt-2">
+                                Publish the best of your client testimonials and let the world know what a great agent or
+                                real estate
+                                agency you are. Testimonials build trust
+                            </p>
+                            <div class="line mx-auto"></div>
+                            <div class="fw-semibold fs-5">Ed Simon</div>
+                            <small>Happy Seller</small>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="carousel-detail">
+                            <img src="~/images/img-2.png" alt="img-2" class="img-width">
+                            <p class="mt-2">
+                                Publish the best of your client testimonials and let the world know what a great agent or
+                                real estate
+                                agency you are. Testimonials build trust
+                            </p>
+                            <div class="line mx-auto"></div>
+                            <div class="fw-semibold fs-5">Anna Marry</div>
+                            <small>Happy Seller</small>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="carousel-detail">
+                            <img src="~/images/img-3.png" alt="img-3" class="img-width">
+                            <p class="mt-2">
+                                Publish the best of your client testimonials and let the world know what a great agent or
+                                real estate
+                                agency you are. Testimonials build trust
+                            </p>
+                            <div class="line mx-auto"></div>
+                            <div class="fw-semibold fs-5">Anna Simon</div>
+                            <small>Happy Seller</small>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="carousel-detail">
+                            <img src="~/images/img-1.png" alt="img-1" class="img-width">
+                            <p class="mt-2">
+                                Publish the best of your client testimonials and let the world know what a great agent or
+                                real estate
+                                agency you are. Testimonials build trust
+                            </p>
+                            <div class="line mx-auto"></div>
+                            <div class="fw-semibold fs-5">Edward Simon</div>
+                            <small>Happy Seller</small>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="carousel-detail">
+                            <img src="~/images/img-2.png" alt="img-2" class="img-width">
+                            <p class="mt-2">
+                                Publish the best of your client testimonials and let the world know what a great agent or
+                                real estate
+                                agency you are. Testimonials build trust
+                            </p>
+                            <div class="line mx-auto"></div>
+                            <div class="fw-semibold fs-5">Rita Ora</div>
+                            <small>Happy Seller</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>     
+
+
+        @*<div class="modal-dialog modal-dialog-centered" id="AllFilterModel">
+            <div class="modal-content br-32 border-0">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-semibold">All Filters</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btnAllFilterCancel"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xl-3 col-md-6 mb-2">
+                            <h5 class="blue-primary mb-3">Search Type</h5>
+                            <div class="property-type-ul" id="SearchType">
+                                <ul class="list-unstyled">
+                                    <li class="d-flex align-items-center">
+                                        <input type="checkbox" id="txtSelectAll2" value="0" class="me-4 filter-checkbox">Select All
+                                    </li>
+                                    <li>
+                                        <hr class="my-2">
+                                    </li>
+                                    <!--======try to check===-->
+                                    <li class="d-flex align-items-center">
+                                        <input type="checkbox" value="1" class="me-4 filter-checkbox" id="txtMultiFamily"><img src="~/Images/Multifamily.png" alt="Multifamily" class="me-2">Multifamily
+                                    </li>
+                                    <li>
+                                        <hr class="my-2">
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <input type="checkbox" value="2" class="me-4 filter-checkbox" name="PropTypes" id="txthouseicon"><img src="~/Images/houseicon.svg" alt="houseicon" class="me-2">1-4 Residential
+                                    </li>
+                                    <li>
+                                        <hr class="my-2">
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <input type="checkbox" value="3" class="me-4 filter-checkbox" name="PropTypes" id="txtoffice"><img src="~/Images/office-icon.svg" alt="office-icon" class="me-2">Office
+                                    </li>
+                                    <li>
+                                        <hr class="my-2">
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <input type="checkbox" value="4" class="me-4 filter-checkbox" name="PropTypes" id="txtIndustrial"><img src="~/Images/Industrial-icon.svg" alt="Industrial-icon" class="me-2">Industrial
+                                    </li>
+                                    <li>
+                                        <hr class="my-2">
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <input type="checkbox" value="5" class="me-4 filter-checkbox" name="PropTypes" id="txtretail"><img src="~/Images/retail.svg" alt="retail" class="me-2">Retail
+                                    </li>
+                                    <li>
+                                        <hr class="my-2">
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <input type="checkbox" value="6" class="me-4 filter-checkbox" name="PropTypes" id="txtshopping"><img src="~/Images/shopping.svg" alt="shopping" class="me-2">Shopping Center
+                                    </li>
+                                    <li>
+                                        <hr class="my-2">
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <input type="checkbox" value="7" class="me-4 filter-checkbox" name="PropTypes" id="txtSpeciality"><img src="~/Images/Speciality.svg" alt="Speciality" class="me-2">Specialty
+                                    </li>
+                                    <li>
+                                        <hr class="my-2">
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <input type="checkbox" value="8" class="me-4 filter-checkbox" name="PropTypes" id="txtHealth"><img src="~/Images/Health.svg" alt="Health" class="me-2">Healthcare
+                                    </li>
+                                    <li>
+                                        <hr class="my-2">
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <input type="checkbox" value="9" class="me-4 filter-checkbox" name="PropTypes" id="txtHospitality"><img src="~/Images/Hospitality.svg" alt="Hospitality" class="me-2">Hospitality
+                                    </li>
+                                    <li>
+                                        <hr class="my-2">
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <input type="checkbox" value="10" class="me-4 filter-checkbox" name="PropTypes" id="txtSports"><img src="~/Images/Sports.svg" alt="Sports" class="me-2">Sports &amp; Entertainment
+                                    </li>
+                                    <li>
+                                        <hr class="my-2">
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <input type="checkbox" value="11" class="me-4 filter-checkbox" name="PropTypes" id="txtLand"><img src="~/Images/Land.svg" alt="Land" class="me-2">Land
+                                    </li>
+                                    <li>
+                                        <hr class="my-2">
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <input type="checkbox" value="12" class="me-4 filter-checkbox" name="PropTypes" id="txtresidentialportfolio"><img src="~/Images/residentialportfolio.svg" alt="residentialportfolio" class="me-2">Residential
+                                        Portfolio
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 mb-2">
+                            <h5 class="blue-primary mb-3">Location</h5>
+                            <div class="">
+                                <div class="mb-3">
+                                    <label class="form-label" for="selectcountry">Country</label>
+                                    <select class="form-select mb-3" aria-label="Default select example" id="selectcountry" value="3">
+                                        <option selected>Select</option>
+                                        <!--<option value="1">Canada</option>
+                                        <option value="2">United Kingdom</option>-->
+                                        <option value="3" selected="selected">USA</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="regionName">State</label>
+                                    <!--<input type="text" placeholder="All Region" id="regionName" class="input-field">-->
+                                    <!--<label for="stateField" class="form-label">State</label>-->
+                                    <select class="form-select" aria-label="Default select example" id="regionName" placeholder="SelectState">
+                                        <option value="0" selected>Select Region</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="marketName">City</label>
+                                    <input type="text" placeholder="City" id="marketName" class="input-field">
+                                </div>
+                                <!--<div class="mb-3">
+                                <label class="form-label" for="submarketName">Submarket</label>
+                                <input type="text" placeholder="All Submarket" id="submarketName" class="input-field">
+                                </div>
+                                <div class="mb-3">
+                                <label for="countyName" class="form-label">County</label>
+                                <input type="text" placeholder="County" id="countyName" class="input-field">
+                                </div>-->
+                                <div class="mb-3">
+                                    <label class="form-label" for="submarketName">Submarket</label>
+                                    <select class="form-select" id="ddlSubMarket">
+                                        <option>Select Submarket</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="countyName" class="form-label">County</label>
+                                    <select class="form-select" id="ddlCounty">
+                                        <option>Select County</option>
+                                    </select>
+                                </div>
+                                <!--<div class="mb-3">
+                                <label for="cityName" class="form-label">City</label>
+                                <input type="text" placeholder="City" id="cityName" class="input-field">
+                                </div>-->
+                                <div class="mb-3">
+                                    <label for="zipName" class="form-label">Zip Code</label>
+                                    <input type="number" placeholder="Zip Code" id="zipName" class="input-field">
+                                </div>
+                                <hr>
+                                <h5 class="blue-primary mb-0">Due Diligence Documents Available</h5>
+                                <div id="txtDueDiligenceDocument">
+                                    <div class="d-flex mt-3 flexcolumn1366 justify-content-between">
+                                        <div class="doc_one d-flex align-items-center">
+                                            <input type="checkbox" class="me-2 filter-checkbox ddDocumrnt" id="txtAppraisal" value="1">
+                                            Appraisal
+                                        </div>
+                                        <div class="doc_one d-flex align-items-center">
+                                            <input type="checkbox" class="me-2 filter-checkbox ddDocumrnt" id="txtSurvey" value="2">
+                                            Survey
+                                        </div>
+                                        <div class="doc_one d-flex align-items-center">
+                                            <input type="checkbox" class="me-2 filter-checkbox ddDocumrnt" id="txtEnvironmental" value="3">
+                                            Environmental
+                                        </div>
+                                    </div>
+                                    <div class="d-flex mt-xxl-2 mt-xl-0 mt-md-0 mt-sm-0 justify-content-between">
+
+                                        <div class="doc_one d-flex align-items-center">
+                                            <input type="checkbox" class="me-2 filter-checkbox ddDocumrnt" id="txtInspection" value="4">
+                                            Inspection
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xl-6 mb-2">
+                            <h5 class="mb-3 blue-primary">Property</h5>
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <div class="mb-3">
+                                        <label for="keywordId" class="form-label">Keyword</label>
+                                        <input type="text" placeholder="Keyword" id="keywordId" class="input-field cstm">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Price</label>
+                                        <div class="d-flex align-items-center">
+                                            <input type="text" id="Af_minPrice" placeholder="Min $" class="input-field number7"> <span class="mx-2">to</span><input type="text" id="Af_maxPrice" placeholder="Max $" class="input-field number8">
+                                        </div>
+                                        <div class="mt-2 mb-3 price-radios">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input txtUnits" type="radio" name="inlineRadioOptions" id="totalradio"
+                                                       value="1" checked>
+                                                <label class="form-check-label" for="totalradio">Total $</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input txtUnits" type="radio" name="inlineRadioOptions" id="sfFieldradio"
+                                                       value="2">
+                                                <label class="form-check-label" for="sfFieldradio">$/SF</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input txtUnits" type="radio" name="inlineRadioOptions" id="acrefield"
+                                                       value="3">
+                                                <label class="form-check-label" for="acrefield">$/Acre</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input txtUnits" type="radio" name="inlineRadioOptions" id="unitRadio"
+                                                       value="4">
+                                                <label class="form-check-label" for="unitRadio">$/Unit</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Building Size</label>
+                                        <div class="d-flex align-items-center">
+                                            <input type="text" id="Af_BuildingMinSF" placeholder="Min SF" class="input-field number9"> <span class="mx-2">to</span><input type="text" id="Af_BuildingMaxSF" placeholder="Max SF" class="input-field number10">
+                                        </div>
+                                        <div class="mt-2 price-radios">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input calculations" type="radio" name="inlineRadioOptions1" id="squareFeetId"
+                                                       value="option1" checked>
+                                                <label class="form-check-label" for="squareFeetId">Square Feet</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input calculations" type="radio" name="inlineRadioOptions1" id="squareMeterRadio"
+                                                       value="option2">
+                                                <label class="form-check-label" for="squareMeterRadio">Square Meters</label>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="mt-2 price-radios">
+                                        <div class="btn-group w-100" role="group" aria-label="Basic radio toggle button group">
+                                        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" checked>
+                                        <label class="btn btn-outline-primary" for="btnradio1">Square Feet</label>
+                                        <input type="radio" class="btn-check" name="btnradio" id="btnradio2">
+                                        <label class="btn btn-outline-primary" for="btnradio2">Square Meters</label>
+                                        </div>
+                                        </div> -->
+                                        <small class="smalltext mb-3">Total size of building in which space is available for lease</small>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Land Size</label>
+                                        <div class="d-flex align-items-center">
+                                            <input type="text" id="Af_LandMinAcres" placeholder="Min Acres" class="input-field number11"> <span class="mx-2">to</span><input type="text" id="Af_LandMaxAcres" placeholder="Max Acres" class="input-field number12">
+                                        </div>
+                                        <div class="mt-2 mb-3 price-radios">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input LandMInMaxSF" type="radio" name="inlineRadioOptions2" id="acresId"
+                                                       value="1" checked>
+                                                <label class="form-check-label" for="acresId">Acres</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input LandMInMaxSF" type="radio" name="inlineRadioOptions2" id="sfRadio"
+                                                       value="2" checked>
+                                                <label class="form-check-label" for="sfRadio">SF</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input LandMInMaxSF" type="radio" name="inlineRadioOptions2" id="hectaresRadio"
+                                                       value="3">
+                                                <label class="form-check-label" for="hectaresRadio">Hectares</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input LandMInMaxSF" type="radio" name="inlineRadioOptions2" id="metersquareRadio"
+                                                       value="4">
+                                                <label class="form-check-label" for="metersquareRadio">m<sup>2</sup></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Units</label>
+                                        <div class="d-flex align-items-center">
+                                            <input type="text" id="Af_UnitBedsMin" placeholder="Min" class="input-field number13"> <span class="mx-2">to</span><input type="text" id="Af_UnitBedsMax" placeholder="Max" class="input-field number14">
+                                        </div>
+                                        <small class="smalltext">Multifamily, Hospitality and Senior Housing only</small>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Year Built</label>
+                                        <div class="d-flex align-items-center">
+                                            <input type="text" id="Af_YearBuiltMin" placeholder="Min" class="input-field"> <span class="mx-2">to</span><input type="text" id="Af_YearBuiltMax" placeholder="Max" class="input-field">
+                                        </div>
+                                    </div>
+                                    <!--<div class="mb-3">
+                                    <label for="keywordId" class="form-label">Keyword</label>
+                                    <input type="text" placeholder="Keyword" id="keywordId" class="input-field">
+                                    </div>-->
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="mb-3">
+                                        <label for="dateId" class="form-label">Date Entered</label>
+                                        <!--<input type="text" placeholder="All Dates" id="dateId" class="input-field">-->
+                                        <!-- ================================================================ -->
+                                        <select class="form-select mb-3" aria-label="Default select example" id="dateId">
+                                            <option selected value="0">All Dates</option>
+                                            <option value="1">Within the last 24 hours</option>
+                                            <option value="2">Within the last 3 days</option>
+                                            <option value="3">Within the last week</option>
+                                            <option value="4">Within the last 2 weeks</option>
+                                            <option value="5">Within the last month</option>
+                                            <option value="6">Within the last 3 months</option>
+                                            <option value="7">Within the last year</option>
+                                        </select>
+                                        <!-- ================================================================ -->
+                                        <div class="input-group d-none custom_mb_3" id="txtCustomDiv">
+                                            <input type="text" class="form-control custom_Date" id="date-range" placeholder="Select Date Range">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">
+                                                    <i class="fa fa-calendar"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="mt-2 price-radios">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="timePeriodId"
+                                                       value="option1" checked>
+                                                <label class="form-check-label" for="timePeriodId">Time Period</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input cstm_radio" type="radio" name="inlineRadioOptions3" id="customRadio"
+                                                       value="option2">
+                                                <label class="form-check-label" for="customRadio">Custom</label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="reidyId" class="form-label">Reidy ID</label>
+                                        <input type="text" placeholder="Reidy ID" id="reidyId" class="input-field">
+                                    </div>
+                                    <hr>
+                                    <h5 class="blue-primary mb-3">Loan Type Filters</h5>
+                                    <!--<div class="mb-3">
+                                    <label for="termField" class="form-label">Term</label>
+                                    <input type="text" placeholder="Term" id="termField" class="input-field">
+                                    </div>-->
+                                    <!-- ================================================================ -->
+                                    <div class="mb-3">
+                                        <label for="termField" class="form-label">Terms</label>
+                                        <!-- <input type="text" placeholder="Term" id="termField" class="input-field"> -->
+                                        <div class="dropdown multi-dropdown">
+                                            <button class="form-select dropdown-toggle" type="button" id="multiSelectDropdown"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                Select
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="multiSelectDropdown">
+                                                <li class="ms-2">
+                                                    <label>
+                                                        <input type="checkbox" value="Interest Only" class="cstm">
+                                                        Interest Only
+                                                    </label>
+                                                </li>
+                                                <li class="ms-2">
+                                                    <label>
+                                                        <input type="checkbox" value="0-3 years" class="cstm">
+                                                        0-3 years
+                                                    </label>
+                                                </li>
+                                                <li class="ms-2">
+                                                    <label>
+                                                        <input type="checkbox" value="4-5 years" class="cstm">
+                                                        4-5 years
+                                                    </label>
+                                                </li>
+                                                <li class="ms-2">
+                                                    <label>
+                                                        <input type="checkbox" value="5-7 years" class="cstm">
+                                                        6-7 years
+                                                    </label>
+                                                </li>
+                                                <li class="ms-2">
+                                                    <label>
+                                                        <input type="checkbox" value="8-10 years" class="cstm">
+                                                        8-10 years
+                                                    </label>
+                                                </li>
+                                                <li class="ms-2">
+                                                    <label>
+                                                        <input type="checkbox" value="11-20 years" class="cstm">
+                                                        11-20 years
+                                                    </label>
+                                                </li>
+                                                <li class="ms-2">
+                                                    <label>
+                                                        <input type="checkbox" value="21-30 years" class="cstm">
+                                                        21-30 years
+                                                    </label>
+                                                </li>
+                                                <li class="ms-2">
+                                                    <label>
+                                                        <input type="checkbox" value="31+ years" class="cstm">
+                                                        31+ years
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- ================================================================ -->
+
+
+                                    <div class="mb-3">
+                                        <label class="form-label" for="selectprograms">Program Type</label>
+                                        <select class="form-select mb-3" aria-label="Default select example" id="selectprograms">
+                                            <option selected>Select</option>
+                                            <option value="1">Conventional Loan</option>
+                                            <option value="2">DSCR Loan</option>
+                                            <option value="3">Hard Money Loan</option>
+                                            <option value="4">Hybrid Loan</option>
+                                            <option value="5">Non - QM Loan</option>
+                                            <option value="6">Private Lender Loan</option>
+                                            <option value="7">Seller Financing</option>
+                                            <option value="8">Subject-to Assumption</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Interest Rate Range</label>
+                                        <div class="d-flex align-items-center">
+                                            <input type="text" placeholder="Min" class="input-field" id="interestMin"> <span class="mx-2">to</span><input type="text" placeholder="Max" class="input-field" id="interestMax">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Funds to Close</label>
+                                        <div class="d-flex align-items-center">
+                                            <input type="text" placeholder="Min" class="input-field" id="txtminFtC"> <span class="mx-2">to</span><input type="text" placeholder="Max" class="input-field" id="txtmaxFtC">
+                                        </div>
+                                    </div>
+                                    <!--<div class="mb-3">
+                                    <label class="form-label">Closing Cost Range</label>
+                                    <div class="d-flex align-items-center">
+                                    <input type="text" placeholder="Min" class="input-field" id="closingCostMin"> <span class="mx-2">to</span><input type="text" placeholder="Max" class="input-field" id="closingCostMax">
+                                    </div>
+                                    </div>-->
+                                </div>
+                            </div>
+                            <div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer mb-0">
+                        <button type="button" class="btn-cancel btn-pbr" 
+                        
+                        id="btnClear">Clear</button>
+        <!--data-bs-dismiss="modal"-->
+                        <button type="button" class="btn-sign btn-pbr" id="btnSearch" data-bs-dismiss="modal">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- Filters Modal Popup End-->*@
+</body>
+</html>
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js" defer></script>
+<script src="~/js/jquery-3.7.1.js"></script>
+<!--<script src="~/js/home.js"></script>
+<script src="~/js/index.js"></script>-->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+
+

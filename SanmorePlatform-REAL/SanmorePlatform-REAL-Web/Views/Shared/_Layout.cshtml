@@ -1,0 +1,1167 @@
+﻿@{
+    var controller = ViewContext.RouteData.Values["Controller"]?.ToString();
+    var action = ViewContext.RouteData.Values["Action"]?.ToString();
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-css/1.4.6/select2-bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <!------- Font awesome link------>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Links -->
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.css">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/layout.css">
+    <link rel="stylesheet" href="~/css/responsive.css">
+    <link rel="stylesheet" href="~/css/toastr.css">
+
+    <link rel="stylesheet"
+          href="/css/styleSlider.css">
+
+</head>
+<body id="bodyElement">
+
+    @*<!--Filter-->
+
+    <!-- Filters Modal Popup Start-->
+        <div class="modal popup" tabindex="-1" id="FiltersId99">
+
+        <div style="max-width: 885px;margin-left:auto;margin-right:auto;" class="modal-dialog modal-dialog-centered" id="AllFilterModel">
+            <div style="border-radius: 10px;" class="modal-content br-32 border-0 filterHeight">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-semibold"
+                        style="margin-left: auto; margin-right: auto; width: 167px;color: #000;text-align: center;font-family: 'Open Sans';font-size: 18px;font-style: normal;font-weight: 700;line-height: normal;">
+                        Filters
+                    </h5>
+                    <button style="float: right;Margin: 0px;" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btnAllFilterCancel"></button>
+                </div>
+                <div class="modal-body row">
+                    <div class="col-sm-12">
+                        <!--<div class="container">-->
+
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div style="height:250px;" class="row">
+
+                                    <div class="col-sm-4" style="margin-bottom:300px;display: inline-block;height:250px;z-index:0;overflow-y:auto;">
+
+                                        <h5 style="margin-left: auto; margin-right: auto; width: 174px; color: #000;font-family: Open Sans;font-size: 14px;font-style: normal;font-weight: 600;line-height: normal;">
+                                            Asset Type
+                                        </h5>
+                                        <div class="property-type-ul" id="SearchType">
+                                            <ul class="list-unstyled">
+                                                <li class="d-flex align-items-center">
+                                                    <input type="checkbox" id="txtSelectAll2" name="txtSelectAll2" value="0" class="me-4 filter-checkbox assetType">Select All
+                                                </li>
+                                                <li>
+                                                    <hr class="my-2">
+                                                </li>
+                                                <!--======try to check===-->
+                                                <li class="d-flex align-items-center">
+                                                    <input type="checkbox" value="1" class="me-4 filter-checkbox" id="txtMultiFamily" name="txtMultiFamily"><img src="~/Images/icons/multifamily.svg" alt="Multifamily" title="Multifamily" class="me-2">
+                                                    <span class="assetType"> Multifamily</span>
+                                                </li>
+                                                <li>
+                                                    <hr class="my-2">
+                                                </li>
+                                                <li class="d-flex align-items-center">
+                                                    <input type="checkbox" value="2" class="me-4 filter-checkbox" name="txthouseicon" id="txthouseicon"><img src="~/Images/icons/1_4_residential.svg" alt="1-4 Residential" title="1-4 Residential" class="me-2">
+                                                    <span class="assetType">1-4 Residential</span>
+                                                </li>
+                                                <li>
+                                                    <hr class="my-2">
+                                                </li>
+                                                <li class="d-flex align-items-center">
+                                                    <input type="checkbox" value="3" class="me-4 filter-checkbox" name="txtoffice" id="txtoffice"><img src="~/Images/icons/office.svg" alt="Office" title="Office" class="me-2">
+                                                    <span class="assetType">Office</span>
+                                                </li>
+                                                <li>
+                                                    <hr class="my-2">
+                                                </li>
+                                                <li class="d-flex align-items-center">
+                                                    <input type="checkbox" value="4" class="me-4 filter-checkbox" name="txtIndustrial" id="txtIndustrial"><img src="~/Images/icons/industrial.svg" alt="Industrial" title="Industrial" class="me-2">
+                                                    <span class="assetType">Industrial</span>
+                                                </li>
+                                                <li>
+                                                    <hr class="my-2">
+                                                </li>
+                                                <li class="d-flex align-items-center">
+                                                    <input type="checkbox" value="5" class="me-4 filter-checkbox" name="txtretail" id="txtretail"><img src="~/Images/icons/retail.svg" alt="Retail" title="Retail" class="me-2">
+                                                    <span class="assetType">Retail</span>
+                                                </li>
+                                                <li>
+                                                    <hr class="my-2">
+                                                </li>
+                                                <li class="d-flex align-items-center">
+                                                    <input type="checkbox" value="6" class="me-4 filter-checkbox" name="txtshopping" id="txtshopping"><img src="~/Images/icons/shopping_center.svg" alt="Shopping Center" title="Shopping Center" class="me-2">
+                                                    <span class="assetType">Shopping Center</span>
+                                                </li>
+                                                <li>
+                                                    <hr class="my-2">
+                                                </li>
+                                                <li class="d-flex align-items-center">
+                                                    <input type="checkbox" value="7" class="me-4 filter-checkbox" name="txtSpeciality" id="txtSpeciality"><img src="~/Images/icons/storage_units.svg" alt="Storage Units" title="Storage Units" class="me-2">
+                                                    <span class="assetType">Storage Units</span>
+                                                </li>
+                                                <li>
+                                                    <hr class="my-2">
+                                                </li>
+                                                <li class="d-flex align-items-center">
+                                                    <input type="checkbox" value="8" class="me-4 filter-checkbox" name="txtHealth" id="txtHealth"><img src="~/Images/icons/healthcare.svg" alt="Healthcare" title="Healthcare" class="me-2">
+                                                    <span class="assetType">Healthcare</span>
+                                                </li>
+                                                <li>
+                                                    <hr class="my-2">
+                                                </li>
+                                                <li class="d-flex align-items-center">
+                                                    <input type="checkbox" value="9" class="me-4 filter-checkbox" name="txtHospitality" id="txtHospitality"><img src="~/Images/icons/hospitality.svg" alt="Hospitality" title="Hospitality" class="me-2">
+                                                    <span class="assetType">Hospitality</span>
+                                                </li>
+                                                <li>
+                                                    <hr class="my-2">
+                                                </li>
+                                                <li class="d-flex align-items-center">
+                                                    <input type="checkbox" value="10" class="me-4 filter-checkbox" name="txtSports" id="txtSports"><img src="~/Images/icons/sports_entertainment.svg" alt="Sports & Entertainment" title="Sports & Entertainment" class="me-2">
+                                                    <span class="assetType">Sports &amp; Entertainment</span>
+                                                </li>
+                                                <li>
+                                                    <hr class="my-2">
+                                                </li>
+                                                <li class="d-flex align-items-center">
+                                                    <input type="checkbox" value="11" class="me-4 filter-checkbox" name="txtLand" id="txtLand"><img src="~/Images/icons/land.svg" alt="Land" title="Land" class="me-2">
+                                                    <span class="assetType">Land</span>
+                                                </li>
+                                                <li>
+                                                    <hr class="my-2">
+                                                </li>
+                                                <li class="d-flex align-items-center">
+                                                    <input type="checkbox" value="12" class="me-4 filter-checkbox" name="txtresidentialportfolio" id="txtresidentialportfolio"><img src="~/Images/icons/residential_portfolio.svg" alt="Residential Portfolio" title="Residential Portfolio" class="me-2">
+                                                    <span class="assetType">Residential Portfolio</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                    <div style="display: inline-block;height:250px;z-index:5;" class="col-sm-8">
+
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <span style="width: 106px; color: #000;font-family: Open Sans;font-size: 12px;font-style: normal;font-weight: 600;line-height: normal;">Reidy Id</span>
+                                                <br />
+                                                <input type="text" id="reidyId" name="reidyId" style="width: 207px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <span style="width: 118px; color: #000; font-family: Open Sans; font-size: 12px; font-style: normal; font-weight: 600; line-height: normal;">Date Entered</span>
+                                                <br /><input type="text" id="date-range1" name="date-range1" placeholder="mm/dd/yyyy" style="width: 110px; height: 31px; flex-shrink: 0; border-radius: 10px; border: 1px solid #F1F1F1; background: #FFF;" />
+                                                <span style="width: 10px; height: 2px; color: #8AAF92; font-size: 24px;">-</span>
+                                                <input type="text" id="date-range2" name="date-range2" placeholder="mm/dd/yyyy" style="width: 110px; height: 31px; flex-shrink: 0; border-radius: 10px; border: 1px solid #F1F1F1; background: #FFF;" />
+                                            </div>
+
+                                            <br /><br /><br /><br />
+
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <span style="width: 106px; color: #000; font-family: Open Sans; font-size: 12px; font-style: normal; font-weight: 600; line-height: normal;">Price Range</span>&nbsp;
+
+                                                    <div style="display: inline-block; width: 97px;height: 21px;flex-shrink: 0;border-radius: 3px;background: #F1F1F1;">
+                                                        <input class="txtUnits" style="width: 12px;height: 12px;flex-shrink: 0;fill: #FFF;stroke-width: 1px;stroke: #D9D9D9;" type="radio" name="inlineRadioOptions" id="totalradio"
+                                                               value="1" checked>&nbsp;
+                                                        <label style="width: 64px;color: #33583B;font-family: Open Sans;font-size: 12px;font-style: normal;font-weight: 400;line-height: normal;" for="totalradio">Total $</label>
+                                                    </div>
+                                                    &nbsp;
+                                                    <div style=" display: inline-block;width: 97px;height: 21px;flex-shrink: 0;border-radius: 3px;background: #F1F1F1;">
+                                                        <input class="txtUnits" style="width: 12px;height: 12px;flex-shrink: 0;fill: #FFF;stroke-width: 1px;stroke: #D9D9D9;" type="radio" name="inlineRadioOptions" id="sfFieldradio"
+                                                               value="2">&nbsp;
+                                                        <label style="width: 64px;color: #33583B;font-family: Open Sans;font-size: 12px;font-style: normal;font-weight: 400;line-height: normal;" for="sfFieldradio">$ / sq. ft.</label>
+                                                    </div>
+                                                    &nbsp;
+                                                    <div style="display: inline-block;width: 97px;height: 21px;flex-shrink: 0;border-radius: 3px;background: #F1F1F1;">
+                                                        <input class="txtUnits" style="width: 12px;height: 12px;flex-shrink: 0;fill: #FFF;stroke-width: 1px;stroke: #D9D9D9;" type="radio" name="inlineRadioOptions" id="acrefield"
+                                                               value="3">&nbsp;
+                                                        <label style="width: 64px;color: #33583B;font-family: Open Sans;font-size: 12px;font-style: normal;font-weight: 400;line-height: normal;" for="acrefield">$ / Acre</label>
+                                                    </div>
+                                                    &nbsp;
+                                                    <div style="display: inline-block;width: 97px;height: 21px;flex-shrink: 0;border-radius: 3px;background: #F1F1F1;">
+                                                        <input class="txtUnits" style="width: 12px;height: 12px;flex-shrink: 0;fill: #FFF;stroke-width: 1px;stroke: #D9D9D9;" type="radio" name="inlineRadioOptions" id="unitRadio"
+                                                               value="4">&nbsp;
+                                                        <label style="width: 64px;color: #33583B;font-family: Open Sans;font-size: 12px;font-style: normal;font-weight: 400;line-height: normal;" for="unitRadio">$ / Unit</label>
+                                                    </div>
+                                                    &nbsp;<br />
+                                                </div>
+                                            </div>
+                                            <!--Range input-->
+
+                                            <br /><br />
+
+                                            <div class="custom-wrapper">
+
+                                                <div class="price-input-container">
+                                                    <div class="price-input">
+
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+
+                                                                <div style="display: inline-block;" class="price-field">
+                                                                    <input type="number"
+                                                                           id="Af_minPrice"
+                                                                           name="Af_minPrice"
+                                                                           class="min-input"
+                                                                           value="0" placeholder="$ Minimum" style="width: 150px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                                                </div>
+
+
+                                                                <span style="display: inline-block;width: 10px; height: 2px; color: #8AAF92; font-size: 24px;">-</span>
+
+
+
+                                                                <div style="display: inline-block;" class="price-field">
+                                                                    <input type="number"
+                                                                           id="Af_maxPrice"
+                                                                           name="Af_maxPrice"
+                                                                           class="max-input"
+                                                                           value="10000000" placeholder="$ Maximum" style="display: inline-block;width: 150px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                                                </div>
+
+                                                            </div>
+
+
+                                                        </div>
+                                                        <div class="slider-container">
+                                                            <div class="price-slider">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Slider -->
+                                                    <div class="range-input">
+                                                        <input type="range"
+                                                               class="min-range"
+                                                               min="0"
+                                                               max="10000000"
+                                                               value="0"
+                                                               step="5">
+                                                        <input type="range"
+                                                               class="max-range"
+                                                               min="0"
+                                                               max="10000000"
+                                                               value="10000000"
+                                                               step="5">
+                                                    </div>
+                                                </div>
+                                                <!--<script src="/js/scriptSlider.js"></script>-->
+
+
+
+
+
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!--<div class="container">-->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div style="height:300px;" class="row">
+
+                                    <div style="margin-bottom:275px;display: inline-block;height:300px;z-index:100;" class="col-sm-4">
+
+                                        <span style="width: 106px;color: #000;font-family: Open Sans;font-size: 12px;font-style: normal;font-weight: 600;line-height: normal;">
+                                            Year Built
+                                        </span>
+                                        <br />
+                                        <input type="text" id="Af_YearBuiltMin" name="Af_YearBuiltMin" placeholder="Min" style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                        <span style="display: inline-block;width: 10px; height: 2px; color: #8AAF92; font-size: 24px;">-</span>
+                                        <input type="text" id="Af_YearBuiltMax" name="Af_YearBuiltMax" placeholder="Max" style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" /><br /><br />
+
+                                        <span style="width: 106px;color: #000;font-family: Open Sans;font-size: 12px;font-style: normal;font-weight: 600;line-height: normal;">
+                                            Building Size
+                                        </span>
+                                        <br />
+                                        <input type="text" id="Af_BuildingMinSF" name="Af_BuildingMinSF" placeholder="Min sq. ft." style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                        <span style="display: inline-block;width: 10px; height: 2px; color: #8AAF92; font-size: 24px;">-</span>
+                                        <input type="text" id="Af_BuildingMaxSF" name="Af_BuildingMaxSF" placeholder="Max sq. ft." style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" /><br /><br />
+
+                                        <span style="width: 106px;color: #000;font-family: Open Sans;font-size: 12px;font-style: normal;font-weight: 600;line-height: normal;">
+                                            Land Size
+                                        </span>
+                                        <br />
+                                        <input type="text" id="Af_LandMinAcres" name="Af_LandMinAcres" placeholder="Min acres" style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                        <span style="display: inline-block;width: 10px; height: 2px; color: #8AAF92; font-size: 24px;">-</span>
+                                        <input type="text" id="Af_LandMaxAcres" name="Af_LandMaxAcres" placeholder="Max acres" style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" /><br /><br />
+
+                                        <span style="width: 106px;color: #000;font-family: Open Sans;font-size: 12px;font-style: normal;font-weight: 600;line-height: normal;">
+                                            Units
+                                        </span><br />
+                                        <input type="text" id="Af_UnitBedsMin" name="Af_UnitBedsMin" placeholder="Min" style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                        <span style="display: inline-block;width: 10px; height: 2px; color: #8AAF92; font-size: 24px;">-</span>
+                                        <input type="text" id="Af_UnitBedsMax" name="Af_UnitBedsMax" placeholder="Max" style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" /><br /><br />
+
+                                    </div>
+
+                                    <div style="display: inline-block;height:300px;z-index:1;" class="col-sm-8">
+
+                                        <span style="width: 106px; color: #000;font-family: Open Sans;font-size: 12px;font-style: normal;font-weight: 600;line-height: normal;">
+                                            Loan Type Filters
+                                        </span>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <span style="width:40px;color: #000;font-family: Open Sans;
+                                      font-size: 12px;
+                                      font-style: normal;
+                                      font-weight: 400;
+                                      line-height: normal;">
+                                                    Terms
+                                                </span><br />
+
+
+                                                <!--<input style="width: 215px;height: 31px;flex-shrink: 0;border-radius: 10px;
+                                                     border: 1px solid #F1F1F1;
+                                                     background: #FFF;" />-->
+
+                                                <div class="dropdown multi-dropdown">
+                                                    <button class="form-select dropdown-toggle" type="button" id="multiSelectDropdown"
+                                                            data-bs-toggle="dropdown" aria-expanded="false"
+                                                            style="width: 215px;height: 40px;flex-shrink: 0;border-radius: 10px;
+                                       border: 1px solid #F1F1F1;
+                                       background: #FFF;">
+                                                        Select
+                                                    </button>
+                                                    <ul class="dropdown-menu" aria-labelledby="multiSelectDropdown">
+                                                        <li class="ms-2">
+                                                            <label>
+                                                                <input id="terms1" name="terms1" type="checkbox" value="Interest Only" class="cstm">
+                                                                Interest Only
+                                                            </label>
+                                                        </li>
+                                                        <li class="ms-2">
+                                                            <label>
+                                                                <input id="terms2" name="terms2" type="checkbox" value="0-3 years" class="cstm">
+                                                                0-3 years
+                                                            </label>
+                                                        </li>
+                                                        <li class="ms-2">
+                                                            <label>
+                                                                <input id="terms3" name="terms3" type="checkbox" value="4-5 years" class="cstm">
+                                                                4-5 years
+                                                            </label>
+                                                        </li>
+                                                        <li class="ms-2">
+                                                            <label>
+                                                                <input id="terms4" name="terms4" type="checkbox" value="5-7 years" class="cstm">
+                                                                6-7 years
+                                                            </label>
+                                                        </li>
+                                                        <li class="ms-2">
+                                                            <label>
+                                                                <input id="terms5" name="terms5" type="checkbox" value="8-10 years" class="cstm">
+                                                                8-10 years
+                                                            </label>
+                                                        </li>
+                                                        <li class="ms-2">
+                                                            <label>
+                                                                <input id="terms6" name="terms6" type="checkbox" value="11-20 years" class="cstm">
+                                                                11-20 years
+                                                            </label>
+                                                        </li>
+                                                        <li class="ms-2">
+                                                            <label>
+                                                                <input id="terms7" name="terms7" type="checkbox" value="21-30 years" class="cstm">
+                                                                21-30 years
+                                                            </label>
+                                                        </li>
+                                                        <li class="ms-2">
+                                                            <label>
+                                                                <input id="terms8" name="terms8" type="checkbox" value="31+ years" class="cstm">
+                                                                31+ years
+                                                            </label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+
+
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <span style="width: 117px;color: #000;font-family: Open Sans;
+                                      font-size: 12px;
+                                      font-style: normal;
+                                      font-weight: 400;
+                                      line-height: normal;">
+                                                    Interest Rate Range
+                                                </span><br />
+                                                <input type="text" id="interestMin" name="interestMin" placeholder="Min" style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                                <span style="display: inline-block;width: 10px; height: 2px; color: #8AAF92; font-size: 24px;">-</span>
+                                                <input type="text" id="interestMax" name="interestMax" placeholder="Max" style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                            </div>
+                                        </div>
+                                        <br /><br />
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <span style="width: 86px;color: #000;font-family: Open Sans;
+                                      font-size: 12px;
+                                      font-style: normal;
+                                      font-weight: 400;
+                                      line-height: normal;">
+                                                    Program Types
+                                                </span><br />
+
+
+                                                <!--<input style="width: 215px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />-->
+
+
+                                                <select class="form-select mb-3" aria-label="Default select example" id="selectprograms" name="selectprograms"
+                                                        style="width: 215px;height: 40px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;">
+                                                    <option value="0" selected>Select</option>
+                                                    <option value="1">Conventional Loan</option>
+                                                    <option value="2">DSCR Loan</option>
+                                                    <option value="3">Hard Money Loan</option>
+                                                    <option value="4">Hybrid Loan</option>
+                                                    <option value="5">Non - QM Loan</option>
+                                                    <option value="6">Private Lender Loan</option>
+                                                    <option value="7">Seller Financing</option>
+                                                    <option value="8">Subject-to Assumption</option>
+                                                </select>
+
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <span style="width: 117px;color: #000;font-family: Open Sans;
+                                      font-size: 12px;
+                                      font-style: normal;
+                                      font-weight: 400;
+                                      line-height: normal;">
+                                                    Funds to Close
+                                                </span><br />
+                                                <input type="text" id="txtminFtC" name="txtminFtC" placeholder="Min" style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                                <span style="display: inline-block;width: 10px; height: 2px; color: #8AAF92; font-size: 24px;">-</span>
+                                                <input type="text" id="txtmaxFtC" name="txtmaxFtC" placeholder="Max" style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                            </div>
+                                        </div>
+                                        <br /><br />
+                                        <div id="txtDueDiligenceDocument" class="row">
+                                            <div style="margin-bottom: 15px;" class="col-sm-12">
+                                                <span style="width: 162px;color: #000;font-family: Open Sans;
+                                      font-size: 12px;
+                                      font-style: normal;
+                                      font-weight: 600;
+                                      line-height: normal;">
+                                                    Due Dilegence Documents
+                                                </span><br />
+
+                                                <div style="display: inline-block;width: 99px;height: 26px;flex-shrink: 0;border-radius: 5px;border: 1px solid #D9D9D9;">
+                                                    <input type="checkbox" id="txtAppraisal" name="txtAppraisal" value="1" style="width: 16px;height: 16px;flex-shrink: 0;border: 2px solid #8AAF92;" />
+                                                    <label style="width:56px;color: #000;font-family: Open Sans;
+                                       font-size: 12px;
+                                       font-style: normal;
+                                       font-weight: 400;
+                                       line-height: normal;" for="txtAppraisal">Appraisal</label>
+                                                </div>
+
+                                                <div style="display: inline-block;width: 130px;height: 26px;flex-shrink: 0;border-radius: 5px;border: 1px solid #D9D9D9;">
+                                                    <input type="checkbox" id="txtEnvironmental" name="txtEnvironmental" value="3" style="width: 16px;height: 16px;flex-shrink: 0;border: 2px solid #8AAF92;" />
+                                                    <label style="width:84px;color: #000;font-family: Open Sans;
+                                       font-size: 12px;
+                                       font-style: normal;
+                                       font-weight: 400;
+                                       line-height: normal;" for="txtEnvironmental">Environmental</label>
+                                                </div>
+
+                                                <div style="display: inline-block;width: 89px;height: 26px;flex-shrink: 0;border-radius: 5px;border: 1px solid #D9D9D9;">
+                                                    <input type="checkbox" id="txtSurvey" name="txtSurvey" value="2" style="width: 16px;height: 16px;flex-shrink: 0;border: 2px solid #8AAF92;" />
+                                                    <label style="width:41px;color: #000;font-family: Open Sans;
+                                       font-size: 12px;
+                                       font-style: normal;
+                                       font-weight: 400;
+                                       line-height: normal;" for="txtSurvey">Survey</label>
+                                                </div>
+
+                                                <div style="display: inline-block;width: 113px;height: 26px;flex-shrink: 0;border-radius: 5px;border: 1px solid #D9D9D9;">
+                                                    <input type="checkbox" id="txtInspection" name="txtInspection" value="4" style="width: 16px;height: 16px;flex-shrink: 0;border: 2px solid #8AAF92;" />
+                                                    <label style="width:59px;color: #000;font-family: Open Sans;
+                                       font-size: 12px;
+                                       font-style: normal;
+                                       font-weight: 400;
+                                       line-height: normal;" for="txtInspection">Inspection</label>
+                                                </div>
+
+                                            </div>
+
+
+
+
+                                            <button style="margin-left:auto;margin-right:auto; width: 100px;" type="button" class="btn-cancel btn-pbr"
+                                                    id="btnClear2">
+                                                Clear
+                                            </button>
+                                            <button style="margin-left:auto;margin-right:auto; width: 100px;" type="submit" class="btn-sign btn-pbr" id="btnSearch2" name="btnSearch" value="btnSearch2" data-bs-dismiss="modal">Search</button>
+
+
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+                        </div>
+                        <!--</div>-->
+                        <!--</div>-->
+
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </div>*@
+
+
+    <script type="text/javascript">
+
+        //alert("HelloAgain");
+        var myUrl = new URL(window.location.href).origin;
+        //alert(myUrl);
+        var compUrl = "https://localhost:7220"
+        //alert(window.location.href);
+
+        var left = window.location.href.split('?')[0];
+        left = left + "/";
+
+        if (myUrl == compUrl && myUrl.length == (window.location.href.length - 1)) {
+            //alert("Hello");
+            var eleFilter = document.getElementById("FiltersId99");
+            //alert(eleFilter);
+            if (eleFilter) {
+                eleFilter.remove();
+            }
+
+        }
+        else if (myUrl + "/Home/PropertyDetails/" == left) {
+            //alert(myUrl + "/Home/PropertyDetails/");
+            var eleFilter = document.getElementById("FiltersId99");
+            if (eleFilter) {
+                eleFilter.remove();
+            }
+        }
+
+    </script>
+    <!--Filter end-->
+
+    <div class="container-fluid">
+        <header id="contHeader" class="content-header">
+            <div class="header-logo">
+                <img onclick="gotohome();" src="~/images/icons/logo.svg" alt="REIDY" />
+            </div>
+            <div class="header-button">
+                @if (Context.Session.GetString("UserName") == null)
+                {
+                    <button type="button" onclick="myclearData1()" class="btn btn-outline-primary small-d-none px-3" id="idLoginForm" data-bs-toggle="modal" data-bs-target="#SignInId2">
+                        Log in
+                    </button>
+                    <button type="button" onclick="myclearData()" class="btn btn-primary small-d-none px-3" data-bs-toggle="modal" data-bs-target="#SignUpId">
+                        Sign up
+                    </button>
+                }
+                else
+                {
+                    <div class="dropdown">
+                        <div class="dropdown-toggle profilebtn btn btn-outline-primary" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="~/images/icons/user-profile.svg" alt="Profile" />
+                        </div>
+                        <ul class="dropdown-menu px-3">
+                            <li>
+                                @{
+                                    if (Context.Session.GetString("roleType") == "BasicUser")
+                                    {
+                                            <a class="dropdown-item text-primary" asp-controller="Account" asp-action="BasicUserProfile" asp-route-id="@Context.Session.GetString("Id")">
+                                                <img src="~/images/icons/user-profile.svg" alt="Profile" />
+                                                @Context.Session.GetString("UserName")
+                                            </a>
+                                    }
+                                    else if (Context.Session.GetString("roleType") == "Broker")
+                                    {
+                                            <a class="dropdown-item text-primary" asp-controller="Broker" asp-action="BrokerProfile" asp-route-id="@Context.Session.GetString("Id")">
+                                                <img src="~/images/icons/user-profile.svg" alt="Profile" />
+                                                @Context.Session.GetString("UserName")
+                                            </a>
+                                    }
+                                    else if (Context.Session.GetString("roleType") == "Lender" || Context.Session.GetString("roleType") == "TransactionCoordinator")
+                                    {
+                                            <a class="dropdown-item text-primary" asp-controller="Lender" asp-action="LenderProfile" asp-route-id="@Context.Session.GetString("Id")">
+                                                <img src="~/images/icons/user-profile.svg" alt="Profile" />
+                                                @Context.Session.GetString("UserName")
+                                            </a>
+                                    }
+                                    else if (Context.Session.GetString("roleType") == "FastTrackBuyer")
+                                    {
+                                            <a class="dropdown-item text-primary" asp-controller="Buyer" asp-action="BuyerRegistration" asp-route-id="@Context.Session.GetString("Id")">
+                                                <img src="~/images/icons/user-profile.svg" alt="Profile" />
+                                                @Context.Session.GetString("UserName")
+                                            </a>
+                                    }
+                                }
+                            </li>
+                            <li class="dropdown-divider mb-1"></li>
+                            @if (Context.Session.GetString("roleIsTransactionCoordinator") == "True")
+                            {
+                                <li>
+                                    <div>@Context.Session.GetString("UserName")</div>
+                                    @if (Context.Session.GetString("roleIsTransactionCoordinator") == "True")
+                                    {
+                                        <div class="fs-small blue-primary">Transaction Coordinator</div>
+                                    }
+                                    else
+                                    {
+                                        <div class="fs-small blue-primary">@Context.Session.GetString("roleType")</div>
+                                    }
+                                </li>
+                                <li class="dropdown-divider mb-1"></li>
+                            }
+                            @if (Context.Session.GetString("roleIsBasicUser") == "True" && Context.Session.GetString("roleIsBroker") == "False" && Context.Session.GetString("roleIsLender") == "False")
+                            {
+                                <li><a class="dropdown-item" href="/Broker/BrokerSignUp/@Context.Session.GetString("Id")">Become a Broker</a></li>
+                                <li class="dropdown-divider mb-1"></li>
+                                <li><a class="dropdown-item" href="/Lender/LenderSignUp/@Context.Session.GetString("Id")">Become a Lender</a></li>
+                                <li class="dropdown-divider mb-1"></li>
+                                <li><a class="dropdown-item" href="/Buyer/BuyerRegistration/@Context.Session.GetString("Id")">Become a FastTrack Buyer</a></li>
+                                <li class="dropdown-divider mb-1"></li>
+                            }
+                            @if (Context.Session.GetString("roleIsBasicUser") == "True" && Context.Session.GetString("roleIsBroker") == "True" && Context.Session.GetString("roleIsLender") == "False" && Context.Session.GetString("roleIsFastTrackBuyer") == "False")
+                            {
+                                <li><a class="dropdown-item" href="/Buyer/BuyerRegistration/@Context.Session.GetString("Id")">Become a FastTrack Buyer</a></li>
+                                <li class="dropdown-divider mb-1"></li>
+                                <li><a class="dropdown-item" href="/Lender/LenderSignUp/@Context.Session.GetString("Id")">Become a Lender</a></li>
+                                <li class="dropdown-divider mb-1"></li>
+                            }
+                            @if (Context.Session.GetString("roleIsBasicUser") == "True" && Context.Session.GetString("roleIsBroker") == "False" && Context.Session.GetString("roleIsLender") == "True" && Context.Session.GetString("roleIsFastTrackBuyer") == "False")
+                            {
+                                <li><a class="dropdown-item" href="/Buyer/BuyerRegistration/@Context.Session.GetString("Id")">Become a FastTrack Buyer</a></li>
+                                <li class="dropdown-divider mb-1"></li>
+                                <li><a class="dropdown-item" href="/Broker/BrokerSignUp/@Context.Session.GetString("Id")">Become a Broker</a></li>
+                                <li class="dropdown-divider mb-1"></li>
+                            }
+                            @if (Context.Session.GetString("roleIsBasicUser") == "True" && Context.Session.GetString("roleIsBroker") == "True" && Context.Session.GetString("roleIsLender") == "True" && Context.Session.GetString("roleIsTransactionCoordinator") == "False" && Context.Session.GetString("roleIsFastTrackBuyer") == "False")
+                            {
+                                <li><a class="dropdown-item" href="#">Swith profile</a></li>
+                                <li class="dropdown-divider mb-1"></li>
+                                <li><a class="dropdown-item" href="/Buyer/BuyerRegistration/@Context.Session.GetString("Id")">Become a FastTrack Buyer</a></li>
+                                <li class="dropdown-divider mb-1"></li>
+                            }
+                            <li><a class="dropdown-item red-txt" onclick="performLogout()" style="cursor:pointer">Sign Out</a></li>
+                        </ul>
+                    </div>
+                }
+                <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#rightModal">
+                    <img src="~/images/icons/menu-bar.svg" />
+                </button>
+            </div>
+        </header>
+        <section class="content-body">
+            @RenderBody()
+        </section>
+        <footer class="content-footer">
+            <div class="row menu-block">
+                <div class="footer-block col-3">
+                    <strong class="footer-title">Resources</strong>
+                    <a class="footer-menu" href="javascript:;">FAQs</a>
+                    <a class="footer-menu" href="javascript:;">Real estate Dictionary</a>
+                    <a class="footer-menu" href="javascript:;">Site map</a>
+                    <a class="footer-menu" href="javascript:;">Transparency</a>
+                </div>
+                <div class="footer-block col-3">
+                    <strong class="footer-title">Features</strong>
+                    <a class="footer-menu" href="javascript:;">FastTrack Buyer</a>
+                    <a class="footer-menu" href="javascript:;">Partner Matching</a>
+                    <a class="footer-menu" href="javascript:;">Submit Instant loan</a>
+                    <a class="footer-menu" href="javascript:;">Browse lending products</a>
+                </div>
+                <div class="footer-block col-2">
+                    <strong class="footer-title">Company</strong>
+                    <a class="footer-menu" href="javascript:;">Who are we?</a>
+                    <a class="footer-menu" href="javascript:;">Careers</a>
+                    <a class="footer-menu" href="javascript:;">Investors</a>
+                    <a class="footer-menu" href="javascript:;">Events</a>
+                </div>
+                <div class="footer-block col-4">
+                    <strong class="footer-title">Contact Us</strong>
+                    <a class="footer-menu" href="javascript:;">1801 Main St. #900, Houston, Texas 77002</a>
+                    <a class="footer-menu" href="javascript:;">(713) 480-0002</a>
+                    <strong class="footer-title">Reidy on the go</strong>
+                    <div class="footer-social">
+                        <div class="store-apple">
+                            <img src="~/images/icons/apple.svg" alt="App Store" />
+                            <div class="store-desc">
+                                Download on the
+                                <strong>App Store</strong>
+                            </div>
+                        </div>
+                        <div class="store-android">
+                            <img src="~/images/icons/play-store.svg" alt="Google Play" />
+                            <div class="store-desc">
+                                Get it on
+                                <strong>Google Play</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="divider" />
+            <div class="row">
+                <ul class="footer-sub">
+                    <li>2024 Reidy Inc</li>
+                    <li>•</li>
+                    <li>Terms</li>
+                    <li>•</li>
+                    <li>Privacy</li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <div class="modal right" id="rightModal" tabindex="-1" aria-labelledby="rightModalLabel" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog w-100 right-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title text-secondary ms-auto">Close</h6>
+                    <button type="button" class="btn-close ms-0" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="menu-nav">
+                        <li class="features active" onclick="toggleSubMenu(this)">
+                           <img src="~/Images/grid.png" alt="icon">
+                            <span>Features</span>
+                            <span class="arrow">
+                                <img src="~/images/icons/angle-down.svg" />
+                            </span>
+                            <ul class="listing">
+                                <li>FastTrack Buyer</li>
+                                <li>Partener Matching</li>
+                                <li>Submit Instant Loans</li>
+                                <li>Browse Lending Products</li>
+                            </ul>
+                        </li>
+                        <li class="userTypes active" onclick="toggleSubMenu(this)">
+                            <img src="~/Images/users.png">
+                            <span>User Types</span>
+                            <span class="arrow">
+                                <img src="~/images/icons/angle-down.svg" />
+                            </span>
+                            <ul class="listing">
+                                <li>My Account</li>
+                                <li>FastTrack Buyer</li>
+                                <li>Lender</li>
+                                <li>Broker</li>
+                            </ul>
+                        </li>
+                        <li class="aboutUs active" onclick="toggleSubMenu(this)">
+                            <img src="~/Images/info.png">
+                            <span>About Us</span>
+                            <span class="arrow">
+                                <img src="~/images/icons/angle-down.svg" />
+                            </span>
+                            <ul class="listing">
+                                <li>Contact Us</li>
+                                <li onclick="window.location.href='/AboutUs/Index'">Who We Are</li>
+                                <li>Sanmore Investments</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="d-flex justify-content-center">
+                        <div class="store-company">
+                            <img src="~/images/icons/logo.svg" alt="REIDY" />
+                        </div>
+                    </div>
+                    <div class="menu-social">
+                        <div class="store-apple">
+                            <img src="~/images/icons/apple.svg" alt="App Store" />
+                            <div class="store-desc">
+                                Download on the
+                                <strong class="h5 d-block m-0">App Store</strong>
+                            </div>
+                        </div>
+                        <div class="store-android">
+                            <img src="~/images/icons/play-store.svg" alt="Google Play" />
+                            <div class="store-desc">
+                                Get it on
+                                <strong class="h5 d-block m-0">Google Play</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <!-- Sign In Modal Popup Start-->
+    <div class="modal popup fade" tabindex="-1" aria-hidden="true" id="SignInId">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content br-32 border-0">
+                <div class="modal-header mt-2">
+                    <h4 class="modal-title fw-semibold">Sign In</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="position-relative">
+                        <span>
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="17" height="14" viewBox="0 0 17 14"
+                                 fill="none">
+                                <path d="M14.45 0H2.55C1.8737 0 1.2251 0.26866 0.746878 0.746878C0.26866 1.2251 0 1.8737 0 2.55V11.05C0 11.7263 0.26866 12.3749 0.746878 12.8531C1.2251 13.3313 1.8737 13.6 2.55 13.6H14.45C15.1263 13.6 15.7749 13.3313 16.2531 12.8531C16.7313 12.3749 17 11.7263 17 11.05V2.55C17 1.8737 16.7313 1.2251 16.2531 0.746878C15.7749 0.26866 15.1263 0 14.45 0ZM14.45 1.7L8.925 5.4995C8.79578 5.5741 8.64921 5.61338 8.5 5.61338C8.35079 5.61338 8.20422 5.5741 8.075 5.4995L2.55 1.7H14.45Z"
+                                      fill="#A0A0A0" />
+                            </svg>
+                        </span>
+                        <input type="email" id="emailfield" class="form-control br-32 input-field ps-5" placeholder="Email Address">
+                    </div>
+                    <button type="submit" class="btn-continue br-32 mt-3" data-bs-target="#SignInId2"
+                            data-bs-toggle="modal">
+                        Continue
+                    </button>
+                    <div class="or my-3">OR</div>
+                    <div class="d-flex">
+                        <button type="button" class="br-32 social-btn">
+                            <img src="~/images/Icon-google.png" alt="Icon-google"
+                                 class="me-2">Google
+                        </button>
+                        <button type="button" class="br-32 social-btn">
+                            <img src="~/images/icon-facebook.png" alt="icon-facebook"
+                                 class="me-2 facebookicon">Facebook
+                        </button>
+                        <button type="button" class="br-32 social-btn">
+                            <img src="~/images/apple-icon-4.png" alt="icon-apple"
+                                 class="me-2 appleicon">Apple
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Sign In 2 -->
+    <div class="modal popup fade" id="SignInId2" aria-hidden="true" tabindex="-1" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 modal-signin">
+                <div class="modal-header mt-2">
+                    <h4 class="modal-title fw-semibold">Log in</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="txtSignClose"></button>
+                </div>
+                <div class="modal-body pt-4">
+                    <div class="position-relative mt-4">
+                        <span class="iconspan">
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="17" height="14" viewBox="0 0 17 14"
+                                 fill="none">
+                                <path d="M14.45 0H2.55C1.8737 0 1.2251 0.26866 0.746878 0.746878C0.26866 1.2251 0 1.8737 0 2.55V11.05C0 11.7263 0.26866 12.3749 0.746878 12.8531C1.2251 13.3313 1.8737 13.6 2.55 13.6H14.45C15.1263 13.6 15.7749 13.3313 16.2531 12.8531C16.7313 12.3749 17 11.7263 17 11.05V2.55C17 1.8737 16.7313 1.2251 16.2531 0.746878C15.7749 0.26866 15.1263 0 14.45 0ZM14.45 1.7L8.925 5.4995C8.79578 5.5741 8.64921 5.61338 8.5 5.61338C8.35079 5.61338 8.20422 5.5741 8.075 5.4995L2.55 1.7H14.45Z"
+                                      fill="#A0A0A0" />
+                            </svg>
+                        </span>
+                        <input type="email" id="emailfield1" onkeyup="RemoveEmailValidation(event)" class="form-control br-10 input-field ps-5" placeholder="Email Address"
+                               value="abc@gmail.com">
+                        <span id="emailErr" class="text-danger error-text"></span>
+                    </div>
+                    <div class="position-relative mt-2">
+                        <span class="reset-inputOuter">
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                <path d="M8.5 12.9524C9.06359 12.9524 9.60409 12.7818 10.0026 12.4782C10.4011 12.1745 10.625 11.7627 10.625 11.3333C10.625 10.9039 10.4011 10.4921 10.0026 10.1885C9.60409 9.88486 9.06359 9.71429 8.5 9.71429C7.93641 9.71429 7.39591 9.88486 6.9974 10.1885C6.59888 10.4921 6.375 10.9039 6.375 11.3333C6.375 11.7627 6.59888 12.1745 6.9974 12.4782C7.39591 12.7818 7.93641 12.9524 8.5 12.9524ZM14.875 5.66667C15.4386 5.66667 15.9791 5.83724 16.3776 6.14088C16.7761 6.44451 17 6.85632 17 7.28571V15.381C17 15.8104 16.7761 16.2222 16.3776 16.5258C15.9791 16.8294 15.4386 17 14.875 17H2.125C1.56141 17 1.02091 16.8294 0.622398 16.5258C0.223883 16.2222 0 15.8104 0 15.381V7.28571C0 6.85632 0.223883 6.44451 0.622398 6.14088C1.02091 5.83724 1.56141 5.66667 2.125 5.66667H3.1875V4.04762C3.1875 2.97412 3.74721 1.9446 4.74349 1.18552C5.73978 0.426444 7.09104 0 8.5 0C9.19765 0 9.88846 0.104695 10.533 0.308107C11.1775 0.511519 11.7632 0.809664 12.2565 1.18552C12.7498 1.56138 13.1411 2.00758 13.4081 2.49866C13.6751 2.98974 13.8125 3.51608 13.8125 4.04762V5.66667H14.875ZM8.5 1.61905C7.65462 1.61905 6.84387 1.87491 6.2461 2.33036C5.64832 2.78581 5.3125 3.40352 5.3125 4.04762V5.66667H11.6875V4.04762C11.6875 3.40352 11.3517 2.78581 10.7539 2.33036C10.1561 1.87491 9.34538 1.61905 8.5 1.61905Z" fill="#A0A0A0"></path>
+                            </svg>
+                            <input type="password" id="passwordinput" onkeyup="RemovePasswordValidation(event)" class="form-control br-10 input-field ps-5"
+                                   placeholder="Enter Password">
+                            <span class="eye-password">
+                                <i class="fa fa-eye" aria-hidden="true" id="show-pass" onclick="passicon()"></i>
+                                <i class="fa fa-eye-slash d-none" aria-hidden="true" id="hide-pass" onclick="passicon2()"></i>
+                            </span>
+                        </span>
+                        <span id="password" class="text-danger error-text"></span>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between mt-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="chkbx">
+                            <label class="form-check-label" for="chkbx">
+                                Remember me
+                            </label>
+                        </div>
+                        <small class="text-primary cursor_pointer" type="submit" data-bs-target="#ForgotPassword" data-bs-toggle="modal">Forgot Password?</small>
+                    </div>
+                    <button type="button" class="btn btn-lg btn-outline-primary btn-block mt-4" onclick="SignInBtn()" data-bs-target="#SignInId2">
+                        Log in
+                    </button>
+                    <div class="mt-2 text-center fs-small">
+                        By clicking Sign In, I agree to Reidy’s 
+                        <a href="" class="text-primary text-decoration-none">Terms of Use.</a>
+                    </div>
+                    <div class="or mt-4">OR</div>
+                    <div class="social-icons py-4">
+                        <button type="button" class="social-btn phone">
+                            <img src="~/images/icons/phone.svg" alt="icon-phone" />
+                        </button>
+                        <button type="button" class="social-btn google">
+                            <img src="~/images/icons/google.svg" alt="icon-google" />
+                        </button>
+                        <button type="button" class="social-btn apple">
+                            <img src="~/images/icons/apple.svg" alt="icon-apple" />
+                        </button>
+                        <button type="button" class="social-btn facebook">
+                            <img src="~/images/icons/facebook.svg" alt="icon-facebook" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Sign In Modal Popup End-->
+    <!------------ forgot password pop up starts ------->
+    <div class="modal popup fade" id="ForgotPassword" aria-hidden="true" aria-labelledby="ForgotPasswordLabe"
+         tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content br-32 border-0">
+                <div class="modal-header mt-2 pb-1">
+                    <h3 class="modal-title fw-semibold blue-primary" id="exampleModalToggleLabel2">Forgot Your Password?</h3>
+                </div>
+                <div class="modal-body py-0">
+                    <p class="thankmsg pb-1 text-black">
+                        Please enter your email and we'll send a link to reset your password
+                    </p>
+                    <div class="col-12 mb-2 mt-1">
+                        <input type="text" class="input-field" id="forgotemail" placeholder="Enter your email" onkeyup="RemoveEmailValidationForget()" required>
+                        <span id="emailErrReset" class="text-danger error-text"></span>
+                    </div>
+                    <div class="pb-4 pt-3 text-end">
+                        <button type="button" class=" btn-login btn-pbr" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                        <button type="button" class="btn-sign btn-pbr" onclick="SendEmail()">
+                            Send
+                            Email
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------------ forgot password pop up Ends ------->
+    <!-- Sign Up Modal Popup Start-->
+    <div class="modal popup12" tabindex="-1" id="SignUpId" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 modal-signin">
+                <div class="modal-header">
+                    <button id="backSignUp" style="display:none" class="btn header-back"><img src="~/images/icons/angle-left.svg" /> Back</button>
+                    <h5 class="modal-title fw-semibold">Sign Up</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="txtClose"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="step1 p-5">
+                        <div class="d-flex flex-row">
+                            <p class="step-title">I am intrested in becoming</p>
+                        </div>
+                        <div class="d-flex flex-row">
+                            <div class="form-check signup-checkbox">
+                                <label class="form-check-label" for="chkbxBuyer">
+                                    <p class="check-title">Buyer</p>
+                                    <img src="~/images/icons/signup-buyer.svg" alt="Buyer" />
+                                    <p class="text123">I want to browse and watch properties</p>
+                                </label>
+                                <input class="form-check-input" type="radio" id="chkbxBuyer" name="intrestedIn" value="Buyer">
+                            </div>
+                            <div class="form-check signup-checkbox space">
+                                <label class="form-check-label" for="chkbxLender">
+                                    <p class="check-title">Lender</p>
+                                    <img src="~/images/icons/signup-lender.svg" alt="Lender" />
+                                    <p class="text123">I can lend money to buyers</p>
+                                </label>
+                                <input class="form-check-input" type="radio" id="chkbxLender" name="intrestedIn" value="Lender">
+                            </div>
+                            <div class="form-check signup-checkbox">
+                                <label class="form-check-label" for="chkbxBroker">
+                                    <p class="check-title">Broker</p>
+                                    <img src="~/images/icons/signup-broker.svg" alt="Broker" />
+                                    <p class="text123">I want to connect both with buyers and brokers</p>
+                                </label>
+                                <input class="form-check-input" type="radio" id="chkbxBroker" name="intrestedIn" value="Broker">
+                            </div>
+                        </div>
+                        <div>
+                            <span id="errintrestedIn" class="text-danger error-text"></span>
+                        </div>
+                    </div>
+                    <div class="step2 p-5" style="display:none">
+                        <div class="d-flex flex-row">
+                            <p class="step-title">Hi, we’re Reidy nice to meet you.....?</p>
+                        </div>
+                        <div class="d-flex flex-row">
+                            <div class="form-group col me-3">
+                                <input type="text" placeholder="First Name" onkeypress="FirstNameAlphanumeric()" id="inputFname" onkeyup="RemoveFNameValidation()" class="input-field br-32">
+                                <span id="errName" class="text-danger error-text"></span>
+                            </div>
+                            <div class="form-group col ms-3">
+                                <input type="text" placeholder="Last Name" id="inputLname" onkeyup="RemoveLNameValidation()" class="input-field br-32">
+                                <span id="errLName" class="text-danger error-text"></span>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row mt-3">
+                            <div class="position-relative form-group col">
+                                <span class="iconspan">
+                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="17" height="14" viewBox="0 0 17 14"
+                                         fill="none">
+                                        <path d="M14.45 0H2.55C1.8737 0 1.2251 0.26866 0.746878 0.746878C0.26866 1.2251 0 1.8737 0 2.55V11.05C0 11.7263 0.26866 12.3749 0.746878 12.8531C1.2251 13.3313 1.8737 13.6 2.55 13.6H14.45C15.1263 13.6 15.7749 13.3313 16.2531 12.8531C16.7313 12.3749 17 11.7263 17 11.05V2.55C17 1.8737 16.7313 1.2251 16.2531 0.746878C15.7749 0.26866 15.1263 0 14.45 0ZM14.45 1.7L8.925 5.4995C8.79578 5.5741 8.64921 5.61338 8.5 5.61338C8.35079 5.61338 8.20422 5.5741 8.075 5.4995L2.55 1.7H14.45Z"
+                                              fill="#A0A0A0" />
+                                    </svg>
+                                </span>
+                                <input type="email" id="emailAddressId" onkeyup="RemoveEValidation()" class="form-control br-32 input-field ps-5"
+                                       placeholder="Email Address">
+                                <span id="errEmailAddressId" class="text-danger error-text"></span>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row mt-3">
+                            <div class="position-relative form-group col">
+                                <span class="iconspan">
+                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"
+                                         fill="none">
+                                        <path d="M3.01667 6.49167C4.21667 8.85 6.15 10.7833 8.50833 11.9833L10.3417 10.15C10.575 9.91667 10.9 9.85 11.1917 9.94167C12.125 10.25 13.125 10.4167 14.1667 10.4167C14.3877 10.4167 14.5996 10.5045 14.7559 10.6607C14.9122 10.817 15 11.029 15 11.25V14.1667C15 14.3877 14.9122 14.5996 14.7559 14.7559C14.5996 14.9122 14.3877 15 14.1667 15C10.4094 15 6.80609 13.5074 4.14932 10.8507C1.49256 8.19391 0 4.59057 0 0.833333C0 0.61232 0.0877973 0.400358 0.244078 0.244078C0.400358 0.0877973 0.61232 0 0.833333 0H3.75C3.97101 0 4.18298 0.0877973 4.33926 0.244078C4.49554 0.400358 4.58333 0.61232 4.58333 0.833333C4.58333 1.875 4.75 2.875 5.05833 3.80833C5.15 4.1 5.08333 4.425 4.85 4.65833L3.01667 6.49167Z"
+                                              fill="#A0A0A0" />
+                                    </svg>
+                                </span>
+                                <input type="tel" maxlength="12" id="phoneId" class="form-control br-32 input-field ps-5 myPhoneclass"
+                                       placeholder="Phone" onkeyup="RemovePhoneValidation()">
+                                <span id="errPNumber" class="text-danger error-text"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step3 p-5" style="display:none">
+                        <div class="d-flex flex-row">
+                            <p class="step-title">Hi <span class="lblFirstName"></span>, how did you hear about us?</p>
+                        </div>
+                        <div class="d-flex flex-row">
+                            <div class="form-group col">
+                                <select id="inputhearAbout" class="form-select input-field br-10">
+                                    <option value="" disabled selected>How did you hear about us..</option>
+                                    <option value="LinkedIn">LinkedIn</option>
+                                    <option value="Facebook">Facebook</option>
+                                    <option value="Instagram">Instagram</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <span id="errinputhearAbout" class="text-danger error-text"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step4 p-5" style="display:none">
+                        <div class="d-flex flex-row">
+                            <p class="step-title"><span class="lblFirstName"></span>, please create a password to finish signing up.</p>
+                        </div>
+                        <div class="d-flex flex-row">
+                            <div class="position-relative form-group col">
+                                <span class="iconspan">
+                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17"
+                                         fill="none">
+                                        <path d="M8.5 12.9524C9.06359 12.9524 9.60409 12.7818 10.0026 12.4782C10.4011 12.1745 10.625 11.7627 10.625 11.3333C10.625 10.9039 10.4011 10.4921 10.0026 10.1885C9.60409 9.88486 9.06359 9.71429 8.5 9.71429C7.93641 9.71429 7.39591 9.88486 6.9974 10.1885C6.59888 10.4921 6.375 10.9039 6.375 11.3333C6.375 11.7627 6.59888 12.1745 6.9974 12.4782C7.39591 12.7818 7.93641 12.9524 8.5 12.9524ZM14.875 5.66667C15.4386 5.66667 15.9791 5.83724 16.3776 6.14088C16.7761 6.44451 17 6.85632 17 7.28571V15.381C17 15.8104 16.7761 16.2222 16.3776 16.5258C15.9791 16.8294 15.4386 17 14.875 17H2.125C1.56141 17 1.02091 16.8294 0.622398 16.5258C0.223883 16.2222 0 15.8104 0 15.381V7.28571C0 6.85632 0.223883 6.44451 0.622398 6.14088C1.02091 5.83724 1.56141 5.66667 2.125 5.66667H3.1875V4.04762C3.1875 2.97412 3.74721 1.9446 4.74349 1.18552C5.73978 0.426444 7.09104 0 8.5 0C9.19765 0 9.88846 0.104695 10.533 0.308107C11.1775 0.511519 11.7632 0.809664 12.2565 1.18552C12.7498 1.56138 13.1411 2.00758 13.4081 2.49866C13.6751 2.98974 13.8125 3.51608 13.8125 4.04762V5.66667H14.875ZM8.5 1.61905C7.65462 1.61905 6.84387 1.87491 6.2461 2.33036C5.64832 2.78581 5.3125 3.40352 5.3125 4.04762V5.66667H11.6875V4.04762C11.6875 3.40352 11.3517 2.78581 10.7539 2.33036C10.1561 1.87491 9.34538 1.61905 8.5 1.61905Z"
+                                              fill="#A0A0A0" />
+                                    </svg>
+                                </span>
+                                <input type="password" id="passwordfield" onkeyup="RemovePValidation()" class="form-control br-32 input-field ps-5" placeholder="Password">
+                                <span class="eye-password">
+                                    <i class="fa fa-eye" aria-hidden="true" id="show-passconfirm" onclick="passiconconfirm1()"></i>
+                                    <i class="fa fa-eye-slash d-none" aria-hidden="true" id="hide-passconfirm" onclick="passiconconfirm()"></i>
+                                </span>
+                                <span id="errPassword" class="text-danger error-text"></span>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row mt-3">
+                            <div class="position-relative form-group col">
+                                <span class="iconspan">
+                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17"
+                                         fill="none">
+                                        <path d="M8.5 12.9524C9.06359 12.9524 9.60409 12.7818 10.0026 12.4782C10.4011 12.1745 10.625 11.7627 10.625 11.3333C10.625 10.9039 10.4011 10.4921 10.0026 10.1885C9.60409 9.88486 9.06359 9.71429 8.5 9.71429C7.93641 9.71429 7.39591 9.88486 6.9974 10.1885C6.59888 10.4921 6.375 10.9039 6.375 11.3333C6.375 11.7627 6.59888 12.1745 6.9974 12.4782C7.39591 12.7818 7.93641 12.9524 8.5 12.9524ZM14.875 5.66667C15.4386 5.66667 15.9791 5.83724 16.3776 6.14088C16.7761 6.44451 17 6.85632 17 7.28571V15.381C17 15.8104 16.7761 16.2222 16.3776 16.5258C15.9791 16.8294 15.4386 17 14.875 17H2.125C1.56141 17 1.02091 16.8294 0.622398 16.5258C0.223883 16.2222 0 15.8104 0 15.381V7.28571C0 6.85632 0.223883 6.44451 0.622398 6.14088C1.02091 5.83724 1.56141 5.66667 2.125 5.66667H3.1875V4.04762C3.1875 2.97412 3.74721 1.9446 4.74349 1.18552C5.73978 0.426444 7.09104 0 8.5 0C9.19765 0 9.88846 0.104695 10.533 0.308107C11.1775 0.511519 11.7632 0.809664 12.2565 1.18552C12.7498 1.56138 13.1411 2.00758 13.4081 2.49866C13.6751 2.98974 13.8125 3.51608 13.8125 4.04762V5.66667H14.875ZM8.5 1.61905C7.65462 1.61905 6.84387 1.87491 6.2461 2.33036C5.64832 2.78581 5.3125 3.40352 5.3125 4.04762V5.66667H11.6875V4.04762C11.6875 3.40352 11.3517 2.78581 10.7539 2.33036C10.1561 1.87491 9.34538 1.61905 8.5 1.61905Z"
+                                              fill="#A0A0A0" />
+                                    </svg>
+                                </span>
+                                <input type="password" id="passwordfields" onkeyup="RemovePValidation()" class="form-control br-32 input-field ps-5" placeholder="Confirm password">
+                                <span class="eye-password">
+                                    <i class="fa fa-eye" aria-hidden="true" id="show-repassconfirm" onclick="repassiconconfirm2()"></i>
+                                    <i class="fa fa-eye-slash d-none" aria-hidden="true" id="hide-repassconfirm" onclick="repassiconconfirm()"></i>
+                                </span>
+                                <span id="cpassword" class="text-danger error-text"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row mt-3 px-5">
+                        <div class="social-footer col" style="display:none">
+                            <div class="or my-3">OR</div>
+                            <div class="social-icons py-4">
+                                <button type="button" class="social-btn phone">
+                                    <img src="~/images/icons/phone.svg" alt="icon-phone" />
+                                </button>
+                                <button type="button" class="social-btn google">
+                                    <img src="~/images/icons/google.svg" alt="icon-google" />
+                                </button>
+                                <button type="button" class="social-btn apple">
+                                    <img src="~/images/icons/apple.svg" alt="icon-apple" />
+                                </button>
+                                <button type="button" class="social-btn facebook">
+                                    <img src="~/images/icons/facebook.svg" alt="icon-facebook" />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="div-footer">
+                        <button id="nextSignUp" class="btn btn-outline-primary btn-lg btn-block max-w-50p">Submit</button>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div> 
+     
+    <div class="loader-outer" id="divLoader">
+        <div class="loader"></div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js" defer></script>
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
+    @*<script async src="https://maps.googleapis.com/maps/api/js?v=weekly&key=AIzaSyAm2IDn-s0afymCmwBPvK96j9BW64XkNFk&callback=initMap&libraries=places&v=weekly">*@</script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=weekly&key=AIzaSyAm2IDn-s0afymCmwBPvK96j9BW64XkNFk&loading=async&libraries=places&async=false"></script><!--&callback=initMap-->
+    <script src="~/js/map.js"></script>
+    <script src="~/js/notify.min.js"></script>
+    <script src="~/js/toastr.min.js"></script>
+    <script src="~/js/index.js"></script>
+    <script src="~/js/_layout.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src="~/js/home.js"></script>
+    <script src="/js/scriptSlider.js"></script>
+
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        const LayoutJs = {
+            Success: '@TempData["Success"]',
+            Error: '@TempData["Error"]'
+        }
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+

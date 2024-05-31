@@ -1,0 +1,330 @@
+﻿/*Common CSS*/
+.bg-seconsary {
+    background-color: var(--secondary);
+}
+
+/* Create lending page */
+.success-popup {
+    width: 100px;
+}
+
+.thankmsg {
+    line-height: 26px;
+}
+
+.dollor-span {
+    background: transparent;
+    border-radius: 20px 0 0 20px;
+    border-top: 1px solid #C5C5C5;
+    border-left: 1px solid #C5C5C5;
+    border-bottom: 1px solid #C5C5C5;
+    border-right: none;
+}
+
+.dollor-input {
+    border-radius: 0 20px 20px 0;
+    padding: 0.5rem 0.8rem;
+    border: 1px solid #C5C5C5;
+}
+
+/* lending product list page */
+.btn-headerlist {
+    padding: 5px 22px;
+    border-radius: 30px;
+    margin-right: 12px;
+    font-weight: 500;
+}
+
+/* Other CSS */
+.lending-list {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 0 0.75rem;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px 0px rgba(159, 159, 159, 0.25);
+}
+
+
+/* Filters section */
+
+.map-filters.container-fluid {
+    padding: unset;
+}
+
+.row-detail .col {
+    display: flex;
+    justify-content: center;
+}
+
+.row-detail .first-col {
+    justify-content: start;
+}
+
+.p-20-12 {
+    padding: 20px 12px;
+}
+
+.list-header {
+    background: #B1C9F8;
+    padding: 1rem 1.5rem;
+    border-radius: 10px 10px 0 0;
+}
+
+.lending-list-title {
+    border-left: 3px solid #002A7B;
+}
+
+.product-modal-xxl {
+    --bs-modal-width: 80%;
+}
+
+#viewlist .modal-footer {
+    border: none;
+}
+
+
+
+.lending-list .on-off-toggle {
+    width: 120px;
+    height: 35px;
+}
+
+.lending-list .on-off-toggle__slider {
+    width: 130px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    padding-top: 2px;
+}
+
+.on-off-toggle__slider {
+    &:before
+
+{
+    content: '';
+    display: block;
+    height: 30px;
+    width: 30px;
+}
+
+&::after {
+    content: '';
+    padding-left: 38px;
+}
+
+}
+
+.lending-list .on-off-toggle__input:checked + .on-off-toggle__slider {
+    &:before
+
+{
+    content: '';
+    display: block;
+    background-color: #fff;
+    bottom: 3px;
+    height: 30px;
+    left: 3px;
+    position: absolute;
+    transition: .4s;
+    width: 30px;
+    z-index: 5;
+    border-radius: 100%;
+}
+
+&:after {
+    display: block;
+    content: 'Approved';
+    padding-left: 18px;
+}
+
+}
+
+.lending-list .on-off-toggle__input:checked + .on-off-toggle__slider {
+    &:before
+
+{
+    transform: translateX(95px);
+}
+
+}
+
+.lending-list .on-off-toggle__input:checked + .on-off-toggle__slider {
+    background-color: #198754;
+}
+
+.lending-list .on-off-toggle__slider::after {
+    content: 'Unapproved';
+}
+
+
+.switch-outer {
+    display: flex;
+    justify-content: center;
+}
+
+.lenderList-loan,
+.textleft-mob {
+    text-align: right;
+}
+
+.row-detail .col:nth-child(1) {
+    justify-content: flex-start;
+}
+
+.row-detail .col:nth-last-child(1) {
+    justify-content: flex-end;
+}
+
+.lending_product_padding {
+    padding: 15px 20px 15px 20px;
+}
+
+/* ==================================== Fast track page starts ===================================*/
+/*Progress bar*/
+
+
+#msform .fieldset:not(:first-of-type) {
+    display: none
+}
+
+.card {
+    z-index: 0;
+    border: none;
+    position: relative
+}
+
+.fs-title {
+    font-size: 25px;
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-weight: normal;
+    text-align: left
+}
+
+.steps {
+    font-size: 25px;
+    color: gray;
+    margin-bottom: 10px;
+    font-weight: normal;
+    text-align: right
+}
+
+#progressbar .active {
+    color: var(--primary);
+}
+
+.progress {
+    height: 20px
+}
+
+.progress-bar {
+    background-color: var(--primary);
+}
+
+/**/
+.input-150 {
+    width: 150px;
+}
+
+.submit-btn {
+    font-size: 1.2rem;
+    padding: 0.5rem 3rem;
+    margin-top: 1.5rem;
+}
+
+.min-50vh {
+    min-height: 50vh;
+}
+
+.w-xl-10 {
+    width: 10%;
+}
+
+.w-xl-50 {
+    width: 50%;
+}
+
+/* user list for TC page*/
+.w-xl-75 {
+    width: 75%;
+}
+
+/*summary screen*/
+.summery-title {
+    color: var(--primary);
+}
+
+.thumbnail-fastTrack {
+    max-width: 100px;
+    display: block;
+}
+
+.fast-uploadname {
+    font-size: 14px;
+}
+
+.flex-wrap-unset {
+    flex-wrap: unset;
+}
+
+.line-bottom-dasshed {
+    border-bottom: 1px dashed #002a7b;
+}
+
+/* ============================================ user listing page starts ===========================*/
+
+
+.role-ul .nav-link,
+.viewprofileuser {
+    padding: 10px 25px;
+    font-size: 14px;
+    border-radius: 30px;
+}
+
+.role-ul button.nav-link.role-tabbtn.active {
+    color: #fff !important;
+    background-color: #002A7B;
+}
+
+    .role-ul button.nav-link.role-tabbtn.active:hover {
+        background-color: #031d4d;
+    }
+
+.role-ul button.nav-link.role-tabbtn {
+    color: #fff;
+    border: 1px solid #002a7b;
+    color: #002a7b;
+    font-weight: 500;
+    background-color: #ffffff;
+}
+
+    .role-ul button.nav-link.role-tabbtn:hover {
+        color: #fff;
+        background: #002a7b;
+    }
+
+.user-list-header {
+    background-color: #e1e1e1;
+    padding: 1rem 1.5rem;
+}
+
+.status-approv,
+.status-pending,
+.status-cancel {
+    background: #198754;
+    padding: 3px 10px;
+    border-radius: 2px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.status-pending {
+    background-color: #002A7B;
+}
+
+.status-cancel {
+    background-color: #dc3545;
+}
+
+/* ============================================ user listing page Ends ===========================*/

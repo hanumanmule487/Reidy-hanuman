@@ -1,0 +1,927 @@
+﻿<div class="landing-banner">
+    <video id="background-video" autoplay loop muted poster="~/images/background/landing-baner.png">
+        <source src="~/videos/landing-background.mp4" type="video/mp4">
+    </video>
+    <div class="banner-content">
+        <div>
+            <h5 class="search-title">Streamline Home Buying</h5>
+        </div>
+       
+
+
+        <form action="/Home/Index" method="get">
+        <div class="search-container1">
+                <input id="txtSearchProperty" name="txtSearchProperty" type="text" class="search-input1" placeholder="Enter an Address,city or Neighbourhood">
+                <button type="submit" id="btnSearch" name="btnSearch" value="btnSearch" class="search123"><img src="~/Images/search.png" alt="Search"></button>
+            <span>
+                    <button onclick="$('.modal-backdrop').remove();$('#contHeader').css('z-index','2')" type="button" id="btnfilter" data-backdrop="false" data-bs-toggle="modal" data-bs-target="#FiltersId" class="filter-button">
+                    Filter
+                    <img src="~/images/icon-filter.svg" alt="icon-Filter" class="filter3" />
+                </button>
+            </span>
+        </div>
+
+
+        <!--
+
+                    Place Filter HERE
+
+                    -->
+
+
+
+                        <!-- Filters Modal Popup Start-->
+                        <div class="modal popup" tabindex="-1" id="FiltersId">
+
+                            <div style="max-width: 885px;margin-left:auto;margin-right:auto;" class="modal-dialog modal-dialog-centered" id="AllFilterModel">
+                                <div style="border-radius: 10px;" class="modal-content br-32 border-0 filterHeight">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title fw-semibold"
+                                            style="margin-left: auto; margin-right: auto; width: 167px;color: #000;text-align: center;font-family: 'Open Sans';font-size: 18px;font-style: normal;font-weight: 700;line-height: normal;">
+                                            Filters
+                                        </h5>
+                                        <button style="float: right;Margin: 0px;" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btnAllFilterCancel"></button>
+                                    </div>
+                                    <div class="modal-body row">
+                                        <div class="col-sm-12">
+                                            <!--<div class="container">-->
+
+
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div style="height:250px;" class="row">
+
+                                                        <div class="col-sm-4" style="margin-bottom:300px;display: inline-block;height:250px;z-index:0;overflow-y:auto;">
+
+                                                            <h5 style="margin-left: auto; margin-right: auto; width: 174px; color: #000;font-family: Open Sans;font-size: 14px;font-style: normal;font-weight: 600;line-height: normal;">
+                                                                Asset Type
+                                                            </h5>
+                                                            <div class="property-type-ul" id="SearchType">
+                                                                <ul class="list-unstyled">
+                                                                    <li class="d-flex align-items-center">
+                                                                        <input type="checkbox" id="txtSelectAll2" name="txtSelectAll2" value="0" class="me-4 filter-checkbox assetType">Select All
+                                                                    </li>
+                                                                    <li>
+                                                                        <hr class="my-2">
+                                                                    </li>
+                                                                    <!--======try to check===-->
+                                                                    <li class="d-flex align-items-center">
+                                                                        <input type="checkbox" value="1" class="me-4 filter-checkbox" id="txtMultiFamily" name="txtMultiFamily"><img src="~/Images/icons/multifamily.svg" alt="Multifamily" title="Multifamily" class="me-2">
+                                                                        <span class="assetType"> Multifamily</span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <hr class="my-2">
+                                                                    </li>
+                                                                    <li class="d-flex align-items-center">
+                                                                        <input type="checkbox" value="2" class="me-4 filter-checkbox" name="txthouseicon" id="txthouseicon"><img src="~/Images/icons/1_4_residential.svg" alt="1-4 Residential" title="1-4 Residential" class="me-2">
+                                                                        <span class="assetType">1-4 Residential</span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <hr class="my-2">
+                                                                    </li>
+                                                                    <li class="d-flex align-items-center">
+                                                                        <input type="checkbox" value="3" class="me-4 filter-checkbox" name="txtoffice" id="txtoffice"><img src="~/Images/icons/office.svg" alt="Office" title="Office" class="me-2">
+                                                                        <span class="assetType">Office</span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <hr class="my-2">
+                                                                    </li>
+                                                                    <li class="d-flex align-items-center">
+                                                                        <input type="checkbox" value="4" class="me-4 filter-checkbox" name="txtIndustrial" id="txtIndustrial"><img src="~/Images/icons/industrial.svg" alt="Industrial" title="Industrial" class="me-2">
+                                                                        <span class="assetType">Industrial</span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <hr class="my-2">
+                                                                    </li>
+                                                                    <li class="d-flex align-items-center">
+                                                                        <input type="checkbox" value="5" class="me-4 filter-checkbox" name="txtretail" id="txtretail"><img src="~/Images/icons/retail.svg" alt="Retail" title="Retail" class="me-2">
+                                                                        <span class="assetType">Retail</span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <hr class="my-2">
+                                                                    </li>
+                                                                    <li class="d-flex align-items-center">
+                                                                        <input type="checkbox" value="6" class="me-4 filter-checkbox" name="txtshopping" id="txtshopping"><img src="~/Images/icons/shopping_center.svg" alt="Shopping Center" title="Shopping Center" class="me-2">
+                                                                        <span class="assetType">Shopping Center</span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <hr class="my-2">
+                                                                    </li>
+                                                                    <li class="d-flex align-items-center">
+                                                                        <input type="checkbox" value="7" class="me-4 filter-checkbox" name="txtSpeciality" id="txtSpeciality"><img src="~/Images/icons/storage_units.svg" alt="Storage Units" title="Storage Units" class="me-2">
+                                                                        <span class="assetType">Storage Units</span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <hr class="my-2">
+                                                                    </li>
+                                                                    <li class="d-flex align-items-center">
+                                                                        <input type="checkbox" value="8" class="me-4 filter-checkbox" name="txtHealth" id="txtHealth"><img src="~/Images/icons/healthcare.svg" alt="Healthcare" title="Healthcare" class="me-2">
+                                                                        <span class="assetType">Healthcare</span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <hr class="my-2">
+                                                                    </li>
+                                                                    <li class="d-flex align-items-center">
+                                                                        <input type="checkbox" value="9" class="me-4 filter-checkbox" name="txtHospitality" id="txtHospitality"><img src="~/Images/icons/hospitality.svg" alt="Hospitality" title="Hospitality" class="me-2">
+                                                                        <span class="assetType">Hospitality</span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <hr class="my-2">
+                                                                    </li>
+                                                                    <li class="d-flex align-items-center">
+                                                                        <input type="checkbox" value="10" class="me-4 filter-checkbox" name="txtSports" id="txtSports"><img src="~/Images/icons/sports_entertainment.svg" alt="Sports & Entertainment" title="Sports & Entertainment" class="me-2">
+                                                                        <span class="assetType">Sports &amp; Entertainment</span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <hr class="my-2">
+                                                                    </li>
+                                                                    <li class="d-flex align-items-center">
+                                                                        <input type="checkbox" value="11" class="me-4 filter-checkbox" name="txtLand" id="txtLand"><img src="~/Images/icons/land.svg" alt="Land" title="Land" class="me-2">
+                                                                        <span class="assetType">Land</span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <hr class="my-2">
+                                                                    </li>
+                                                                    <li class="d-flex align-items-center">
+                                                                        <input type="checkbox" value="12" class="me-4 filter-checkbox" name="txtresidentialportfolio" id="txtresidentialportfolio"><img src="~/Images/icons/residential_portfolio.svg" alt="Residential Portfolio" title="Residential Portfolio" class="me-2">
+                                                                        <span class="assetType">Residential Portfolio</span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+
+                                                        </div>
+                                                        <div style="display: inline-block;height:250px;z-index:5;" class="col-sm-8">
+
+                                                            <div class="row">
+                                                                <div class="col-sm-6">
+                                                                    <span style="width: 106px; color: #000;font-family: Open Sans;font-size: 12px;font-style: normal;font-weight: 600;line-height: normal;">Reidy Id</span>
+                                                                    <br />
+                                                                    <input type="text" id="reidyId" name="reidyId" style="width: 207px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                                                </div>
+                                                                <div class="col-sm-6">
+                                                                    <span style="width: 118px; color: #000; font-family: Open Sans; font-size: 12px; font-style: normal; font-weight: 600; line-height: normal;">Date Entered</span>
+                                                                    <br /><input type="text" id="date-range1" name="date-range1" placeholder="mm/dd/yyyy" style="width: 110px; height: 31px; flex-shrink: 0; border-radius: 10px; border: 1px solid #F1F1F1; background: #FFF;" />
+                                                                    <span style="width: 10px; height: 2px; color: #8AAF92; font-size: 24px;">-</span>
+                                                                    <input type="text" id="date-range2" name="date-range2" placeholder="mm/dd/yyyy" style="width: 110px; height: 31px; flex-shrink: 0; border-radius: 10px; border: 1px solid #F1F1F1; background: #FFF;" />
+                                                                </div>
+
+                                                                <br /><br /><br /><br />
+
+                                                                <div class="row">
+                                                                    <div class="col-sm-12">
+                                                                        <span style="width: 106px; color: #000; font-family: Open Sans; font-size: 12px; font-style: normal; font-weight: 600; line-height: normal;">Price Range</span>&nbsp;
+
+                                                                        <div style="display: inline-block; width: 97px;height: 21px;flex-shrink: 0;border-radius: 3px;background: #F1F1F1;">
+                                                                            <input class="txtUnits" style="width: 12px;height: 12px;flex-shrink: 0;fill: #FFF;stroke-width: 1px;stroke: #D9D9D9;" type="radio" name="inlineRadioOptions" id="totalradio"
+                                                                                   value="1" checked>&nbsp;
+                                                                            <label style="width: 64px;color: #33583B;font-family: Open Sans;font-size: 12px;font-style: normal;font-weight: 400;line-height: normal;" for="totalradio">Total $</label>
+                                                                        </div>
+                                                                        &nbsp;
+                                                                        <div style=" display: inline-block;width: 97px;height: 21px;flex-shrink: 0;border-radius: 3px;background: #F1F1F1;">
+                                                                            <input class="txtUnits" style="width: 12px;height: 12px;flex-shrink: 0;fill: #FFF;stroke-width: 1px;stroke: #D9D9D9;" type="radio" name="inlineRadioOptions" id="sfFieldradio"
+                                                                                   value="2">&nbsp;
+                                                                            <label style="width: 64px;color: #33583B;font-family: Open Sans;font-size: 12px;font-style: normal;font-weight: 400;line-height: normal;" for="sfFieldradio">$ / sq. ft.</label>
+                                                                        </div>
+                                                                        &nbsp;
+                                                                        <div style="display: inline-block;width: 97px;height: 21px;flex-shrink: 0;border-radius: 3px;background: #F1F1F1;">
+                                                                            <input class="txtUnits" style="width: 12px;height: 12px;flex-shrink: 0;fill: #FFF;stroke-width: 1px;stroke: #D9D9D9;" type="radio" name="inlineRadioOptions" id="acrefield"
+                                                                                   value="3">&nbsp;
+                                                                            <label style="width: 64px;color: #33583B;font-family: Open Sans;font-size: 12px;font-style: normal;font-weight: 400;line-height: normal;" for="acrefield">$ / Acre</label>
+                                                                        </div>
+                                                                        &nbsp;
+                                                                        <div style="display: inline-block;width: 97px;height: 21px;flex-shrink: 0;border-radius: 3px;background: #F1F1F1;">
+                                                                            <input class="txtUnits" style="width: 12px;height: 12px;flex-shrink: 0;fill: #FFF;stroke-width: 1px;stroke: #D9D9D9;" type="radio" name="inlineRadioOptions" id="unitRadio"
+                                                                                   value="4">&nbsp;
+                                                                            <label style="width: 64px;color: #33583B;font-family: Open Sans;font-size: 12px;font-style: normal;font-weight: 400;line-height: normal;" for="unitRadio">$ / Unit</label>
+                                                                        </div>
+                                                                        &nbsp;<br />
+                                                                    </div>
+                                                                </div>
+                                                                <!--Range input-->
+
+                                                                <br /><br />
+
+                                                                <div class="custom-wrapper">
+
+                                                                    <div class="price-input-container">
+                                                                        <div class="price-input">
+
+                                                                            <div class="row">
+                                                                                <div class="col-sm-12">
+
+                                                                                    <div style="display: inline-block;" class="price-field">
+                                                                                        <input type="number"
+                                                                                               id="Af_minPrice"
+                                                                                               name="Af_minPrice"
+                                                                                               class="min-input"
+                                                                                               value="0" placeholder="$ Minimum" style="width: 150px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                                                                    </div>
+
+
+                                                                                    <span style="display: inline-block;width: 10px; height: 2px; color: #8AAF92; font-size: 24px;">-</span>
+
+
+
+                                                                                    <div style="display: inline-block;" class="price-field">
+                                                                                        <input type="number"
+                                                                                               id="Af_maxPrice"
+                                                                                               name="Af_maxPrice"
+                                                                                               class="max-input"
+                                                                                               value="10000000" placeholder="$ Maximum" style="display: inline-block;width: 150px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                                                                    </div>
+
+                                                                                </div>
+
+
+                                                                            </div>
+                                                                            <div class="slider-container">
+                                                                                <div class="price-slider">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <!-- Slider -->
+                                                                        <div class="range-input">
+                                                                            <input type="range"
+                                                                                   class="min-range"
+                                                                                   min="0"
+                                                                                   max="10000000"
+                                                                                   value="0"
+                                                                                   step="5">
+                                                                            <input type="range"
+                                                                                   class="max-range"
+                                                                                   min="0"
+                                                                                   max="10000000"
+                                                                                   value="10000000"
+                                                                                   step="5">
+                                                                        </div>
+                                                                    </div>
+                                                                    <!--<script src="/js/scriptSlider.js"></script>-->
+
+
+
+
+
+
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+                                            <!--<div class="container">-->
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div style="height:300px;" class="row">
+
+                                                        <div style="margin-bottom:275px;display: inline-block;height:300px;z-index:100;" class="col-sm-4">
+
+                                                            <span style="width: 106px;color: #000;font-family: Open Sans;font-size: 12px;font-style: normal;font-weight: 600;line-height: normal;">
+                                                                Year Built
+                                                            </span>
+                                                            <br />
+                                                            <input type="text" id="Af_YearBuiltMin" name="Af_YearBuiltMin" placeholder="Min" style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                                            <span style="display: inline-block;width: 10px; height: 2px; color: #8AAF92; font-size: 24px;">-</span>
+                                                            <input type="text" id="Af_YearBuiltMax" name="Af_YearBuiltMax" placeholder="Max" style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" /><br /><br />
+
+                                                            <span style="width: 106px;color: #000;font-family: Open Sans;font-size: 12px;font-style: normal;font-weight: 600;line-height: normal;">
+                                                                Building Size
+                                                            </span>
+                                                            <br />
+                                                            <input type="text" id="Af_BuildingMinSF" name="Af_BuildingMinSF" placeholder="Min sq. ft." style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                                            <span style="display: inline-block;width: 10px; height: 2px; color: #8AAF92; font-size: 24px;">-</span>
+                                                            <input type="text" id="Af_BuildingMaxSF" name="Af_BuildingMaxSF" placeholder="Max sq. ft." style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" /><br /><br />
+
+                                                            <span style="width: 106px;color: #000;font-family: Open Sans;font-size: 12px;font-style: normal;font-weight: 600;line-height: normal;">
+                                                                Land Size
+                                                            </span>
+                                                            <br />
+                                                            <input type="text" id="Af_LandMinAcres" name="Af_LandMinAcres" placeholder="Min acres" style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                                            <span style="display: inline-block;width: 10px; height: 2px; color: #8AAF92; font-size: 24px;">-</span>
+                                                            <input type="text" id="Af_LandMaxAcres" name="Af_LandMaxAcres" placeholder="Max acres" style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" /><br /><br />
+
+                                                            <span style="width: 106px;color: #000;font-family: Open Sans;font-size: 12px;font-style: normal;font-weight: 600;line-height: normal;">
+                                                                Units
+                                                            </span><br />
+                                                            <input type="text" id="Af_UnitBedsMin" name="Af_UnitBedsMin" placeholder="Min" style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                                            <span style="display: inline-block;width: 10px; height: 2px; color: #8AAF92; font-size: 24px;">-</span>
+                                                            <input type="text" id="Af_UnitBedsMax" name="Af_UnitBedsMax" placeholder="Max" style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" /><br /><br />
+
+                                                        </div>
+
+                                                        <div style="display: inline-block;height:300px;z-index:1;" class="col-sm-8">
+
+                                                            <span style="width: 106px; color: #000;font-family: Open Sans;font-size: 12px;font-style: normal;font-weight: 600;line-height: normal;">
+                                                                Loan Type Filters
+                                                            </span>
+                                                            <div class="row">
+                                                                <div class="col-sm-6">
+                                                                    <span style="width:40px;color: #000;font-family: Open Sans;
+                                      font-size: 12px;
+                                      font-style: normal;
+                                      font-weight: 400;
+                                      line-height: normal;">
+                                                                        Terms
+                                                                    </span><br />
+
+
+                                                                    <!--<input style="width: 215px;height: 31px;flex-shrink: 0;border-radius: 10px;
+                                                                         border: 1px solid #F1F1F1;
+                                                                         background: #FFF;" />-->
+
+                                                                    <div class="dropdown multi-dropdown">
+                                                                        <button class="form-select dropdown-toggle" type="button" id="multiSelectDropdown"
+                                                                                data-bs-toggle="dropdown" aria-expanded="false"
+                                                                                style="width: 215px;height: 40px;flex-shrink: 0;border-radius: 10px;
+                                       border: 1px solid #F1F1F1;
+                                       background: #FFF;">
+                                                                            Select
+                                                                        </button>
+                                                                        <ul class="dropdown-menu" aria-labelledby="multiSelectDropdown">
+                                                                            <li class="ms-2">
+                                                                                <label>
+                                                                                    <input id="terms1" name="terms1" type="checkbox" value="Interest Only" class="cstm">
+                                                                                    Interest Only
+                                                                                </label>
+                                                                            </li>
+                                                                            <li class="ms-2">
+                                                                                <label>
+                                                                                    <input id="terms2" name="terms2" type="checkbox" value="0-3 years" class="cstm">
+                                                                                    0-3 years
+                                                                                </label>
+                                                                            </li>
+                                                                            <li class="ms-2">
+                                                                                <label>
+                                                                                    <input id="terms3" name="terms3" type="checkbox" value="4-5 years" class="cstm">
+                                                                                    4-5 years
+                                                                                </label>
+                                                                            </li>
+                                                                            <li class="ms-2">
+                                                                                <label>
+                                                                                    <input id="terms4" name="terms4" type="checkbox" value="5-7 years" class="cstm">
+                                                                                    6-7 years
+                                                                                </label>
+                                                                            </li>
+                                                                            <li class="ms-2">
+                                                                                <label>
+                                                                                    <input id="terms5" name="terms5" type="checkbox" value="8-10 years" class="cstm">
+                                                                                    8-10 years
+                                                                                </label>
+                                                                            </li>
+                                                                            <li class="ms-2">
+                                                                                <label>
+                                                                                    <input id="terms6" name="terms6" type="checkbox" value="11-20 years" class="cstm">
+                                                                                    11-20 years
+                                                                                </label>
+                                                                            </li>
+                                                                            <li class="ms-2">
+                                                                                <label>
+                                                                                    <input id="terms7" name="terms7" type="checkbox" value="21-30 years" class="cstm">
+                                                                                    21-30 years
+                                                                                </label>
+                                                                            </li>
+                                                                            <li class="ms-2">
+                                                                                <label>
+                                                                                    <input id="terms8" name="terms8" type="checkbox" value="31+ years" class="cstm">
+                                                                                    31+ years
+                                                                                </label>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+
+
+
+                                                                </div>
+                                                                <div class="col-sm-6">
+                                                                    <span style="width: 117px;color: #000;font-family: Open Sans;
+                                      font-size: 12px;
+                                      font-style: normal;
+                                      font-weight: 400;
+                                      line-height: normal;">
+                                                                        Interest Rate Range
+                                                                    </span><br />
+                                                                    <input type="text" id="interestMin" name="interestMin" placeholder="Min" style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                                                    <span style="display: inline-block;width: 10px; height: 2px; color: #8AAF92; font-size: 24px;">-</span>
+                                                                    <input type="text" id="interestMax" name="interestMax" placeholder="Max" style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                                                </div>
+                                                            </div>
+                                                            <br /><br />
+                                                            <div class="row">
+                                                                <div class="col-sm-6">
+                                                                    <span style="width: 86px;color: #000;font-family: Open Sans;
+                                      font-size: 12px;
+                                      font-style: normal;
+                                      font-weight: 400;
+                                      line-height: normal;">
+                                                                        Program Types
+                                                                    </span><br />
+
+
+                                                                    <!--<input style="width: 215px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />-->
+
+
+                                                                    <select class="form-select mb-3" aria-label="Default select example" id="selectprograms" name="selectprograms"
+                                                                            style="width: 215px;height: 40px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;">
+                                                                        <option value="0" selected>Select</option>
+                                                                        <option value="1">Conventional Loan</option>
+                                                                        <option value="2">DSCR Loan</option>
+                                                                        <option value="3">Hard Money Loan</option>
+                                                                        <option value="4">Hybrid Loan</option>
+                                                                        <option value="5">Non - QM Loan</option>
+                                                                        <option value="6">Private Lender Loan</option>
+                                                                        <option value="7">Seller Financing</option>
+                                                                        <option value="8">Subject-to Assumption</option>
+                                                                    </select>
+
+                                                                </div>
+                                                                <div class="col-sm-6">
+                                                                    <span style="width: 117px;color: #000;font-family: Open Sans;
+                                      font-size: 12px;
+                                      font-style: normal;
+                                      font-weight: 400;
+                                      line-height: normal;">
+                                                                        Funds to Close
+                                                                    </span><br />
+                                                                    <input type="text" id="txtminFtC" name="txtminFtC" placeholder="Min" style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                                                    <span style="display: inline-block;width: 10px; height: 2px; color: #8AAF92; font-size: 24px;">-</span>
+                                                                    <input type="text" id="txtmaxFtC" name="txtmaxFtC" placeholder="Max" style="width: 89px;height: 31px;flex-shrink: 0;border-radius: 10px;border: 1px solid #F1F1F1;background: #FFF;" />
+                                                                </div>
+                                                            </div>
+                                                            <br /><br />
+                                                            <div id="txtDueDiligenceDocument" class="row">
+                                                                <div style="margin-bottom: 15px;" class="col-sm-12">
+                                                                    <span style="width: 162px;color: #000;font-family: Open Sans;
+                                      font-size: 12px;
+                                      font-style: normal;
+                                      font-weight: 600;
+                                      line-height: normal;">
+                                                                        Due Dilegence Documents
+                                                                    </span><br />
+
+                                                                    <div style="display: inline-block;width: 99px;height: 26px;flex-shrink: 0;border-radius: 5px;border: 1px solid #D9D9D9;">
+                                                                        <input type="checkbox" id="txtAppraisal" name="txtAppraisal" value="1" style="width: 16px;height: 16px;flex-shrink: 0;border: 2px solid #8AAF92;" />
+                                                                        <label style="width:56px;color: #000;font-family: Open Sans;
+                                       font-size: 12px;
+                                       font-style: normal;
+                                       font-weight: 400;
+                                       line-height: normal;" for="txtAppraisal">Appraisal</label>
+                                                                    </div>
+
+                                                                    <div style="display: inline-block;width: 130px;height: 26px;flex-shrink: 0;border-radius: 5px;border: 1px solid #D9D9D9;">
+                                                                        <input type="checkbox" id="txtEnvironmental" name="txtEnvironmental" value="3" style="width: 16px;height: 16px;flex-shrink: 0;border: 2px solid #8AAF92;" />
+                                                                        <label style="width:84px;color: #000;font-family: Open Sans;
+                                       font-size: 12px;
+                                       font-style: normal;
+                                       font-weight: 400;
+                                       line-height: normal;" for="txtEnvironmental">Environmental</label>
+                                                                    </div>
+
+                                                                    <div style="display: inline-block;width: 89px;height: 26px;flex-shrink: 0;border-radius: 5px;border: 1px solid #D9D9D9;">
+                                                                        <input type="checkbox" id="txtSurvey" name="txtSurvey" value="2" style="width: 16px;height: 16px;flex-shrink: 0;border: 2px solid #8AAF92;" />
+                                                                        <label style="width:41px;color: #000;font-family: Open Sans;
+                                       font-size: 12px;
+                                       font-style: normal;
+                                       font-weight: 400;
+                                       line-height: normal;" for="txtSurvey">Survey</label>
+                                                                    </div>
+
+                                                                    <div style="display: inline-block;width: 113px;height: 26px;flex-shrink: 0;border-radius: 5px;border: 1px solid #D9D9D9;">
+                                                                        <input type="checkbox" id="txtInspection" name="txtInspection" value="4" style="width: 16px;height: 16px;flex-shrink: 0;border: 2px solid #8AAF92;" />
+                                                                        <label style="width:59px;color: #000;font-family: Open Sans;
+                                       font-size: 12px;
+                                       font-style: normal;
+                                       font-weight: 400;
+                                       line-height: normal;" for="txtInspection">Inspection</label>
+                                                                    </div>
+                                                                    
+                                                                </div>
+
+
+
+                                                                
+                                                                <button style="margin-left:auto;margin-right:auto; width: 100px;" type="button" class="btn-cancel btn-pbr"
+                                                                        id="btnClear2">
+                                                                    Clear
+                                                                </button>
+                                                                <button style="margin-left:auto;margin-right:auto; width: 100px;" type="submit" class="btn-sign btn-pbr" id="btnSearch2" name="btnSearch" value="btnSearch2" data-bs-dismiss="modal">Search</button>
+
+
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+
+
+
+
+                                            </div>
+                                            <!--</div>-->
+                                            <!--</div>-->
+
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        </form>                       
+
+
+
+    </div>
+</div>
+<div style="width: 100%">
+    <div class="container my-4">
+        <div>
+            <h4 class="page-title">REIDY to be yours</h4>
+        </div>
+        <div class="owl-carousel owl-theme">
+            <div class="item">
+                <div class="card">
+                    <img class="card-img-top" src="~/images/background/card-baner.png" alt="Apartments" />
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <strong>$1,955,000</strong>
+                            <strong>Apartments</strong>
+                        </div>
+                        <div class="text-start border-top">
+                            8 Bds | 8 Ba | 4028 sqft
+                        </div>
+                        <div class="text-start">
+                            3010 Truxillo St, Houston TX 77007
+                        </div>
+                        <div class="text-start border-top">Built in: 2023</div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="card">
+                    <img class="card-img-top" src="~/images/background/card-baner.png" alt="Apartments" />
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <strong>$1,955,000</strong>
+                            <strong>Apartments</strong>
+                        </div>
+                        <div class="text-start border-top">
+                            8 Bds | 8 Ba | 4028 sqft
+                        </div>
+                        <div class="text-start">
+                            3010 Truxillo St, Houston TX 77007
+                        </div>
+                        <div class="text-start border-top">Built in: 2023</div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="card">
+                    <img class="card-img-top" src="~/images/background/card-baner.png" alt="Apartments" />
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <strong>$1,955,000</strong>
+                            <strong>Apartments</strong>
+                        </div>
+                        <div class="text-start border-top">
+                            8 Bds | 8 Ba | 4028 sqft
+                        </div>
+                        <div class="text-start">
+                            3010 Truxillo St, Houston TX 77007
+                        </div>
+                        <div class="text-start border-top">Built in: 2023</div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="card">
+                    <img class="card-img-top" src="~/images/background/card-baner.png" alt="Apartments" />
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <strong>$1,955,000</strong>
+                            <strong>Apartments</strong>
+                        </div>
+                        <div class="text-start border-top">
+                            8 Bds | 8 Ba | 4028 sqft
+                        </div>
+                        <div class="text-start">
+                            3010 Truxillo St, Houston TX 77007
+                        </div>
+                        <div class="text-start border-top">Built in: 2023</div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="card">
+                    <img class="card-img-top" src="~/images/background/card-baner.png" alt="Apartments" />
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <strong>$1,955,000</strong>
+                            <strong>Apartments</strong>
+                        </div>
+                        <div class="text-start border-top">
+                            8 Bds | 8 Ba | 4028 sqft
+                        </div>
+                        <div class="text-start">
+                            3010 Truxillo St, Houston TX 77007
+                        </div>
+                        <div class="text-start border-top">Built in: 2023</div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="card">
+                    <img class="card-img-top" src="~/images/background/card-baner.png" alt="Apartments" />
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <strong>$1,955,000</strong>
+                            <strong>Apartments</strong>
+                        </div>
+                        <div class="text-start border-top">
+                            8 Bds | 8 Ba | 4028 sqft
+                        </div>
+                        <div class="text-start">
+                            3010 Truxillo St, Houston TX 77007
+                        </div>
+                        <div class="text-start border-top">Built in: 2023</div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="card">
+                    <img class="card-img-top" src="~/images/background/card-baner.png" alt="Apartments" />
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <strong>$1,955,000</strong>
+                            <strong>Apartments</strong>
+                        </div>
+                        <div class="text-start border-top">
+                            8 Bds | 8 Ba | 4028 sqft
+                        </div>
+                        <div class="text-start">
+                            3010 Truxillo St, Houston TX 77007
+                        </div>
+                        <div class="text-start border-top">Built in: 2023</div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="card">
+                    <img class="card-img-top" src="~/images/background/card-baner.png" alt="Apartments" />
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <strong>$1,955,000</strong>
+                            <strong>Apartments</strong>
+                        </div>
+                        <div class="text-start border-top">
+                            8 Bds | 8 Ba | 4028 sqft
+                        </div>
+                        <div class="text-start">
+                            3010 Truxillo St, Houston TX 77007
+                        </div>
+                        <div class="text-start border-top">Built in: 2023</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div>
+            <h1 class="reidy-title">Investing like never before with...</h1>
+        </div>
+        <div class="invest-block">
+            <div class="reidy-options">
+                <p>Partner Matching</p>
+                <p>Fast-track Buyer</p>
+                <p>Loan Market Place</p>
+            </div>
+            <div class="rediy-images">
+                <img class ="image-1" src="~/Images/background/lnd.png" alt="card-image" />
+                <img class="image-2" src="~/Images/background/image 21.png" alt="card-image" />
+                <img class="image-3" src="~/Images/background/image 23.png" alt="card-image" />
+            </div>
+            <div class="reidy-system">
+                <ul>
+                    <strong class="text-primary">Pick the loan that works for you!</strong>
+                    <p>Our system automatically selects lending options that you are already approved of based on your Fast-Track buyer information</p>
+                </ul>
+                <button class="btn btn-sm btn-primary reidy-start">Start now</button>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h4 class="page-title px-2">What our users have to say</h4>
+    </div>
+    <div class="owl-carousel owl-theme card-review px-2">
+        <div class="user-container">
+            <div class="card-view">
+                <div class="user-image">
+                    <img src="~/Images/background/Ellipse 9.png" alt="user-image">
+                </div>
+                <div class="rate">
+                    <input type="radio" id="star5" name="rate" value="5" />
+                    <label for="star5" title="5 stars">5 stars</label>
+                    <input type="radio" id="star4" name="rate" value="4" />
+                    <label for="star4" title="4 stars">4 stars</label>
+                    <input type="radio" id="star3" name="rate" value="3" />
+                    <label for="star3" title="3 stars">3 stars</label>
+                    <input type="radio" id="star2" name="rate" value="2" />
+                    <label for="star2" title="2 stars">2 stars</label>
+                    <input type="radio" id="star1" name="rate" value="1" />
+                    <label for="star1" title="1 star">1 star</label>
+                </div>
+                <div class="text-light">
+                    Sanmore is a one-stop shop for all your real estate needs!
+                </div>
+            </div>
+        </div>
+        <div class="user-container">
+            <div class="card-view">
+                <div class="user-image">
+                    <img src="~/Images/background/Ellipse 9.png" alt="user-image">
+                </div>
+                <div class="rate">
+                    <input type="radio" id="star5" name="rate" value="5" />
+                    <label for="star5" title="5 stars">5 stars</label>
+                    <input type="radio" id="star4" name="rate" value="4" />
+                    <label for="star4" title="4 stars">4 stars</label>
+                    <input type="radio" id="star3" name="rate" value="3" />
+                    <label for="star3" title="3 stars">3 stars</label>
+                    <input type="radio" id="star2" name="rate" value="2" />
+                    <label for="star2" title="2 stars">2 stars</label>
+                    <input type="radio" id="star1" name="rate" value="1" />
+                    <label for="star1" title="1 star">1 star</label>
+                </div>
+                <div class="text-light">
+                    Sanmore is a one-stop shop for all your real estate needs!
+                </div>
+            </div>
+        </div>
+        <div class="user-container">
+            <div class="card-view">
+                <div class="user-image">
+                    <img src="~/Images/background/Ellipse 9.png" alt="user-image">
+                </div>
+                <div class="rate">
+                    <input type="radio" id="star5" name="rate" value="5" />
+                    <label for="star5" title="5 stars">5 stars</label>
+                    <input type="radio" id="star4" name="rate" value="4" />
+                    <label for="star4" title="4 stars">4 stars</label>
+                    <input type="radio" id="star3" name="rate" value="3" />
+                    <label for="star3" title="3 stars">3 stars</label>
+                    <input type="radio" id="star2" name="rate" value="2" />
+                    <label for="star2" title="2 stars">2 stars</label>
+                    <input type="radio" id="star1" name="rate" value="1" />
+                    <label for="star1" title="1 star">1 star</label>
+                </div>
+                <div class="text-light">
+                    Sanmore is a one-stop shop for all your real estate needs!
+                </div>
+            </div>
+        </div>
+        <div class="user-container">
+            <div class="card-view">
+                <div class="user-image">
+                    <img src="~/Images/background/Ellipse 9.png" alt="user-image">
+                </div>
+                <div class="rate">
+                    <input type="radio" id="star5" name="rate" value="5" />
+                    <label for="star5" title="5 stars">5 stars</label>
+                    <input type="radio" id="star4" name="rate" value="4" />
+                    <label for="star4" title="4 stars">4 stars</label>
+                    <input type="radio" id="star3" name="rate" value="3" />
+                    <label for="star3" title="3 stars">3 stars</label>
+                    <input type="radio" id="star2" name="rate" value="2" />
+                    <label for="star2" title="2 stars">2 stars</label>
+                    <input type="radio" id="star1" name="rate" value="1" />
+                    <label for="star1" title="1 star">1 star</label>
+                </div>
+                <div class="text-light">
+                    Sanmore is a one-stop shop for all your real estate needs!
+                </div>
+            </div>
+        </div>
+        <div class="user-container">
+            <div class="card-view">
+                <div class="user-image">
+                    <img src="~/Images/background/Ellipse 9.png" alt="user-image">
+                </div>
+                <div class="rate">
+                    <input type="radio" id="star5" name="rate" value="5" />
+                    <label for="star5" title="5 stars">5 stars</label>
+                    <input type="radio" id="star4" name="rate" value="4" />
+                    <label for="star4" title="4 stars">4 stars</label>
+                    <input type="radio" id="star3" name="rate" value="3" />
+                    <label for="star3" title="3 stars">3 stars</label>
+                    <input type="radio" id="star2" name="rate" value="2" />
+                    <label for="star2" title="2 stars">2 stars</label>
+                    <input type="radio" id="star1" name="rate" value="1" />
+                    <label for="star1" title="1 star">1 star</label>
+                </div>
+                <div class="text-light">
+                    Sanmore is a one-stop shop for all your real estate needs!
+                </div>
+            </div>
+        </div>
+        <div class="user-container">
+            <div class="card-view">
+                <div class="user-image">
+                    <img src="~/Images/background/Ellipse 9.png" alt="user-image">
+                </div>
+                <div class="rate">
+                    <input type="radio" id="star5" name="rate" value="5" />
+                    <label for="star5" title="5 stars">5 stars</label>
+                    <input type="radio" id="star4" name="rate" value="4" />
+                    <label for="star4" title="4 stars">4 stars</label>
+                    <input type="radio" id="star3" name="rate" value="3" />
+                    <label for="star3" title="3 stars">3 stars</label>
+                    <input type="radio" id="star2" name="rate" value="2" />
+                    <label for="star2" title="2 stars">2 stars</label>
+                    <input type="radio" id="star1" name="rate" value="1" />
+                    <label for="star1" title="1 star">1 star</label>
+                </div>
+                <div class="text-light">
+                    Sanmore is a one-stop shop for all your real estate needs!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container my-4 front-image">
+    <h5 class="title-front">Reidy on the front page</h5>
+    <div class="image-container">
+        <div>
+            <img class="main-image" src="~/Images/background/main.png" alt="main-image" />
+        </div>
+        <div>
+            <img class="first-image" src="~/Images/background/img-1.png" alt="first-image" />
+                <img class="first-image" src="~/Images/background/img-2.png" alt="second-image" />
+        </div>
+        <div>
+            <img class="second-image"  src="~/Images/background/img-2.png" alt="second-image" />
+            <img class="second-image"  src="~/Images/\background/img-3.png" alt="second-image" />
+        </div>
+        <div>
+            <img class="third-image" src="~/Images/background/img-4.png" alt="third-image" />
+            <img class="third-image" src="~/Images/background/img-2.png" alt="third-image" />
+        </div>
+        <div class="icons-landing">
+            <div>
+                <button type="button">
+                    <img src="~/Images/icons/insta.png" alt="icon-insta" />
+                </button>
+            </div>
+            <div>
+                <button type="button">
+                    <img src="~/Images/icons/facebook.png" alt="icon-facebook" />
+                </button>
+            </div>
+            <div>
+                <button type="button">
+                    <img src="~/Images/icons/tiktok.png" alt="icon-tik" />
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            menu.style.display = (menu.style.display === 'none') ? 'block' : 'none';
+        }
+        $(document).ready(function () {
+            $('.owl-carousel').owlCarousel({
+                items: 4,
+                loop: false,
+                margin: 20, 
+                nav: true,
+                dots: false
+            })
+        });
+    </script>
+
+
+    <script type="text/javascript">
+
+        $('#FiltersId').on('hide.bs.modal', function () {
+            $('#contHeader').css('z-index', '3');
+        })
+
+    </script>
+}

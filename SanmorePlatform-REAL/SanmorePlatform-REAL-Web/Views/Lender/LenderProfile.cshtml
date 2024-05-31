@@ -1,0 +1,429 @@
+﻿@using SanmorePlatform_REAL_Utility.Enum.LenderEnum;
+@model SanmorePlatform_REAL_Model.ViewModels.LenderViewModel.LenderResponceModel;
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SanmorePlatform-REAL</title>
+    <!-- Links -->
+</head>
+
+<body>
+    <!--Nav-->
+    <div class="top-section">
+        <div class="container-fluid container-px">
+            <div class="flexcntrbtw">
+                <h3 class="fw-semibold mb-0">My <span class="blue-primary">Profile</span></h3>
+            </div>
+        </div>
+    </div>
+    <div class="addlistingform">
+        <div class="container-px">
+            <!-- Lender-profile section -->
+            <div class="lender_profile">
+                <div class="add-property">
+                    <div class="flexcntrbtw">
+                        <h5>Edit Profile</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-3 text-center">
+                            <div class="profile-pic">
+                                <label class="edit-label" for="file">
+                                    <span>Change Image</span>
+                                </label>
+                                <input id="file" type="file" onchange="loadFile(event)">
+                                <img src="~/Images/User.png" id="output" width="200" alt="profile_pic" class="edit_pic">
+                            </div>
+                            <p class="mt-2">Profile Picture</p>
+                        </div>
+                        <div class="col-xl-9">
+                            <div class="row mt-4">
+                                <div class="col-xxl-4 col-xl-4 col-md-6 mb-2">
+                                    <label for="fName" class="form-label">First name</label>
+                                    <input type="text" class="input-field" id="fName" placeholder="First name" value="@Model.FirstName" disabled>
+                                </div>
+                                <div class="col-xxl-4 col-xl-4 col-md-6 mb-2">
+                                    <label for="lastName" class="form-label">Last name</label>
+                                    <input type="text" class="input-field" id="lastName" placeholder="Last name" value="@Model.LastName" disabled>
+                                </div>
+                                <div class="col-xxl-4 col-xl-4 col-md-6 mb-2">
+                                    <label for="principalBroker" class="form-label">Title</label>
+                                    <input type="text" class="input-field" id="principalBroker" placeholder="Title">
+                                </div>
+                                <div class="col-xxl-4 col-xl-4 col-md-6 mb-2">
+                                    <label for="emailProfile" class="form-label">Email</label>
+                                    <input type="email" class="input-field" id="emailProfile" placeholder="caroline@gmail.com"
+                                           value="@Model.Email">
+                                </div>
+                                <div class="col-xxl-4 col-xl-4 col-md-6 mb-2">
+                                    <label for="mobilePhoneId" class="form-label">Mobile phone</label>
+                                    <input type="tel" maxlength="12" class="input-field myMobilePhone" id="mobilePhoneId" placeholder="Mobile phone" onkeyup="RemoveMobileNumber()"
+                                           value="@Model.PhoneNumber">
+                                    <span id="errMobileNo" class="text-danger"></span>
+                                </div>
+                                <div class="col-xxl-4 col-xl-4 col-md-6 mb-2">
+                                    <label for="officePhoneId" class="form-label">Office phone</label>
+                                    <input type="tel" maxlength="12" class="input-field myOfficePhone" id="officePhoneId" placeholder="Office phone" onkeyup="RemoveOfficePhone()">
+                                    <span id="errOfficePhone" class="text-danger"></span>
+                                </div>
+                                <div class="col-xxl-4 col-xl-4 col-md-6 mb-2">
+                                    <label for="primaryRole" class="form-label">
+                                        Primary
+                                        Role
+                                    </label>
+                                    <select class="form-select" aria-label="Default select example" id="primaryRole">
+                                        <option value="1">Lender</option>
+                                        <option value="2">Broker</option>
+                                        <option value="2">FastTrack Buyer</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="add-property">
+                    <div class="row mt-3">
+                        <h5>Company Address</h5>
+                        <div class="col-xl-6">
+                            <div class="row">
+                                <div class="col-xl-6 col-md-6 mb-3">
+                                    <label for="addressfield3" class="form-label">Address 1 </label>
+                                    <input type="text" class="input-field" id="addressfield3" placeholder="Address 1"
+                                           value="@Model.Address1">
+                                    <span id="errAddressfield3" class="text-danger"></span>
+                                </div>
+                                <div class="col-xl-6 col-md-6 mb-3">
+                                    <label for="address2field" class="form-label">Address 2</label>
+                                    <input type="text" class="input-field" id="address2field" placeholder="Address 2" value="@Model.Address2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="row">
+                                <div class="col-xl-4 col-md-6 mb-3">
+                                    <label for="CityField1" class="form-label">City </label>
+                                    <input type="text" class="input-field" id="CityField1" placeholder="City" value="@Model.City">
+                                    <span id="errCityField1" class="text-danger"></span>
+                                </div>
+                                <div class="col-xl-4 col-md-6 mb-3">
+                                    <label for="stateField1" class="form-label">State </label>
+                                    <select class="form-select" aria-label="Default select example" id="stateField1"
+                                            placeholder="SelectState">
+                                        <option value="0">Select State</option>
+                                        @foreach (var stateValues in Model.states)
+                                        {                                     
+                                            if (Model.StateId == stateValues.StateId)
+                                            {
+                                                <option selected value="@stateValues.StateId">@stateValues.LongName</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@stateValues.StateId">@stateValues.LongName</option>
+                                            }
+                                        }
+
+                                    </select>
+                                    <span id="errStateField1" class="text-danger"></span>
+                                </div>
+                                <div class="col-xl-4 col-md-6 mb-3">
+                                    <label for="zipCode1" class="form-label">Zip code </label>
+                                    <input type="text" class="input-field" id="zipCode1" placeholder="Zip code" value="@Model.ZipCode">
+                                    <span id="errZipCode1" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="add-property">
+                    <div class="row">
+                        <div class="col-xxl-3 col-xl-3 col-md-6 mb-3">
+                            <label for="roleLending" class="form-label">Role in lending company</label>
+                            <input type="text" class="input-field" id="roleLending" value="@Model.RoleInLendingCompany">
+                            <span id="errRoleLending" class="text-danger"></span>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-md-6 mb-3">
+                            <label for="lenderCompanyName1" class="form-label">Lender company name </label>
+                            <input type="text" class="input-field" id="lenderCompanyName1" value="@Model.LenderCompanyName">
+                            <span id="errLenderCompanyName1" class="text-danger"></span>
+                        </div>
+                        <div class="col-xxl-2 col-xl-3 col-md-6 mb-3">
+                            <label for="enrityType" class="form-label">Entity type</label>
+                            <select class="form-select" aria-label="Default select example" id="enrityType">
+                                <option>Select</option>
+
+                                @{
+                                    var entity = 1;
+                                    foreach (var i in Enum.GetValues(typeof(EntityType)))
+                                    {
+                                        @if (Model.EntityType == entity)
+                                        {
+                                            <option selected> @i.ToString().Replace('_',' ')</option>
+                                        }
+                                        else
+                                        {
+                                            <option> @i.ToString().Replace('_',' ')</option>
+                                        }
+
+                                        entity++;
+                                    }
+                                }
+                            </select>
+                            <span id="errEntityType" class="text-danger"></span>
+                        </div>
+                        <div class="col-xxl-2 col-xl-3 col-md-6 mb-3">
+                            <label for="phoneLenderInput" class="form-label">
+                                Lender phone
+                            </label>
+                            <input type="tel" maxlength="12" class="input-field myLenderPhone" id="phoneLenderInput" placeholder="Lender phone" onkeyup="RemoveLenderPhoneNumber()"
+                                   value="@Model.LenderPhoneNo">
+                            <span id="errPhoneLenderInput" class="text-danger"></span>
+                        </div>
+                        <div class="col-xxl-2 col-xl-3 col-md-6 mb-3">
+                            <label for="yearsInBusiness" class="form-label w-100">
+                                Years in business
+                            </label>
+                            <input type="text" class="input-field w-xl-50" id="yearsInBusiness" placeholder="Years in business"
+                                   value="@Model.YearsInBusiness">
+                            <span id="errYearsInBusiness" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xxl-3 col-xl-4 col-md-6 mb-3">
+                            <label for="estimatedNumberLoanDone" class="form-label">
+                                Est. number of loans done per year
+                            </label>
+                            <input type="text" class="input-field custom-w30" id="estimatedNumberLoanDone"
+                                   placeholder="Est. number of loans done per year " value="@Model.EstimatedLoansDonePerYear">
+                            <span id="errEstimatedNumberLoanDone" class="text-danger"></span>
+                        </div>
+                        <div class="col-xxl-3 col-xl-4 col-md-6 mb-3">
+                            <label for="preferredAttorneyDoc" class="form-label">
+                                Preferred attorney for doc drafting
+                            </label>
+                            <input type="text" class="input-field" id="preferredAttorneyDoc"
+                                   placeholder="Preferred attorney for doc drafting" value="@Model.PreferredAttorneyForDocDrafting">
+                        </div>
+                        <div class="col-xxl-2 col-xl-4 col-md-6 mb-3">
+                            <label for="preferredAttorneyPhone" class="form-label">
+                                Preferred attorney phone
+                            </label>
+                            <input type="tel" maxlength="12" class="input-field myAttorneyPhone" id="preferredAttorneyPhone" placeholder="Enter phone number" onkeyup="RemoveAttorneyPhone()"
+                                   value="@Model.PreferredAttorneyPhone">
+                            <span id="errPreferredAttorneyPhone" class="text-danger"></span>
+                        </div>
+                        <div class="col-xxl-6 col-xl-10 col-md-12 mb-3">
+                            <div class="d-flex align-items-center flex-wrap">
+                                <label for="servicingLoanReidy" class="me-2">
+                                    Are you interested in servicing your loans
+                                    right here within Reidy?
+                                </label>
+
+                                <select class="form-select w-25" aria-label="Default select example" id="servicingLoanReidy">
+
+                                    <option>Select</option>
+                                    @{
+                                        var loanReidy = 1;
+                                        foreach (var i in Enum.GetValues(typeof(LoanWithinReidy)))
+                                        {
+                                            @if (Model.InterestedInServeLoansRightHereWithInReidy == loanReidy)
+                                            {
+                                                <option selected> @i.ToString().Replace('_',' ')</option>
+                                            }
+                                            else
+                                            {
+                                                <option> @i.ToString().Replace('_',' ')</option>
+                                            }
+                                            loanReidy++;
+                                        }
+                                    }
+                                </select>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="add-property">
+                    <h5 class="mt-2">Proof of Lendable Funds</h5>
+                    <div class="row">
+                        <div class="col-xl-3 col-md-6 mb-3">
+                            <label for="proofType" class="form-label">Type </label>
+                            <select class="form-select" aria-label="Default select example" id="proofType" onchange="RemoveProofType()">
+                                <option>Select</option>
+                                @{
+                                    var proofType = 1;
+                                    foreach (var i in Enum.GetValues(typeof(ProofType)))
+                                    {
+                                        @if (Model.ProofType == proofType)
+                                        {
+                                            <option selected> @i.ToString().Replace('_',' ')</option>
+                                        }
+                                        else
+                                        {
+                                            <option> @i.ToString().Replace('_',' ')</option>
+                                        }
+                                        proofType++;
+                                    }
+                                }
+                            </select>
+                            <span id="errProofType" class="text-danger"></span>
+                        </div>
+                        <div class="col-xl-3 col-md-6 mb-3">
+                            <div class="upload__box">
+                                <div class="upload__btn-box">
+                                    <div class="upload__btn">
+                                        <label for="uploadFileLender" class="form-label">
+                                            Upload file <span class="fs-small subpara">
+                                                (pdf
+                                                or images only)
+                                            </span>
+                                        </label>
+                                        
+                                       @*  <input type="file" asp-for="UploadLenderFileName" multiple data-max_length="20" class="input-field formFile upload__inputfile"
+                                               id="uploadFileLender" onchange="fileFormatOnchange()" accept="image/*"> *@
+                                        <input type="file" multiple data-max_length="20" class="input-field formFile upload__inputfile"
+                                               id="uploadFileLender">
+
+                                    </div>
+                                </div>
+                                <span id="errUploadLenderFile" class="text-danger"></span>
+                                <span id="spanUploadLenderFile" class="text-danger"></span>
+                                <div class="upload__img-wrap">
+                                    @if (Model.ProofOfLendableFund != null)
+                                    {
+                                        foreach (var item in Model.ProofOfLendableFund)
+                                        {
+                                            @if(item.FileType==1){
+                                                <div class='upload__img-box'><input type="hidden" class="clsHdnBankDocumentFiles" id="hdnBankDocumentFiles_@item.FileType" value="@item.FileType" /><div style='background-image: url("@item.FilePath")' data-file='@item.FilePath' id="dvUploadImageBankDocument_@item.ProofOfLendableFundId" class='img-bg'><div class='upload__img-close'></div></div></div>
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                    }
+                                </div>
+                            </div>
+                            @* <div class="uploaded-pics">
+                                <div class="prview-outer d-flex">
+                                    <div class="user_upload-img">
+                                        <img src="~/Images/statement1.jpg" alt="" class="img-fluid">
+                                        <span class="remove_btn2">x</span>
+                                    </div>
+                                </div>
+                            </div> *@
+
+                        </div>
+                        <div class="col-xxl-3 col-xl-5 col-md-6 mb-3">
+                            <div class="upload__box">
+                                <div class="upload__btn-box">
+                                    <div class="upload__btn">
+                                        <label for="uploadLenderLicense" class="form-label">
+                                            Upload lending license (if any) <span class="fs-small subpara">(pdf or images allowed)</span>
+                                        </label>
+                                        <input type="file" multiple data-max_length="20" class="input-field formFile upload__inputfile"
+                                               id="uploadLenderLicense" accept="image/*">
+                                    </div>
+                                </div>
+
+                                <div class="upload__img-wrap">
+                                    @if (Model.ProofOfLendableFund != null)
+                                    {
+                                        foreach (var item in Model.ProofOfLendableFund)
+                                        {
+                                            @if(item.FileType==2){
+                                                <div class='upload__img-box'><input type="hidden" class="clsHdnBankDocumentFiles" id="hdnBankDocumentFiles_@item.ProofOfLendableFundId" value="@item.ProofOfLendableFundId" /><div style='background-image: url("@item.FilePath")' data-file='@item.FilePath' id="dvUploadImageBankDocument_@item.ProofOfLendableFundId" class='img-bg'><div class='upload__img-close'></div></div></div>
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                    }
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="add-property">
+                    <h5>Help us fight fraud!</h5>
+                    <div class="row">
+                        <div class="col-xxl-2 col-xl-3 col-md-6 mb-3">
+                            <label for="identificationform1" class="form-label">Identification verification type</label>
+
+                            <select class="form-select" aria-label="Default select example" id="identificationform1">
+                                <option selected>Select</option>
+                                @{                                  
+                                    var identity = 1;
+                                    foreach (var i in Enum.GetValues(typeof(IdentificationType)))
+                                    {
+                                        @if (Model.IdentificationType == identity)
+                                        {
+                                            <option selected> @i.ToString().Replace('_',' ')</option>
+                                        }
+                                        else
+                                        {
+                                            <option> @i.ToString().Replace('_',' ')</option>
+                                        }
+                                        identity++;
+                                    }
+                                }
+                            </select>
+
+                        </div>
+                        <div class="col-xxl-3 col-xl-4 col-md-6 mb-3">
+                            <div class="upload__box">
+                                <div class="upload__btn-box">
+                                    <div class="upload__btn">
+                                        <label for="stateIssuedId" class="form-label">
+                                            Upload identification <span class="fs-small subpara">(pdf or images only)</span>
+                                        </label>
+                                        <input type="file" multiple data-max_length="20" class="input-field formFile upload__inputfile"
+                                               id="stateIssuedId" accept="image/*">
+                                    </div>
+                                </div>
+                                <div class="upload__img-wrap">
+                                    @if (Model.IdentificationFileName != null)
+                                    {
+                                     
+                                            <div class='upload__img-box'><input type="hidden" class="clsHdnBankDocumentFiles" /><div style='background-image: url("@Model.IdentificationFilePath")' data-file='@Model.IdentificationFilePath' class='img-bg'><div class='upload__img-close'></div></div></div>
+                                       
+                                    }
+                                    else
+                                    {
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4 mb-4 user_profile">
+
+                @*   <a href="/Home/Index">
+                <input type="button" class="btn-pbr btn-cancel" value="Cancel" />
+                </a> *@
+                <button type="button" class="btn-pbr btn-cancel" onclick="CancelLenderProfile()">Cancel</button>
+                <button type="button" class="btn-login btn-pbr" onclick="UpdateLenderProfile()">Save changes</button>
+                <button type="button" class="btn-sign btn-pbr" onclick="location.href='/Lender/LenderProductList/@Context.Session.GetString("Id")'">Go to my lending products now</button>
+
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <!-- Right Sidebar Menu Modal Popup -->
+    <!-- Right Sidebar Menu Modal Popup End-->
+    <!-- scripts -->
+    <script src="~/js/jquery-3.7.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script src="~/js/Lender/lenderProfile.js"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>

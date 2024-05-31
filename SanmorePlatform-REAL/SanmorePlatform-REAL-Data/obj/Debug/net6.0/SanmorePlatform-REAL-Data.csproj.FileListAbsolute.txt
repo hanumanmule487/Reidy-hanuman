@@ -1,0 +1,100 @@
+D:\Project\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Data.deps.json
+D:\Project\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Data.runtimeconfig.json
+D:\Project\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Data.dll
+D:\Project\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Data.pdb
+D:\Project\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Model.dll
+D:\Project\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Utility.dll
+D:\Project\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Model.pdb
+D:\Project\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Utility.pdb
+D:\Project\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.csproj.AssemblyReference.cache
+D:\Project\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.AssemblyInfoInputs.cache
+D:\Project\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.AssemblyInfo.cs
+D:\Project\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.csproj.CoreCompileInputs.cache
+D:\Project\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.csproj.CopyComplete
+D:\Project\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.dll
+D:\Project\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\refint\SanmorePlatform-REAL-Data.dll
+D:\Project\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.pdb
+D:\Project\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.genruntimeconfig.cache
+D:\Project\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\ref\SanmorePlatform-REAL-Data.dll
+C:\Users\Michael Cohen\Source\Repos\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Data.deps.json
+C:\Users\Michael Cohen\Source\Repos\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Data.runtimeconfig.json
+C:\Users\Michael Cohen\Source\Repos\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Data.dll
+C:\Users\Michael Cohen\Source\Repos\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Data.pdb
+C:\Users\Michael Cohen\Source\Repos\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Model.dll
+C:\Users\Michael Cohen\Source\Repos\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Utility.dll
+C:\Users\Michael Cohen\Source\Repos\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Model.pdb
+C:\Users\Michael Cohen\Source\Repos\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Utility.pdb
+C:\Users\Michael Cohen\Source\Repos\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.csproj.AssemblyReference.cache
+C:\Users\Michael Cohen\Source\Repos\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Michael Cohen\Source\Repos\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.AssemblyInfoInputs.cache
+C:\Users\Michael Cohen\Source\Repos\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.AssemblyInfo.cs
+C:\Users\Michael Cohen\Source\Repos\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.csproj.CoreCompileInputs.cache
+C:\Users\Michael Cohen\Source\Repos\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.sourcelink.json
+C:\Users\Michael Cohen\Source\Repos\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmoreP.B99B3BA1.Up2Date
+C:\Users\Michael Cohen\Source\Repos\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.dll
+C:\Users\Michael Cohen\Source\Repos\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\refint\SanmorePlatform-REAL-Data.dll
+C:\Users\Michael Cohen\Source\Repos\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.pdb
+C:\Users\Michael Cohen\Source\Repos\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.genruntimeconfig.cache
+C:\Users\Michael Cohen\Source\Repos\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\ref\SanmorePlatform-REAL-Data.dll
+C:\Users\Michael Cohen\source\repos\Development\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Data.deps.json
+C:\Users\Michael Cohen\source\repos\Development\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Data.runtimeconfig.json
+C:\Users\Michael Cohen\source\repos\Development\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Data.dll
+C:\Users\Michael Cohen\source\repos\Development\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Data.pdb
+C:\Users\Michael Cohen\source\repos\Development\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Model.dll
+C:\Users\Michael Cohen\source\repos\Development\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Utility.dll
+C:\Users\Michael Cohen\source\repos\Development\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Model.pdb
+C:\Users\Michael Cohen\source\repos\Development\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Utility.pdb
+C:\Users\Michael Cohen\source\repos\Development\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.csproj.AssemblyReference.cache
+C:\Users\Michael Cohen\source\repos\Development\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Michael Cohen\source\repos\Development\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.AssemblyInfoInputs.cache
+C:\Users\Michael Cohen\source\repos\Development\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.AssemblyInfo.cs
+C:\Users\Michael Cohen\source\repos\Development\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.csproj.CoreCompileInputs.cache
+C:\Users\Michael Cohen\source\repos\Development\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.sourcelink.json
+C:\Users\Michael Cohen\source\repos\Development\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmoreP.B99B3BA1.Up2Date
+C:\Users\Michael Cohen\source\repos\Development\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.dll
+C:\Users\Michael Cohen\source\repos\Development\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\refint\SanmorePlatform-REAL-Data.dll
+C:\Users\Michael Cohen\source\repos\Development\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.pdb
+C:\Users\Michael Cohen\source\repos\Development\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.genruntimeconfig.cache
+C:\Users\Michael Cohen\source\repos\Development\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\ref\SanmorePlatform-REAL-Data.dll
+C:\Users\Michael Cohen\Desktop\Development\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\web.config
+C:\Users\Michael Cohen\Desktop\Development\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Data.deps.json
+C:\Users\Michael Cohen\Desktop\Development\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Data.runtimeconfig.json
+C:\Users\Michael Cohen\Desktop\Development\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Data.dll
+C:\Users\Michael Cohen\Desktop\Development\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Data.pdb
+C:\Users\Michael Cohen\Desktop\Development\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Model.dll
+C:\Users\Michael Cohen\Desktop\Development\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Utility.dll
+C:\Users\Michael Cohen\Desktop\Development\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Model.pdb
+C:\Users\Michael Cohen\Desktop\Development\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Utility.pdb
+C:\Users\Michael Cohen\Desktop\Development\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.csproj.AssemblyReference.cache
+C:\Users\Michael Cohen\Desktop\Development\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Michael Cohen\Desktop\Development\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.AssemblyInfoInputs.cache
+C:\Users\Michael Cohen\Desktop\Development\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.AssemblyInfo.cs
+C:\Users\Michael Cohen\Desktop\Development\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.csproj.CoreCompileInputs.cache
+C:\Users\Michael Cohen\Desktop\Development\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmoreP.B99B3BA1.Up2Date
+C:\Users\Michael Cohen\Desktop\Development\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.dll
+C:\Users\Michael Cohen\Desktop\Development\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\refint\SanmorePlatform-REAL-Data.dll
+C:\Users\Michael Cohen\Desktop\Development\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.pdb
+C:\Users\Michael Cohen\Desktop\Development\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.genruntimeconfig.cache
+C:\Users\Michael Cohen\Desktop\Development\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\ref\SanmorePlatform-REAL-Data.dll
+C:\Users\Michael Cohen\Desktop\SourceDev\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\web.config
+C:\Users\Michael Cohen\Desktop\SourceDev\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Data.deps.json
+C:\Users\Michael Cohen\Desktop\SourceDev\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Data.runtimeconfig.json
+C:\Users\Michael Cohen\Desktop\SourceDev\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Data.dll
+C:\Users\Michael Cohen\Desktop\SourceDev\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Data.pdb
+C:\Users\Michael Cohen\Desktop\SourceDev\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Model.dll
+C:\Users\Michael Cohen\Desktop\SourceDev\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Utility.dll
+C:\Users\Michael Cohen\Desktop\SourceDev\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Model.pdb
+C:\Users\Michael Cohen\Desktop\SourceDev\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\bin\Debug\net6.0\SanmorePlatform-REAL-Utility.pdb
+C:\Users\Michael Cohen\Desktop\SourceDev\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.csproj.AssemblyReference.cache
+C:\Users\Michael Cohen\Desktop\SourceDev\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Michael Cohen\Desktop\SourceDev\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.AssemblyInfoInputs.cache
+C:\Users\Michael Cohen\Desktop\SourceDev\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.AssemblyInfo.cs
+C:\Users\Michael Cohen\Desktop\SourceDev\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.csproj.CoreCompileInputs.cache
+C:\Users\Michael Cohen\Desktop\SourceDev\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.sourcelink.json
+C:\Users\Michael Cohen\Desktop\SourceDev\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmoreP.B99B3BA1.Up2Date
+C:\Users\Michael Cohen\Desktop\SourceDev\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.dll
+C:\Users\Michael Cohen\Desktop\SourceDev\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\refint\SanmorePlatform-REAL-Data.dll
+C:\Users\Michael Cohen\Desktop\SourceDev\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.pdb
+C:\Users\Michael Cohen\Desktop\SourceDev\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\SanmorePlatform-REAL-Data.genruntimeconfig.cache
+C:\Users\Michael Cohen\Desktop\SourceDev\SanmorePlatform-REAL\SanmorePlatform-REAL-Data\obj\Debug\net6.0\ref\SanmorePlatform-REAL-Data.dll
