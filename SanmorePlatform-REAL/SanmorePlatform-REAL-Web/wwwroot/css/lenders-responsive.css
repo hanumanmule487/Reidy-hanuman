@@ -1,0 +1,68 @@
+@media(max-width:1800px) {
+    .insurance-check-outer .form-check-inline {
+        padding-left: 1rem;
+    }
+}
+
+@media (max-width:1359px) {
+    .fs-15-responsive {
+        font-size: 15px;
+    }
+}
+
+@media (max-width:1359px) {
+    .insurance-check-outer .form-check-inline {
+        padding-left: 0.8rem;
+    }
+
+    .w-xl-50 {
+        width: 100%;
+    }
+}
+
+@media(max-width:1025px) {
+    /* Create lending product page Ends*/
+
+    .lending-list .col {
+        width: 50%;
+        flex: auto;
+    }
+
+    .lending-list-title {
+        border-left: 0;
+    }
+
+    .list-header {
+        padding: 0.5rem 0.5rem;
+    }
+
+    .switch-outer {
+        justify-content: start;
+    }
+
+    .lenderList-loan {
+        text-align: left;
+    }
+
+    .lending-list .col p {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* user list for TC page*/
+    .w-xl-75 {
+        width: 100%;
+    }
+}
+
+@media(max-width:765px) {
+
+    /* Landing list page */
+    .lending-list .col {
+        width: 100%;
+    }
+
+    .textleft-mob {
+        text-align: left;
+    }
+}

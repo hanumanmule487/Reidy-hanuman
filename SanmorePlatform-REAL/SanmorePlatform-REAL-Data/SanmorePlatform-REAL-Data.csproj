@@ -1,0 +1,74 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName></SccProjectName>
+    <SccProvider></SccProvider>
+    <SccAuxPath></SccAuxPath>
+    <SccLocalPath></SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>SanmorePlatform_REAL_Data</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" />
+    <Compile Include="obj\Debug\net6.0\SanmorePlatform-REAL-Data.AssemblyInfo.cs" />
+    <Compile Include="obj\Debug\net6.0\SanmorePlatform-REAL-Data.GlobalUsings.g.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="bin\Debug\net6.0\SanmorePlatform-REAL-Data.deps.json" />
+    <Content Include="bin\Debug\net6.0\SanmorePlatform-REAL-Data.runtimeconfig.json" />
+    <Content Include="obj\Debug\net6.0\SanmorePlatform-REAL-Data.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\project.assets.json" />
+    <Content Include="obj\SanmorePlatform-REAL-Data.csproj.nuget.dgspec.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SanmorePlatform-REAL-Model\SanmorePlatform-REAL-Model.csproj" />
+    <ProjectReference Include="..\SanmorePlatform-REAL-Utility\SanmorePlatform-REAL-Utility.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Debug\net6.0\SanmorePlatform-REAL-Data.dll" />
+    <None Include="bin\Debug\net6.0\SanmorePlatform-REAL-Data.pdb" />
+    <None Include="bin\Debug\net6.0\SanmorePlatform-REAL-Model.dll" />
+    <None Include="bin\Debug\net6.0\SanmorePlatform-REAL-Model.pdb" />
+    <None Include="bin\Debug\net6.0\SanmorePlatform-REAL-Utility.dll" />
+    <None Include="bin\Debug\net6.0\SanmorePlatform-REAL-Utility.pdb" />
+    <None Include="obj\Debug\net6.0\refint\SanmorePlatform-REAL-Data.dll" />
+    <None Include="obj\Debug\net6.0\ref\SanmorePlatform-REAL-Data.dll" />
+    <None Include="obj\Debug\net6.0\SanmorePlatform-REAL-Data.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\net6.0\SanmorePlatform-REAL-Data.assets.cache" />
+    <None Include="obj\Debug\net6.0\SanmorePlatform-REAL-Data.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\net6.0\SanmorePlatform-REAL-Data.csproj.BuildWithSkipAnalyzers" />
+    <None Include="obj\Debug\net6.0\SanmorePlatform-REAL-Data.csproj.CopyComplete" />
+    <None Include="obj\Debug\net6.0\SanmorePlatform-REAL-Data.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\net6.0\SanmorePlatform-REAL-Data.dll" />
+    <None Include="obj\Debug\net6.0\SanmorePlatform-REAL-Data.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\Debug\net6.0\SanmorePlatform-REAL-Data.genruntimeconfig.cache" />
+    <None Include="obj\Debug\net6.0\SanmorePlatform-REAL-Data.pdb" />
+    <None Include="obj\project.nuget.cache" />
+    <None Include="obj\SanmorePlatform-REAL-Data.csproj.nuget.g.props" />
+    <None Include="obj\SanmorePlatform-REAL-Data.csproj.nuget.g.targets" />
+  </ItemGroup>
+
+</Project>

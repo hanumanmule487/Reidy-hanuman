@@ -1,0 +1,224 @@
+﻿/*User listing page TC start*/
+
+.lending-list .list-header {
+    background: #B1C9F8;
+    padding: 1rem 1.5rem;
+    border-radius: 10px 10px 0 0;
+}
+
+.role-ul .nav-link,
+.viewprofileuser {
+    padding: 10px 25px;
+    font-size: 14px;
+    border-radius: 30px;
+}
+
+.role-ul button.nav-link.role-tabbtn.active {
+    color: #fff !important;
+    background-color: #002A7B;
+}
+
+    .role-ul button.nav-link.role-tabbtn.active:hover {
+        background-color: #031d4d;
+    }
+
+.role-ul button.nav-link.role-tabbtn {
+    color: #fff;
+    border: 1px solid #002a7b;
+    color: #002a7b;
+    font-weight: 500;
+    background-color: #ffffff;
+}
+
+    .role-ul button.nav-link.role-tabbtn:hover {
+        color: #fff;
+        background: #002a7b;
+    }
+
+.user-list-header {
+    background-color: #e1e1e1;
+    padding: 1rem 1.5rem;
+}
+
+.status-approv,
+.status-pending,
+.status-cancel {
+    background: #198754;
+    padding: 3px 10px;
+    border-radius: 2px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.status-pending {
+    background-color: #dc7b35;
+}
+
+.status-cancel {
+    background-color: #dc3545;
+}
+
+.userlist .role-ul .nav-link,
+.userlist .viewprofileuser {
+    padding: 8px 18px;
+    font-size: 14px;
+    border-radius: 30px;
+}
+
+.userlist .role-ul .nav-link {
+    border-radius: 20px;
+}
+
+a.view-text {
+    font-size: 16px;
+    color: #002a7b;
+    font-weight: 600;
+}
+
+.user_upload-img {
+    width: 80px;
+    height: auto;
+}
+
+button#dropdownMenuButton1 {
+    background: white;
+    padding: 5px 10px;
+    border-radius: 33px;
+    border: 1px solid #c5c5c5;
+}
+
+.w-xl-75 {
+    width: 75%;
+}
+
+/* userlisting tabs section of pop up */
+
+div#v-pills-tab {
+    min-width: 20%;
+}
+
+.edit-accordian .accordion-button:not(.collapsed) {
+    background-color: #002a7b;
+    box-shadow: none;
+    color: #fff;
+}
+
+.edit-accordian .accordion-button:focus {
+    z-index: 3;
+    border-color: none;
+    outline: 0;
+    box-shadow: none;
+}
+
+.edit-accordian .accordion-item:first-of-type .accordion-button,
+.edit-accordian .accordion-item:first-of-type,
+.edit-accordian .accordion-item:last-of-type .accordion-button.collapsed {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.edit-accordian .accordion-item:last-of-type {
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.edit-accordian .accordion-item {
+    margin-top: 5px;
+    border-radius: 20px;
+}
+
+    .edit-accordian .accordion-item:last-of-type .accordion-button.collapsed {
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+
+.edit-accordian .accordion-button {
+    background-color: #b1c9f8;
+    color: #000;
+    font-weight: 600;
+    border-radius: 20px;
+}
+
+    .edit-accordian .accordion-button:not(.collapsed)::after {
+        filter: invert(1);
+    }
+
+.text-underline {
+    text-decoration: underline;
+}
+
+/*user header for TC*/
+
+.userlistcompany {
+    width: 22%;
+}
+
+.userlistname {
+    width: 15%;
+}
+
+.userlislocation {
+    width: 15%;
+}
+
+.userlisttabs {
+    width: 33%;
+}
+
+.userlistprofile {
+    width: 15%;
+}
+
+/*For status change*/
+.property_info p {
+    line-height: 35px;
+}
+
+.property_info select {
+    height: 28px;
+    max-width: 164px;
+    padding: 0px 0px 0px 15px;
+}
+
+.property_info p a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #002a7b;
+}
+
+option {
+    background: #fff;
+    color: #000
+}
+
+.property_img img {
+    height: 100%;
+    border-radius: 5px 0px 0px 5px;
+    object-fit:cover;
+}
+
+/*28-12-2023*/
+.property_img {
+    height: 100%;
+    width: 100%;
+}
+
+.col-12.col-md-12.col-lg-12.bg-white.mt-3.mb-3.rounded-start {
+    border-radius: 5px 0px 0px 5px;
+    box-shadow: 8px 7px 15px #dfdfdf;
+}
+
+
+.map-filters {
+  /* background-color: var(--light-green); */
+  background-color: #fff;
+  padding: 20px 0px;
+}
+
+
+.p-20-12 {
+    padding: 20px 12px;
+}
+ /*CSS 31 jan 2024*/
+
+/*User Listing page TC End*/

@@ -1,0 +1,174 @@
+function SendMailToSelectedTechnicians() {
+    $('.loder').show();
+    $('.loading1').show();
+    var technicianEmails = $('#techniciansEmail').val();
+    var technicianNames = $('#techniciansName').val();
+    var jobId = $('#jobId').val();
+    var subject = $('#subjectSendDocPopup').val();
+    var body = $('.card-block').html();
+    var image = $('.card-block').html();
+    var emailCc = $('#CcSendDocPopup').val();
+    var emailBcc = $('#bccSendDocPopup').val();
+
+    $('#lblErrorimageupload').html('');
+    var UploadPicture = $('#UploadPictures').get(0);
+    var files = UploadPicture.files;
+    if (files.length > 0) {
+        var UploadPictures = $('#UploadPictures').val();
+        var regexpress = (/\.(gif|jpe?g|tiff?|png|jfif|webp|bmp|heic|pdf)$/i).test(UploadPictures);
+        if (regexpress == false) {
+            $('#spanFileMsg').html('');
+
+            $('#lblErrorimageupload')
+            $('.loder').hide();
+            $('.loading1').hide();
+            return false;
+        }
+        else {
+            $('#spanFileMsg').html('');
+            var fileData = new FormData();
+            fileData.append(UploadPicture, files[0]);
+            fileData.append(LaborId, files[1]);
+            fileData.append('DocumentName', UploadPicture);
+            fileData.append('LabourId', LaborId);
+            fileData.append('TechnicianEmails', technicianEmails);
+            fileData.append('TechnicianNames', technicianNames);
+            fileData.append('JobId', jobId);
+            fileData.append('EmailSubject', subject);
+            fileData.append('EmailBody', body);
+            fileData.append('EmailCC', emailCc);
+            fileData.append('EmailBCC', emailBcc);
+        }
+    }
+    else {
+        var fileData = new FormData();
+        fileData.append('LabourId', LaborId);
+        fileData.append('TechnicianEmails', technicianEmails);
+        fileData.append('TechnicianNames', technicianNames);
+        fileData.append('JobId', jobId);
+        fileData.append('EmailSubject', subject);
+        fileData.append('EmailBody', body);
+        fileData.append('EmailCC', emailCc);
+        fileData.append('EmailBCC', emailBcc);
+    }
+    $.ajax({
+        type: "POST",
+        url: "/CrewHub/SendMailToAll",
+        contentType: false,
+        processData: false,
+        data: fileData,
+        success: function (data) {
+            console.log(data);
+            toastr.success('Email send to selected Technicians.');
+            $('.resetMail').click();
+            $('#fileName').val('')
+            $('.loder').hide();
+            $('.loading1').hide();
+        },
+        error: function () {
+            alert("error : ");
+            $('.loder').hide();
+            $('.loading1').hide();
+        }
+    });
+}
+  public class FilesDetailModel
+    {
+        public int FilesId { get; set; }
+        public int? JobsId { get; set; }
+        public int? LabourId { get; set; }
+        public int? ClientId { get; set; }
+        public bool? Internal { get; set; }
+        public bool? External { get; set; }
+        public string DocumentCode { get; set; }
+        public string SummaryDescription { get; set; }
+        public DateTime? CreatedOn { get; set; }
+        public string ModifiedBy { get; set; }
+        public DateTime? ModifiedOn { get; set; }
+        public string FileType { get; set; }
+        public string ExistingFilePath { get; set; }
+
+        //Email properties for Crew hub Email functionality
+        public int JobId { get; set; }
+        public string TechnicianEmails { get; set; }
+        public string TechnicianNames { get; set; }
+        public string EmailSubject { get; set; }
+        [AllowHtml]
+        public string EmailBody { get; set; }
+        public string DocumentName { get; set; }
+        public string FilePath { get; set; }
+        public string EmailCC { get; set; }
+        public string EmailBCC { get; set; }
+        public string Image { get; set; }
+    }
+public string SendMailToAll(FilesDetailModel fileData)
+        {
+            try
+            {
+                string name = fileData.TechnicianNames.Replace(',', ' ');
+                string emailpath=string.Empty;
+                string flag = "0";
+                string techEmail = fileData.TechnicianEmails;
+                string[] techEmailArray = techEmail.Split(' ');
+                HttpFileCollectionBase files = Request.Files;                
+                for (int efile=0; efile<files.Count ; efile++)
+                {
+                    HttpPostedFileBase file = files[efile];
+                    string fname, hiecfile;
+                    // Checking for Internet Explorer  
+                    if (Request.Browser.Browser.ToUpper() == "IE" || Request.Browser.Browser.ToUpper() == "INTERNETEXPLORER")
+                    {
+                        string[] testfiles = file.FileName.Split(new char[] { '\\' });
+                        fname = testfiles[testfiles.Length - 1];
+                    }
+                    else
+                    {
+                        fname = file.FileName;
+                    }
+                    // Get the complete folder path and store the file inside it. 
+                    if (fname.Contains("heic"))
+                    {
+                        hiecfile = "/Temp/" + fname;
+                        fname = Path.Combine(Server.MapPath("~/Temp/"), fname);
+                    }
+                   else
+                    {
+                        hiecfile = "/Images/" + fileData.LabourId + "_" + fname;
+                        fname = Path.Combine(Server.MapPath("/Images/"), fileData.LabourId + "_" + fname);
+                    }
+                    string filenames= fname.Replace(" ", "");
+                    file.SaveAs(filenames);
+                    fileData.FilePath = hiecfile;
+                    //emailpath = fname;
+                    emailpath += filenames+ " ";
+                }
+                var path = Path.Combine(Server.MapPath("~/dist\\EmailTemplates\\CrewHubEmail.html"));
+                string FilePath = path;
+                StreamReader str = new StreamReader(FilePath);
+                string userId = Convert.ToString(Session["UserId"]);
+                var loggedInUserEmail = CrewHubBAL.BALGetUserDetails(userId);
+                string body = str.ReadToEnd();
+                str.Close();
+                body = body.Replace("[FullName]", name);
+                body = body.Replace("[JobNumber]", fileData.JobId.ToString());
+                body = body.Replace("[InsertNote]", fileData.EmailBody);
+                var subject = fileData.EmailSubject;
+               
+                bool isSend = EmailService.SendReplyToMailonCrewHub(fileData.TechnicianEmails, body.ToString(), subject, loggedInUserEmail.UserName, emailpath, fileData.EmailBCC, fileData.EmailCC);
+                if (isSend)
+                {
+                    flag = "1";
+                }
+                else
+                {
+                    flag = "0";
+                }
+                return flag;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+                Log.Fatal(ex.StackTrace);
+                throw;
+            }
+        }
