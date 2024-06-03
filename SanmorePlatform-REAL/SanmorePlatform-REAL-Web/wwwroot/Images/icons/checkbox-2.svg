@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#33583B" version="1.1" id="" viewBox="0 0 24 24">
+<g id="checkbox-selected">
+	<g>
+		<rect x="5" y="5" width="14" height="14"/>
+	</g>
+	<g>
+		<path d="M23,23H1V1h22V23z M3,21h18V3H3V21z"/>
+	</g>
+</g>
+</svg>

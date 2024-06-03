@@ -1,0 +1,455 @@
+﻿@model SanmorePlatform_REAL_Model.ViewModels.BrokerViewModel
+
+<head>
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+
+<div class="container pt-page">
+    <div class="progressbar">
+        <div class="progress" id="progress"></div>
+        <div class="progress-step progress-step-active" data-title="Intro"></div>
+        <div class="progress-step" data-title="Company"></div>
+        <div class="progress-step" data-title="Deals"></div>
+        <div class="progress-step" data-title="Fraud"></div>
+        <div class="progress-step" data-title="Tc"></div>
+    </div>
+    <div class="card card-primary">
+        <div class="card-body">
+            <div class="progress-container">
+                <div class="progress-card-title">
+                    <div class="title-left">
+                        <button class="btn btn-sm btn-prev">
+                            <img src="~/images/icons/angle-left-color.svg" />
+                            <span>Back</span>
+                        </button>
+                    </div>
+                    <div class="progress-title">Broker Sign Up</div>
+                    <div class="title-right">
+                        <button class="btn btn-sm">
+                            <img src="~/images/icons/close.svg" />
+                        </button>
+                    </div>
+                </div>
+                <form class="form-container">
+                    <!-- First step form -->
+                    <div class="form-step form-step-active">
+                        <div class="form-title">
+                            Does this look right?
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6 col-md-6">
+                                <label for="first-name">First Name</label>
+                                <input type="text" class="form-control" asp-for="FirstName" id="first-name" name="first-name" placeholder="Enter your first name">
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="last-name">Last Name</label>
+                                <input type="text" class="form-control" asp-for="LastName"  id="last-name" name="last-name" placeholder="Enter your last name">
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" asp-for="Email"  id="email" name="email" placeholder="Enter your email">
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="phone">Phone</label>
+                                <input type="tel" class="form-control" asp-for="CompanyPhoneNumber" id="phone" name="phone" placeholder="Enter your phone number">
+                                <span asp-validation-for="CompanyPhoneNumber" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="account">Account</label>
+                                <input type="text" class="form-control" asp-for="Account" id="account" name="account" placeholder="Enter your account">
+                                <span asp-validation-for="Account" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="social-media">Social Media</label>
+                                <input type="text" class="form-control" asp-for="SocialMedia" id="social-media" name="social-media" placeholder="Enter your social media">
+                                <span asp-validation-for="SocialMedia" class="text-danger"></span>
+                            </div>
+
+                        </div>
+                        <div class="btns-group">
+                            <button type="button" class="btn btn-next btn-outline-primary">Next</button>
+                        </div>
+                    </div>
+
+                    <!-- Second step form -->
+                    <div class="form-step">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="company-name">Company Name</label>
+                                <input type="text" class="form-control" asp-for="CompanyName" id="company-name" name="company-name" placeholder="Enter your company name">
+                                <span asp-validation-for="CompanyName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="business-address">Business Address</label>
+                                <input type="text" class="form-control" asp-for="BusinessAddress1" id="business-address" name="business-address" placeholder="Enter your business address">
+                                <span asp-validation-for="BusinessAddress1" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="city">City</label>
+                                <input type="text" class="form-control" asp-for="City" id="city" name="city" placeholder="Enter your city">
+                                <span asp-validation-for="City" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="state">State</label>
+                                <input type="text" class="form-control" asp-for="State" id="state" name="state" placeholder="Enter your state">
+                                <span asp-validation-for="State" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="zip-code">Zip Code</label>
+                                <input type="text" class="form-control" asp-for="ZipCode" id="zip-code" name="zip-code" placeholder="Enter your zip code">
+                                <span asp-validation-for="ZipCode" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="country">Country</label>
+                                <input type="text" class="form-control" asp-for="CountryName" id="country" name="country" placeholder="Enter your country">
+                                <span asp-validation-for="CountryName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="btns-group">
+                            <button type="button" class="btn btn-prev btn-outline-primary">Previous</button>
+                            <button type="button" class="btn btn-next btn-outline-primary">Next</button>
+                        </div>
+                    </div>
+
+                    <!-- Third step form -->
+                    <div class="form-step">
+                        <div class="form-title">
+                            We like to know just a little bit more about you
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="deals-done">Number of deals done by you</label>
+                                <input type="number" class="form-control" asp-for="NumberOfDeals" id="deals-done" name="deals-done" placeholder="Enter number of deals">
+                                <span asp-validation-for="NumberOfDeals" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="help-get-deals">How can we help you get more deals?</label>
+                                <input type="number" class="form-control" asp-for="HelpGetMoreDeals" id="help-get-deals" name="help-get-deals" placeholder="Enter your preference">
+                                <span asp-validation-for="HelpGetMoreDeals" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="feature-request">What feature would you like to see on Reidy?</label>
+                                <input type="text" class="form-control" asp-for="FeatureYouLikeToSee"  id="document" name="feature-request" placeholder="Enter your preference">
+                                <span asp-validation-for="FeatureYouLikeToSee" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="btns-group">
+                            <button type="button" class="btn btn-prev btn-outline-primary">Previous</button>
+                            <button type="button" class="btn btn-next btn-outline-primary">Next</button>
+                        </div>
+                    </div>
+
+                    <!-- Fourth step form -->
+                    <div class="form-step">
+                        <div class="form-title">
+                            Help us fight fraud!
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="identification-type">Identification type</label>
+                                <input type="text" class="form-control" asp-for="IdentificationType" id="identification-type" name="identification-type" placeholder="Enter your identification type">
+                                <span asp-validation-for="IdentificationType" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="upload-documents">Upload Documents</label>
+                                <input type="file" class="form-control" asp-for="UpLoadDocuments" id="upload-documents" name="upload-documents">
+                                <span asp-validation-for="UpLoadDocuments" class="text-danger"></span>
+                            </div>
+                            <div class="btns-group">
+                                <button type="button" class="btn btn-prev btn-outline-primary">Previous</button>
+                                <button type="button" class="btn btn-next btn-outline-primary">Next</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fifth step form -->
+                    <div class="form-step">
+                        <div class="form-title">
+                            Are you interested in servicing your loans in Reidy
+                        </div>
+                        <div class="form-group">
+                            <label for="tc-upload"></label>
+                            <div class="radio-btns">
+                                <input type="radio" id="tc-yes" name="tc-upload" value="Yes">
+                                <label for="tc-yes">Yes</label>
+                                <input type="radio" id="tc-no" name="tc-upload" value="No">
+                                <label for="tc-no">No</label>
+                            </div>
+                        </div>
+                        <div class="btns-group">
+                            <button type="button" class="btn btn-prev btn-outline-primary">Do it By Myself</button>
+                            <button type="submit" class="btn btn-submit btn-outline-primary" onclick="BrokerSignUp">Tc Upload</button>
+                        </div>
+                        <div class="button-skip">
+                            <button type="button" class="btn btn-skip btn-outline-secondary">Skip</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+    @* <div class="addlistingform broker_signup">
+        <div class="container">
+            <form asp-action="BrokerSignUp" method="post" enctype="multipart/form-data">
+                <div class="add-property">
+                    <div class="row">
+
+                        <input asp-for="UserId" type="hidden" />
+
+                        <div class="col-xl-4 col-md-6 mb-3">
+                            <label for="firstNameInput" class="form-label">First name <span class="red-txt">*</span></label>
+                            <input type="text" asp-for="FirstName" class="input-field readonly" id="firstNameInput" placeholder="First name" readonly>
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-xl-4 col-md-6 mb-3">
+                            <label for="lastNameInput" class="form-label">Last name <span class="red-txt">*</span></label>
+                            <input type="text" asp-for="LastName" class="input-field readonly" id="lastNameInput" placeholder="Last name" readonly>
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
+                        <div class="col-xl-4 col-md-6 mb-3">
+                            <label for="companyField" class="form-label">
+                                Company name
+                            </label>
+                            <input type="text" asp-for="CompanyName" class="input-field" id="companyField" placeholder="Company name">
+                        </div>
+                        <div class="col-xl-4 col-md-6 mb-3">
+                            <label for="titleField" class="form-label">Title</label>
+                            <input type="text" asp-for="Title" class="input-field" id="titleField" placeholder="Title">
+                        </div>
+                        <div class="col-xl-4 col-md-6 mb-3">
+                            <label for="mainRole" class="form-label">
+                                Main role
+                            </label>
+                            <select asp-for="MainRole" class="form-select" aria-label="Default select example" id="mainRole">
+                                <option value="" selected>Select</option>
+                                <option value="1">Wholesaler</option>
+                                <option value="2">Property owner</option>
+                                <option value="3">Broker / Realtor</option>
+                            </select>
+                        </div>
+
+                        <div class="col-xl-4 col-md-6 mb-3">
+                            <label for="contactCellphone" class="form-label">
+                                Contact cell phone number <span class="red-txt">*</span>
+                            </label>
+                            <input type="tel" asp-for="ContactPhoneNumber" class="input-field myPhoneclass" id="contactCellphone"
+                                   placeholder="Contact cell phone number" maxlength="12" min="12">
+                            <span asp-validation-for="ContactPhoneNumber" class="text-danger"></span>
+
+                        </div>
+                        <div class="col-xl-4 col-md-6 mb-3">
+                            <label for="companyPhone" class="form-label">
+                                Company phone number
+                            </label>
+                            <input type="tel" asp-for="CompanyPhoneNumber" class="input-field myPhoneclass" id="companyPhone" placeholder="Company phone number" maxlength="12">
+                        </div>
+                        <div class="col-xl-4 col-md-6 mb-3">
+                            <label for="socialMedia" class="form-label">Social media</label>
+                            <input type="text" asp-for="SocialMedia" class="input-field" id="socialMedia" placeholder="Add link">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-4 col-md-6 mb-3">
+                            <label for="experienceText" class="form-label">
+                                Company profile <span class="fs-small">
+                                    (Maximum
+                                    200 characters)
+                                </span>
+                            </label>
+                            <textarea asp-for="CompanyProfile" class="form-control txtarea" placeholder="Add company profile" id="experienceText"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="add-property">
+                    <div class="row mt-3">
+                        <h5>Business Address</h5>
+                        <div class="col-xl-8">
+                            <div class="row">
+                                <div class="col-xl-6 col-md-6 mb-3">
+                                    <label for="addressfield3" class="form-label">Address 1 <span class="red-txt">*</span></label>
+                                    <input type="text" asp-for="BusinessAddress1" class="input-field" id="addressfield3" placeholder="Address 1">
+                                    <span asp-validation-for="BusinessAddress1" class="text-danger"></span>
+                                </div>
+                                <div class="col-xl-6 col-md-6 mb-3">
+                                    <label for="address2field" class="form-label">Address 2</label>
+                                    <input type="text" asp-for="BusinessAddress2" class="input-field" id="address2field" placeholder="Address 2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-8">
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label for="CityField1" class="form-label">City <span class="red-txt">*</span></label>
+                                            <input type="text" asp-for="City" class="input-field" id="CityField1" placeholder="City">
+                                            <span asp-validation-for="City" class="text-danger"></span>
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="stateField1" class="form-label">State <span class="red-txt">*</span></label>
+                                            <select asp-for="State" class="form-select" aria-label="Default select example" id="stateField1"
+                                                    placeholder="SelectState">
+                                                <option value="">Select State</option>
+                                                <option value="1">Alaska</option>
+                                              
+                                            </select>
+                                            <span asp-validation-for="State" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="row">
+                                        <div class="col-xl-6">
+                                            <label for="zipCode1" class="form-label">Zip code <span class="red-txt">*</span></label>
+                                            <input type="number" asp-for="ZipCode" class="input-field " id="zipCode1" placeholder="Zip code" maxlength="5">
+                                            <span asp-validation-for="ZipCode" class="text-danger"></span>
+                                        </div>
+
+                                        <div class="col-xl-6">
+                                            <label for="countryname" class="form-label">
+                                                Country <span class="red-txt">*</span>
+                                            </label>
+                                            <select asp-for="CountryName" class="form-select" aria-label="Default select example"
+                                                    id="countryname">
+                                                <option value="">Select Country</option>
+                                                <option selected value="1">USA</option>
+                                            </select>
+                                            <span asp-validation-for="CountryName" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="add-property">
+                    <div class="row">
+                        <div class="col-xl-8 col-md-6 mb-3">
+                            <div class="row ">
+                                <div class="col-6">
+                                    <label for="numberofDeals" class="form-label">
+                                        Number of deals done by you in last 6 months <span class="red-txt">*</span>
+                                    </label>
+                                </div>
+                                <div class="col-6">
+                                    <span class="w-100 d-block">
+                                        <input type="text" asp-for="NumberOfDeals" class="input-field w-75" id="numberofDeals" placeholder="Number of deals done" type="number" />
+                                    </span>
+                                    <span asp-validation-for="NumberOfDeals" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-8 col-md-6 mb-3">
+                            <div class="row ">
+                                <div class="col-6">
+                                    <label for="howcanwehelp" class="form-label">
+                                        How can we help you get more deals? <span class="red-txt">*</span>
+                                    </label>
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" asp-for="HelpGetMoreDeals" class="input-field wpx-410" id="howcanwehelp" placeholder="How can we help you get more deals?">
+                                    <span asp-validation-for="HelpGetMoreDeals" class="text-danger"></span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-8 col-md-6 mb-3">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label for="featureSee" class="form-label">
+                                        What feature would you like to see here? <span class="red-txt">*</span>
+                                    </label>
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" asp-for="FeatureYouLikeToSee" class="input-field wpx-410" id="featureSee" placeholder="What feature would you like to see here?">
+                                    <span asp-validation-for="FeatureYouLikeToSee" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xxl-9 col-xl-10 col-md-6">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="d-flex align-items-center">
+                                        <label for="uploadInventory" class="form-label me-2">
+                                            Our Transaction Coordinators can help you upload all your inventory! Would you be interested?<span class="red-txt">*</span>
+                                        </label>
+                                        <span class="d-block w-100px">
+                                            <select asp-for="IntrestedInUploadInventory" class="form-select " aria-label="Default select example" id="uploadInventory">
+                                                <option value="" selected>Select</option>
+                                                <option value="1">Yes</option>
+                                                <option value="2">No</option>
+                                            </select>
+                                        </span>
+                                    </div>
+                                    <span asp-validation-for="IntrestedInUploadInventory" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="add-property">
+                    <h5>Help us fight fraud!</h5>
+                    <div class="row">
+                        <div class="col-xl-3 col-md-6">
+                            <label for="identificationform1" class="form-label">Identification verification type</label>
+                            <select asp-for="IdentificationType" class="form-select" aria-label="Default select example" id="identificationform1">
+                                <option value="0" selected>Select</option>
+                                <option value="1">State Issued ID</option>
+                                <option value="2">Passport</option>
+                            </select>
+                        </div>
+
+                        <div class="col-xl-4 col-md-6">
+                            <div class="upload__box">
+                                <div class="upload__btn-box">
+                                    <div class="upload__btn">
+                                        <label for="stateIssuedId" class="form-label">
+                                            Upload identification <span class="fs-small subpara">(pdf or images only)</span>
+                                        </label>
+                                        <input asp-for="File" type="file" class="input-field formFile upload__inputfile" onchange="fileFormatOnchange()" id="stateIssuedId" accept="application/pdf,image/*" name="File">
+                                    </div>
+                                    <span id="errstateIssuedId" class="text-danger"></span>
+                                    <span id="spanUploadIdentityFile" class="text-danger"></span>
+                                </div>
+                                <div class="upload__img-wrap"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4 mb-5">
+                    <a type="button" asp-action="Index" asp-controller="Home" class="me-2 btn-pbr btn-cancel btn">Cancel</a>
+               <input asp-for="IsSubmited" value="false" type="submit" class="btn-login btn-pbr" onclick="">Save Progress</input>
+              @*     <input type="submit" class="btn-sign btn-pbr" value="Submit" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>  *@
+@section Scripts {
+    <script src="~/js/Broker.js" asp-append-version="true"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+}

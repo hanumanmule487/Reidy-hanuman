@@ -1,0 +1,1833 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User list : SanmorePlatform-REAL</title>
+    <!-- Links -->
+
+    <link rel="stylesheet" href="~/css/TransactionCoordinator.css">
+</head>
+
+<body>
+    <!--Nav-->
+    <!-- Add listing -->
+    <div class="top-section">
+        <div class="container-fluid container-px">
+            <div class="d-flex flex-column">
+                <h4 class="fw-semibold mb-0">User <span class="blue-primary">List</span> </h4>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="addlistingform">
+        <div class="container-fluid container-px">
+            <div class="map-filters p-0">
+                <div class="row p-20-12">
+                    <div class="col-12 d-flex ">
+                        <div>
+                            <input type="text" class="filter-control searchicon" placeholder="Search...">
+                        </div>
+                        <div class="dropdown open small-d-none">
+                            <button type="button" class="btn filter-control dropdown-toggle" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                Sort by
+                            </button>
+
+                            <ul class="dropdown-menu px-3">
+                                <li class="d-flex align-items-center">
+                                    Company
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    Highest&nbsp;Experience
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    Highest Liquidity
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    Name
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    Newest
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    Oldest
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dropdown open small-d-none">
+                            <button type="button" class="btn px-4 filter-control dropdown-toggle"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                Filter by role
+                            </button>
+
+                            <ul class="dropdown-menu px-3">
+                                <li class="d-flex align-items-center">
+                                    <input type="checkbox" class="me-3 filter-checkbox">Basic Buyer
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <input type="checkbox" class="me-3 filter-checkbox">FastTrack&nbsp;Buyer
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <input type="checkbox" class="me-3 filter-checkbox">Broker
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <input type="checkbox" class="me-3 filter-checkbox">Lender
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- <div class="dropdown open small-d-none">
+                           
+                        </div> -->
+                        <div class="dropdown open small-d-none">
+                            <button type="button" class="btn px-4 filter-control dropdown-toggle"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                Additional Filters
+                            </button>
+
+                            <ul class="dropdown-menu px-3">
+                                <li class="d-flex align-items-center">
+                                    <input type="checkbox" class="me-3 filter-checkbox">Approved
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <input type="checkbox" class="me-3 filter-checkbox">Unapproved
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <input type="checkbox" class="me-3 filter-checkbox">Applied date
+                                </li>
+                                <li>
+                                    <div class="d-flex align-items-center py-2">
+                                        <div class="range-from">
+                                            <label for="applieddatefrom">From</label>
+                                            <input type="date" class="input-drpdwn" id="applieddatefrom">
+                                        </div>
+                                        <div class="range-to ms-2">
+                                            <label for="applieddateto">To</label>
+                                            <input type="date" class="input-drpdwn" id="applieddateto">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider mt-3 mb-2">
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <input type="checkbox" class="me-3 filter-checkbox">Profile updated
+                                </li>
+                                <li>
+                                    <div class="d-flex align-items-center py-2">
+                                        <div class="range-from">
+                                            <label for="profileupdtfrom">From</label>
+                                            <input type="date" class="input-drpdwn" id="profileupdtfrom">
+                                        </div>
+                                        <div class="range-to ms-2">
+                                            <label for="profileupdtto">To</label>
+                                            <input type="date" class="input-drpdwn" id="profileupdtto">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider mt-3 mb-2">
+                                </li>
+                                <li class="d-flex align-items-center ">
+                                    <input type="checkbox" class="me-3 filter-checkbox">Last login
+                                </li>
+                                <li>
+                                    <div class="d-flex align-items-center py-2">
+                                        <div class="range-from">
+                                            <label for="lastloginfrom">From</label>
+                                            <input type="date" class="input-drpdwn" id="lastloginfrom">
+                                        </div>
+                                        <div class="range-to ms-2">
+                                            <label for="lastloginto">To</label>
+                                            <input type="date" class="input-drpdwn" id="lastloginto">
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn-sign btn-pbr">Search</button>
+                    </div>
+                </div>
+            </div>
+            <!---- list 1 -->
+            <div class="lending-list userlist mt-2 pb-3">
+                <div class="list-header row align-items-center">
+                    <div class="userlistcompany lending-list-title txt-ellipsis">
+                        <span class="fw-bold mb-0">Company :</span>
+                        <span class="ms-1 fw-bold blue-primary" title="Bluewhale Surfboards Pvt. ltd.">
+                            Bluewhale
+                            Surfboards Pvt. ltd.
+                            elit.
+                        </span>
+                    </div>
+                    <div class="userlistname lending-list-title txt-ellipsis">
+                        <span class="fw-bold mb-0">Name :</span>
+                        <span class="ms-1 fw-bold blue-primary">Williamson Elizabeth</span>
+                    </div>
+                    <div class="userlislocation lending-list-title txt-ellipsis">
+                        <span class="fw-bold mb-0">Location :</span>
+                        <span class="ms-1 fw-bold blue-primary text-uppercase">
+                            CA ,
+                            <span class="text-capitalize ms-1">Los Angeles</span>
+                        </span>
+                    </div>
+                    <div class="userlisttabs ps-xl-0 mt-xl-2">
+                        <div class="mb-0 lending-list-title">
+                            <ul class="nav nav-pills role-ul" role="tablist">
+                                <li class="nav-item">
+                                    <span class="nav-link text-black fw-bold">
+                                        Roles :
+                                    </span>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active role-tabbtn me-2" type="button">
+                                        Basic User
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="userlistprofile text-end">
+                        <a href="" class="viewbtn text-end viewprofileuser " data-bs-toggle="modal"
+                           data-bs-target="#viewuser1">View contact details</a>
+                    </div>
+                </div>
+                <!------- user profile modal 1 starts-->
+                <div class="modal fade" id="viewuser1" data-bs-backdrop="static" data-bs-keyboard="false"
+                     aria-hidden="true" aria-labelledby="viewuser1Label" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-xl ">
+                        <div class="modal-content br-32">
+                            <div class="modal-header p-4">
+                                <h5 class="modal-title" id="viewuser1Label">Profile Details</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body p-4 pt-0 bg-seconsary">
+                                <div class="addlistingform pb-0">
+                                    <div class="container-fluid">
+                                        <div class="add-property">
+                                            <div class="row">
+                                                <div class="col-xxl-2 col-xl-3">
+                                                    <div class="text-center">
+                                                        <img src="~/Images/profile.png
+                                                             alt="profile">
+                                                        <p class="fw-bold text-center">Anna Swift</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-10 col-xl-12">
+                                                    <div class="row mt-2">
+                                                        <div class="col">
+                                                            <span>First Name</span>
+                                                            <p class="fw-bold">Anna</p>
+                                                        </div>
+                                                        <div class="col">
+                                                            <span>Last Name</span>
+                                                            <p class="fw-bold">Swift</p>
+                                                        </div>
+                                                        <div class="col">
+                                                            <span>Email</span>
+                                                            <p class="fw-bold">annas123@email.com</p>
+                                                        </div>
+                                                        <div class="col">
+                                                            <span>Phone</span>
+                                                            <p class="fw-bold">+1-(713) 480-0002</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mt-2">
+                                                        <div class="col">
+                                                            <span>Company name</span>
+                                                            <p class="fw-bold">Axis Realtors Pvt. Ltd.</p>
+                                                        </div>
+                                                        <div class="col">
+                                                            <span>City</span>
+                                                            <p class="fw-bold">Houston</p>
+                                                        </div>
+                                                        <div class="col">
+                                                            <span>State</span>
+                                                            <p class="fw-bold">Texas</p>
+                                                        </div>
+                                                        <div class="col">
+                                                            <span>Zip</span>
+                                                            <p class="fw-bold">77002</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mt-2">
+                                                        <div class="col">
+                                                            <span>Roles approved</span>
+                                                            <p class="fw-bold mt-1">
+                                                                <span class="me-2 status-approv">Broker</span>
+                                                                <span class="me-2 status-approv">
+                                                                    FastTrack
+                                                                    Buyer
+                                                                </span>
+                                                                <span class="me-2 status-approv">Lender</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <div class="col-xl-12 col-md-12 d-flex justify-content-end pe-0">
+                                    <button type="button" class="btn-login btn-headerlist" data-bs-dismiss="modal"
+                                            aria-label="Close">
+                                        Close
+                                    </button>
+                                    <button type="button" class="btn-sign btn-headerlist me-0">Save Changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!------- user profile modal 1 Ends-->
+                <div class="row mt-3 row-detail ps-3 pe-3">
+                    <div class="col-12 col-md-3 col-xl-4 col-xxl-3">
+                        <p class="mb-xxl-0 fs-15-responsive">
+                            Phone : <span class="ms-2 fw-bold">
+                                +1-(713)
+                                480-0002
+                            </span>
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-3 col-xl-4 col-xxl-3">
+                        <p class="fs-15-responsive">
+                            Email : <span class="ms-2 fw-bold">elizabethwill@samplemail.com</span>
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-3 col-xl-4 col-xxl-3">
+                        <p class="fs-15-responsive">
+                            Address :<span class="ms-2 fw-bold">
+                                1801 Avenue St.
+                                Houston, TX
+                                77002
+                            </span>
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-3 col-xl-4 col-xxl-3">
+                        <p class="fs-15-responsive">
+                            Applied date : <span class="ms-2 fw-bold">10/28/2023</span>
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-3 col-xl-4 col-xxl-3">
+                        <p class="fs-15-responsive">
+                            How did you hear about us ? : <span class="ms-2 fw-bold">Advertisement</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row border-top pt-3 ps-3 pe-3">
+                    <div class="col-md-6 col-12">
+                        <p class="mb-0">
+                            <span class="fw-bold me-2">Application status : </span>
+                            <span class="ms-2 status-approv">Approved</span>
+                        </p>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="col switch-outer justify-content-end">
+                            <button type="button" class="btn-login btn-headerlist">
+                                Edit
+                            </button>
+                            <div class="on-off-toggle">
+                                <input class="on-off-toggle__input" type="checkbox" id="list">
+                                <label for="list" class="on-off-toggle__slider"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!---- list 2 -->
+            <div class="lending-list userlist mt-4 pb-3">
+                <div class="list-header row align-items-center">
+                    <div class="userlistcompany lending-list-title txt-ellipsis">
+                        <span class="fw-bold mb-0">Company :</span>
+                        <span class="ms-1 fw-bold blue-primary" title="Thrill Of The Chase Corporation Pvt. ltd.">
+                            Thrill Of The Chase Corporation Pvt. ltd.
+                        </span>
+                    </div>
+                    <div class="userlistname lending-list-title txt-ellipsis">
+                        <span class="fw-bold mb-0">Name :</span>
+                        <span class="ms-1 fw-bold blue-primary">Anderson Abrahams</span>
+                    </div>
+                    <div class="userlislocation lending-list-title txt-ellipsis">
+                        <span class="fw-bold mb-0">Location :</span>
+                        <span class="ms-1 fw-bold blue-primary text-uppercase">
+                            MO,
+                            <span class="text-capitalize ms-1" title="Jefferson City">Jefferson City</span>
+                        </span>
+                    </div>
+                    <div class="userlisttabs ps-xl-0 mt-xl-2">
+                        <div class="mb-0 lending-list-title">
+                            <ul class="nav nav-pills role-ul" id="roles-tab2" role="tablist">
+                                <li class="nav-item">
+                                    <span class="nav-link text-black fw-bold">
+                                        Roles :
+                                    </span>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active role-tabbtn role-btn-1" id="user-role1-tab"
+                                            data-bs-toggle="pill" data-bs-target="#user-role1" type="button" role="tab"
+                                            aria-controls="user-role1" aria-selected="true">
+                                        Broker
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link role-tabbtn role-btn-2 mx-2" id="user-role2-tab"
+                                            data-bs-toggle="pill" data-bs-target="#user-role2" type="button" role="tab"
+                                            aria-controls="user-role2" aria-selected="false">
+                                        Lender
+                                    </button>
+                                </li>
+                                <li class="nav-item " role="presentation">
+                                    <button class="nav-link role-tabbtn" id="user-role5-tab" data-bs-toggle="pill"
+                                            data-bs-target="#user-role5" type="button" role="tab" aria-controls="user-role5"
+                                            aria-selected="false">
+                                        FastTrack
+                                        Buyer
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="userlistprofile text-end">
+                        <a href="" class="viewbtn text-end viewprofileuser " data-bs-toggle="modal"
+                           data-bs-target="#viewuser1">View contact details</a>
+                    </div>
+                </div>
+                <div class="row mt-3 row-detail  ps-3 pe-3">
+                    <!----- tabs section for users starts-->
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="user-role1" role="tabpanel"
+                             aria-labelledby="user-role1-tab" tabindex="0">
+                            <div class="row mt-2">
+                                <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                    <p class="fs-15-responsive">
+                                        Active deals :<span class="ms-2 fw-bold">35</span>
+                                    </p>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                    <p class="fs-15-responsive">
+                                        Sold deals : <span class="ms-2 fw-bold">203</span>
+                                    </p>
+                                </div>
+
+                                <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                    <p class="fs-15-responsive">
+                                        Pending deals : <span class="ms-2 fw-bold">15</span>
+                                    </p>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                    <p class="fs-15-responsive">
+                                        Member since : <span class="ms-2 fw-bold">04/2014</span>
+                                    </p>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                    <p class="fs-15-responsive">
+                                        Profile last updated : <span class="ms-2 fw-bold">11/08/2023</span>
+                                    </p>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                    <p class="fs-15-responsive">
+                                        Last login : <span class="ms-2 fw-bold">12/21/2023</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row border-top pt-3">
+                                <div class="col-md-6 col-12">
+                                    <p class="mb-0">
+                                        <span class="fw-bold me-2">Application status : </span>
+                                        <span class="ms-2 status-approv">Approved</span>
+                                    </p>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="col switch-outer">
+                                        <button type="button" class="btn-login btn-headerlist" data-bs-toggle="modal"
+                                                data-bs-target="#editbrkoer1">
+                                            Edit
+                                        </button>
+                                        <div class="on-off-toggle">
+                                            <input class="on-off-toggle__input" type="checkbox" id="list1">
+                                            <label for="list1" class="on-off-toggle__slider"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!------- Edit modal for Broker starts-->
+                        <div class="modal fade" id="editbrkoer1" data-bs-backdrop="static" data-bs-keyboard="false"
+                             aria-hidden="true" aria-labelledby="editbrkoer1Label" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+                                <div class="modal-content br-32">
+                                    <div class="modal-header p-4">
+                                        <h5 class="modal-title" id="editbrkoer1Label">Edit Broker Details</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body p-4 pt-0 bg-seconsary">
+                                        <div class="addlistingform pb-0">
+                                            <div class="container-fluid">
+                                                <div class="add-property">
+                                                    <div class="row">
+                                                        <div class="col-xl-3 col-md-6 mb-3">
+                                                            <label class="form-label" for="dealsactive">
+                                                                Active Deals
+                                                            </label>
+                                                            <input type="tel" class="input-field" value="35"
+                                                                   id="dealsactive">
+                                                        </div>
+                                                        <div class="col-xl-3 col-md-6 mb-3">
+                                                            <label for="dealssold" class="form-label">
+                                                                Sold deals
+                                                            </label>
+                                                            <input type="tel" class="input-field" id="dealssold"
+                                                                   value="203">
+                                                        </div>
+                                                        <div class="col-xl-3 col-md-6 mb-3">
+                                                            <label for="pendingdeals" class="form-label">
+                                                                Pending deals
+                                                            </label>
+                                                            <input type="tel" class="input-field" id="pendingdeals"
+                                                                   value="15">
+                                                        </div>
+                                                        <div class="col-xl-3 col-md-6 mb-3">
+                                                            <label for="memberbroker" class="form-label">
+                                                                Member since
+                                                            </label>
+                                                            <input type="tel" class="input-field" id="memberbroker"
+                                                                   value="04/2014">
+                                                        </div>
+                                                        <div class="col-xl-3 col-md-6 mb-3">
+                                                            <label for="membersincebroker" class="form-label">
+                                                                Member since
+                                                            </label>
+                                                            <input type="tel" class="input-field" id="membersincebroker"
+                                                                   value="2013">
+                                                        </div>
+                                                        <div class="col-xl-3 col-md-6 mb-3">
+                                                            <label for="profieupdatedbrkoker" class="form-label">
+                                                                Profile last updated
+                                                            </label>
+                                                            <input type="tel" class="input-field"
+                                                                   id="profieupdatedbrkoker" value="11/08/2023" disabled>
+                                                        </div>
+                                                        <div class="col-xl-3 col-md-6 mb-3">
+                                                            <label for="lastloginbrkoer" class="form-label">
+                                                                Last login
+                                                            </label>
+                                                            <input type="tel" class="input-field" id="lastloginbrkoer"
+                                                                   value="12/21/2023" disabled>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="col-xl-12 col-md-12 d-flex justify-content-end pe-0">
+                                            <button type="button" class="btn-login btn-headerlist"
+                                                    data-bs-dismiss="modal" aria-label="Close">
+                                                Close
+                                            </button>
+                                            <button type="button" class="btn-sign btn-headerlist me-0">
+                                                Save
+                                                Changes
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!------- Edit modal for broker 1 Ends-->
+
+                        <div class="tab-pane fade" id="user-role2" role="tabpanel" aria-labelledby="user-role2-tab"
+                             tabindex="0">
+                            <div class="row mt-2 row-detail ">
+                                <!-- <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                    <p>Phone : <span class="ms-2 fw-bold">+1-(713) 480-0002</span></p>
+                                </div> -->
+                                <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                    <p class="fs-15-responsive">
+                                        Deals lent :<span class="ms-2 fw-bold">59</span>
+                                    </p>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                    <p class="fs-15-responsive">
+                                        Deals in contract : <span class="ms-2 fw-bold">27</span>
+                                    </p>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                    <p class="fs-15-responsive">
+                                        Locations lending on : <span class="ms-2 fw-bold">California, USA</span>
+                                    </p>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                    <p class="fs-15-responsive">
+                                        City : <span class="ms-2 fw-bold">
+                                            San
+                                            Francisco
+                                        </span>
+                                    </p>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                    <p class="fs-15-responsive">
+                                        State : <span class="ms-2 fw-bold">California</span>
+                                    </p>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                    <p class="fs-15-responsive">
+                                        Year founded : <span class="ms-2 fw-bold">2019</span>
+                                    </p>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                    <p class="fs-15-responsive">
+                                        Member since : <span class="ms-2 fw-bold">2013</span>
+                                    </p>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                    <p class="fs-15-responsive">
+                                        Profile last updated : <span class="ms-2 fw-bold">11/30/2023</span>
+                                    </p>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                    <p class="fs-15-responsive">
+                                        Last login : <span class="ms-2 fw-bold">11/30/2023</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row border-top pt-3">
+                                <div class="col-md-6 col-12">
+                                    <p class="mb-0">
+                                        <span class="fw-bold me-2">Application status : </span>
+                                        <span class="ms-2 status-approv">Approved</span>
+                                    </p>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="col switch-outer">
+                                        <button type="button" class="btn-login btn-headerlist" data-bs-toggle="modal"
+                                                data-bs-target="#editlender1">
+                                            Edit
+                                        </button>
+                                        <div class="on-off-toggle">
+                                            <input class="on-off-toggle__input" type="checkbox" id="list2">
+                                            <label for="list2" class="on-off-toggle__slider"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--- fasttrack buyer tab-->
+                        <div class="tab-pane fade" id="user-role5" role="tabpanel" aria-labelledby="user-role5-tab"
+                             tabindex="0">
+                            <div class="row mt-2 row-detail ">
+                                <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                    <p class="fs-15-responsive">
+                                        Deals purchased :<span class="ms-2 fw-bold">68</span>
+                                    </p>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                    <p class="fs-15-responsive">
+                                        Deals under contract : <span class="ms-2 fw-bold">18</span>
+                                    </p>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                    <p class="fs-15-responsive">
+                                        Liquidity : <span class="ms-2 fw-bold">
+                                            More than
+                                            20%
+                                            of loan amount
+                                        </span>
+                                    </p>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                    <p class="fs-15-responsive">
+                                        Last login : <span class="ms-2 fw-bold">10/01/2024</span>
+                                    </p>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                    <p class="fs-15-responsive">
+                                        User since : <span class="ms-2 fw-bold">02/2014</span>
+                                    </p>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                    <p class="fs-15-responsive">
+                                        Property types buying : <span class="ms-2 fw-bold">Retail</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row border-top pt-3">
+                                <div class="col-md-6 col-12">
+                                    <p class="mb-0">
+                                        <span class="fw-bold me-2">Application status : </span>
+                                        <span class="ms-2 status-approv">Approved</span>
+                                    </p>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="col switch-outer">
+                                        <button type="button" class="btn-login btn-headerlist" data-bs-toggle="modal"
+                                                data-bs-target="#fasttrackedit">
+                                            Edit
+                                        </button>
+                                        <div class="on-off-toggle">
+                                            <input class="on-off-toggle__input" type="checkbox" id="list4">
+                                            <label for="list4" class="on-off-toggle__slider"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!------- Edit modal for lender starts-->
+                <div class="modal fade" id="editlender1" data-bs-backdrop="static" data-bs-keyboard="false"
+                     aria-hidden="true" aria-labelledby="editlender1Label" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+                        <div class="modal-content br-32">
+                            <div class="modal-header p-4">
+                                <h5 class="modal-title" id="editlender1Label">Edit Lender Details</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body p-4 pt-0 bg-seconsary">
+                                <div class="addlistingform pb-0">
+                                    <div class="container-fluid">
+                                        <div class="add-property">
+                                            <div class="row">
+                                                <div class="col-xl-3 col-md-6 mb-3">
+                                                    <label class="form-label">
+                                                        Deals lent
+                                                    </label>
+                                                    <input type="tel" class="input-field" value="59">
+                                                </div>
+                                                <div class="col-xl-3 col-md-6 mb-3">
+                                                    <label for="dealscontract" class="form-label">
+                                                        Deals in contract
+                                                    </label>
+                                                    <input type="tel" class="input-field" id="dealscontract" value="27">
+                                                </div>
+                                                <div class="col-xl-3 col-md-6 mb-3">
+                                                    <label for="locationEdit" class="form-label">
+                                                        Locations lending on
+                                                    </label>
+                                                    <input type="tel" class="input-field" id="locationEdit"
+                                                           value="California, USA">
+                                                </div>
+                                                <div class="col-xl-3 col-md-6 mb-3">
+                                                    <label for="cityEdit" class="form-label">
+                                                        City
+                                                    </label>
+                                                    <input type="tel" class="input-field" id="cityEdit"
+                                                           value="San Francisco">
+                                                </div>
+
+                                                <div class="col-xl-3 col-md-6 mb-3">
+                                                    <label for="stateEdit" class="form-label">
+                                                        State
+                                                    </label>
+                                                    <input type="tel" class="input-field" id="stateEdit"
+                                                           value="California">
+                                                </div>
+                                                <div class="col-xl-3 col-md-6 mb-3">
+                                                    <label for="foundedEdit" class="form-label">
+                                                        Year founded
+                                                    </label>
+                                                    <input type="tel" class="input-field" id="foundedEdit" value="2019">
+                                                </div>
+                                                <div class="col-xl-3 col-md-6 mb-3">
+                                                    <label for="membersinceEdit" class="form-label">
+                                                        Member since
+                                                    </label>
+                                                    <input type="tel" class="input-field" id="membersinceEdit"
+                                                           value="2013">
+                                                </div>
+                                                <div class="col-xl-3 col-md-6 mb-3">
+                                                    <label for="profieupdatedEdit" class="form-label">
+                                                        Profile last updated
+                                                    </label>
+                                                    <input type="tel" class="input-field" id="profieupdatedEdit"
+                                                           value="11/30/2023" disabled>
+                                                </div>
+                                                <div class="col-xl-3 col-md-6 mb-3">
+                                                    <label for="lastloginEdit" class="form-label">
+                                                        Last login
+                                                    </label>
+                                                    <input type="tel" class="input-field" id="lastloginEdit"
+                                                           value="11/30/2023" disabled>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-xxl-3 col-xl-4 col-md-6 mb-3">
+                                                    <label class="form-label">
+                                                        Role in lending company
+                                                    </label>
+                                                    <input type="tel" class="input-field" value="Vice president">
+                                                </div>
+                                                <div class="col-xxl-3 col-xl-4 col-md-6 mb-3">
+                                                    <label class="form-label">
+                                                        Lender company name
+                                                    </label>
+                                                    <input type="tel" class="input-field" value="MTNC pvt. ltd">
+                                                </div>
+                                                <div class="col-xxl-3 col-xl-4 col-md-6 mb-3">
+                                                    <label class="form-label">
+                                                        Entity type
+                                                    </label>
+                                                    <select class="form-select" aria-label="Default select example"
+                                                            id="enrityType">
+                                                        <option selected value="1">Self-proprietorship</option>
+                                                        <option value="2">LLC</option>
+                                                        <option value="3">LLP</option>
+                                                        <option value="4">S-Corporation</option>
+                                                        <option value="5">C-Corporation</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-xxl-3 col-xl-4 col-md-6 mb-3">
+                                                    <label class="form-label">
+                                                        Years in business
+                                                    </label>
+                                                    <input type="tel" class="input-field" value="5 Years">
+                                                </div>
+                                                <div class="col-xxl-4 col-xl-4 col-md-6 mb-3">
+                                                    <label class="form-label">
+                                                        Estimated number of loans done per year
+                                                    </label>
+                                                    <input type="tel" class="input-field" value="35">
+                                                </div>
+                                                <div class="col-xxl-4 col-xl-4 col-md-6 mb-3">
+                                                    <label class="form-label">
+                                                        Preferred attorney for doc drafting
+                                                    </label>
+                                                    <input type="tel" class="input-field" value="35">
+                                                </div>
+                                                <div class="col-xxl-4 col-xl-4 col-md-6 mb-3">
+                                                    <label class="form-label">
+                                                        Preferred attorney phone
+                                                    </label>
+                                                    <input type="tel" class="input-field" value="+1 (713) 480-2136">
+                                                </div>
+                                                <div class="col-xxl-6 col-xl-6 col-md-6 mb-3">
+                                                    <label class="form-label">
+                                                        interested in servicing your loans right here within
+                                                        Reidy?
+                                                    </label>
+                                                    <input type="tel" class="input-field w-50" value="No">
+                                                </div>
+                                            </div>
+                                            <div class="row ">
+                                                <h6 class="fw-bold my-2">Proof of lendable funds</h6>
+                                                <div class="col-xl-6">
+                                                    <p class="mb-0">
+                                                        <label class="form-label">
+                                                            Type
+                                                        </label>
+                                                    </p>
+                                                    <input type="tel" class="input-field w-xl-75"
+                                                           value="Proof of liquidity">
+                                                    <div class="row mt-3">
+                                                        <div class="col-md-6 mb-3">
+                                                            <label class="form-label">
+                                                                Upload file
+                                                            </label>
+                                                            <div class="prview-outer d-flex">
+                                                                <div class="user_upload-img">
+                                                                    <img src="~/Images/statement1.jpg" alt=""
+                                                                         class="img-fluid">
+                                                                </div>
+                                                                <div class="user_upload-img">
+                                                                    <img src="~/Images/Images/statement2.jpg" alt=""
+                                                                         class="img-fluid">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 mb-3">
+                                                            <p class="mb-0">
+                                                                <label class="form-label">
+                                                                    Lending License
+                                                                </label>
+                                                            </p>
+                                                            <div class="prview-outer d-flex">
+                                                                <div class="user_upload-img">
+                                                                    <img src="~/Images/statement1.jpg" alt=""
+                                                                         class="img-fluid">
+                                                                </div>
+                                                                <div class="user_upload-img">
+                                                                    <img src="~/Images/Images/statement2.jpg" alt=""
+                                                                         class="img-fluid">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6">
+                                                    <label class="form-label">
+                                                        Identification verification type
+                                                    </label>
+                                                    <select class="form-select w-xl-75"
+                                                            aria-label="Default select example" id="identificationform1">
+                                                        <option value="1" selected>State Issued ID</option>
+                                                        <option value="2">Passport</option>
+                                                    </select>
+                                                    <div class="row mt-3">
+                                                        <div class="col-xxl-4 col-xl-4 col-md-6 mb-3">
+                                                            <label class="form-label">
+                                                                Identification
+                                                            </label>
+                                                            <div class="prview-outer d-flex">
+                                                                <div class="user_upload-img">
+                                                                    <img src="~/Images/passport.jpg" alt=""
+                                                                         class="img-fluid">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <button type="button" class="btn-sign btn-headerlist me-0">
+                                                        View all lending products
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <div class="col-xl-12 col-md-12 d-flex justify-content-end pe-0">
+                                    <button type="button" class="btn-login btn-headerlist" data-bs-dismiss="modal"
+                                            aria-label="Close">
+                                        Close
+                                    </button>
+                                    <button type="button" class="btn-sign btn-headerlist me-0">
+                                        Save
+                                        Changes
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!------- Edit modal for lender 1 Ends-->
+                <!---- Fast track buyer edit pop up strats -->
+                <div class="modal fade" id="fasttrackedit" data-bs-backdrop="static" data-bs-keyboard="false"
+                     aria-hidden="true" aria-labelledby="fasttrackeditLabel" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+                        <div class="modal-content br-32 ">
+                            <div class="modal-header p-4">
+                                <h5 class="modal-title" id="editfasttrack">Edit FastTrack Buyer Details</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body p-4 pt-0 bg-seconsary">
+                                <div class="form-card my-3">
+                                    <div class="accordion edit-accordian" id="accordionExample">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                        data-bs-target="#collapseOne" aria-expanded="true"
+                                                        aria-controls="collapseOne">
+                                                    Work Experience
+                                                </button>
+                                            </h2>
+                                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                                 data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <div class="form-card">
+                                                        <div class="row mt-2">
+                                                            <div class="col-xl-3 col-md-6 mb-3">
+                                                                <label for="CompanyNameFst"
+                                                                       class="form-label text-start">
+                                                                    Company name
+                                                                </label>
+                                                                <input type="text" class="input-field"
+                                                                       id="CompanyNameFst"
+                                                                       value="Bluewhale Surfboards ltd.">
+                                                            </div>
+                                                            <div class="col-xl-4 col-md-6 mb-2">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">
+                                                                        Work
+                                                                        date
+                                                                    </label>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <input type="text" class="input-field"
+                                                                               value="12/08/2019">
+                                                                        <span class="mx-2">to</span>
+                                                                        <input type="text" class="input-field"
+                                                                               value="12/08/2022">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-5 col-md-6 mb-3">
+                                                                <label for="WorkDesc" class="form-label text-start">
+                                                                    Description
+                                                                </label>
+                                                                <input type="text" class="input-field" id="WorkDesc"
+                                                                       value="onsectetur, adipisicing elit. Mollitia, amet consectetur, adipisicing elit. Mollitia">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3">
+                                                            <div class="col-12">
+                                                                <h6 class=" mb-0">Real Estate Experience</h6>
+                                                            </div>
+                                                            <div class="col-12 mt-1">
+                                                                <label for="DescriptionDeals"
+                                                                       class="form-label text-start">
+                                                                    What kind of deals have you done in the last 2
+                                                                    years?
+                                                                </label>
+                                                                <textarea class="form-control"
+                                                                          placeholder="Enter description.."
+                                                                          id="DescriptionDeals">nsectetur, adipisicing elit. Mollitia, amet consectetur, adipisicing elit. Mollitia</textarea>
+                                                            </div>
+                                                            <div class="col-12">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseLiquidity"
+                                                        aria-expanded="false" aria-controls="collapseLiquidity">
+                                                    Liquidity
+                                                </button>
+                                            </h2>
+                                            <div id="collapseLiquidity" class="accordion-collapse collapse"
+                                                 data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <div class="form-card">
+                                                        <div class="row mt-3">
+                                                            <div class="col-xl-4 mb-3">
+                                                                <label class="me-2 form-label" for="CashOnHand">
+                                                                    How much cash on hand do you have?
+                                                                </label>
+                                                                <input type="tel" class="input-field w-auto"
+                                                                       id="CashOnHand" placeholder="Total liquidity"
+                                                                       value="$ 25,000,00">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                        aria-expanded="false" aria-controls="collapseTwo">
+                                                    Real Estate Owned
+                                                </button>
+                                            </h2>
+                                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                                 data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <div class="form-card mb-3">
+                                                        <div class="row mt-2">
+                                                            <div class="col-xl-4 md-4 col-6 mb-2">
+                                                                <span class="ms-1 form-label d-block">
+                                                                    Do you own any other real estate?
+                                                                </span>
+                                                                <span class="ms-3">
+                                                                    <input class="form-check-input" type="radio"
+                                                                           name="otherrealestate" id="OtherownYes" checked>
+                                                                    <label class="form-check-label ms-1"
+                                                                           for="OtherownYes">Yes</label>
+                                                                </span>
+                                                                <span class="ms-3">
+                                                                    <input class="form-check-input" type="radio"
+                                                                           name="otherrealestate" id="OtherownNo">
+                                                                    <label class="form-check-label ms-1"
+                                                                           for="OtherownNo">No</label>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <!-------- Below row is hidden and will show on click to yes radio button ------>
+                                                        <div class="row mt-2 mb-3">
+                                                            <div class="col-12">
+                                                                <div class="row mb-2">
+                                                                    <div class="col-xl-6">
+                                                                        <div class="row">
+                                                                            <div class="col-xl-6 col-md-6 mb-2">
+                                                                                <label for="estateaddress1"
+                                                                                       class="form-label">
+                                                                                    Address line 1
+                                                                                </label>
+                                                                                <input type="text" class="input-field"
+                                                                                       id="estateaddress1"
+                                                                                       value="1801 Main St.">
+                                                                            </div>
+                                                                            <div class="col-xl-6 col-md-6 mb-2">
+                                                                                <label for="estateaddress2"
+                                                                                       class="form-label">
+                                                                                    Address line 2
+                                                                                </label>
+                                                                                <input type="text" class="input-field"
+                                                                                       id="estateaddress2"
+                                                                                       value=" 900 Houston">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xl-6">
+                                                                        <div class="row">
+                                                                            <div class="col-xl-4 col-md-6 mb-2">
+                                                                                <label for="estateCityField"
+                                                                                       class="form-label">City</label>
+                                                                                <input type="text" class="input-field"
+                                                                                       id="estateCityField"
+                                                                                       value="Houston">
+                                                                            </div>
+                                                                            <div class="col-xl-4 col-md-6 mb-2">
+                                                                                <label for="estatestateField"
+                                                                                       class="form-label">State</label>
+                                                                                <input type="text" class="input-field"
+                                                                                       id="estatestateField" value="Texas">
+                                                                            </div>
+                                                                            <div class="col-xl-4 col-md-6 mb-2">
+                                                                                <label for="estatezipCode"
+                                                                                       class="form-label">
+                                                                                    Zip
+                                                                                    code
+                                                                                </label>
+                                                                                <input type="text" class="input-field"
+                                                                                       id="estatezipCode" value="77002">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row" id="ownState">
+                                                                    <div class="col-xxl-3 col-xl-3 col-md-6 mb-2">
+                                                                        <label for="fixAdjustRate"
+                                                                               class="form-label">
+                                                                            Type
+                                                                            of
+                                                                            property
+                                                                        </label>
+                                                                        <select class="form-select"
+                                                                                aria-label="Default select example"
+                                                                                id="assetTypeId">
+                                                                            <option>Select</option>
+                                                                            <option value="1" selected>
+                                                                                Multifamily
+                                                                            </option>
+                                                                            <option value="2">
+                                                                                1-4 Residential
+                                                                            </option>
+                                                                            <option value="3">Office</option>
+                                                                            <option value="4">Industrial</option>
+                                                                            <option value="5">Retail</option>
+                                                                            <option value="6">
+                                                                                Shopping Center
+                                                                            </option>
+                                                                            <option value="7">Specialty</option>
+                                                                            <option value="8">
+                                                                                Health Care
+                                                                            </option>
+                                                                            <option value="9">Hospitality</option>
+                                                                            <option value="10">
+                                                                                Sports &amp;
+                                                                                Entertainment
+                                                                            </option>
+                                                                            <option value="11">Land</option>
+                                                                            <option value="12">
+                                                                                Residential Portfolio
+                                                                            </option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-xxl-3 col-xl-3 col-md-6 mb-2">
+                                                                        <label for="PropertyWorth"
+                                                                               class="form-label">
+                                                                            What
+                                                                            is the
+                                                                            property worth?
+                                                                        </label>
+                                                                        <input type="text" class="input-field"
+                                                                               id="PropertyWorth" value="$ 1199.00">
+                                                                    </div>
+                                                                    <div class="col-xxl-3 col-xl-3 col-md-6 mb-2">
+                                                                        <label for="PropertyDebt" class="form-label">
+                                                                            How much debt on property?
+                                                                        </label>
+                                                                        <input type="tel" class="input-field"
+                                                                               id="PropertyDebt" value="None">
+                                                                    </div>
+                                                                    <div class="col-xxl-3 col-xl-3 col-md-6 mb-2">
+                                                                        <label for="acquiredtime" class="form-label">
+                                                                            Month/year acquired
+                                                                        </label>
+                                                                        <input type="text" class="input-field"
+                                                                               id="acquiredtime" value="July/2023">
+                                                                    </div>
+                                                                    <div class="col-xxl-3 col-xl-3 col-md-6 mb-2">
+                                                                        <label for="percentowned" class="form-label">
+                                                                            Percentage of property owned
+                                                                        </label>
+                                                                        <input type="text" class="input-field"
+                                                                               id="percentowned" value="75.5%">
+                                                                    </div>
+                                                                    <div class="col-xl-1 col-md-1 mt-6">
+                                                                        <span class="ms-2">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                 width="20" height="20"
+                                                                                 viewBox="0 0 20 20" fill="none">
+                                                                                <path d="M10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20C15.523 20 20 15.523 20 10C20 4.477 15.523 0 10 0ZM15 11H11V15H9V11H5V9H9V5H11V9H15V11Z"
+                                                                                      fill="#002A7B"></path>
+                                                                            </svg>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-------- Above row is hidden and will show on click to yes radio button ------>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                        aria-expanded="false" aria-controls="collapseThree">
+                                                    Loans And Notes
+                                                </button>
+                                            </h2>
+                                            <div id="collapseThree" class="accordion-collapse collapse"
+                                                 data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <div class="row mt-2">
+                                                        <div class="col-xl-4 md-4 col-6 mb-2">
+                                                            <span class="ms-1 form-label d-block">
+                                                                Are any loans and notes due <span class="text-underline">to</span> you?
+                                                            </span>
+                                                            <span class="ms-3">
+                                                                <input class="form-check-input" type="radio"
+                                                                       name="loanesandnotes" id="OtherloansYes" checked>
+                                                                <label class="form-check-label ms-1"
+                                                                       for="OtherloansYes">Yes</label>
+                                                            </span>
+                                                            <span class="ms-3">
+                                                                <input class="form-check-input" type="radio"
+                                                                       name="loanesandnotes" id="OtherloansNo">
+                                                                <label class="form-check-label ms-1"
+                                                                       for="OtherloansNo">No</label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="Descnote">
+                                                        <div class="col-xl-4 col-md-6 mb-1">
+                                                            <label for="NoteDescrptn" class="form-label">
+                                                                Description of note
+                                                            </label>
+                                                            <input type="text" class="input-field" id="NoteDescrptn"
+                                                                   value="nsectetur, adipisicing elit. Mollitia, amet consectetur, adipisicing elit. Mollitia">
+                                                        </div>
+                                                        <div class="col-xxl-2 col-xl-3 col-md-6 mb-1">
+                                                            <label class="form-label">Collateralized?</label>
+                                                            <div class="mt-2 mb-3">
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio"
+                                                                           name="Collateralized" id="collateralizedYes">
+                                                                    <label class="form-check-label"
+                                                                           for="collateralizedYes">Yes</label>
+                                                                </div>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio"
+                                                                           name="Collateralized" id="collateralizedYNo">
+                                                                    <label class="form-check-label"
+                                                                           for="collateralizedYNo">No</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xxl-3 col-xl-3 col-md-6 mb-1">
+                                                            <label for="collateral" class="form-label">
+                                                                What collateral?
+                                                            </label>
+                                                            <input type="text" class="input-field" id="collateral"
+                                                                   value="None">
+                                                        </div>
+                                                        <div class="col-xxl-3 col-xl-3 col-md-6 mb-1">
+                                                            <label for="Notevalue" class="form-label">
+                                                                Note value
+                                                            </label>
+                                                            <input type="tel" class="input-field" id="Notevalue"
+                                                                   value="$ 120,00">
+                                                        </div>
+                                                        <div class="col-xxl-3 col-xl-3 col-md-6 mb-2">
+                                                            <label for="collateralvalue" class="form-label">
+                                                                Value of collateral
+                                                            </label>
+                                                            <input type="tel" class="input-field" id="collateralvalue"
+                                                                   value="$ 950">
+                                                        </div>
+                                                        <div class="col-xl-1 col-md-1 mt-6">
+                                                            <span class="ms-2">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                                                     height="20" viewBox="0 0 20 20" fill="none">
+                                                                    <path d="M10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20C15.523 20 20 15.523 20 10C20 4.477 15.523 0 10 0ZM15 11H11V15H9V11H5V9H9V5H11V9H15V11Z"
+                                                                          fill="#002A7B"></path>
+                                                                </svg>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!---- accordian item-->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                                        aria-expanded="false" aria-controls="collapseFour">
+                                                    Life Insurance
+                                                </button>
+                                            </h2>
+                                            <div id="collapseFour" class="accordion-collapse collapse"
+                                                 data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <div class="row mt-2">
+                                                        <div class="col-xxl-5 col-xl-6 md-4 col-6 mb-2">
+                                                            <span class="ms-1 form-label d-block">
+                                                                Do you own any life insurance with surrender value?
+                                                            </span>
+                                                            <span class="ms-3">
+                                                                <input class="form-check-input" type="radio"
+                                                                       name="lifeinsurance" id="Loansdueyes" checked>
+                                                                <label class="form-check-label ms-1"
+                                                                       for="Loansdueyes">Yes</label>
+                                                            </span>
+                                                            <span class="ms-3">
+                                                                <input class="form-check-input" type="radio"
+                                                                       name="lifeinsurance" id="LoansdueNo">
+                                                                <label class="form-check-label ms-1"
+                                                                       for="LoansdueNo">No</label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xxl-3 col-xl-4 col-md-6 mb-2 " id="InsurPolicy">
+                                                            <label for="Insurancevalue" class="form-label">
+                                                                Life insurance policy value
+                                                            </label>
+                                                            <input type="tel" class="input-field" id="Insurancevalue"
+                                                                   value="$ 15,000">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!---- accordian item-->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseFive"
+                                                        aria-expanded="false" aria-controls="collapseFive">
+                                                    Stocks And Bonds
+                                                </button>
+                                            </h2>
+                                            <div id="collapseFive" class="accordion-collapse collapse"
+                                                 data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <div class="row mt-2">
+                                                        <div class="col-xxl-5 col-xl-6 md-4 col-6 mb-2">
+                                                            <span class="ms-1 form-label d-block">
+                                                                Any stocks or bonds owned?
+                                                            </span>
+                                                            <span class="ms-3">
+                                                                <input class="form-check-input" type="radio"
+                                                                       name="anybondsown" id="Bondsownyesyes" checked>
+                                                                <label class="form-check-label ms-1"
+                                                                       for="Bondsownyesyes">Yes</label>
+                                                            </span>
+                                                            <span class="ms-3">
+                                                                <input class="form-check-input" type="radio"
+                                                                       name="anybondsown" id="BondsownNo">
+                                                                <label class="form-check-label ms-1"
+                                                                       for="BondsownNo">No</label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xxl-3 col-xl-4 col-md-6 mb-2">
+                                                            <label for="StocksBonds" class="form-label">
+                                                                Stocks and bonds total value
+                                                            </label>
+                                                            <input type="tel" class="input-field" id="StocksBonds"
+                                                                   value="$ 25,000,00">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!---- accordian item-->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseSix"
+                                                        aria-expanded="false" aria-controls="collapseSix">
+                                                    Business Owned
+                                                </button>
+                                            </h2>
+                                            <div id="collapseSix" class="accordion-collapse collapse"
+                                                 data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <div class="row mt-2">
+                                                        <div class="col-xxl-5 col-xl-6 md-4 col-6 mb-2">
+                                                            <span class="ms-1 form-label d-block">
+                                                                Do you own any businesses?
+                                                            </span>
+                                                            <span class="ms-3">
+                                                                <input class="form-check-input" type="radio"
+                                                                       name="anybusinesse" id="businessesyes" checked>
+                                                                <label class="form-check-label ms-1"
+                                                                       for="businessesyes">Yes</label>
+                                                            </span>
+                                                            <span class="ms-3">
+                                                                <input class="form-check-input" type="radio"
+                                                                       name="anybusinesse" id="businessesNo">
+                                                                <label class="form-check-label ms-1"
+                                                                       for="businessesNo">No</label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mt-2 mb-3 " id="BsnesOwned">
+                                                        <div class="col-xxl-3 col-xl-4 col-md-6 mb-2">
+                                                            <label for="BusinessType" class="form-label">
+                                                                Type of business
+                                                            </label>
+                                                            <input type="text" class="input-field" id="BusinessType"
+                                                                   value="Real Estate">
+                                                        </div>
+                                                        <div class="col-xxl-3 col-xl-4 col-md-6 mb-2">
+                                                            <label for="businessPercent" class="form-label">
+                                                                Percentage of business owned
+                                                            </label>
+                                                            <input type="text" class="input-field" id="businessPercent"
+                                                                   value="65.35">
+                                                        </div>
+                                                        <div class="col-xxl-3 col-xl-4 col-md-6 mb-2">
+                                                            <label for="businessValue" class="form-label">
+                                                                Value of business
+                                                            </label>
+                                                            <input type="tel" class="input-field" id="businessValue"
+                                                                   value="$ 25,000,00">
+                                                        </div>
+                                                        <div class="col-xl-1 col-md-1 mt-6">
+                                                            <span class="ms-2">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                                                     height="20" viewBox="0 0 20 20" fill="none">
+                                                                    <path d="M10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20C15.523 20 20 15.523 20 10C20 4.477 15.523 0 10 0ZM15 11H11V15H9V11H5V9H9V5H11V9H15V11Z"
+                                                                          fill="#002A7B"></path>
+                                                                </svg>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!---- accordian item-->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseven"
+                                                        aria-expanded="false" aria-controls="collapseven">
+                                                    Other Assets Owned
+                                                </button>
+                                            </h2>
+                                            <div id="collapseven" class="accordion-collapse collapse"
+                                                 data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <div class="row">
+                                                        <div class="col-xl-3 col-md-6 mb-2">
+                                                            <label for="Automobiles" class="form-label">
+                                                                Automobiles owned total worth
+                                                            </label>
+                                                            <input type="tel" class="input-field" id="Automobiles"
+                                                                   value="$ 11,500,0">
+                                                        </div>
+                                                        <div class="col-xxl-3 col-xl-3 col-md-6 mb-2">
+                                                            <label for="DebtOnautos" class="form-label">
+                                                                Debt on owned autos
+                                                            </label>
+                                                            <input type="text" class="input-field" id="DebtOnautos"
+                                                                   value="None">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xxl-3 col-xl-4 col-md-6 mb-2">
+                                                            <label for="OtherTotal" class="form-label">
+                                                                Other assets total worth
+                                                            </label>
+                                                            <input type="tel" class="input-field" id="OtherTotal"
+                                                                   value="$ 36,500">
+                                                        </div>
+                                                        <div class="col-xxl-3 col-xl-4 col-md-6 mb-2">
+                                                            <label for="otherAssetDebts" class="form-label">
+                                                                Debt on assets owned
+                                                            </label>
+                                                            <input type="tel" class="input-field" id="otherAssetDebts"
+                                                                   value="$ 8,500">
+                                                        </div>
+                                                        <div class="col-xl-1 col-md-1 mt-6">
+                                                            <span class="ms-2">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                                                     height="20" viewBox="0 0 20 20" fill="none">
+                                                                    <path d="M10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20C15.523 20 20 15.523 20 10C20 4.477 15.523 0 10 0ZM15 11H11V15H9V11H5V9H9V5H11V9H15V11Z"
+                                                                          fill="#002A7B"></path>
+                                                                </svg>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!---- accordian item-->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapeEight"
+                                                        aria-expanded="false" aria-controls="collapeEight">
+                                                    Other Debts
+                                                </button>
+                                            </h2>
+                                            <div id="collapeEight" class="accordion-collapse collapse"
+                                                 data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <div class="row">
+                                                        <div class="col-xxl-5 col-xl-6 md-4 col-6 mb-2">
+                                                            <span class="ms-1 form-label d-block">
+                                                                Do you have any other debts?
+                                                            </span>
+                                                            <span class="ms-3">
+                                                                <input class="form-check-input" type="radio"
+                                                                       name="OtherDebts" id="OtherDebtsYes" checked>
+                                                                <label class="form-check-label ms-1"
+                                                                       for="OtherDebtsYes">Yes</label>
+                                                            </span>
+                                                            <span class="ms-3">
+                                                                <input class="form-check-input" type="radio"
+                                                                       name="OtherDebts" id="OtherDebtsNo">
+                                                                <label class="form-check-label ms-1"
+                                                                       for="OtherDebtsNo">No</label>
+                                                            </span>
+                                                        </div>
+                                                        <div class="row mb-3 mt-2" id="DebtsQues">
+                                                            <div class="col-xxl-4 col-xl-5 col-md-6 mb-2">
+                                                                <label for="DebtType" class="form-label">
+                                                                    Type of debt
+                                                                </label>
+                                                                <select class="form-select"
+                                                                        aria-label="Default select example" id="DebtType">
+                                                                    <option>Select</option>
+                                                                    <option value="1">Secured Loan</option>
+                                                                    <option value="2">Unsecured Loan</option>
+                                                                    <option value="3" selected>
+                                                                        Notes Payable To
+                                                                        Others
+                                                                    </option>
+                                                                    <option value="4">Taxes Due</option>
+                                                                    <option value="5">Other</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-xxl-4 col-xl-5 col-md-6 mb-2">
+                                                                <label for="DebtAmount" class="form-label">
+                                                                    Debt amount
+                                                                </label>
+                                                                <input type="tel" class="input-field" id="DebtAmount"
+                                                                       value="$ 1500">
+                                                            </div>
+                                                            <div class="col-xl-1 col-md-1 mt-6">
+                                                                <span class="ms-2">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                                                         height="20" viewBox="0 0 20 20" fill="none">
+                                                                        <path d="M10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20C15.523 20 20 15.523 20 10C20 4.477 15.523 0 10 0ZM15 11H11V15H9V11H5V9H9V5H11V9H15V11Z"
+                                                                              fill="#002A7B"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!---- accordian item-->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapNine"
+                                                        aria-expanded="false" aria-controls="collapNine">
+                                                    Other Details
+                                                </button>
+                                            </h2>
+                                            <div id="collapNine" class="accordion-collapse collapse"
+                                                 data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <div class="row">
+                                                        <div class="col-xxl-3 col-xl-5 col-md-6 mb-3">
+                                                            <label for="DebtAmount" class="form-label">
+                                                                Social security number
+                                                            </label>
+                                                            <div class="d-flex align-items-center justify-content-between">
+                                                                <input type="tel" class="input-field text-center me-1"
+                                                                       value="452" maxlength="3">
+                                                                -
+                                                                <input type="tel"
+                                                                       class="input-field text-center ms-1 me-1" value="25"
+                                                                       maxlength="2">
+                                                                -
+                                                                <input type="tel" class="input-field text-center ms-1"
+                                                                       value="4520" maxlength="4">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xxl-2 col-xl-3 col-md-6 mb-3">
+                                                            <label for="DebtAmount" class="form-label">
+                                                                Date of birth
+                                                            </label>
+                                                            <input type="text" class="input-field" value="08/10/1995">
+                                                        </div>
+                                                        <div class="col-xxl-2 col-xl-2 col-md-6 mb-3">
+                                                            <label for="Marital" class="form-label">
+                                                                Marital status
+                                                            </label>
+                                                            <select class="form-select"
+                                                                    aria-label="Default select example" id="Marital">
+                                                                <option>Select</option>
+                                                                <option value="1" selected>Single</option>
+                                                                <option value="2">Married</option>
+                                                                <option value="3">Divorced</option>
+                                                                <option value="4">Widowed </option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-xxl-5 col-xl-4 col-md-6 mb-3">
+                                                            <label for="Taxfiled" class="form-label">
+                                                                Have you filed tax returns for all prior
+                                                                years?
+                                                            </label>
+                                                            <select class="form-select"
+                                                                    aria-label="Default select example" id="Taxfiled">
+                                                                <option>Select</option>
+                                                                <option value="1" selected>Yes</option>
+                                                                <option value="2">No</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-xxl-5 col-xl-4 col-md-6 mb-3">
+                                                            <label for="acquiring" class="form-label">
+                                                                Are you acquiring property with a company?
+                                                            </label>
+                                                            <select class="form-select"
+                                                                    aria-label="Default select example" id="acquiring">
+                                                                <option>Select</option>
+                                                                <option value="1">No just personal name</option>
+                                                                <option value="2" selected>
+                                                                    Yes with an LLC or LLP
+                                                                </option>
+                                                                <option value="3">Yes with a Corporation</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xxl-4 col-xl-4 col-md-6 mb-3">
+                                                            <label for="DebtAmount" class="form-label">
+                                                                Do you have a criminal background?
+                                                            </label>
+                                                            <div class="mt-2 mb-3">
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio"
+                                                                           name="criminaloptions" id="criminalYes" checked>
+                                                                    <label class="form-check-label"
+                                                                           for="criminalYes">Yes</label>
+                                                                </div>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio"
+                                                                           name="criminaloptions" id="criminalNo">
+                                                                    <label class="form-check-label"
+                                                                           for="criminalNo">No</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xxl-4 col-xl-4 col-md-6 mb-3">
+                                                            <label for="detailcriminalYes" class="form-label">
+                                                                Description
+                                                            </label>
+                                                            <input type="tel" class="input-field" id="detailcriminalYes"
+                                                                   value="Adipisicing elit. Mollitia, amet consectetur, adipisicing elit. Mollitia, adipisicing elit">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xxl-3 col-xl-4 col-md-6 mb-3">
+                                                            <label for="citizenstatus" class="form-label">
+                                                                What is your citizenship status?
+                                                            </label>
+                                                            <select class="form-select"
+                                                                    aria-label="Default select example" id="citizenstatus">
+                                                                <option value="1">US citizen</option>
+                                                                <option value="2">Legal resident</option>
+                                                                <option value="3">No legal status</option>
+                                                                <option value="4" selected>Other</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-xxl-4 col-xl-5 col-md-6 mb-3">
+                                                            <label for="othercitizen" class="form-label">
+                                                                Description
+                                                            </label>
+                                                            <input type="text" class="input-field" id="othercitizen"
+                                                                   value="Adipisicing elit. Mollitia, amet consectetur, adipisicing elit. Mollitia, adipisicing elit">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!---- accordian item-->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapTen"
+                                                        aria-expanded="false" aria-controls="collapTen">
+                                                    Upload Documents
+                                                </button>
+                                            </h2>
+                                            <div id="collapTen" class="accordion-collapse collapse"
+                                                 data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <div class="row ">
+                                                        <div class="col-xxl-4 col-xl-4 col-md-6">
+                                                            <label class="form-label">
+                                                                Bank Statements
+                                                            </label>
+                                                            <div class="prview-outer d-flex">
+
+                                                                <div class="user_upload-img">
+                                                                    <img src="~/Images/Images/statement2.jpg" alt=""
+                                                                         class="img-fluid">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xxl-4 col-xl-4 col-md-6">
+                                                            <label class="form-label">
+                                                                Upload Credit Report
+                                                            </label>
+                                                            <div class="prview-outer d-flex">
+                                                                <div class="user_upload-img">
+                                                                    <img src="~/images/statement1.jpg" alt=""
+                                                                         class="img-fluid">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xxl-4 col-xl-4 col-md-6">
+                                                            <label class="form-label">
+                                                                Identification
+                                                            </label>
+                                                            <div class="prview-outer d-flex">
+                                                                <div class="user_upload-img">
+                                                                    <img src="~/images/passport.jpg" alt=""
+                                                                         class="img-fluid">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!---- accordian item-->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapeNetworth"
+                                                        aria-expanded="false" aria-controls="collapeNetworth">
+                                                    Summary
+                                                </button>
+                                            </h2>
+                                            <div id="collapeNetworth" class="accordion-collapse collapse"
+                                                 data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <div class="row">
+                                                        <div class="row mb-3 mt-2">
+                                                            <div class="col-xxl-4 col-xl-4 col-md-6 mb-2">
+                                                                <label for="assetstworth" class="form-label">
+                                                                    Assets
+                                                                </label>
+                                                                <p class="mb-0 fw-bold">$ 2,000,00</p>
+                                                            </div>
+                                                            <div class="col-xxl-4 col-xl-4 col-md-6 mb-2">
+                                                                <label for="Liabilityworth" class="form-label">
+                                                                    Liability
+                                                                </label>
+                                                                <p class="mb-0 fw-bold">$ 4,000,00</p>
+                                                            </div>
+                                                            <div class="col-xxl-4 col-xl-4 col-md-6 mb-2">
+                                                                <label for="networth" class="form-label">
+                                                                    Net worth
+                                                                </label>
+                                                                <p class="mb-0 fw-bold">$ 6,000,000</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <div class="col-xl-12 col-md-12 d-flex justify-content-end pe-0">
+                                    <button type="button" class="btn-login btn-headerlist" data-bs-dismiss="modal"
+                                            aria-label="Close">
+                                        Close
+                                    </button>
+                                    <button type="button" class="btn-sign btn-headerlist me-0">
+                                        Save
+                                        Changes
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--- fast track buyer edit pop up ends-->
+            </div>
+        </div>
+    </div>
+    <!-- scripts -->
+    <script src="~/js/jquery-3.7.1.js"></script>
+    <script src="~/js/tabindex></script>
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

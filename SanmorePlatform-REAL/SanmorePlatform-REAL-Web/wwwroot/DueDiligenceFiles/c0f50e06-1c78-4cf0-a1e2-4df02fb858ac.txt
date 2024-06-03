@@ -1,0 +1,44 @@
+@model ConsumeImageAPI.Models.PropertyImageModel
+
+@{
+    ViewData["Title"] = "Upload Image";
+}
+
+<h2>Upload Image</h2>
+
+<form asp-action="UploadImage" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="ImageFile"></label>
+        <input asp-for="ImageFile" type="file" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Upload</button>
+</form>
+for save image above
+
+and below
+@model List<ConsumeImageAPI.Models.PropertyImageModel>
+
+<h2>Image List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var image in Model)
+        {
+            <tr>
+                <td>@image.Title</td>
+                <td><img src="@image.ImageFile" alt="@image.Title" style="max-width: 100px; max-height: 100px;" /></td>
+            </tr>
+        }
+    </tbody>
+</table>
+

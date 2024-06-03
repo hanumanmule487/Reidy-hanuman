@@ -1,0 +1,1062 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SanmorePlatform-REAL</title>
+    <!-- Links -->
+</head>
+
+<body>
+    <!-- Add listing -->
+    <div class="top-section">
+        <div class="container-fluid container-px">
+            <h3 class="fw-semibold mb-0 titletext">View <span class="blue-primary">Details</span></h3>
+            <div>
+                <svg class="me-2 mb-1" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"
+                     fill="none">
+                    <path d="M12.3215 5.89276C12.3215 4.61406 11.8136 3.38773 10.9094 2.48355C10.0052 1.57937 8.77889 1.07141 7.50019 1.07141C6.22148 1.07141 4.99515 1.57937 4.09097 2.48355C3.1868 3.38773 2.67883 4.61406 2.67883 5.89276C2.67883 7.87059 4.26131 10.4484 7.50019 13.5362C10.7391 10.4484 12.3215 7.87059 12.3215 5.89276ZM7.50019 14.9998C3.57132 11.4287 1.60742 8.39237 1.60742 5.89276C1.60742 4.32991 2.22826 2.83106 3.33337 1.72595C4.43848 0.620843 5.93733 0 7.50019 0C9.06304 0 10.5619 0.620843 11.667 1.72595C12.7721 2.83106 13.393 4.32991 13.393 5.89276C13.393 8.39237 11.4291 11.4287 7.50019 14.9998Z"
+                          fill="#002A7B"></path>
+                    <path d="M7.49988 6.42908C7.78404 6.42908 8.05655 6.3162 8.25748 6.11527C8.45841 5.91434 8.57129 5.64182 8.57129 5.35767C8.57129 5.07351 8.45841 4.80099 8.25748 4.60006C8.05655 4.39914 7.78404 4.28626 7.49988 4.28626C7.21573 4.28626 6.94321 4.39914 6.74228 4.60006C6.54135 4.80099 6.42847 5.07351 6.42847 5.35767C6.42847 5.64182 6.54135 5.91434 6.74228 6.11527C6.94321 6.3162 7.21573 6.42908 7.49988 6.42908ZM7.49988 7.50049C6.93157 7.50049 6.38653 7.27473 5.98468 6.87287C5.58282 6.47101 5.35706 5.92598 5.35706 5.35767C5.35706 4.78935 5.58282 4.24432 5.98468 3.84246C6.38653 3.4406 6.93157 3.21484 7.49988 3.21484C8.06819 3.21484 8.61323 3.4406 9.01509 3.84246C9.41694 4.24432 9.6427 4.78935 9.6427 5.35767C9.6427 5.92598 9.41694 6.47101 9.01509 6.87287C8.61323 7.27473 8.06819 7.50049 7.49988 7.50049ZM13.2855 10.7147L14.9998 15.0004H10.1784V13.929H4.82135V15.0004H0L1.71426 10.7147H13.2855ZM12.1316 10.7147H2.86817L1.58247 13.929H13.4173L12.1316 10.7147Z"
+                          fill="#002A7B"></path>
+                </svg><span>58 Hullbrook Road, Billesley, B13 0LA</span>
+            </div>
+        </div>
+    </div>
+    <div class="addlistingform pb-5">
+        <div class="container-fluid container-px">
+            <div class="add-property">
+                <div class="row">
+                    <h5>Property</h5>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="propertyType" class="form-label">
+                            Property type <span class="red-txt">*</span>
+                        </label>
+                        <select class="form-select" aria-label="Default select example" id="propertyType">
+                            <option>Select</option>
+                            <option value="1" selected>Multifamily</option>
+                            <option value="2">1-4 Residential</option>
+                            <option value="3">Office</option>
+                            <option value="4">Industrial</option>
+                            <option value="5">Retail</option>
+                            <option value="6">Shopping Center</option>
+                            <option value="7">Specialty</option>
+                            <option value="8">Healthcare</option>
+                            <option value="9">Hospitality</option>
+                            <option value="10">Sports &amp; Entertainment</option>
+                            <option value="11">Land</option>
+                            <option value="12">Residential Portfolio</option>
+                        </select>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="relationshipId1" class="form-label">
+                            Relationship to property <span class="red-txt">*</span>
+                        </label>
+                        <select class="form-select" aria-label="Default select example" id="relationshipId1">
+                            <option selected>Select</option>
+                            <option value="1">Wholesaler</option>
+                            <option value="2" selected>Owner</option>
+                            <option value="3">Broker / Realtor</option>
+                        </select>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="targetPrice" class="form-label">Target price <span class="red-txt">*</span></label>
+                        <input type="text" class="input-field" id="targetPrice" placeholder="Target price"
+                               value="$120,00.00">
+                    </div>
+                    <!-- field for wholesaler start -->
+                    <!-- <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="originalContractPrice" class="form-label">Original contract price</label>
+                        <input type="text" class="input-field" id="originalContractPrice" placeholder="Original contract price">
+                    </div> -->
+                    <!-- fields for wholesaler end -->
+                </div>
+            </div>
+            <!-- address section -->
+            <div class="add-property">
+                <div class="row mt-3">
+                    <h5>Address</h5>
+                    <div class="col-xl-6">
+                        <div class="row">
+                            <div class="col-xl-6 col-md-6 mb-3">
+                                <label for="addressfield3" class="form-label">
+                                    Address 1 <span class="red-txt">*</span>
+                                </label>
+                                <input type="text" class="input-field" id="addressfield3" placeholder="Address 1"
+                                       value="4428 Sycamore Lake Road">
+                            </div>
+                            <div class="col-xl-6 col-md-6 mb-3">
+                                <label for="address2field" class="form-label">Address 2</label>
+                                <input type="text" class="input-field" id="address2field" placeholder="Address 2">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-7">
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label for="CityField1" class="form-label">
+                                            City <span class="red-txt">*</span>
+                                        </label>
+                                        <input type="text" class="input-field" id="CityField1" placeholder="City"
+                                               value="Green Bay">
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="stateField1" class="form-label">
+                                            State <span class="red-txt">*</span>
+                                        </label>
+                                        <select class="form-select" aria-label="Default select example" id="stateField1"
+                                                placeholder="SelectState">
+                                            <option value="0">Select State</option>
+                                            <option value="1">Alabama </option>
+                                            <option value="2">Alaska </option>
+                                            <option value="3">Arizona </option>
+                                            <option value="4">Arkansas </option>
+                                            <option value="5">California </option>
+                                            <option value="6">Colorado </option>
+                                            <option value="7">Connecticut </option>
+                                            <option value="8">Delaware </option>
+                                            <option value="9">Florida </option>
+                                            <option value="10">Georgia </option>
+                                            <option value="11">Hawaii </option>
+                                            <option value="12">Idaho </option>
+                                            <option value="13">Illinois </option>
+                                            <option value="14">Indiana </option>
+                                            <option value="15">Iowa </option>
+                                            <option value="16">Kansas </option>
+                                            <option value="17">Kentucky</option>
+                                            <option value="18">Louisiana </option>
+                                            <option value="19">Maine </option>
+                                            <option value="20">Maryland </option>
+                                            <option value="21">Massachusetts</option>
+                                            <option value="22">Michigan </option>
+                                            <option value="23">Minnesota</option>
+                                            <option value="24">Mississippi</option>
+                                            <option value="25">Missouri</option>
+                                            <option value="26">Montana</option>
+                                            <option value="27">Nebraska </option>
+                                            <option value="28">Nevada </option>
+                                            <option value="29">New Hampshire</option>
+                                            <option value="30">New Jersey </option>
+                                            <option value="31">New Mexico </option>
+                                            <option value="32">New York</option>
+                                            <option value="33">North Carolina </option>
+                                            <option value="34">North Dakota</option>
+                                            <option value="35">Ohio </option>
+                                            <option value="36">Oklahoma</option>
+                                            <option value="37">Oregon </option>
+                                            <option value="38">Pennsylvania </option>
+                                            <option value="39">Rhode Island </option>
+                                            <option value="40">South Carolina</option>
+                                            <option value="41">South Dakota </option>
+                                            <option value="42">Tennessee</option>
+                                            <option value="43">Texas </option>
+                                            <option value="44">Utah</option>
+                                            <option value="45">Vermont </option>
+                                            <option value="46">Virginia</option>
+                                            <option value="47">Washington</option>
+                                            <option value="48">West Virginia </option>
+                                            <option value="49" selected>Wisconsin</option>
+                                            <option value="50">Wyoming</option>
+                                            <option value="51">District of Columbia</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="row">
+                                    <div class="col-xl-6">
+                                        <label for="zipCode1" class="form-label">
+                                            Zip code <span class="red-txt">*</span>
+                                        </label>
+                                        <input type="text" class="input-field" id="zipCode1" placeholder="Zip code"
+                                               value="54302">
+                                    </div>
+                                    <div class="col-xl-6">
+                                        <label for="countryname" class="form-label">
+                                            Country <span class="red-txt">*</span>
+                                        </label>
+                                        <select class="form-select" aria-label="Default select example"
+                                                id="countryname">
+                                            <option>Select</option>
+                                            <option value="1">United Kingdom</option>
+                                            <option value="2" selected>United States</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="add-property">
+                <h5>Property Details</h5>
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="buildingStatus" class="form-label">
+                            Building status <span class="red-txt">*</span>
+                        </label>
+                        <select class="form-select" aria-label="Default select example" id="buildingStatus">
+                            <option selected>Select</option>
+                            <option value="1">Existing</option>
+                            <option value="2">Under construction</option>
+                            <option value="3">Needing renovation </option>
+                            <option value="4">Recently built</option>
+                        </select>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="buildings" class="form-label">Building count <span class="red-txt">*</span></label>
+                        <input type="text" class="input-field" id="buildings" placeholder="Building count">
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="units1" class="form-label">Units</label>
+                        <input type="text" class="input-field" id="units1" placeholder="Units">
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="squareFootage" class="form-label">
+                            Built square footage <span class="red-txt">*</span>
+                        </label>
+                        <input type="text" class="input-field" id="squareFootage" placeholder="Built square footage">
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="fFloors" class="form-label">Floors</label>
+                        <input type="text" class="input-field" id="fFloors" placeholder="Floors">
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="yearBuilt" class="form-label">Year built <span class="red-txt">*</span></label>
+                        <input type="text" class="input-field" id="yearBuilt" placeholder="Year built">
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="yearRenovated" class="form-label">Year renovated</label>
+                        <input type="text" class="input-field" id="yearRenovated" placeholder="Year renovated">
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="landArea" class="form-label">
+                            Land area (in square feet) <span class="red-txt">*</span>
+                        </label>
+                        <input type="text" class="input-field" id="landArea" placeholder="Land area">
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="occupiedField" class="form-label">Occupancy <span class="red-txt">*</span></label>
+                        <select class="form-select" aria-label="Default select example" id="occupiedField">
+                            <option selected>Select</option>
+                            <option value="1">Owner occupied</option>
+                            <option value="2">Paying tenant</option>
+                            <option value="3">Nonpaying occupant</option>
+                            <option value="4">Vacant</option>
+                        </select>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="willOccupantStayAfterSale" class="form-label">Will occupant stay after sale </label>
+                        <select class="form-select" aria-label="Default select example" id="willOccupantStayAfterSale">
+                            <option selected>Select</option>
+                            <option value="1">Yes</option>
+                            <option value="2">No</option>
+                            <option value="3">N/A</option>
+                        </select>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="constructionmaterial" class="form-label">
+                            Construction materials <span class="red-txt">*</span>
+                        </label>
+                        <select class="form-select" aria-label="Default select example" id="constructionmaterial">
+                            <option selected>Select</option>
+                            <option value="1">Wood frame</option>
+                            <option value="2">Metal frame</option>
+                            <option value="3">Cement board</option>
+                            <option value="4">Brick</option>
+                            <option value="5">Other</option>
+                        </select>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="elevators" class="form-label">Elevators</label>
+                        <input type="text" class="input-field" id="elevators" placeholder="Elevators">
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="parking" class="form-label">Parking count <span class="red-txt">*</span></label>
+                        <input type="text" class="input-field" id="parking" placeholder="Parking count">
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="governanceField" class="form-label">Governance </label>
+                        <select class="js-select2 form-select" aria-label="Default select example" id="governanceField"
+                                multiple>
+                            <option>Select</option>
+                            <option value="1">City zoning</option>
+                            <option value="2">County zoning</option>
+                            <option value="3">Deed restrictions</option>
+                            <option value="4">Historic restrictions</option>
+                            <option value="5">HOA</option>
+                            <option value="6">Other</option>
+                        </select>
+                    </div>
+                    <!-- Only visible if Other is selected from governance -->
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="otherDescription" class="form-label">Other</label>
+                        <input type="text" class="input-field" id="otherDescription" placeholder="Add description">
+                    </div>
+                    <!-- Only visible if Other is selected from governance option-->
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="deliveryBays" class="form-label">Delivery bays</label>
+                        <input type="text" class="input-field" id="deliveryBays" placeholder="Delivery bays">
+                    </div>
+                </div>
+                <hr>
+                <div class="unit-mix-section">
+                    <h5>Unit Mix</h5>
+                    <div class="row">
+                        <div class="col-xl-3">
+                            <div class="row">
+                                <div class="col-xl-6 col-md-6 mb-3">
+                                    <label for="units" class="form-label">Units</label>
+                                    <input type="text" class="input-field" id="units" placeholder="Units">
+                                </div>
+                                <div class="col-xl-6 col-md-6 mb-3">
+                                    <label for="bedselect" class="form-label">Beds</label>
+                                    <select class="form-select" aria-label="Default select example" id="bedselect">
+                                        <option selected>Select</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="row">
+                                <div class="col-xl-3 col-md-6 mb-3">
+                                    <label for="bathselect" class="form-label">Baths</label>
+                                    <select class="form-select" aria-label="Default select example" id="bathselect">
+                                        <option selected>Select</option>
+                                        <option value="1">1</option>
+                                        <option value="2">1.5</option>
+                                        <option value="3">2</option>
+                                        <option value="4">2.5</option>
+                                        <option value="5">3</option>
+                                        <option value="6">3.5</option>
+                                        <option value="7">4</option>
+                                        <option value="8">4.5</option>
+                                        <option value="9">5</option>
+                                    </select>
+                                </div>
+                                <div class="col-xl-3 col-md-6 mb-3">
+                                    <label for="units" class="form-label">Unit area</label>
+                                    <input type="text" class="input-field" id="unitsarea" placeholder="Unit SF">
+                                </div>
+                                <div class="col-xl-3 col-md-6 mb-3">
+                                    <label for="askingRent" class="form-label">Asking rent</label>
+                                    <input type="text" class="input-field" id="askingRent" placeholder="Asking rent">
+                                </div>
+                                <div class="col-xl-3 col-md-6 mt-6">
+                                    <span class="ms-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18"
+                                             viewBox="0 0 16 18" fill="none">
+                                            <path d="M3 18C2.45 18 1.979 17.804 1.587 17.412C1.195 17.02 0.999333 16.5493 1 16V3H0V1H5V0H11V1H16V3H15V16C15 16.55 14.804 17.021 14.412 17.413C14.02 17.805 13.5493 18.0007 13 18H3ZM5 14H7V5H5V14ZM9 14H11V5H9V14Z"
+                                                  fill="#DC3545" />
+                                        </svg>
+                                    </span>
+                                    <span class="ms-2" id="addmore">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                             height="20" viewBox="0 0 20 20" fill="none">
+                                            <path d="M10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20C15.523 20 20 15.523 20 10C20 4.477 15.523 0 10 0ZM15 11H11V15H9V11H5V9H9V5H11V9H15V11Z"
+                                                  fill="#002A7B" />
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!---- Residential property details start---->
+            <div class="add-property d-none">
+                <h5>Residential Property Details</h5>
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="buildingStatus" class="form-label">
+                            Building status <span class="red-txt">*</span>
+                        </label>
+                        <select class="form-select" aria-label="Default select example" id="buildingStatus1">
+                            <option selected>Select</option>
+                            <option value="1">New build</option>
+                            <option value="2">Renovated</option>
+                            <option value="3">Rehab needed</option>
+                            <option value="4">Under construction</option>
+                        </select>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="buildingType" class="form-label">
+                            Building Type <span class="red-txt">*</span>
+                        </label>
+                        <select class="form-select" aria-label="Default select example" id="buildingType">
+                            <option selected>Select</option>
+                            <option value="1">Single Family Residential</option>
+                            <option value="2">Duplex</option>
+                            <option value="3">Triplex</option>
+                            <option value="4">Fourplex</option>
+                        </select>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="renovated" class="form-label">Price of renovations needed</label>
+                        <input type="text" class="input-field" id="renovated"
+                               placeholder="Enter price of renovations needed">
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="afterRepair" class="form-label">
+                            After repair value <span class="red-txt">*</span>
+                        </label>
+                        <input type="text" class="input-field" id="afterRepair" placeholder="After repair value">
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="bedroomsId" class="form-label">Bedrooms <span class="red-txt">*</span></label>
+                        <select class="form-select" aria-label="Default select example" id="bedroomsId">
+                            <option selected>Select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5+</option>
+                        </select>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="bathroomId" class="form-label">Bathrooms <span class="red-txt">*</span></label>
+                        <select class="form-select" aria-label="Default select example" id="bathroomId">
+                            <option selected>Select</option>
+                            <option value="1">1</option>
+                            <option value="2">1.5</option>
+                            <option value="3">2</option>
+                            <option value="4">2.5</option>
+                            <option value="5">3</option>
+                            <option value="6">3.5</option>
+                            <option value="7">4</option>
+                            <option value="8">4.5</option>
+                            <option value="9">5+</option>
+                        </select>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="builtSquareId" class="form-label">
+                            Built square footage <span class="red-txt">*</span>
+                        </label>
+                        <input type="text" class="input-field" id="builtSquareId" placeholder="Built square footage">
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="lotSizeFootage" class="form-label">
+                            Lot size square footage <span class="red-txt">*</span>
+                        </label>
+                        <input type="text" class="input-field" id="lotSizeFootage"
+                               placeholder="Lot size square footage">
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="builtYearField" class="form-label">Built year</label>
+                        <input type="text" class="input-field" id="builtYearField" placeholder="Built year">
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="renovatedYear1" class="form-label">Renovated year</label>
+                        <input type="text" class="input-field" id="renovatedYear1" placeholder="Renovated year">
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="parkingResidential" class="form-label">
+                            Parking <span class="red-txt">*</span>
+                        </label>
+                        <select class="form-select" aria-label="Default select example" id="parkingResidential">
+                            <option selected>Select</option>
+                            <option value="1">Attached garage</option>
+                            <option value="2">Detached garage</option>
+                            <option value="3">Attached carport</option>
+                            <option value="4">Detached carport</option>
+                            <option value="5">Uncovered parking</option>
+                            <option value="6">Street only parking</option>
+                        </select>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="parkingSpaces" class="form-label">
+                            Parking spaces <span class="red-txt">*</span>
+                        </label>
+                        <select class="form-select" aria-label="Default select example" id="parkingSpaces">
+                            <option selected>Select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5+</option>
+                        </select>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="occupiedField1" class="form-label">Occupancy <span class="red-txt">*</span></label>
+                        <select class="form-select" aria-label="Default select example" id="occupiedField1">
+                            <option selected>Select</option>
+                            <option value="1">Owner occupied</option>
+                            <option value="2">Paying tenant</option>
+                            <option value="3">Nonpaying occupant</option>
+                            <option value="4">Vacant</option>
+                        </select>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="willOccupantStayAfterSale1" class="form-label">
+                            Will occupant stay after sale <span class="red-txt">*</span>
+                        </label>
+                        <select class="form-select" aria-label="Default select example" id="willOccupantStayAfterSale1">
+                            <option selected>Select</option>
+                            <option value="1">Yes</option>
+                            <option value="2">No</option>
+                            <option value="3">N/A</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- Residential property Details end-->
+            <!-- Land Details if user select Land-->
+            <div class="add-property">
+                <h5>Land Details</h5>
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="landSize" class="form-label">Land size <span class="red-txt">*</span></label>
+                        <div class="d-flex">
+                            <input type="text" class="input-field me-2" id="landSize"
+                                   placeholder="Land size">
+                            <select class="form-select" aria-label="Default select example" id="landSize2">
+                                <option selected>Select</option>
+                                <option value="1">Square feet</option>
+                                <option value="2">Acres</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="lotStatus" class="form-label">
+                            Lot status <span class="red-txt">*</span>
+                        </label>
+                        <select class="form-select" aria-label="Default select example" id="lotStatus">
+                            <option selected>Select</option>
+                            <option value="1">Cleared</option>
+                            <option value="2">Uncleared</option>
+                            <option value="3">Wooded</option>
+                            <option value="4">Pre-developed w/ utilities ran</option>
+                        </select>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="lotUse" class="form-label">
+                            Lot use <span class="red-txt">*</span>
+                        </label>
+                        <select class="form-select" aria-label="Default select example" id="lotUse">
+                            <option selected>Select</option>
+                            <option value="1">Commercial</option>
+                            <option value="2">Residential</option>
+                            <option value="3">Unrestricted</option>
+                        </select>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="lotUse" class="form-label">
+                            Restrictions <span class="red-txt">*</span>
+                        </label>
+                        <select class="form-select" aria-label="Default select example" id="restrictions">
+                            <option selected>Select</option>
+                            <option value="1">Residential zoning</option>
+                            <option value="2">Commercial zoning</option>
+                            <option value="3">Agricultural zoning</option>
+                            <option value="4">Deed restricted to residential</option>
+                            <option value="5">Deed restricted to commercial</option>
+                            <option value="6">No restrictions</option>
+                            <option value="7">Other</option>
+                        </select>
+                    </div>
+                    <!--------------------- below feild is hidden and only will show when other option is selected in Restrictions------------>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="rstrictndscrptn" class="form-label">
+                            Other
+                        </label>
+                        <input type="text" class="input-field" id="rstrictndscrptn" placeholder="Add description">
+                    </div>
+                    <!--------------------- Above feild is hidden and only will show when other option is selected in Restrictions------------>
+                    <h5 class="mt-2">Utilities Available </h5>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="electricField" class="form-label">Electric <span class="red-txt">*</span></label>
+                        <select class="form-select" aria-label="Default select example" id="electricField">
+                            <option selected>Select</option>
+                            <option value="1">Available</option>
+                            <option value="2">Not available</option>
+                            <option value="3">Unknown</option>
+                        </select>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="gasField" class="form-label">Gas <span class="red-txt">*</span></label>
+                        <select class="form-select" aria-label="Default select example" id="gasField">
+                            <option selected>Select</option>
+                            <option value="1">Available</option>
+                            <option value="2">Not available</option>
+                            <option value="3">Unknown</option>
+                        </select>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="waterrequirement" class="form-label">Water <span class="red-txt">*</span></label>
+                        <select class="js-select2 form-select" aria-label="Default select example" id="waterrequirement"
+                                multiple>
+                            <option value="1">Public water</option>
+                            <option value="2">Public sewer</option>
+                            <option value="3">Septic tank</option>
+                            <option value="4">Well</option>
+                            <option value="5">None available</option>
+                        </select>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="opentoBuilders" class="form-label">
+                            Open to partnering with builders? <span class="red-txt">*</span>
+                        </label>
+                        <select class="form-select" aria-label="Default select example" id="opentoBuilders">
+                            <option selected>Select</option>
+                            <option value="1">Yes</option>
+                            <option value="2">No</option>
+                        </select>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="surveyavail" class="form-label">
+                            Survey available? <span class="red-txt">*</span>
+                        </label>
+                        <select class="form-select" aria-label="Default select example" id="surveyavail">
+                            <option selected>Select</option>
+                            <option value="1">Yes</option>
+                            <option value="2">No</option>
+                        </select>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <label for="enironmentalAvail" class="form-label">
+                            Environmental available? <span class="red-txt">*</span>
+                        </label>
+                        <select class="form-select" aria-label="Default select example" id="enironmentalAvail">
+                            <option selected>Select</option>
+                            <option value="1">Yes</option>
+                            <option value="2">No</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- seller details -->
+            <div class="add-property">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="row">
+                            <div class="col-xl-3 col-md-6 mb-3">
+                                <label for="isSellerOffered" class="txtellipsis"
+                                       title="Is Seller financing offered under property?">
+                                    Is seller financing offered
+                                    under property? <span class="red-txt">*</span>
+                                </label>
+                                <select class="form-select" aria-label="Default select example" id="isSellerOffered">
+                                    <option>Select</option>
+                                    <option value="1" selected>Yes</option>
+                                    <option value="2">No</option>
+                                </select>
+                            </div>
+                            <div class="col-xxl-3 col-xl-5 col-md-6">
+                                <div class="row">
+                                    <div class="col-xl-6 col-md-6 mb-3">
+                                        <label for="downPayment" class="form-label">
+                                            Down payment needed <span class="red-txt">*</span>
+                                        </label>
+                                        <input type="text" class="input-field" id="downPayment"
+                                               placeholder="Down payment needed ">
+                                    </div>
+                                    <div class="col-xl-6 col-md-6 mb-3">
+                                        <label for="interestOffered" class="form-label">
+                                            Interest being offered <span class="red-txt">*</span>
+                                        </label>
+                                        <input type="text" class="input-field" id="interestOffered"
+                                               placeholder="Interest being offered">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6 mb-3">
+                                <label for="termOfLoan" class="form-label">Term of loan</label>
+                                <div class="d-flex">
+                                    <input type="text" class="input-field me-2" id="yearLoan"
+                                           placeholder="Years">
+                                    <input type="text" class="input-field" id="monthLoan" placeholder="Months">
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-xl-3 col-md-6 mb-3">
+                                <label for="amortizedId" class="form-label">
+                                    Amortized? <span class="red-txt">*</span>
+                                </label>
+                                <select class="form-select" aria-label="Default select example" id="amortizedId">
+                                    <option selected>Select</option>
+                                    <option value="1">Interest only</option>
+                                    <option value="2">5 years</option>
+                                    <option value="3">10 years</option>
+                                    <option value="4">15 years</option>
+                                    <option value="5">20 years</option>
+                                    <option value="6">25 years</option>
+                                    <option value="7">30 years</option>
+                                    <option value="8">40 years</option>
+                                    <option value="9">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12">
+                        <div class="row">
+                            <div class="col-xl-3 col-md-6 mb-3">
+                                <label for="subAssup" class="form-label">
+                                    Is this a subject-to assumption? <span class="red-txt">*</span>
+                                </label>
+                                <select class="form-select" aria-label="Default select example" id="subAssup">
+                                    <option>Select</option>
+                                    <option value="1" selected>Yes</option>
+                                    <option value="2">No</option>
+                                </select>
+                            </div>
+                            <div class="col-xxl-3 col-xl-5 col-md-6">
+                                <div class="row">
+                                    <div class="col-xl-6 col-md-6 mb-3">
+                                        <label for="cashToCLoseNeeded" class="form-label">
+                                            Cash to close needed <span class="red-txt">*</span>
+                                        </label>
+                                        <input type="text" class="input-field" id="cashToCLoseNeeded" placeholder="$">
+                                    </div>
+                                    <div class="col-xl-6 col-md-6 mb-3">
+                                        <label for="mortgageBalance" class="form-label">
+                                            Mortgage balance <span class="red-txt">*</span>
+                                        </label>
+                                        <input type="text" class="input-field" id="mortgageBalance" placeholder="$">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6 mb-3">
+                                <label for="monthlyPaymentAssumed" class="form-label">
+                                    Monthly payment being assumed
+                                    <span class="red-txt">*</span>
+                                </label>
+                                <input type="text" class="input-field" id="monthlyPaymentAssumed" placeholder="$">
+                            </div>
+                            <div class="col-xxl-3 col-xl-4 col-md-6 mb-3">
+                                <label for="escrowsField" class="form-label">
+                                    Escrows included in monthly payment <span class="red-txt">*</span>
+                                </label>
+                                <select class="js-select2 form-select" aria-label="Default select example"
+                                        id="escrowsField" multiple>
+                                    <option value="1">Insurance</option>
+                                    <option value="2">Taxes</option>
+                                    <option value="3">HOA fees</option>
+                                    <option value="4">Other</option>
+                                </select>
+                            </div>
+                            <div class="col-xl-3 col-md-6 mb-3">
+                                <label for="termOfLoan1" class="form-label">
+                                    Term left on mortgage <span class="red-txt">*</span>
+                                </label>
+                                <div class="d-flex">
+                                    <input type="text" class="input-field me-2" id="yearLoan1"
+                                           placeholder="Years">
+                                    <input type="text" class="input-field" id="monthLoan1" placeholder="Months">
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6 mb-3">
+                                <label for="amortizedmortgageId" class="form-label">Amortization of mortgage</label>
+                                <select class="form-select" aria-label="Default select example"
+                                        id="amortizedmortgageId">
+                                    <option selected>Select</option>
+                                    <option value="1">Interest only</option>
+                                    <option value="2">10 years</option>
+                                    <option value="3">15 years</option>
+                                    <option value="4">20 years</option>
+                                    <option value="5">25 years</option>
+                                    <option value="6">30 years</option>
+                                    <option value="7">40 years</option>
+                                    <option value="8">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-md-6 mb-3">
+                        <div class="txtellipsis form-label" title="Is Due Diligence period available on this property?">
+                            Is due diligence period available on this
+                            property? <span class="red-txt">*</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div>Up&nbsp;to</div> <select class="form-select mx-2 custom-width"
+                                                          aria-label="Default select example" id="dueDiligenceAvail">
+                                <option selected>Select</option>
+                                <option value="1">0</option>
+                                <option value="2">1</option>
+                                <option value="3">2</option>
+                                <option value="4">3</option>
+                                <option value="5">4</option>
+                                <option value="6">5</option>
+                                <option value="7">6</option>
+                                <option value="8">7</option>
+                                <option value="9">8</option>
+                                <option value="10">9</option>
+                                <option value="11">10</option>
+                                <option value="12">11</option>
+                                <option value="13">12</option>
+                                <option value="14">13</option>
+                                <option value="15">14</option>
+                                <option value="16">15</option>
+                                <option value="17">16</option>
+                                <option value="18">17</option>
+                                <option value="19">18</option>
+                                <option value="20">19</option>
+                                <option value="21">20</option>
+                            </select>
+                            <div>Days available as due diligence period</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Property Description -->
+            <div class="add-property">
+                <!-- <h5>Property Description</h5> -->
+                <div class="row">
+                    <div class="col-xl-12 col-md-6 mb-3">
+                        <label for="descTextarea" class="form-label">
+                            Property description <span class="red-txt">*</span>
+                        </label>
+                        <textarea class="form-control txtarea" placeholder="Add property description.."
+                                  id="descTextarea"></textarea>
+                    </div>
+                </div>
+            </div>
+            <!-- Features -->
+            <div class="add-property">
+                <div>
+                    <h5 class="mb-1">Key Features</h5>
+                    <div class="mb-3 subpara">
+                        Please input the best features of this property <span class="fs-small">
+                            (Maximum
+                            100 characters)
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-6 col-md-6 mb-3">
+                        <label for="feature1" class="form-label">Key feature 1</label>
+                        <input type="text" class="input-field" id="feature1" placeholder="Add Feature">
+                    </div>
+                    <div class="col-xl-6 col-md-6 mb-3">
+                        <label for="feature2" class="form-label">Key feature 2</label>
+                        <input type="text" class="input-field" id="feature2" placeholder="Add Feature">
+                    </div>
+                    <div class="col-xl-6 col-md-6 mb-3">
+                        <label for="feature3" class="form-label">Key feature 3</label>
+                        <input type="text" class="input-field" id="feature3" placeholder="Add Feature">
+                    </div>
+                    <div class="col-xl-6 col-md-6 mb-3">
+                        <label for="feature4" class="form-label">Key feature 4</label>
+                        <input type="text" class="input-field" id="feature4" placeholder="Add Feature">
+                    </div>
+                </div>
+            </div>
+            <!-- Due diligence documents -->
+            <div class="add-property">
+                <h5 class="mb-1">Due Diligence Documents</h5>
+                <div class="mb-3 subpara"> Only pdf and all image format</div>
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <!-- <label for="fileForm" class="form-label">Appraisal</label>
+                        <input class="input-field formFile" type="file" id="fileForm"> -->
+                        <div class="upload__box">
+                            <div class="upload__btn-box">
+                                <div class="upload__btn position-relative">
+                                    <label for="fileForm" class="form-label">Appraisal</label>
+                                    <input type="file" multiple data-max_length="20"
+                                           class="input-field formFile upload__inputfile" id="fileInput1">
+                                    <p><span class="counter" id="counter1">0 File</span></p>
+                                </div>
+                            </div>
+                            <div class="upload__img-wrap" id="filePreviewContainer1"></div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <!-- <label for="fileForm1" class="form-label">Inspection</label>
+                        <input class="input-field formFile" type="file" id="fileForm1"> -->
+                        <div class="upload__box">
+                            <div class="upload__btn-box">
+                                <div class="upload__btn position-relative">
+                                    <label for="fileForm1" class="form-label">Inspection</label>
+                                    <input type="file" multiple data-max_length="20"
+                                           class="input-field formFile upload__inputfile" id="fileInput2">
+                                    <p><span class="counter" id="counter2">0 File</span></p>
+                                </div>
+                            </div>
+
+                            <div class="upload__img-wrap" id="filePreviewContainer2"></div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <!-- <label for="fileForm2" class="form-label">Survey</label>
+                        <input class="input-field formFile" type="file" id="fileForm2"> -->
+                        <div class="upload__box">
+                            <div class="upload__btn-box">
+                                <div class="upload__btn">
+                                    <label for="fileForm2" class="form-label">Survey</label>
+                                    <input type="file" multiple data-max_length="20"
+                                           class="input-field formFile upload__inputfile" id="fileForm2">
+                                </div>
+                            </div>
+
+                            <div class="upload__img-wrap"></div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <div class="upload__box">
+                            <div class="upload__btn-box">
+                                <div class="upload__btn">
+                                    <label for="fileForm3" class="form-label">Environmental</label>
+                                    <input type="file" multiple data-max_length="20"
+                                           class="input-field formFile upload__inputfile" id="fileForm3">
+                                </div>
+                            </div>
+
+                            <div class="upload__img-wrap"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!--property pictures -->
+                <div class="col-xl-6">
+                    <div class="add-property">
+                        <div class="row">
+                            <h5>Property Pictures <span class="fs-small subpara">(Select all that apply)</span></h5>
+                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                <label for="upload-img" class="form-label">Upload Pictures</label>
+                                <input class="input-field formFile" type="file" id="upload-img" accept="image/*"
+                                       multiple>
+                            </div>
+                            <!-- for preview property images -->
+                            <div class="img-thumbs img-thumbs-hidden" id="img-preview"></div>
+                        </div>
+                    </div>
+                </div>
+                <!--property Videos -->
+                <div class="col-xl-6">
+                    <div class="add-property">
+                        <div class="row">
+                            <h5>Property Videos <span class="fs-small subpara">(Select all that apply)</span></h5>
+                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                <label for="filevideos" class="form-label">Upload Videos</label>
+                                <input class="input-field formFile" type="file" id="upload-video" accept="video/*"
+                                       multiple>
+                            </div>
+                            <!-- for preview property videos -->
+                            <div class="img-thumbs img-thumbs-hidden" id="video-preview"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Links -->
+            <div class="add-property">
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <h5>Links</h5>
+                        <label for="linkform" class="form-label">Add links</label>
+                        <div class="d-flex align-items-center">
+                            <input type="text" class="input-field" id="linkform" placeholder="Add links">
+                            <span class="ms-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18"
+                                     viewBox="0 0 16 18" fill="none">
+                                    <path d="M3 18C2.45 18 1.979 17.804 1.587 17.412C1.195 17.02 0.999333 16.5493 1 16V3H0V1H5V0H11V1H16V3H15V16C15 16.55 14.804 17.021 14.412 17.413C14.02 17.805 13.5493 18.0007 13 18H3ZM5 14H7V5H5V14ZM9 14H11V5H9V14Z"
+                                          fill="#DC3545" />
+                                </svg>
+                            </span>
+                            <span class="ms-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                     viewBox="0 0 20 20" fill="none">
+                                    <path d="M10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20C15.523 20 20 15.523 20 10C20 4.477 15.523 0 10 0ZM15 11H11V15H9V11H5V9H9V5H11V9H15V11Z"
+                                          fill="#002A7B" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Identification Verification -->
+            <div class="add-property">
+                <h5>
+                    Identification Verification <span class="info" data-toggle="tooltip"
+                                                      title="Help us prevent fraud! Please upload your ID">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             width="18" height="18" viewBox="0 0 18 18" fill="none">
+                            <path d="M8.1 13.5H9.9V8.1H8.1V13.5ZM9 6.3C9.255 6.3 9.4689 6.2136 9.6417 6.0408C9.8145 5.868 9.9006 5.6544 9.9 5.4C9.9 5.145 9.8136 4.9314 9.6408 4.7592C9.468 4.587 9.2544 4.5006 9 4.5C8.745 4.5 8.5314 4.5864 8.3592 4.7592C8.187 4.932 8.1006 5.1456 8.1 5.4C8.1 5.655 8.1864 5.8689 8.3592 6.0417C8.532 6.2145 8.7456 6.3006 9 6.3ZM9 18C7.755 18 6.585 17.7636 5.49 17.2908C4.395 16.818 3.4425 16.1769 2.6325 15.3675C1.8225 14.5575 1.1814 13.605 0.7092 12.51C0.237 11.415 0.0006 10.245 0 9C0 7.755 0.2364 6.585 0.7092 5.49C1.182 4.395 1.8231 3.4425 2.6325 2.6325C3.4425 1.8225 4.395 1.1814 5.49 0.7092C6.585 0.237 7.755 0.0006 9 0C10.245 0 11.415 0.2364 12.51 0.7092C13.605 1.182 14.5575 1.8231 15.3675 2.6325C16.1775 3.4425 16.8189 4.395 17.2917 5.49C17.7645 6.585 18.0006 7.755 18 9C18 10.245 17.7636 11.415 17.2908 12.51C16.818 13.605 16.1769 14.5575 15.3675 15.3675C14.5575 16.1775 13.605 16.8189 12.51 17.2917C11.415 17.7645 10.245 18.0006 9 18Z"
+                                  fill="#002A7B" />
+                        </svg>
+                    </span>
+                </h5>
+                <div class="row">
+                    <div class="col-xxl-2 col-xl-3 col-md-6 mb-3">
+                        <label for="identificationform" class="form-label">
+                            Identification verification type <span class="red-txt">*</span>
+                        </label>
+                        <select class="form-select" aria-label="Default select example" id="identificationform">
+                            <option selected>Select</option>
+                            <option value="1">State Issued ID</option>
+                            <option value="2">Passport</option>
+                        </select>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-3">
+                        <div class="upload__box">
+                            <div class="upload__btn-box">
+                                <div class="upload__btn">
+                                    <label for="stateIssuedId" class="form-label">
+                                        Upload identification <span class="red-txt">*</span>
+                                    </label>
+                                    <input type="file" multiple data-max_length="20"
+                                           class="input-field formFile upload__inputfile" id="stateIssuedId">
+                                </div>
+                            </div>
+                            <div class="upload__img-wrap"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- User Agreement -->
+            <div class="add-property">
+                <h5>User Agreement</h5>
+                <div class="row mt-2">
+                    <div class="col-xl-12 col-md-12 mb-3">
+                        <div class="userfield">
+                            Accept Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+                            voluptas facilis quo dolor aut quibusdam eaque, aspernatur ut temporibus tenetur quaerat rem
+                            repellat mollitia voluptatum repellendus velit necessitatibus error suscipit.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
+                            ipsum dolor sit Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Lorem ipsum
+                            dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit Lorem ipsum dolor sit amet consectetur adipisicing elit amet consectetur
+                            adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim deserunt
+                            molestiae dolor consec.
+                            Adipisicing elit Lorem ipsum dolor sit amet consectetur adipisicing elit amet consectetur
+                            adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim deserunt
+                            molestiae dolor consectetur natus reprehenderit hic a architecto atque nisi sit facere est
+                            doloremque quaerat sequi sapiente, dignissimos, nihil labore.
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex">
+                        <input type="checkbox" class="me-2 mt-1 filter-checkbox" id="chkbx1"><label class="fs-small">Accept user agreement</label>
+                    </div>
+                </div>
+            </div>
+            <div class="text-end mt-3">
+                <button type="button" class="me-2 btn-pbr btn-cancel">Cancel</button>
+                <button type="button" class="btn-sign btn-pbr" data-bs-toggle="modal"
+                        data-bs-target="#WarningCreateLending">
+                    Save Progress
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- scripts -->
+
+    <script src="~/js/jquery-3.7.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script src="~/js/addListing.js"></script>
+</body>
+
+</html>

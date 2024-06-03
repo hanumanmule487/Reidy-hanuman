@@ -1,0 +1,904 @@
+﻿@using SanmorePlatform_REAL_Utility.Enum;
+@using SanmorePlatform_REAL_Utility.Enum.LenderEnum;
+@model SanmorePlatform_REAL_Model.ViewModels.LenderViewModel.LenderProductModel;
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Landing Product : SanmorePlatform-REAL</title>
+    <!-- Links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-css/1.4.6/select2-bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/lenderDev.css">
+    <!-- Lenders CSS -->
+    <link rel="stylesheet" href="~/css/lenders.css">
+    <link rel="stylesheet" href="~/css/lendersResponsive.css">
+</head>
+
+<body>
+    <!-- top section -->
+    <div class="top-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xxl-5 col-md-5">
+                    <h3 class="fw-semibold mb-0">Add A New <span class="blue-primary">Lending Product</span></h3>
+                </div>
+                <div class="col-xxl-7 col-md-7 d-flex align-items-center justify-content-end">                  
+                    <div class="ideal-div">
+                        <div class="indexz">
+                            Need help?
+                        </div> <a href="#" class="ms-2 idealbtn indexz">
+                            Please call 1800-000-0000 to
+                            speak our transaction coordinator
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="addlistingform pb-5">
+        <div class="container">
+            <div class="add-property program-box">
+                <div class="row">
+                    <h5 class="mb-3">Program</h5>
+                    <div class="col-xl-4 col-md-6 mb-2">
+                        <label for="programType" class="form-label">Loan product <span class="text-danger">*</span></label>
+                        <select class="form-select" aria-label="Default select example" id="propertyType" onchange="LoanOnchange()">
+                           @*  <option selected value="0">Select</option>
+                            @{
+                                var loan = 1;
+                                foreach (var i in Enum.GetValues(typeof(LoanProduct)))
+                                {
+                                    <option> @i.ToString().Replace('_',' ')</option>
+                                    loan++;
+                                }
+                            } *@
+
+                            <option selected value="0">Select</option>
+                            <option value="1">Conventional loan</option>
+                            <option value="2">DSCR loan</option>
+                            <option value="3">Hard money loan</option>
+                            <option value="4">Hybrid loan</option>
+                            <option value="5">Non - QM loan</option>
+                            <option value="6">Private lender loan</option>
+                        </select>
+                        <span id="errLaonProduct" class="text-danger"></span>
+                    </div>
+                    <div class="col-xl-4 col-md-6 mb-2">
+                        <label for="fixAdjustRate" class="form-label">
+                            Fixed or adjustable rate? <span class="text-danger">*</span>
+                        </label>
+                        <select class="form-select" aria-label="Default select example" id="RateSelect" onchange="FixedRateOnchange()">
+                           @*      <option selected value="0">Select</option>
+                            @{
+                                var rate = 1;
+                                foreach (var i in Enum.GetValues(typeof(FixedOrAdjustableRate)))
+                                {
+                                    <option> @i.ToString().Replace('_',' ')</option>
+                                    rate++;
+                                }
+                            } *@
+                            <option selected value="0">Select</option>
+                            <option value="1">Adjustable rate</option>
+                            <option value="2">Fixed rate</option>
+                        </select>
+                        <span id="errFixRate" class="text-danger"></span>
+                    </div>
+                    <!------- Below section is hidden and will show on select of Adjustable Rate option ----->
+                    <div class="col-xl-4 col-md-6 mb-3 d-none" id="AdjustValue">
+                        <label for="Adjuststrctr" class="form-label">Adjustable structure desc</label>
+                        <input type="text" class="input-field" id="Adjuststrctr" placeholder="Adjustable structure">
+                    </div>
+                    <!------- Above section is hidden and  will show on select of Adjustable Rate option ----->
+                    <div class="col-xl-4 col-md-6 mb-3">
+                        <label for="termField" class="form-label">Terms <span class="text-danger">*</span></label>
+
+                        <div class="row">
+                            <div class="col-12 d-flex align-items-center">
+                                <div class="w-50 me-3">
+                                    <input type="text" class="input-field" placeholder="0" id="inputTerm" onkeyup="RemoveTerms()" @* value="@Model.TermValue" *@>
+                                   
+                                </div>
+                                <div class="w-50">
+                                    <select class="form-select" id="selectTerm">
+                                            <option>Select</option>
+                                            <option value="1" selected>Months</option>
+                                            <option value="2">Years</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <span id="errTerms" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 mb-3">
+                        <label for="Amortization" class="form-label">Amortization<span class="text-danger">*</span></label>                   
+                        <select asp-for="Amortization" class="form-select" aria-label="Default select example" id="amortization" onchange="AmortizationOnChange()">
+                            <option selected value="0">Select</option>
+                            <option value="0">Interest only</option>
+                            <option value="1">5 years</option>
+                            <option value="2">10 years</option>
+                            <option value="3">15 years</option>
+                            <option value="4">20 years</option>
+                            <option value="5">25 years</option>
+                            <option value="6">30 years</option>
+                            <option value="7">35 years</option>
+                            <option value="8">40 years</option>
+                            <option value="9">Other</option>
+                        </select>
+                        <span id="errAmortization" class="text-danger"></span>
+                    </div>
+                    <!------- Below section is hidden and will show on select of OtherAmortization option ----->
+                    <div class="col-xxl-4 col-xl-2 col-md-6 mb-3 d-none" id="OtherAmortization">
+                        <label for="amortizationother" class="form-label">Other</label>
+                        <input type="text" class="input-field" id="amortizationother" placeholder="Description">
+                    </div>
+                    <!------- Above section is hidden and  will show on select of OtherAmortization option ----->
+                    <div class="col-xl-12 mb-3">
+                        <label for="Monthlypayment" class="form-label">Monthly payment requirement</label>
+                        <div class="row">
+                            <div class="col-xl-4">
+                                <select class="form-select" id="Monthlypayment" onchange="MonthlyPayment()">
+                                    <option value="0">Select</option>
+                                    <option value="1">Monthly due at beginning of the month</option>
+                                    <option value="2">monthly due at anniversary of funding</option>
+                                    <option selected value="3">No monthly payment required</option>
+                                </select>
+                            </div>
+                            <div class="col-xl-8">
+                                <div class="mt-2 mb-3" id="textClosingPayment">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="closingPayments">
+                                        <label class="form-check-label" for="closingPayments">Payments collected upfront at closing</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="exitPayments">
+                                        <label class="form-check-label" for="exitPayments">Payments collected at loan exit</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    <div class="col-xxl-2 col-xl-2 col-md-6 mb-3">
+                        <label for="InterestRate" class="form-label">Interest rate <span class="text-danger">*</span></label>                     
+                            <input type="text" class="input-field" id="InterestRate" placeholder="%" onkeyup="RemoveInterestRate()">                  
+                        <span id="errInterestRate" class="text-danger"></span>
+                    </div>
+                    <div class="col-xxl-4 col-xl-4 col-md-6 mb-2 priceinput-outer">
+                        <label class="form-label">Loan amount range <span class="text-danger">*</span></label>
+                        <div class="row">
+                            <div class="col-12 d-flex align-items-center">
+                                <div>                                  
+                                        <input type="text" class="input-field" placeholder="Min" id="minLoan" onkeyup="CalculateMinLoanAmount(this)">
+
+                                </div>
+                                <div>
+                                    <span class="mx-2">to</span>
+                                </div>
+                                <div>                               
+                                        <input type="text" class="input-field" placeholder="Max" id="maxLoan" onkeyup="CalculateMaxLoanAmount(this)">                                  
+                                </div>
+                            </div>
+                            <span id="errMinLoan" class="text-danger"></span>
+
+                        </div>
+                    </div>
+                    <div class="col-xxl-4 col-xl-4 col-md-6 mb-3">
+                        <label for="LenderOrigin" class="form-label">Lender origination</label>
+                        <input type="text" class="input-field" id="LenderOrigin" placeholder="Origination points">
+                    </div>
+                </div>              
+                    <div class="work-experience-section">
+                        <div class="row" id="getAllHtml">
+                            <div class="col-12" id="mainDiv2">
+                                <div class="row">
+                                    <div class="col-xxl-4 col-xl-4 col-md-6 mb-3">
+                                        <label for="AdditionalFees" class="form-label">Additional fees</label>
+                                        <input type="text" class="input-field" id="AdditionalFees" placeholder="Description of fee ">
+                                    </div>
+                                    <div class="col-xxl-2 col-xl-4 col-md-6 mb-3">
+                                        <label for="AdditionalAmount" class="form-label">Amount</label>
+                                        <input type="tel" class="input-field" id="AdditionalAmount" onkeyup="CalculateAmount(this)" placeholder="Amount">
+                                    </div>
+                                    <div class="col-xl-1 col-md-1 mt-6">
+                                        <span class="ms-2 d-none" id="divDelete">
+                                            <svg class="deleteMe2" xmlns="http://www.w3.org/2000/svg" width="16" height="18"
+                                                 viewBox="0 0 16 18" fill="none">
+                                                <path d="M3 18C2.45 18 1.979 17.804 1.587 17.412C1.195 17.02 0.999333 16.5493 1 16V3H0V1H5V0H11V1H16V3H15V16C15 16.55 14.804 17.021 14.412 17.413C14.02 17.805 13.5493 18.0007 13 18H3ZM5 14H7V5H5V14ZM9 14H11V5H9V14Z"
+                                                      fill="#DC3545" />
+                                            </svg>
+                                        </span>
+                                        <span class="ms-2">
+                                            <svg onclick="MakeNewRow()" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="idAddUnitDiv" id="divAddMain">
+                                                <path d="M10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20C15.523 20 20 15.523 20 10C20 4.477 15.523 0 10 0ZM15 11H11V15H9V11H5V9H9V5H11V9H15V11Z"
+                                                      fill="#002A7B"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <div class="Amount-section d-none">
+
+                    <div class="row" id="getAllHtmldNone">
+                        <div class="col-12" id="parentDiv2">
+                            <div class="row">
+                                <div class="col-xxl-4 col-xl-4 col-md-6 mb-3">
+                                    <label for="AdditionalFees" class="form-label">Additional fees</label>
+                                    <input type="text" class="input-field" id="AdditionalFees" placeholder="Description of fee ">
+                                </div>
+                                <div class="col-xxl-2 col-xl-4 col-md-6 mb-3">
+                                    <label for="AdditionalAmount" class="form-label">Amount</label>
+                                    <input type="tel" class="input-field" id="AdditionalAmount" onkeyup="CalculateAmount(this)" placeholder="Amount">
+                                </div>
+                                <div class="col-xl-1 col-md-1 mt-6">
+                                    <span class="ms-2">
+                                        <svg class="deleteMeUnitMix" xmlns="http://www.w3.org/2000/svg" width="16" height="18"
+                                             viewBox="0 0 16 18" fill="none">
+                                            <path d="M3 18C2.45 18 1.979 17.804 1.587 17.412C1.195 17.02 0.999333 16.5493 1 16V3H0V1H5V0H11V1H16V3H15V16C15 16.55 14.804 17.021 14.412 17.413C14.02 17.805 13.5493 18.0007 13 18H3ZM5 14H7V5H5V14ZM9 14H11V5H9V14Z"
+                                                  fill="#DC3545" />
+                                        </svg>
+                                    </span>
+                                    <span class="ms-2">
+                                        <svg onclick="MakeNewRow()" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="idAddUnitDiv" id="AddIcon">
+                                            <path d="M10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20C15.523 20 20 15.523 20 10C20 4.477 15.523 0 10 0ZM15 11H11V15H9V11H5V9H9V5H11V9H15V11Z"
+                                                  fill="#002A7B"></path>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="add-property">
+                <h5 class="mb-3">Areas Served</h5>
+                <div class="row">
+                    <div class="col-xl-4 col-md-4 mb-3" id="myDropdown">
+                        <label for="StateFeilds" class="form-label">State <span class="text-danger">*</span></label>
+
+                        <select class="js-select2 form-select" aria-label="Default select example" id="StateFeilds"  onchange="RemoveState()" multiple>                           
+                           
+                        </select>
+                        <span id="errStateField" class="text-danger"></span>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-2">
+                        <div class="mb-3">
+                            <label class="form-label" for="LendingCounties">Counties</label>
+                            <select class="js-select2 form-select " aria-label="Default select example" id="LendingCounties" @* asp-items="Html.GetEnumSelectList<Counties>()" *@ multiple>
+                                <option value="5" id="txtCounties">All counties</option>
+                                <option value="1">Bullock</option>
+                                <option value="2">Butler</option>
+                                <option value="3">Colbert</option>
+                                <option value="4">Houston</option>
+                            </select>
+                            <input type="text" id="county" class="auto-complete-county">
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-2">
+                        <div class="mb-3">
+                            <label class="form-label" for="LendingCity">City</label>
+                            <select class="js-select2 form-select" aria-label="Default select example" id="LendingCity" @* asp-items="Html.GetEnumSelectList<City>()" *@ multiple>
+                                <option value="5">All cities</option>
+                                <option value="1">Chicago</option>
+                                <option value="2">Dallas</option>
+                                <option value="3">Miami</option>
+                                <option value="4">Hollywood</option>
+                          </select>
+                            <input type="text" id="city" class="auto-complete-city">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="add-property">
+                <h5 class="mb-3">Property Details</h5>
+                <div class="row justify-between-desktop LTV-outer">
+                    <div class="col-xxl-3 col-xl-4 col-md-6 mb-3 col-12 pe-xl-1">
+                        <label for="assetTypeId" class="form-label">
+                            Type of assets this product applies to <span class="text-danger">*</span>
+                        </label>
+                        <select class="js-select2 form-select" aria-label="Default select example" id="assetTypeId" multiple onchange="AssetsTypeOnChange()">                         
+                                <option value="1">Multifamily</option>
+                                <option value="2">1-4 Residential</option>
+                                <option value="3">Office</option>
+                                <option value="4">Industrial</option>
+                                <option value="5">Retail</option>
+                                <option value="6">Shopping center</option>
+                                <option value="7">Specialty</option>
+                                <option value="8">Healthcare</option>
+                                <option value="9">Hospitality</option>
+                                <option value="10">Sports &amp; entertainment</option>
+                                <option value="11">Land</option>
+                                <option value="12">Residential portfolio</option>                           
+                        </select>
+                        <span id="errAssetType" class="text-danger"></span>
+                    </div>
+
+                    <!-------- Below section will show if the Multifamily option is selected on above dropdown ----->
+                    <div class="col-xxl-4 col-xl-4 col-md-6 mb-3 col-12 d-none" id="divMultifamily">
+                        <label for="multifamilyunits" class="form-label">
+                            Multifamily units lending range<span class="text-danger">*</span>
+                        </label>
+                        <div class="row">
+                            <div class="col-12 d-flex align-items-center justify-content-between mb-3">
+                                <div>
+                                    <input type="text" class="input-field" placeholder="Min. unit count" id="MinUnitCount" onkeyup="RemoveMultiUnitRange()">
+
+                                </div>
+                                <span id="errMinUnitCount" class="text-danger"></span>
+                                <div>
+                                    <span class="mx-2">to</span>
+                                </div>
+                                <div>
+                                    <input type="text" class="input-field" placeholder="Max. unit count" id="MaxUnitCount" onkeyup="RemoveMultiUnitRange()">
+
+                                </div>
+                            </div>
+                            <span id="errMaxUnitCount" class="text-danger"></span>
+                        </div>
+                        <span id="errMultifamilyUnit" class="text-danger"></span>
+                    </div>
+
+                    <!-------- Above section will show if the Multifamily option is selected on above dropdown ----->
+                </div>
+                <div class="row">
+                    <div class="col-xxl-3 col-xl-4 col-md-6 mb-3 col-12 pe-xl-1">
+                        <label for="PurchasePercent" class="form-label">
+                            Percent of purchase to lend up to<span class="text-danger">*</span>
+                        </label>                     
+                            <input type="text" class="input-field" id="PurchasePercent" placeholder="%" onkeyup="RemovePurchasePercent()">                      
+                        <span id="errPurchasePercent" class="text-danger"></span>
+                    </div>
+                    <div class="col-xxl-3 col-xl-4 col-md-6 mb-3 col-12">
+                        <label for="RehabPercent" class="form-label">Percent of rehab to lend up to</label>                  
+                            <input type="text" class="input-field" id="RehabPercent" placeholder="%">                       
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xxl-3 col-md-4 mb-3 col-6 pe-xl-1">
+                        <label for="LTVmax" class="form-label">Loan-To-Value max <span class="text-danger">*</span></label>                    
+                            <input type="text" class="input-field" id="LTVmax" placeholder="%" onkeyup="RemoveLTVmax()">
+                        <span id="errLTVmax" class="text-danger"></span>
+                    </div>
+                    <div class="col-xxl-3 col-md-4 mb-3 col-6 ">
+                        <label for="LTCmax" class="form-label">Loan-To-Cost max</label>                     
+                            <input type="text" class="input-field" id="LTCmax" placeholder="%">                       
+                    </div>
+                    <div class="col-xxl-3 col-md-4 mb-3 col-12">
+                        <label for="DSCRAccept" class="form-label">Min. acceptable DSCR (if any)</label>                      
+                            <input type="text" class="input-field DSCR" id="DSCRAccept" placeholder="Minimum DSCR" maxlength="3">                       
+                    </div>
+                </div>
+                <hr>
+                <div class="unit-mix-section pt-2">
+                    <div class="row">
+                        <div class="col-xxl-4 col-xl-4 col-md-6 mb-3">
+                            <label class="form-label" for="quespenalty">
+                                Does this loan have a prepayment penalty
+                                ?
+                            </label>                       
+                            <select class="form-select" aria-label="Default select example" id="quespenalty" onchange="SelectPaymentPenality()">
+                                <option value="0">Select</option>
+                                <option value="1">Yes</option>
+                                <option selected value="2">No</option>
+                            </select>
+                        </div>
+                        <!------- Below sections are hidden and will show on selet of Yes option ------->
+                        <div class="col-xl-8 d-none quespenaltyyes">
+                            <div class="row">
+                                <div class="col-xxl-6 col-md-6 mb-3 ">
+                                    <label class="form-label" for="structure">Type of prepayment structure</label>
+                                    <select class="form-select" aria-label="Default select example" id="structure">
+                                       @*  <option selected value="0">Select</option>
+                                        @{
+                                            var prepayment = 1;
+                                            foreach (var i in Enum.GetValues(typeof(PrepaymentStructure)))
+                                            {
+                                                <option> @i.ToString().Replace('_',' ')</option>
+                                                prepayment++;   
+                                            }
+                                        } *@
+                                        <option selected value="0">Select</option>
+                                        <option value="1">Flat fee</option>
+                                        <option value="2">Step down</option>
+                                        <option value="3">Yield maintenance</option>
+                                        <option value="4">Defeasance</option>
+                                        <option value="5">Other</option>
+                                    </select>
+                                </div>
+                                <div class="col-xxl-6 col-md-6 mb-3 col-12 ">
+                                    <label for="FeeCharged" class="form-label">Description </label>
+                                    <input type="text" class="input-field DSCR" id="FeeCharged" placeholder="Description">
+                                </div>
+                            </div>
+                        </div>
+                        <!------- Above sections are hidden and will show on selet of Yes option ------->
+                        <div class="col-xxl-4 col-xl-4 col-md-6 mb-3">
+                            <label class="form-label" for="Inspection">Inspection required? <span class="text-danger">*</span></label>
+                            <select class="form-select" aria-label="Default select example" id="Inspection" onchange="RemoveInspection()">
+                                @* <option selected value="0">Select</option>
+                                @{
+                                    var inspection = 1;
+                                    foreach (var i in Enum.GetValues(typeof(InspectionRequired)))
+                                    {
+                                        <option> @i.ToString().Replace('_',' ')</option>
+                                        inspection++;
+                                    }
+                                } *@
+
+                                <option selected value="0">Select</option>
+                                <option value="1">None required before close</option>
+                                <option value="2">Third party report needed before closing</option>
+                                <option value="3">Lender visit needed before closing</option>
+                                <option value="3">Lender visit after closing</option>
+                            </select>
+                            <span id="errInspection" class="text-danger"></span>
+                        </div>
+                        <div class="col-xxl-4 col-xl-4 col-md-6 mb-3">
+                            <label for="IncomeDocs" class="form-label">
+                                Property income docs required? <span class="text-danger">*</span>
+                            </label>
+                            <select class="js-select2 form-select" aria-label="Default select example" id="IncomeDocs" onchange="RemoveIncomeDocs()" multiple>
+                               @*  @{
+                                    var incomeDocs = 1;
+                                    foreach (var i in Enum.GetValues(typeof(IncomeDocs)))
+                                    {
+                                        <option> @i.ToString().Replace('_',' ')</option>
+                                        incomeDocs++;
+                                    }
+                                } *@
+                                <option value="1">None required</option>
+                                <option value="2">Rent roll</option>
+                                <option value="3">Current income vs expenses</option>
+                                <option value="4">Income vs expense report last 6 months</option>
+                                <option value="5">Income vs expense report last 12 months</option>
+                                <option value="6">Copy of all leases</option>
+                            </select>
+                            <span id="errIncomeDocs" class="text-danger"></span>
+                        </div>
+                        <div class="col-xxl-4 col-xl-4 col-md-6 mb-3 w-20">
+                            <label for="environmental" class="form-label">
+                                Environmental required? <span class="text-danger">*</span>
+                            </label>
+                            <select class="form-select" aria-label="Default select example" id="environmental" onchange="RemoveEnvironmental()">
+                              @*   <option selected value="0">Select</option>
+                                @{
+                                    var envir = 1;
+                                    foreach (var i in Enum.GetValues(typeof(Environmental)))
+                                    {
+                                        <option> @i.ToString().Replace('_',' ')</option>
+                                        envir++;
+                                    }
+                                } *@
+                                <option selected value="0">Select</option>
+                                <option value="1">None required</option>
+                                <option value="2">Case by case basis</option>
+                                <option value="3">Desktop environmental risk assessment</option>
+                                <option value="4">Phase 1 study</option>
+                                <option value="5">Phase 2 study</option>
+                            </select>
+                            <span id="errEnvironmental" class="text-danger"></span>
+                        </div>
+                        <div class="col-xxl-4 col-xl-4 col-md-6 mb-3 w-20">
+                            <label class="form-label" for="AppraisalReq">
+                                Appraisal required? <span class="text-danger">*</span>
+                            </label>                        
+                            <select class="form-select" aria-label="Default select example" id="AppraisalReq" onchange="RemoveAppraisal()">
+                                @* <option selected value="0">Select</option>
+                                @{
+                                    var appraisal = 1;
+                                    foreach (var i in Enum.GetValues(typeof(AppraisalList)))
+                                    {
+                                        <option> @i.ToString().Replace('_',' ')</option>
+                                        appraisal++;
+                                    }
+                                } *@
+                                <option selected value="0">Select</option>
+                                <option value="1">None required</option>
+                                <option value="2">CMA Is OK</option>
+                                <option value="3">Lite Or Desk Appraisal OK</option>
+                                <option value="4">Full Appraisal Needed</option>
+                            </select>
+                            <span id="errAppraisalReq" class="text-danger"></span>
+                        </div>                     
+                            <div class="col-xxl-3 col-xl-8 col-md-6 mb-3 w-20">
+                                <label class="form-label">Survey required? <span class="text-danger">*</span></label>
+                                <div class="mt-2 mb-3">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="surveyYes" value="yes">
+                                        <label class="form-check-label" for="surveyYes">Yes</label>
+
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="surveyYNo" value="No">
+                                        <label class="form-check-label" for="surveyYNo">No</label>
+                                    </div>
+                                </div>
+                                <span id="errSurveyRequired" class="text-danger error-remove"></span>
+                            </div>                      
+                        <div class="row">
+                            <div class="col-xxl-4 col-xl-4 col-md-6 mb-3">
+                                <label for="programType" class="form-label">
+                                    Insurance level requirement <span class="text-danger">*</span>
+                                </label>
+                                <select class="form-select" aria-label="Default select example" id="InsuranceLevel" onchange="RemoveInsuranceLevel()">
+                                    <option selected value="0">Select</option>
+                                    <option value="1">3 Months</option>
+                                    <option value="2">6 Months</option>
+                                    <option value="3">12 Months</option>
+                                    <option value="4">1 Year</option>
+                                    <option value="5">2 Years</option>
+                                    <option value="6">3 Years</option>
+                                </select>
+                                <span id="errInsuranceLevel" class="text-danger"></span>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-md-12 mb-3 ">
+                                <label class="form-label ms-1">Type of insurance</label>
+                                <div class="mt-2 mb-3 checkboxouter">
+                                    <div class="form-check form-check-inline checkbox-1 me-1 ps-xl-1 ps-md-1">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" name="" id="GeneralLiability">
+                                            <label class="form-check-label" for="GeneralLiability">General liability</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-check form-check-inline me-1 ps-xl-1 ps-md-1">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" name="" id="Hazard">
+                                            <label class="form-check-label" for="Hazard">Hazard</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-check form-check-inline me-1 ps-xl-1 ps-md-1">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" name="" id="Flood">
+                                            <label class="form-check-label" for="Flood">Flood</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-check form-check-inline me-1 ps-xl-1 ps-md-1">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" name="" id="WindHail">
+                                            <label class="form-check-label" for="WindHail">Wind and hail</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-check form-check-inline me-1 ps-xl-1 ps-md-1">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" name="" id="BuilderRisk">
+                                            <label class="form-check-label" for="BuilderRisk">Builder's risk</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-4 col-xl-4 col-md-6 mb-3">
+                            <label for="CollectEscrows" class="form-label">Will you collect escrows?</label>
+                            <select class="form-select" aria-label="Default select example" id="CollectEscrows" onchange="SelectWillYouCollectEscrows()">
+                               @*  <option selected value="0">Select</option>
+                                @{
+                                    var collectEscrows = 1;
+                                    foreach (var i in Enum.GetValues(typeof(EscrowList)))
+                                    {
+                                        <option> @i.ToString().Replace('_',' ')</option>
+                                        collectEscrows++;
+                                    }
+                                } *@
+                                <option selected value="0">Select</option>
+                                <option value="1">Insurance only</option>
+                                <option value="2">Property taxes only</option>
+                                <option value="3">Both insurance and property taxes</option>
+                                <option value="4">Other</option>
+                            </select>
+                        </div>
+                        <!------- Below section is hidden and will show on other option is selet ------->
+                        <div class="col-xl-4 col-md-6 mb-3 d-none" id="other_escrows">
+                            <label for="otherescrows" class="form-label">Other</label>
+                            <input type="text" class="input-field" id="otherescrows"placeholder="Other">
+                        </div>
+                        <!------- Above section is hidden and will show on other option is selet ------->
+                    </div>
+                </div>
+            </div>
+            <!-- other section starts ---->
+            <div class="add-property">
+                <h5 class="mb-3">Buyer Requirements</h5>
+                <div class="row mt-2">
+                    <div class="col-xl-4 col-md-6 mb-3">
+                        <label for="CreditRequirement" class="form-label">
+                            Credit score requirement (if any) <span class="text-danger">*</span>
+                        </label>
+                        <select class="form-select" aria-label="Default select example" id="CreditRequirement" onchange="RemoveCreditRequirement()">
+                            <option selected value="0">Select</option>
+                            <option value="1">None required</option>
+                            <option value="2">550+</option>
+                            <option value="3">600+</option>
+                            <option value="4">625+</option>
+                            <option value="5">650+</option>
+                            <option value="6">675+</option>
+                            <option value="7">700+</option>
+                            <option value="8">725+</option>
+                            <option value="9">750+</option>
+                        </select>
+                        <span id="errCreditRequirement" class="text-danger"></span>
+
+                    </div>
+                    <div class="col-xl-4 col-md-6 mb-3">
+                        <label for="LiquidityRequirement" class="form-label">
+                            Liquidity requirement (if any) <span class="text-danger">*</span>
+                        </label>                    
+                        <select class="form-select" aria-label="Default select example" id="LiquidityRequirement" onchange="RemoveLiquidityRequirement()">
+                            <option selected value="0">Select</option>
+                            <option value="1">None required</option>
+                            <option value="2">3 months of debt service</option>
+                            <option value="3">6 months of debt service</option>
+                            <option value="4">9 months of debt service</option>
+                            <option value="5">1 year of debt service</option>
+                            <option value="6">5% of loan amount </option>
+                            <option value="7">10% of loan amount</option>
+                            <option value="8">20% of loan amount</option>
+                            <option value="9">More than 20% of loan amount</option>
+                        </select>
+                        <span id="errLiquidityRequirement" class="text-danger"></span>
+                    </div>
+                    <div class="col-xl-4 col-md-6 mb-3">
+                        <label for="TaxReturn" class="form-label">
+                            Tax return requirement (if any) <span class="text-danger">*</span>
+                        </label>
+                        <select class="form-select" aria-label="Default select example" id="TaxReturn" onchange="RemoveTaxReturn()">
+                           @*  <option selected value="0">Select</option>
+                            @{
+                                var tax = 1;
+                                foreach (var i in Enum.GetValues(typeof(TaxRequirementList)))
+                                {
+                                    <option> @i.ToString().Replace('_',' ')</option>
+                                    tax++;
+                                }
+                            } *@
+                            <option selected value="0">Select</option>
+                            <option value="1">None Required</option>
+                            <option value="2">Must Show Last Year</option>
+                            <option value="3">Must Show Last 2 Years</option>
+                            <option value="4">Must Show Last 3 Years</option>
+                        </select>
+                        <span id="errTaxReturn" class="text-danger"></span>
+                    </div>
+                    <div class="col-xl-4 col-md-6 mb-3">
+                        <label for="experience" class="form-label">
+                            Experience requirement (if any) <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" class="input-field" id="experience" onkeyup="RemoveExperience()" placeholder="Experience requirement">
+                        <span id="errExperience" class="text-danger"></span>
+                    </div>
+                    <div class="col-xl-4 col-md-6 mb-3">
+                        <label for="NetWorth" class="form-label">
+                            Net worth requirement (if any) <span class="text-danger">*</span>
+                        </label>         
+                        <select class="form-select" aria-label="Default select example" id="NetWorth" onchange="RemoveNetWorth()">
+                            <option selected value="0">Select</option>
+                            <option value="1">None Required</option>
+                            <option value="2">Equal or greater than loan amount</option>
+                        </select>
+                        <span id="errNetWorth" class="text-danger"></span>
+                    </div>
+                    <div class="col-xl-4 col-md-6 mb-3">
+                        <label for="USCitizen" class="form-label">US citizenship status requirement <span class="text-danger">*</span></label>
+                        <select class="js-select2 form-select" aria-label="Default select example" id="USCitizen" onchange="RemoveUSCitizen()" multiple>
+                         
+                           @*  @{
+                                var citizen = 1;
+                                foreach (var i in Enum.GetValues(typeof(USCitizenshipStatus)))
+                                {
+                                    <option> @i.ToString().Replace('_',' ')</option>
+                                    citizen++;
+                                }
+                            } *@
+                            <option value="1">US citizen</option>
+                            <option value="2">Legal US resident</option>
+                            <option value="3">US Visa or temporary status holder</option>
+                            <option value="4">International citizenship accepted</option>
+                        </select>
+                        <span id="errUSCitizen" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="add-property">
+                <h5>Other Requirements</h5>
+                <label for="linkform" class="form-label">
+                    Any other property or buyer requirements
+                    needed?
+                </label>
+
+                <div class="row" id="getAllHtmlForLink">                
+                        <div class="col-xxl-4 col-xl-5 col-md-8 mb-3" id="mainDiv">
+                            <div>
+                                <div class="d-flex align-items-center">
+                                    <input type="text" class="input-field" id="OtherDocs" placeholder="Other buyer requirements ?">
+                                    <span class="ms-3 d-none" id="divOtherDelete">
+                                        <svg class="deleteMe1" xmlns="http://www.w3.org/2000/svg" width="16" height="18" id="DeleteMeDisable "
+                                             viewBox="0 0 16 18" fill="none">
+                                            <path d="M3 18C2.45 18 1.979 17.804 1.587 17.412C1.195 17.02 0.999333 16.5493 1 16V3H0V1H5V0H11V1H16V3H15V16C15 16.55 14.804 17.021 14.412 17.413C14.02 17.805 13.5493 18.0007 13 18H3ZM5 14H7V5H5V14ZM9 14H11V5H9V14Z"
+                                                  fill="#DC3545" />
+                                        </svg>
+                                    </span>
+                                    <span class="ms-2">
+                                        <svg onclick="MakeNewLinkRow()" xmlns="http://www.w3.org/2000/svg" class="idAddDiv" width="20" height="20" id="divLinkMain"
+                                             viewBox="0 0 20 20" fill="none">
+                                            <path d="M10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20C15.523 20 20 15.523 20 10C20 4.477 15.523 0 10 0ZM15 11H11V15H9V11H5V9H9V5H11V9H15V11Z"
+                                                  fill="#002A7B" />
+                                        </svg>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>                   
+                </div>
+            </div>
+            <div class="add-property d-none ">
+                <div class="row" id="getAllHtmlForLinkhdn">
+                    <div>
+                        <div class="col-xxl-4 col-xl-5 col-md-8 mb-3" id="parentDiv">
+                            <div>
+                                <div class="d-flex align-items-center">
+                                    <input type="text" class="input-field" id="OtherDocs" placeholder="Other buyer requirements ?">
+                                    <span class="ms-3">
+                                        <svg class="deleteMe" xmlns="http://www.w3.org/2000/svg" width="16" height="18" id="DeleteMeOnDeleteCopy"
+                                             viewBox="0 0 16 18" fill="none">
+                                            <path d="M3 18C2.45 18 1.979 17.804 1.587 17.412C1.195 17.02 0.999333 16.5493 1 16V3H0V1H5V0H11V1H16V3H15V16C15 16.55 14.804 17.021 14.412 17.413C14.02 17.805 13.5493 18.0007 13 18H3ZM5 14H7V5H5V14ZM9 14H11V5H9V14Z"
+                                                  fill="#DC3545" />
+                                        </svg>
+                                    </span>
+                                    <span class="ms-2 trying" id="AddMeCopy">
+                                        <svg onclick="MakeNewLinkRow()" class="idAddDiv" xmlns="http://www.w3.org/2000/svg" width="20" height="20" id="deleteMeCopy"
+                                             viewBox="0 0 20 20" fill="none">
+                                            <path d="M10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20C15.523 20 20 15.523 20 10C20 4.477 15.523 0 10 0ZM15 11H11V15H9V11H5V9H9V5H11V9H15V11Z"
+                                                  fill="#002A7B" />
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="add-property">
+                <h5 class="mb-3">Nickname</h5>
+                <div class="row mt-2 align-items-center">
+                    <div class="col-xxl-4 col-xl-5 col-md-8 mb-3">
+                        <label for="nick_name_product" class="form-label">
+                            Lending product nickname
+                            <span class="fast-uploadname">(for internal use only)<span class="text-danger">*</span></span>
+                        </label>
+                        <input type="text" class="input-field" id="nick_name_product" placeholder="Type a nickname" onkeyup="RemoveNickname()">
+                        <span id="errNickname" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- User Agreement -->
+            <div class="add-property">
+                <h5>User Agreement</h5>
+                <div class="row mt-2">
+                    <div class="col-xl-12 col-md-12 mb-2">
+                        <div class="userfield">
+                            Accept Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+                            voluptas facilis quo dolor aut quibusdam eaque, aspernatur ut temporibus tenetur quaerat rem repellat
+                            mollitia voluptatum repellendus velit necessitatibus error suscipit?
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit Lorem
+                            ipsum dolor sit amet consectetur adipisicing elit. <br> Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Enim deserunt molestiae dolor consectetur natus reprehenderit hic a architecto atque nisi sit facere
+                            est doloremque quaerat sequi sapiente, dignissimos, nihil labore?
+                        </div>
+                    </div>
+                </div>           
+                    <div>
+                        <div class="d-flex">
+                            <input type="checkbox" class="me-2 mt-1 filter-checkbox" id="chkbx1" value="1">
+                            <label class="fs-small" for="chkbx1" id="txtAcceptUser">Accept user agreement</label>
+                        </div>
+                    </div>            
+            </div>
+
+          
+            <div class="text-center mt-3 user_profile">
+
+                <button type="button" class="btn-pbr btn-cancel">Cancel</button>
+                <button type="button" class="btn-login btn-pbr" onclick="UpdateLenderProduct()">
+                    Save Progress
+                </button>             
+                <button type="button" class="btn-sign btn-pbr" data-bs-toggle="modal"
+                        onclick="AddLendingProduct()">
+                    Submit
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="WarningCreateLending" aria-hidden="true" aria-labelledby="WarningCreateLendingLabel"
+         tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content br-32 border-0">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center mb-4">
+                        <img src="~/Images/warning-icon.png" alt="warning-icon">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="fw-semibold blue-primary">
+                            Are you ready to submit?
+                        </h3>
+                        <p>Are you sure you want to submit the provided information?</p>
+                    </div>
+                </div>
+                <div class="py-4 text-center user_profile">
+                    <button type="button" class="me-3 btn-pbr btn-cancel" data-bs-dismiss="modal" aria-label="Close">
+                        Stay and
+                        edit
+                    </button>
+                    <button type="submit" class="btn-sign btn-pbr" id="txtConformModel" data-bs-target="#WarningCreateLending2"
+                            data-bs-toggle="modal">
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="WarningCreateLending2" aria-hidden="true" aria-labelledby="WarningCreateLendingLabel2"
+         tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content br-32 border-0">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">&nbsp;</h1>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center mb-4">
+                        <img src="~/Images/success.svg" alt="success icon" class="success-popup">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="fw-semibold blue-primary">
+                            Submission successful!
+                        </h3>
+                        <p class="thankmsg">
+                            Thank you for your submission, your lending product addition was successfully sent to a
+                            Reidy
+                            Transaction Coordinator, we will
+                            review
+                            and be in contact soon!
+                        </p>
+                    </div>
+                </div>
+                <div class="py-4 text-center user_profile">
+
+                    <a href="/Lender/LenderProductList/@Context.Session.GetString("Id")">
+                        <input type="button" class="me-3 btn-pbr btn-cancel" data-bs-dismiss="modal" value="Close" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <!-- Right Sidebar Menu Modal Popup -->
+    <!-- Right Sidebar Menu Modal Popup End-->
+    <!-- scripts -->
+    <script src="~/js/jquery-3.7.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script src="~/js/Lender/addLendingProduct.js"></script>
+
+
+</body>
+
+</html>
