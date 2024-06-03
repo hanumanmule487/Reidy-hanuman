@@ -1,65 +1,69 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\",
+  "WorkspaceRootPath": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|c:\\users\\michael cohen\\desktop\\sourcedev\\sanmoreplatform-real\\sanmoreplatform-real-web\\views\\lender\\lenderprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|solutionrelative:sanmoreplatform-real-web\\views\\lender\\lenderprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|c:\\users\\michael cohen\\desktop\\sourcedev1\\sanmoreplatform-real\\sanmoreplatform-real-web\\views\\buyer\\buyerregistration.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|solutionrelative:sanmoreplatform-real-web\\views\\buyer\\buyerregistration.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2579623D-3E63-4769-B18C-83323A9DA9F7}|SanmorePlatform-REAL-Model\\SanmorePlatform-REAL-Model.csproj|c:\\users\\michael cohen\\desktop\\sourcedev\\sanmoreplatform-real\\sanmoreplatform-real-model\\viewmodels\\brokerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2579623D-3E63-4769-B18C-83323A9DA9F7}|SanmorePlatform-REAL-Model\\SanmorePlatform-REAL-Model.csproj|solutionrelative:sanmoreplatform-real-model\\viewmodels\\brokerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|c:\\users\\michael cohen\\desktop\\sourcedev\\sanmoreplatform-real\\sanmoreplatform-real-web\\views\\broker\\brokersignup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|solutionrelative:sanmoreplatform-real-web\\views\\broker\\brokersignup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|c:\\users\\michael cohen\\desktop\\sourcedev\\sanmoreplatform-real\\sanmoreplatform-real-web\\views\\landing\\landing.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|solutionrelative:sanmoreplatform-real-web\\views\\landing\\landing.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|c:\\users\\michael cohen\\desktop\\sourcedev\\sanmoreplatform-real\\sanmoreplatform-real-web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|solutionrelative:sanmoreplatform-real-web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|c:\\users\\michael cohen\\desktop\\sourcedev\\sanmoreplatform-real\\sanmoreplatform-real-web\\wwwroot\\css\\layout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|solutionrelative:sanmoreplatform-real-web\\wwwroot\\css\\layout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|c:\\users\\michael cohen\\desktop\\sourcedev\\sanmoreplatform-real\\sanmoreplatform-real-web\\wwwroot\\js\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|solutionrelative:sanmoreplatform-real-web\\wwwroot\\js\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|c:\\users\\michael cohen\\desktop\\sourcedev\\sanmoreplatform-real\\sanmoreplatform-real-web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|solutionrelative:sanmoreplatform-real-web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|c:\\users\\michael cohen\\desktop\\sourcedev\\sanmoreplatform-real\\sanmoreplatform-real-web\\views\\home\\propertydetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|c:\\users\\michael cohen\\desktop\\sourcedev1\\sanmoreplatform-real\\sanmoreplatform-real-web\\views\\home\\propertydetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|solutionrelative:sanmoreplatform-real-web\\views\\home\\propertydetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|c:\\users\\michael cohen\\desktop\\sourcedev\\sanmoreplatform-real\\sanmoreplatform-real-web\\wwwroot\\js\\_layout.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|c:\\users\\michael cohen\\desktop\\sourcedev1\\sanmoreplatform-real\\sanmoreplatform-real-web\\views\\lender\\lenderprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|solutionrelative:sanmoreplatform-real-web\\views\\lender\\lenderprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2579623D-3E63-4769-B18C-83323A9DA9F7}|SanmorePlatform-REAL-Model\\SanmorePlatform-REAL-Model.csproj|c:\\users\\michael cohen\\desktop\\sourcedev1\\sanmoreplatform-real\\sanmoreplatform-real-model\\viewmodels\\brokerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2579623D-3E63-4769-B18C-83323A9DA9F7}|SanmorePlatform-REAL-Model\\SanmorePlatform-REAL-Model.csproj|solutionrelative:sanmoreplatform-real-model\\viewmodels\\brokerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|c:\\users\\michael cohen\\desktop\\sourcedev1\\sanmoreplatform-real\\sanmoreplatform-real-web\\views\\broker\\brokersignup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|solutionrelative:sanmoreplatform-real-web\\views\\broker\\brokersignup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|c:\\users\\michael cohen\\desktop\\sourcedev1\\sanmoreplatform-real\\sanmoreplatform-real-web\\views\\landing\\landing.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|solutionrelative:sanmoreplatform-real-web\\views\\landing\\landing.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|c:\\users\\michael cohen\\desktop\\sourcedev1\\sanmoreplatform-real\\sanmoreplatform-real-web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|solutionrelative:sanmoreplatform-real-web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|c:\\users\\michael cohen\\desktop\\sourcedev1\\sanmoreplatform-real\\sanmoreplatform-real-web\\wwwroot\\css\\layout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|solutionrelative:sanmoreplatform-real-web\\wwwroot\\css\\layout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|c:\\users\\michael cohen\\desktop\\sourcedev1\\sanmoreplatform-real\\sanmoreplatform-real-web\\wwwroot\\js\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|solutionrelative:sanmoreplatform-real-web\\wwwroot\\js\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|c:\\users\\michael cohen\\desktop\\sourcedev1\\sanmoreplatform-real\\sanmoreplatform-real-web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|solutionrelative:sanmoreplatform-real-web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|c:\\users\\michael cohen\\desktop\\sourcedev1\\sanmoreplatform-real\\sanmoreplatform-real-web\\wwwroot\\js\\_layout.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|solutionrelative:sanmoreplatform-real-web\\wwwroot\\js\\_layout.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|c:\\users\\michael cohen\\desktop\\sourcedev\\sanmoreplatform-real\\sanmoreplatform-real-web\\wwwroot\\js\\propertydetails.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|c:\\users\\michael cohen\\desktop\\sourcedev1\\sanmoreplatform-real\\sanmoreplatform-real-web\\wwwroot\\js\\propertydetails.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|solutionrelative:sanmoreplatform-real-web\\wwwroot\\js\\propertydetails.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|c:\\users\\michael cohen\\desktop\\sourcedev\\sanmoreplatform-real\\sanmoreplatform-real-web\\wwwroot\\js\\map.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|c:\\users\\michael cohen\\desktop\\sourcedev1\\sanmoreplatform-real\\sanmoreplatform-real-web\\wwwroot\\js\\map.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|solutionrelative:sanmoreplatform-real-web\\wwwroot\\js\\map.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|c:\\users\\michael cohen\\desktop\\sourcedev\\sanmoreplatform-real\\sanmoreplatform-real-web\\wwwroot\\js\\home.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|c:\\users\\michael cohen\\desktop\\sourcedev1\\sanmoreplatform-real\\sanmoreplatform-real-web\\wwwroot\\js\\home.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|solutionrelative:sanmoreplatform-real-web\\wwwroot\\js\\home.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|c:\\users\\michael cohen\\desktop\\sourcedev\\sanmoreplatform-real\\sanmoreplatform-real-web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|c:\\users\\michael cohen\\desktop\\sourcedev1\\sanmoreplatform-real\\sanmoreplatform-real-web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|solutionrelative:sanmoreplatform-real-web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|c:\\users\\michael cohen\\desktop\\sourcedev\\sanmoreplatform-real\\sanmoreplatform-real-web\\controllers\\propertycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|c:\\users\\michael cohen\\desktop\\sourcedev1\\sanmoreplatform-real\\sanmoreplatform-real-web\\controllers\\propertycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C0000480-E1A4-4A27-A766-40BDD1C58873}|SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj|solutionrelative:sanmoreplatform-real-web\\controllers\\propertycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -70,36 +74,44 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "LenderProfile.cshtml",
-              "DocumentMoniker": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Views\\Lender\\LenderProfile.cshtml",
-              "RelativeDocumentMoniker": "SanmorePlatform-REAL-Web\\Views\\Lender\\LenderProfile.cshtml",
-              "ToolTip": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Views\\Lender\\LenderProfile.cshtml",
-              "RelativeToolTip": "SanmorePlatform-REAL-Web\\Views\\Lender\\LenderProfile.cshtml",
-              "ViewState": "AQIAAFIAAAAAAAAAAAAowF4AAABBAAAA",
+              "Title": "BuyerRegistration.cshtml",
+              "DocumentMoniker": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Views\\Buyer\\BuyerRegistration.cshtml",
+              "RelativeDocumentMoniker": "SanmorePlatform-REAL-Web\\Views\\Buyer\\BuyerRegistration.cshtml",
+              "ToolTip": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Views\\Buyer\\BuyerRegistration.cshtml",
+              "RelativeToolTip": "SanmorePlatform-REAL-Web\\Views\\Buyer\\BuyerRegistration.cshtml",
+              "ViewState": "AQIAALkAAAAAAAAAAAAAANMAAABIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-31T18:26:50.929Z",
+              "WhenOpened": "2024-05-31T21:10:26.306Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "LenderProfile.cshtml",
+              "DocumentMoniker": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Views\\Lender\\LenderProfile.cshtml",
+              "RelativeDocumentMoniker": "SanmorePlatform-REAL-Web\\Views\\Lender\\LenderProfile.cshtml",
+              "ToolTip": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Views\\Lender\\LenderProfile.cshtml",
+              "RelativeToolTip": "SanmorePlatform-REAL-Web\\Views\\Lender\\LenderProfile.cshtml",
+              "ViewState": "AQIAAFIAAAAAAAAAAAAowF4AAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-31T18:26:50.929Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "BrokerViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Model\\ViewModels\\BrokerViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Model\\ViewModels\\BrokerViewModel.cs",
               "RelativeDocumentMoniker": "SanmorePlatform-REAL-Model\\ViewModels\\BrokerViewModel.cs",
-              "ToolTip": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Model\\ViewModels\\BrokerViewModel.cs",
+              "ToolTip": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Model\\ViewModels\\BrokerViewModel.cs",
               "RelativeToolTip": "SanmorePlatform-REAL-Model\\ViewModels\\BrokerViewModel.cs",
               "ViewState": "AQIAADIAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -107,11 +119,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "BrokerSignUp.cshtml",
-              "DocumentMoniker": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Views\\Broker\\BrokerSignUp.cshtml",
+              "DocumentMoniker": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Views\\Broker\\BrokerSignUp.cshtml",
               "RelativeDocumentMoniker": "SanmorePlatform-REAL-Web\\Views\\Broker\\BrokerSignUp.cshtml",
-              "ToolTip": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Views\\Broker\\BrokerSignUp.cshtml",
+              "ToolTip": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Views\\Broker\\BrokerSignUp.cshtml",
               "RelativeToolTip": "SanmorePlatform-REAL-Web\\Views\\Broker\\BrokerSignUp.cshtml",
               "ViewState": "AQIAAC0AAAAAAAAAAAD4vzUAAACGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -119,11 +131,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "layout.css",
-              "DocumentMoniker": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\wwwroot\\css\\layout.css",
+              "DocumentMoniker": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\wwwroot\\css\\layout.css",
               "RelativeDocumentMoniker": "SanmorePlatform-REAL-Web\\wwwroot\\css\\layout.css",
-              "ToolTip": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\wwwroot\\css\\layout.css",
+              "ToolTip": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\wwwroot\\css\\layout.css",
               "RelativeToolTip": "SanmorePlatform-REAL-Web\\wwwroot\\css\\layout.css",
               "ViewState": "AQIAAEEAAAAAAAAAAAAewFEAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -131,11 +143,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "index.js",
-              "DocumentMoniker": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\wwwroot\\js\\index.js",
+              "DocumentMoniker": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\wwwroot\\js\\index.js",
               "RelativeDocumentMoniker": "SanmorePlatform-REAL-Web\\wwwroot\\js\\index.js",
-              "ToolTip": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\wwwroot\\js\\index.js",
+              "ToolTip": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\wwwroot\\js\\index.js",
               "RelativeToolTip": "SanmorePlatform-REAL-Web\\wwwroot\\js\\index.js",
               "ViewState": "AQIAAA8AAAAAAAAAAAAAABsAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
@@ -143,11 +155,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Views\\Home\\Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "SanmorePlatform-REAL-Web\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "SanmorePlatform-REAL-Web\\Views\\Home\\Index.cshtml",
               "ViewState": "AQIAAHwGAAAAAAAAAAAAAIsGAABQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -155,11 +167,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "PropertyDetails.js",
-              "DocumentMoniker": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\wwwroot\\js\\PropertyDetails.js",
+              "DocumentMoniker": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\wwwroot\\js\\PropertyDetails.js",
               "RelativeDocumentMoniker": "SanmorePlatform-REAL-Web\\wwwroot\\js\\PropertyDetails.js",
-              "ToolTip": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\wwwroot\\js\\PropertyDetails.js",
+              "ToolTip": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\wwwroot\\js\\PropertyDetails.js",
               "RelativeToolTip": "SanmorePlatform-REAL-Web\\wwwroot\\js\\PropertyDetails.js",
               "ViewState": "AQIAAFABAAAAAAAAAAAAwFYBAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
@@ -167,23 +179,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
               "Title": "PropertyDetails.cshtml",
-              "DocumentMoniker": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Views\\Home\\PropertyDetails.cshtml",
+              "DocumentMoniker": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Views\\Home\\PropertyDetails.cshtml",
               "RelativeDocumentMoniker": "SanmorePlatform-REAL-Web\\Views\\Home\\PropertyDetails.cshtml",
-              "ToolTip": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Views\\Home\\PropertyDetails.cshtml",
+              "ToolTip": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Views\\Home\\PropertyDetails.cshtml",
               "RelativeToolTip": "SanmorePlatform-REAL-Web\\Views\\Home\\PropertyDetails.cshtml",
-              "ViewState": "AQIAADUAAAAAAAAAAAAWwEMAAAAiAAAA",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAAABMAAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-30T21:11:42.014Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "_Layout.js",
-              "DocumentMoniker": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\wwwroot\\js\\_Layout.js",
+              "DocumentMoniker": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\wwwroot\\js\\_Layout.js",
               "RelativeDocumentMoniker": "SanmorePlatform-REAL-Web\\wwwroot\\js\\_Layout.js",
-              "ToolTip": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\wwwroot\\js\\_Layout.js",
+              "ToolTip": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\wwwroot\\js\\_Layout.js",
               "RelativeToolTip": "SanmorePlatform-REAL-Web\\wwwroot\\js\\_Layout.js",
               "ViewState": "AQIAAMcCAAAAAAAAAADwv6MCAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
@@ -191,11 +203,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "PropertyController.cs",
-              "DocumentMoniker": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Controllers\\PropertyController.cs",
+              "DocumentMoniker": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Controllers\\PropertyController.cs",
               "RelativeDocumentMoniker": "SanmorePlatform-REAL-Web\\Controllers\\PropertyController.cs",
-              "ToolTip": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Controllers\\PropertyController.cs",
+              "ToolTip": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Controllers\\PropertyController.cs",
               "RelativeToolTip": "SanmorePlatform-REAL-Web\\Controllers\\PropertyController.cs",
               "ViewState": "AQIAABAAAAAAAAAAAAAQwDQAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -203,11 +215,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Map.js",
-              "DocumentMoniker": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\wwwroot\\js\\Map.js",
+              "DocumentMoniker": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\wwwroot\\js\\Map.js",
               "RelativeDocumentMoniker": "SanmorePlatform-REAL-Web\\wwwroot\\js\\Map.js",
-              "ToolTip": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\wwwroot\\js\\Map.js",
+              "ToolTip": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\wwwroot\\js\\Map.js",
               "RelativeToolTip": "SanmorePlatform-REAL-Web\\wwwroot\\js\\Map.js",
               "ViewState": "AQIAAEQAAAAAAAAAAAAgwFAAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
@@ -215,11 +227,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Program.cs",
               "RelativeDocumentMoniker": "SanmorePlatform-REAL-Web\\Program.cs",
-              "ToolTip": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Program.cs",
+              "ToolTip": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Program.cs",
               "RelativeToolTip": "SanmorePlatform-REAL-Web\\Program.cs",
               "ViewState": "AQIAACMAAAAAAAAAAAAowDMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -227,11 +239,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Home.js",
-              "DocumentMoniker": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\wwwroot\\js\\Home.js",
+              "DocumentMoniker": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\wwwroot\\js\\Home.js",
               "RelativeDocumentMoniker": "SanmorePlatform-REAL-Web\\wwwroot\\js\\Home.js",
-              "ToolTip": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\wwwroot\\js\\Home.js",
+              "ToolTip": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\wwwroot\\js\\Home.js",
               "RelativeToolTip": "SanmorePlatform-REAL-Web\\wwwroot\\js\\Home.js",
               "ViewState": "AQIAAOYCAAAAAAAAAAAMwPMCAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
@@ -239,11 +251,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Landing.cshtml",
-              "DocumentMoniker": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Views\\Landing\\Landing.cshtml",
+              "DocumentMoniker": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Views\\Landing\\Landing.cshtml",
               "RelativeDocumentMoniker": "SanmorePlatform-REAL-Web\\Views\\Landing\\Landing.cshtml",
-              "ToolTip": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Views\\Landing\\Landing.cshtml",
+              "ToolTip": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Views\\Landing\\Landing.cshtml",
               "RelativeToolTip": "SanmorePlatform-REAL-Web\\Views\\Landing\\Landing.cshtml",
               "ViewState": "AQIAAI8DAAAAAAAAAAAkwJ0DAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -251,11 +263,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Views\\Shared\\_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "SanmorePlatform-REAL-Web\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "SanmorePlatform-REAL-Web\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AQIAADsCAAAAAAAAAAAAAEICAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",

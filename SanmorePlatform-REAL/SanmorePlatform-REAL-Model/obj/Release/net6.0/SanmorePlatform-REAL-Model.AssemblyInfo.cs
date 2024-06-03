@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SanmorePlatform-REAL-Model")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8964e2d9e2e66f0817c4600a03ac3126e98e42ef")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+110dab8ddab720b63e1af2f972844ca3ae7cb46d")]
 [assembly: System.Reflection.AssemblyProductAttribute("SanmorePlatform-REAL-Model")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SanmorePlatform-REAL-Model")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -2894,11 +2894,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Utility\\SanmorePlatform-REAL-Utility.csproj",
+      "projectUniqueName": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Utility\\SanmorePlatform-REAL-Utility.csproj",
       "projectName": "SanmorePlatform-REAL-Utility",
-      "projectPath": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Utility\\SanmorePlatform-REAL-Utility.csproj",
+      "projectPath": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Utility\\SanmorePlatform-REAL-Utility.csproj",
       "packagesPath": "C:\\Users\\Michael Cohen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Utility\\obj\\",
+      "outputPath": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Utility\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Michael Cohen\\AppData\\Roaming\\NuGet\\NuGet.Config",

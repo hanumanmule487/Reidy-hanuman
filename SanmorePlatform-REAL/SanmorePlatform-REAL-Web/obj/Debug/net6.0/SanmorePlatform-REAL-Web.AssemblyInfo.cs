@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SanmorePlatform-REAL-Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+76bf94e645f084b5169d13dfa4f6b07fc751332c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+110dab8ddab720b63e1af2f972844ca3ae7cb46d")]
 [assembly: System.Reflection.AssemblyProductAttribute("SanmorePlatform-REAL-Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SanmorePlatform-REAL-Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SWo2Z8LYF7nM/cTquODY9YKjMH0Jqa8wbTrZsPQkhg8o0TXaNlrVehgPp5AGjDnKVc1s00bg1paBzP5IPu+LKg==",
+  "dgSpecHash": "iGGKkTmS4xarGkZTt1des9uMkp/wXrhlYbNG5Id8tRqGrzMd15z8JzaulNh9AFaA0oFSNwk+Cy8+02ySdTBsCg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Data\\SanmorePlatform-REAL-Data.csproj",
+  "projectFilePath": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Data\\SanmorePlatform-REAL-Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Michael Cohen\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Michael Cohen\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

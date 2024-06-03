@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "q3iDuro/db4D2KMH1VVo5rDRob8jXAisd4rO2DVpkzs=",
+  "Hash": "YvQKWZi/QPXCUiAFjg1AqUuUDvnb0+H3G0znp4z0kI0=",
   "Source": "SanmorePlatform-REAL-API",
   "BasePath": "_content/SanmorePlatform-REAL-API",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "SanmorePlatform-REAL-API\\wwwroot",
       "Source": "SanmorePlatform-REAL-API",
-      "ContentRoot": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-API\\wwwroot\\",
       "BasePath": "_content/SanmorePlatform-REAL-API",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-API\\wwwroot\\EmailTemplate\\Index.html",
+      "Identity": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-API\\wwwroot\\EmailTemplate\\Index.html",
       "SourceId": "SanmorePlatform-REAL-API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-API\\wwwroot\\",
       "BasePath": "_content/SanmorePlatform-REAL-API",
       "RelativePath": "EmailTemplate/Index.html",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\EmailTemplate\\Index.html"
     },
     {
-      "Identity": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-API\\wwwroot\\PropertyImages\\367ace60-5b48-4706-94c8-f10f80177aa7.png",
+      "Identity": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-API\\wwwroot\\PropertyImages\\367ace60-5b48-4706-94c8-f10f80177aa7.png",
       "SourceId": "SanmorePlatform-REAL-API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-API\\wwwroot\\",
       "BasePath": "_content/SanmorePlatform-REAL-API",
       "RelativePath": "PropertyImages/367ace60-5b48-4706-94c8-f10f80177aa7.png",
       "AssetKind": "All",
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "wwwroot\\PropertyImages\\367ace60-5b48-4706-94c8-f10f80177aa7.png"
     },
     {
-      "Identity": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-API\\wwwroot\\PropertyImages\\579ab3f2-8563-4a84-983f-6add6bdb940f.png",
+      "Identity": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-API\\wwwroot\\PropertyImages\\579ab3f2-8563-4a84-983f-6add6bdb940f.png",
       "SourceId": "SanmorePlatform-REAL-API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-API\\wwwroot\\",
       "BasePath": "_content/SanmorePlatform-REAL-API",
       "RelativePath": "PropertyImages/579ab3f2-8563-4a84-983f-6add6bdb940f.png",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\PropertyImages\\579ab3f2-8563-4a84-983f-6add6bdb940f.png"
     },
     {
-      "Identity": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-API\\wwwroot\\PropertyImages\\8ae8aa64-c405-4dbd-80c6-de1b0b588604.png",
+      "Identity": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-API\\wwwroot\\PropertyImages\\8ae8aa64-c405-4dbd-80c6-de1b0b588604.png",
       "SourceId": "SanmorePlatform-REAL-API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-API\\wwwroot\\",
       "BasePath": "_content/SanmorePlatform-REAL-API",
       "RelativePath": "PropertyImages/8ae8aa64-c405-4dbd-80c6-de1b0b588604.png",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\PropertyImages\\8ae8aa64-c405-4dbd-80c6-de1b0b588604.png"
     },
     {
-      "Identity": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-API\\wwwroot\\PropertyImages\\a21e624c-7dac-49e8-9f8a-b98be9a75aaa.png",
+      "Identity": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-API\\wwwroot\\PropertyImages\\a21e624c-7dac-49e8-9f8a-b98be9a75aaa.png",
       "SourceId": "SanmorePlatform-REAL-API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-API\\wwwroot\\",
       "BasePath": "_content/SanmorePlatform-REAL-API",
       "RelativePath": "PropertyImages/a21e624c-7dac-49e8-9f8a-b98be9a75aaa.png",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\PropertyImages\\a21e624c-7dac-49e8-9f8a-b98be9a75aaa.png"
     },
     {
-      "Identity": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-API\\wwwroot\\PropertyImages\\e9ba9a9e-a4ef-40df-8eaf-de79f6837ad3.png",
+      "Identity": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-API\\wwwroot\\PropertyImages\\e9ba9a9e-a4ef-40df-8eaf-de79f6837ad3.png",
       "SourceId": "SanmorePlatform-REAL-API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-API\\wwwroot\\",
       "BasePath": "_content/SanmorePlatform-REAL-API",
       "RelativePath": "PropertyImages/e9ba9a9e-a4ef-40df-8eaf-de79f6837ad3.png",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\PropertyImages\\e9ba9a9e-a4ef-40df-8eaf-de79f6837ad3.png"
     },
     {
-      "Identity": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-API\\wwwroot\\PropertyImages\\fe725820-30ac-4a25-b757-adf2ee651dbf.png",
+      "Identity": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-API\\wwwroot\\PropertyImages\\fe725820-30ac-4a25-b757-adf2ee651dbf.png",
       "SourceId": "SanmorePlatform-REAL-API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-API\\wwwroot\\",
       "BasePath": "_content/SanmorePlatform-REAL-API",
       "RelativePath": "PropertyImages/fe725820-30ac-4a25-b757-adf2ee651dbf.png",
       "AssetKind": "All",

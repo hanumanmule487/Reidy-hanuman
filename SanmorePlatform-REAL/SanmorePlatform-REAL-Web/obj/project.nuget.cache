@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NMoeyhIrG9Jtr0DAlni0p1wVYZ0RWCATierGvIxJkXTlEdQm2IM1rKhvpY7dlkuKCwPjT8akuFNCCBzYRHDjWg==",
+  "dgSpecHash": "ohay9gJjM4ulsmFU+kypXfTVlhY9E59t31HEFxTWKtx+urjqr2gauoSNoZ9HS2qVxKgRnBUdQGNS4pcZDy4g1Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj",
+  "projectFilePath": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Web\\SanmorePlatform-REAL-Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Michael Cohen\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Michael Cohen\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

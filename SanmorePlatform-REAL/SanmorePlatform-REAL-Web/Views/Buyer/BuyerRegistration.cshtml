@@ -159,9 +159,9 @@
     <!-- top section -->
     <div class="top-section">
         <div class="container-fluid container-px">
-            <h3 class="fw-semibold mb-0">
+            @*<h3 class="fw-semibold mb-0">
                 <span class="blue-primary">Fast Track Buyer</span> - Application
-            </h3>
+            </h3>*@
         </div>
     </div>
     <div class="addlistingform min-50vh">
@@ -191,31 +191,27 @@
                                                 <div class="form-card">
                                                     <div class="row">
                                                         <div class="col-12">
-                                                            <h2 class="fs-title">
-                                                                Please Confirm The Information
-                                                                <!-- Please confirm the information on file -->
+                                                            <h2 style="width:50%;margin-left:auto;margin-right:auto;text-align:center;" class="fs-title">
+                                                                Fast-Track Sign up                                                                
                                                             </h2>
+                                                            <br /><br />
+                                                            We'd love to know about your experience
                                                         </div>
                                                     </div>
-                                                    <div class="row mt-3">
-                                                        <!-- <h5>Personal Information</h5> -->
-                                                        <div class="col-xl-3 col-md-6 mb-3">
-                                                            <label for="fName" class="form-label">First Name</label>
-                                                            <input type="hidden" id="hdnSectionNameSavedUpto" value="@Model.SectionID">
-                                                            <input type="text" class="input-field" id="txtFName"
-                                                                   placeholder="First Name" value="@Model.FirstName" disabled>
-                                                            <input type="hidden" class="input-field" id="hdnUserId" placeholder="First Name" value="@Model.UserID" disabled>
-
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <br /><br />
+                                                            Real Estate Experience<br />
+                                                            <br />
+                                                            Deals done in the last two years<br />
+                                                            <input type="text" />
                                                         </div>
-                                                        <div class="col-xl-3 col-md-6 mb-3">
-                                                            <label for="lName" class="form-label">Last Name</label>
-                                                            <input type="text" class="input-field" id="txtLName"
-                                                                   placeholder="Last Name" value="@Model.LastName" disabled>
-                                                        </div>
-                                                        <div class="col-xl-3 col-md-6 mb-3">
-                                                            <label for="mobilePhoneId" class="form-label">Phone</label>
-                                                            <input type="tel" class="input-field" id="txtMobilePhoneId"
-                                                                   value="@Model.PhoneNumber" disabled>
+                                                        <div class="col-md-6">
+                                                            <br />
+                                                            <br />
+                                                            <br /><br />
+                                                            Liquidity (Cash on Hand)<br />
+                                                            <input type="text" />
                                                         </div>
                                                     </div>
                                                     <div class="row mt-2 mb-3">
@@ -279,6 +275,10 @@
                                                     </div>
                                                 </div>
                                             </section>
+
+
+
+
                                             <section class="fieldset step" id="tab2">
                                                 <div class="form-card">
                                                     <div class="row">

@@ -3004,11 +3004,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Service\\SanmorePlatform-REAL-Service.csproj",
+      "projectUniqueName": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Service\\SanmorePlatform-REAL-Service.csproj",
       "projectName": "SanmorePlatform-REAL-Service",
-      "projectPath": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Service\\SanmorePlatform-REAL-Service.csproj",
+      "projectPath": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Service\\SanmorePlatform-REAL-Service.csproj",
       "packagesPath": "C:\\Users\\Michael Cohen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Service\\obj\\",
+      "outputPath": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Michael Cohen\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3025,14 +3025,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Data\\SanmorePlatform-REAL-Data.csproj": {
-              "projectPath": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Data\\SanmorePlatform-REAL-Data.csproj"
+            "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Data\\SanmorePlatform-REAL-Data.csproj": {
+              "projectPath": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Data\\SanmorePlatform-REAL-Data.csproj"
             },
-            "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Model\\SanmorePlatform-REAL-Model.csproj": {
-              "projectPath": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Model\\SanmorePlatform-REAL-Model.csproj"
+            "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Model\\SanmorePlatform-REAL-Model.csproj": {
+              "projectPath": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Model\\SanmorePlatform-REAL-Model.csproj"
             },
-            "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Utility\\SanmorePlatform-REAL-Utility.csproj": {
-              "projectPath": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Utility\\SanmorePlatform-REAL-Utility.csproj"
+            "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Utility\\SanmorePlatform-REAL-Utility.csproj": {
+              "projectPath": "C:\\Users\\Michael Cohen\\Desktop\\SourceDev1\\SanmorePlatform-REAL\\SanmorePlatform-REAL-Utility\\SanmorePlatform-REAL-Utility.csproj"
             }
           }
         }
