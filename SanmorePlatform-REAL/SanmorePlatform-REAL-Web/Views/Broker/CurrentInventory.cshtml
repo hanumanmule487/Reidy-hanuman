@@ -1,0 +1,330 @@
+﻿@model IEnumerable<SanmorePlatform_REAL_Model.ViewModels.GetCurrentInventoryViewModel>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Inventory : SanmorePlatform-REAL</title>
+    <!-- Links -->
+    <link rel="stylesheet" href="~/css/site.css">
+    <link rel="stylesheet" href="~/css/TransactionCoordinator.css">
+
+</head>
+
+<body>
+    <!--Nav-->
+    <!-- Add listing -->
+    <div class="top-section">
+        <div class="container-fluid container-px">
+            <div class="d-flex flex-column">
+                <h4 class="fw-semibold mb-0">Current Inventory <span class="blue-primary">Listing</span> </h4>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="addlistingform">
+        <div class="container-fluid container-px">
+            <div class="map-filters p-4">
+                <div class="row p-20-12">
+                    <div class="col-12 d-flex ">
+                        <div>
+                            <input type="text" class="filter-control searchicon" placeholder="Search...">
+                        </div>
+                        <div class="dropdown open small-d-none">
+                            <button type="button" class="btn filter-control dropdown-toggle" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                Sort by
+                            </button>
+
+                            <ul class="dropdown-menu px-3 wrap-text">
+                                <li class="d-flex align-items-center">
+                                    Oldest posted
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    Newest posted
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    Most popular last 30 days
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    Least popular last 30 days
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    Most popular all time
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    Least popular all time
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    Earliest modified
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    Oldest modified
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    Highest price
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    Lowest price
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dropdown open small-d-none">
+                            <button type="button" class="btn filter-control dropdown-toggle" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                Status
+                            </button>
+                            <ul class="dropdown-menu px-3 wrap-text">
+                                <li class="d-flex align-items-center">
+                                    Active
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    Under contract
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    Sold
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    Cancelled
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown open small-d-none">
+                            <button type="button" class="btn px-4 filter-control dropdown-toggle"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                Filter by
+                            </button>
+
+                            <ul class="dropdown-menu px-3">
+                                <li class="d-flex align-items-center fw-bold">
+                                    <input type="checkbox" class="me-3 filter-checkbox">Last modified
+                                </li>
+                                <li>
+                                    <div class="d-flex align-items-center py-2">
+                                        <div class="range-from">
+                                            <label for="applieddatefrom">From</label>
+                                            <input type="date" class="input-drpdwn" id="applieddatefrom">
+                                        </div>
+                                        <div class="range-to ms-2">
+                                            <label for="applieddateto">To</label>
+                                            <input type="date" class="input-drpdwn" id="applieddateto">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider mt-3 mb-2">
+                                </li>
+                                <li class="d-flex align-items-center fw-bold">
+                                    <input type="checkbox" class="me-3 filter-checkbox">Posted date
+                                </li>
+                                <li>
+                                    <div class="d-flex align-items-center py-2">
+                                        <div class="range-from">
+                                            <label for="profileupdtfrom">From</label>
+                                            <input type="date" class="input-drpdwn" id="profileupdtfrom">
+                                        </div>
+                                        <div class="range-to ms-2">
+                                            <label for="profileupdtto">To</label>
+                                            <input type="date" class="input-drpdwn" id="profileupdtto">
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <button type="button" class="btn-sign btn-pbr">Search</button>
+                    </div>
+                </div>
+            </div>
+
+            @if (Model == null)
+            {
+                <h1>Please try Again</h1>
+            }
+            else
+            {
+                @foreach (var item in Model)
+                {
+                    <div class="col-12 col-md-12 col-lg-12 col-xxl-12 bg-white mt-4 mb-4 rounded-start">
+                        <div class="row m-0">
+                            <div class="col-12 col-lg-2 col-md-2 col-xxl-2 p-0">
+                                @if (@item.PropertyImages == null)
+                                {
+                                    <div class="property_img">
+                                        <img src="~/Images/no-imge-1.jpg" class="w-100" alt="house1">
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="property_img">
+                                        <img src="~/PropertyImages/@item.PropertyImages" class="w-100" alt="house1">
+                                    </div>
+                                }
+                            </div>
+
+                            <div class="col-12 col-lg-10 col-md-10 col-xxl-10 p-4">
+                                <div class="d-flex justify-content-between">
+                                    <div class="address_details">
+                                        <h5>@item.Address1, @item.City, @item.State @item.ZipCode</h5>
+                                    </div>
+                                    <div class="property_amount">
+                                        <h5><span class="blue-primary fw-bold">$@string.Format("{0:#,##0.00}", @item.TargetPrice)</span></h5>
+                                    </div>
+                                </div>
+                                <div class="row p-0 mt-3">
+                                    <div class="col-12 col-lg-4 col-md-4 border-end property_info">
+                                        <p class="mb-0"><span>Asset type :</span> <span class="fw-bold">@item.PropertyTypeName</span></p>
+                                        <p class="mb-0"><span>Users seen last 30 days  :</span><a href="#"> @item.LastMonthsViews Users</a></p>
+                                        <p class="mb-0"><span>Users seen total :</span> <a href="#">@item.TotalViews Users</a></p>
+                                        <p class="mb-0"><span>Potential buyers :</span> <a href="#">0</a></p>
+                                    </div>
+
+                                    <div class="col-12 col-lg-4 col-md-4 border-end ps-5 property_info">
+                                        <p class="mb-0">
+                                            <span>Applicable lending products : </span>
+                                            <span class="fw-bold"><a href="#"> 0</a></span>
+                                        </p>
+                                        <p class="mb-0"><span>Relationship to property :</span><span class="fw-bold"> @item.RelationshipToProperty</span></p>
+                                        <p class="mb-0"><span>Broker Contact:</span><span class="fw-bold"> @item.ContactNumber</span></p>
+                                        <p class="mb-0"><span>Reidy fee :</span> <span class="fw-bold">$0.00</span> </p>
+                                    </div>
+
+                                    <div class="col-12 col-lg-4 col-md-4 ps-5 property_info">
+                                        <p class="mb-0"><span>Posted By : </span><a href="#"> @item.FirstName @item.LastName </a></p>
+                                        <p class="mb-0"><span>Posted date  :</span><span class="fw-bold"> @DateTime.Parse(item.CreatedOn).ToString("MM/dd/yyyy")</span></p>
+                                        @if (@item.ModifyDate != null)
+                                        {
+                                            <p class="mb-0"><span>Last modified  :</span><span class="fw-bold"> @DateTime.Parse(item.ModifyDate).ToString("MM/dd/yyyy")</span></p>
+                                        }
+                                        else
+                                        {
+                                            <p class="mb-0"><span>Last modified  :</span><span class="fw-bold"> @DateTime.Parse(item.CreatedOn).ToString("MM/dd/yyyy") </span></p>
+                                        }
+                                        <p class="mb-0"><span>Action needed :</span><span class="fw-bold"> Broker</span></p>
+                                    </div>
+
+                                    <div class="d-flex align-items-center mt-4 justify-content-between">
+                                        <div class="col-xxl-3 col-xl-3 col-md-4 col-4">
+                                            <div class="d-flex align-items-center">
+                                                <span class="me-2">
+                                                    Status:
+                                                </span>
+                                                <select class="w-50 form-select d-inline select_status" id="status_select">
+                                                    <option value="0" selected>Select status</option>
+                                                    <option value="1">Active</option>
+                                                    <option value="4">Under contract</option>
+                                                    <option value="5">Sold</option>
+                                                    <option value="6">Cancelled</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <button type="button" class="btn-sign btn-pbr me-0">View Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+    <!-- Need changes Modal popup Start-->
+    <div class="modal popup fade show" id="confirmchange" aria-hidden="false" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content br-32 border-0">
+                <div class="modal-header">
+                    <button type="button" class="btn-close custom_close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center mb-4"><img src="assets/images/warning-icon.png" alt="warning-icon"> </div>
+                    <div class="text-center">
+                        <h5>
+                            Are you sure you want to change the status to active?
+                        </h5>
+                    </div>
+                </div>
+                <div class="py-4 text-center user_profile">
+                    <button type="button" class="me-2 btn-pbr btn-cancel" id="closechnagerole">No</button>
+                    <button type="button" class="btn-sign btn-pbr">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Need Chnages Modal popup End-->
+    <!-- footer -->
+    <!-- scripts -->
+    <script src="~/js/jquery-3.7.1.js"></script>
+    <script src="~/js/transactionCoordinator.js"></script>
+
+
+    <script>
+        // Function for Need chnagesr dropdown section
+        // var status = document.getElementById("status_select");
+        var confirm = document.getElementById('confirmchange');
+        var newEle = document.createElement("div");
+        newEle.setAttribute("class", "modal-backdrop fade show remove_overlay");
+        var status_select = document.getElementById("status_select");
+        var aa = document.querySelector(".modal-backdrop.fade.show.remove_overlay")
+        status_select.addEventListener("change", () => {
+        if (status_select.value == "1") {
+        document.body.appendChild(newEle)
+        confirm.classList.add("show");
+        confirm.classList.add("d-block");
+        body.classList.add("modal-open");
+        }
+        })
+
+        var custom_close = document.querySelector(".custom_close");
+        custom_close.addEventListener("click", () => {
+        confirm.classList.remove("show");
+        confirm.classList.remove("d-block");
+        newEle.remove("")
+        status_select.value = 0
+        })
+
+    </script>
+</body>
+</html>

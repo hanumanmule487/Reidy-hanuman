@@ -1,0 +1,116 @@
+using ConsumeImageAPI.Models;
+using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
+
+namespace ConsumeImageAPI.Controllers
+{
+    public class ImageController : Controller
+    {
+        private readonly IHttpClientFactory _clientFactory;
+
+        public ImageController(IHttpClientFactory clientFactory)
+        {
+            _clientFactory = clientFactory;
+        }
+        public async Task<IActionResult> Index()
+        {
+            // Call the API to get all images
+            var images = await GetImagesFromApi();
+
+            // Pass the retrieved images to the view
+            return View(images);
+        }
+        private async Task<List<PropertyImageModel>> GetImagesFromApi()
+        {
+            var images = new List<PropertyImageModel>();
+
+            try
+            {
+                using (var client = _clientFactory.CreateClient())
+                {
+                    // Set the base address of your API
+                    client.BaseAddress = new System.Uri("http://localhost:5024");
+
+                    // Make a GET request to the GetAllImages endpoint
+                    var response = await client.GetAsync("api/Image/GetAllImages");
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        // Deserialize the response content manually
+                        var contentStream = await response.Content.ReadAsStreamAsync();
+                        images = await JsonSerializer.DeserializeAsync<List<PropertyImageModel>>(contentStream);
+                    }
+                    // Handle other status codes as needed
+                }
+            }
+            catch (HttpRequestException ex)
+            {
+                // Log or handle the exception as needed
+                ModelState.AddModelError(string.Empty, $"Error calling API: {ex.Message}");
+            }
+
+            return images;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<IActionResult> UploadImage()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UploadImage(PropertyImageModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    using (var client = _clientFactory.CreateClient())
+                    {
+                        // Set the base address of your API
+                        client.BaseAddress = new Uri("http://localhost:5024");
+
+                        // Create a FormDataContent to send the image file and other form data
+                        using (var formData = new MultipartFormDataContent())
+                        {
+                            // Convert the PropertyImageModel to key-value pairs
+                            foreach (var property in typeof(PropertyImageModel).GetProperties())
+                            {
+                                formData.Add(new StringContent(property.GetValue(model)?.ToString() ?? ""), property.Name);
+                            }
+
+                            // Add the image file to the form data
+                            formData.Add(new StreamContent(model.ImageFile.OpenReadStream()), "ImageFile", model.ImageFile.FileName);
+
+                            // Send the POST request to the API
+                            var response = await client.PostAsync("api/Image/SaveImage", formData);
+
+                            if (response.IsSuccessStatusCode)
+                            {
+                                // Handle success (e.g., redirect to a success page)
+                                return RedirectToAction("Index");
+                            }
+                            else
+                            {
+                                // Handle failure (e.g., show an error message)
+                                ModelState.AddModelError(string.Empty, "Failed to upload image. Please try again.");
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Log the exception or handle it as needed
+                    ModelState.AddModelError(string.Empty, $"An error occurred: {ex.Message}");
+                }
+            }
+
+            // If ModelState is not valid or an error occurred, return to the upload form
+            return View("Index", model);
+        }
+    }
+}
