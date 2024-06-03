@@ -1,0 +1,84 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName></SccProjectName>
+    <SccProvider></SccProvider>
+    <SccAuxPath></SccAuxPath>
+    <SccLocalPath></SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>SanmorePlatform_REAL_Web</RootNamespace>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\PropertyVideos\**" />
+    <Content Remove="wwwroot\PropertyVideos\**" />
+    <EmbeddedResource Remove="wwwroot\PropertyVideos\**" />
+    <None Remove="wwwroot\PropertyVideos\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\Images\icons\angle-left-color.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.29" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SanmorePlatform-REAL-Data\SanmorePlatform-REAL-Data.csproj" />
+    <ProjectReference Include="..\SanmorePlatform-REAL-Model\SanmorePlatform-REAL-Model.csproj" />
+    <ProjectReference Include="..\SanmorePlatform-REAL-Utility\SanmorePlatform-REAL-Utility.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\DueDiligenceFiles\" />
+    <Folder Include="wwwroot\IdentificationVerificationFiles\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Images\icons\action.svg" />
+    <None Include="wwwroot\Images\icons\angle-down.svg" />
+    <None Include="wwwroot\Images\icons\angle-left-color.svg" />
+    <None Include="wwwroot\Images\icons\angle-left.svg" />
+    <None Include="wwwroot\Images\icons\apple.svg" />
+    <None Include="wwwroot\Images\icons\bell.svg" />
+    <None Include="wwwroot\Images\icons\checkbox-2.svg" />
+    <None Include="wwwroot\Images\icons\doller.svg" />
+    <None Include="wwwroot\Images\icons\edit.svg" />
+    <None Include="wwwroot\Images\icons\facebook.svg" />
+    <None Include="wwwroot\Images\icons\file.svg" />
+    <None Include="wwwroot\Images\icons\google.svg" />
+    <None Include="wwwroot\Images\icons\hand-hi.svg" />
+    <None Include="wwwroot\Images\icons\home.svg" />
+    <None Include="wwwroot\Images\icons\logo.svg" />
+    <None Include="wwwroot\Images\icons\menu-bar.svg" />
+    <None Include="wwwroot\Images\icons\menu.svg" />
+    <None Include="wwwroot\Images\icons\message-circle.svg" />
+    <None Include="wwwroot\Images\icons\notification.svg" />
+    <None Include="wwwroot\Images\icons\phone.svg" />
+    <None Include="wwwroot\Images\icons\play-store.svg" />
+    <None Include="wwwroot\Images\icons\setting.svg" />
+    <None Include="wwwroot\Images\icons\signup-broker.svg" />
+    <None Include="wwwroot\Images\icons\signup-buyer.svg" />
+    <None Include="wwwroot\Images\icons\signup-lender.svg" />
+    <None Include="wwwroot\Images\icons\user-profile.svg" />
+    <None Include="wwwroot\lib\jquery.steps-1.1.0\jquery.steps.js" />
+    <None Include="wwwroot\lib\jquery.steps-1.1.0\jquery.steps.min.js" />
+  </ItemGroup>
+
+</Project>
