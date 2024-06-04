@@ -19,7 +19,6 @@ namespace SanmorePlatform_REAL_Model.ViewModels.LenderViewModel
         public int EntityType { get; set; }
         public string? LenderPhoneNo { get; set; }
         public string? BusinessAddress { get; set; }
-		public string? Address1 { get; set; }
         public string? Address2 { get; set; }
         public string? City { get; set; }
         public int StateId { get; set; }

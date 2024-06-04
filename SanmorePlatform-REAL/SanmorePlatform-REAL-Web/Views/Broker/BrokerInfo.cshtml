@@ -1,19 +1,57 @@
 ﻿<div class="info-banner">
     <div class="banner-content">
-        <div>
-            <h5 class="search-title">Broker Account</h5>
-            <p class="search-title">What it does for you</p>
+        <div class="brokerinfo-title">
+            <h5 class="search-title-broker">Broker Account</h5>
+            <p class="search-title-brokerinfo">What it does for you</p>
+        </div>
+        <div class="brokerinfo1-img">
+            <img class="broker-image1" src="~/Images/icons/brokerinfo2.svg" alt="broker2" />
+            <img class="broker-image2" src="~/Images/icons/brokerinfo1.svg" alt="broker1" />
+            <img class="broker-image3" src="~/Images/icons/brokerinfo2.svg" alt="broker2" />
         </div>
     </div>
+   @*  <div class="brokerinfo-img">
+        <img class="broker-image1" src="~/Images/icons/brokerinfo2.svg" alt="broker2" />
+        <img class="broker-image2" src="~/Images/icons/brokerinfo1.svg" alt="broker1" />
+    </div> *@
+    <div class="brokerinfo-broker">
+        <button class="brokerinfo-button" onclick="goToBrokerSignup()">Become a Broker</button>
+    </div>
+
 </div>
 <div style="width: 100%">
-    <div class="container my-4">
-        <div>
-            <h1 class="reidy-title">Content</h1>
-        </div>
-        <div class="info-block">
-            
-        </div>
+    <div class="container my-4">       
+       
+            <div class="broker-row">
+                <button class="col-md-3">verified Buyers</button>
+                <button class="col-md-3">Automatic Payments</button>
+                <button class="col-md-3">Transaction Cordinator</button>
+                <button class="col-md-3">Streamlined Process</button>
+            </div>
+            <div class="alert-primary-broker">
+                <div class="broker-info2">
+               <p>Easy & Fast Way To List And Sell ProPerties</p>
+               </div>
+                <div class="info-block">
+                    <p>Using a Fast-Track Buyer account allows you to buy and invest on a property all with a click of a button. Afterwards our Transaction Coordinators will take care of the rest for you. This account is completely free with no hidden fees!</p>
+                </div>
+            </div>
+            <div class="brokerinfo-faq">
+                <h4 class="broker-title">FAQ's'</h4>
+                <div class="brokerinfo-l1">
+                How long does the whole process of Listing and selling a property take? <img class="brokerinfo-img" src="/Images/down-arrow.png" />
+                </div>
+                <hr class="line-bottom-dasshed"></hr>
+                <div class="brokerinfo-l1">
+                    Does signing up cost anything? <img class="brokerinfo-img"  src="/Images/down-arrow.png" />
+                </div>
+                <hr class="line-bottom-dasshed"></hr>
+                <div class="brokerinfo-l1">
+                How secure is this platform <img class="brokerinfo-img"  src="/Images/down-arrow.png"  />
+                </div>
+                <hr class="line-bottom-dasshed"></hr>
+            </div>
+       
     </div>
 </div>
 @section Scripts {

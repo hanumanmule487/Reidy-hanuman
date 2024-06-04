@@ -56,13 +56,13 @@ namespace SanmorePlatform_REAL_API.Controllers
         /// <param name="model"></param>
         /// <returns></returns>
         [HttpPost("Login")]
-        public async Task<IActionResult> Login([FromBody] LoginViewModel model)//Task<IActionResult> Login([FromBody] LoginViewModel model)//async
+        public async Task<IActionResult> ILogin([FromBody] LoginViewModel model)//Task<IActionResult> Login([FromBody] LoginViewModel model)//async
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    var res = await _accountServices.UserLogin(model);//await
+                    var res = await _accountServices.UserLogin(model);
                     if (res.StatusCode == HttpStatusCode.OK)
                     {
                         return Ok(res);

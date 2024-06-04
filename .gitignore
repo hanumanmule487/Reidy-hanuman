@@ -1,8 +1,0 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
-
-/.vs/SourceDev1/FileContentIndex/84760605-09bc-459d-bd36-8c36119c7375.vsidx
-*.vsidx
-/SanmorePlatform-REAL/SanmorePlatform-REAL-Database/SanmorePlatform-REAL-Database.dbmdl
-/SanmorePlatform-REAL/SanmorePlatform-REAL-Database/SanmorePlatform-REAL-Database.jfm
