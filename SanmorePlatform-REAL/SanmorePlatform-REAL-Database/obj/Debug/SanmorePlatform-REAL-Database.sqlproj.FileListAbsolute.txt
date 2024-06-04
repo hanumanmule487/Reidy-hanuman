@@ -1,0 +1,16 @@
+C:\Users\Michael Cohen\Desktop\Development\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Database\bin\Debug\SanmorePlatform-REAL-Database.dacpac
+C:\Users\Michael Cohen\Desktop\Development\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Database\bin\Debug\SanmorePlatform_REAL_Database.dll
+C:\Users\Michael Cohen\Desktop\Development\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Database\bin\Debug\SanmorePlatform_REAL_Database.pdb
+C:\Users\Michael Cohen\Desktop\Development\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Database\obj\Debug\SanmorePlatform-REAL-Database.sqlproj.AssemblyReference.cache
+C:\Users\Michael Cohen\Desktop\Development\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Database\obj\Debug\Model.xml
+C:\Users\Michael Cohen\Desktop\Development\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Database\obj\Debug\refactor.xml
+C:\Users\Michael Cohen\Desktop\Development\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Database\obj\Debug\postdeploy.sql
+C:\Users\Michael Cohen\Desktop\Development\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Database\obj\Debug\predeploy.sql
+C:\Users\Michael Cohen\Desktop\Development\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Database\obj\Debug\SanmorePlatform_REAL_Database.dll
+C:\Users\Michael Cohen\Desktop\Development\sanmore_investment_reidy\SanmorePlatform-REAL\SanmorePlatform-REAL-Database\obj\Debug\SanmorePlatform_REAL_Database.pdb
+C:\Users\Michael Cohen\Desktop\SourceDev\SanmorePlatform-REAL\SanmorePlatform-REAL-Database\bin\Debug\SanmorePlatform-REAL-Database.dacpac
+C:\Users\Michael Cohen\Desktop\SourceDev\SanmorePlatform-REAL\SanmorePlatform-REAL-Database\bin\Debug\SanmorePlatform_REAL_Database.dll
+C:\Users\Michael Cohen\Desktop\SourceDev\SanmorePlatform-REAL\SanmorePlatform-REAL-Database\bin\Debug\SanmorePlatform_REAL_Database.pdb
+C:\Users\Michael Cohen\Desktop\SourceDev\SanmorePlatform-REAL\SanmorePlatform-REAL-Database\obj\Debug\SanmorePlatform-REAL-Database.sqlproj.AssemblyReference.cache
+C:\Users\Michael Cohen\Desktop\SourceDev\SanmorePlatform-REAL\SanmorePlatform-REAL-Database\obj\Debug\SanmorePlatform_REAL_Database.dll
+C:\Users\Michael Cohen\Desktop\SourceDev\SanmorePlatform-REAL\SanmorePlatform-REAL-Database\obj\Debug\SanmorePlatform_REAL_Database.pdb

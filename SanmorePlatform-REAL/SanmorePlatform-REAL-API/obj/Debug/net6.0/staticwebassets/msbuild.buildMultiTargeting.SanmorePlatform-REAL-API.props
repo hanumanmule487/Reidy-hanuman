@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\SanmorePlatform-REAL-API.props" />
+</Project>

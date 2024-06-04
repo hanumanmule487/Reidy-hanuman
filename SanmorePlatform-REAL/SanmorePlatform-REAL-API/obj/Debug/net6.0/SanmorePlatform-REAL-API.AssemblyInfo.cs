@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SanmorePlatform-REAL-API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+75820dc6df665501f4ba0399e21c38bbfd005a02")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8bfb23984e2d4fd188592f078372cf2134964bf6")]
 [assembly: System.Reflection.AssemblyProductAttribute("SanmorePlatform-REAL-API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SanmorePlatform-REAL-API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -105,7 +105,7 @@ namespace SanmorePlatform_REAL_Web.Controllers
 
                             var principal = new ClaimsPrincipal(identity);
 
-                            HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+                            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
 
                             return Json(new { success = true });
                         }
@@ -188,7 +188,7 @@ namespace SanmorePlatform_REAL_Web.Controllers
             {
                 Response.Cookies.Delete(cookies);
             }
-            return RedirectToAction("", "");
+            return RedirectToAction("Index", "Home");
         }
 
         public new IActionResult Unauthorized()
