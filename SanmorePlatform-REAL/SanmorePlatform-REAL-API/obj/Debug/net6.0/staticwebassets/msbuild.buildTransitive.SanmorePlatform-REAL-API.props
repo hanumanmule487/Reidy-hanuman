@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\SanmorePlatform-REAL-API.props" />
-</Project>
